@@ -11,16 +11,19 @@
 		<ul class="social">
 			<li>
 				<a href="mailto:info@kamfly.io">
+					<span class="sr-only">Email us at info@kamfly.io</span>
 					<Email />
 				</a>
 			</li>
 			<li>
 				<a href="https://www.linkedin.com/company/kamfly">
+					<span class="sr-only">Find us on LinkedIn</span>
 					<LinkedIn />
 				</a>
 			</li>
 			<li>
 				<a href="https://twitter.com/kamflyio">
+					<span class="sr-only">Find us on Twitter</span>
 					<Twitter />
 				</a>
 			</li>
