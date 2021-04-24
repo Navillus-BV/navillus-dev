@@ -5,7 +5,11 @@ const adapter = require('@sveltejs/adapter-static');
 module.exports = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: preprocess(),
+	preprocess: [
+		preprocess({
+			postcss: true
+		})
+	],
 
 	kit: {
 		adapter: adapter(),
