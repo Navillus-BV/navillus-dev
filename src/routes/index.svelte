@@ -44,7 +44,7 @@
 </script>
 
 <section>
-	<div class="container hero">
+	<div class="container text-center">
 		<h1>
 			Every problem is <strong>different</strong>.
 			<br />

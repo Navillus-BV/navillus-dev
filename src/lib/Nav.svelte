@@ -136,6 +136,7 @@
 
 	nav a {
 		line-height: 2;
+		padding: 0 var(--spacer-sm);
 	}
 
 	[aria-current='true'] {
@@ -154,7 +155,7 @@
 
 		ul {
 			flex-direction: row;
-			gap: 2em;
+			gap: var(--spacer-xs);
 		}
 
 		ul li:last-of-type {

@@ -88,7 +88,15 @@
 
 	.links a {
 		text-decoration: underline;
-		padding: 0 var(--spacer-sm);
+		padding: 0 var(--spacer-xs);
+		font-size: var(--text-sm);
+
+		@media (min-width: 480px) {
+			& {
+				padding: 0 var(--spacer-sm);
+				font-size: var(--text-base);
+			}
+		}
 	}
 
 	.links li:not(:last-of-type) {
