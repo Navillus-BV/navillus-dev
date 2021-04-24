@@ -177,3 +177,15 @@
 		</div>
 	</div>
 </section>
+
+<section>
+	<div class="container">
+		<h3 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h3>
+		<h2>Ready to join the Jamstack revolution?</h2>
+		<p>
+			Reach out, we'd be happy to answer any questions you may have about the Jamstack or jump right
+			into talking more about your needs and what the right solution for your business might be.
+		</p>
+		<a href="/contact" class="btn">Get in touch</a>
+	</div>
+</section>
