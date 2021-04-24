@@ -1,5 +1,380 @@
-/* Write your global styles here, in PostCSS syntax */
 :root {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
+	--color-light-gray: #ebebeb;
+	--color-gray: #37322e;
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-orange: #ffc331;
+	--color-red: #d72516;
+	--color-green: #21815b;
+	--color-blue: #0b70ba;
+	--color-purple: #a259ff;
+
+	/* Default Theme */
+	--color-text: var(--color-gray);
+	--color-primary: var(--color-orange);
+	--color-secondary: var(--color-white);
+	--color-accent: var(--color-gray);
+
+	/* Font Sizes */
+	--text-sm: 0.8rem;
+	--text-base: 1rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.563rem;
+	--text-2xl: 1.953rem;
+	--text-3xl: 2.441rem;
+	--text-4xl: 3.052rem;
+
+	/* Spacer Sizes */
+	--spacer-xs: 0.5rem;
+	--spacer-sm: 1rem;
+	--spacer-md: 2.5rem;
+	--spacer-lg: 4rem;
+	--spacer-xl: 6rem;
+
+	/* Box Shadows */
+	--shadow-sm: -1px 1px 2px 0 rgba(0,0,0,0.25);
+	--shadow-md: 0px 2px 4px 0 rgba(0,0,0,0.25);
+}
+
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+	background: var(--color-primary);
+
+	@media (min-width: 768px) {
+		& {
+		font-size: 18px;
+		}
+	}
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	color: var(--color-text);
+	font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+	'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+	'Segoe UI Symbol', 'Noto Color Emoji';
+	font-size: var(--text-base);
+	line-height: 1.75;
+}
+
+#svelte {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+#svelte main {
+	flex: 1 0 0;
+}
+
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin-bottom: var(--spacer-sm);
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 3em 0 1.38em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1, h3.text-sm + h2 {
+  margin-top: 0;
+}
+
+h1, .text-4xl {
+	font-size: clamp(var(--text-2xl), 12vw, var(--text-4xl));
+}
+
+h2, .text-3xl {
+	font-size: clamp(var(--text-xl), 10vw, var(--text-3xl));
+}
+
+h3, .text-2xl {
+	font-size: clamp(var(--text-lg), 8vw, var(--text-2xl));
+}
+
+h4, .text-xl {
+	font-size: clamp(var(--text-base), 6vw, var(--text-xl));
+}
+
+h5, .text-lg {
+	font-size: clamp(var(--text-base), 5vw, var(--text-lg));
+}
+
+.text-base {
+	font-size: var(--text-base);
+}
+
+small, .text-sm {
+	font-size: var(--text-sm);
+	letter-spacing: 0.025em;
+}
+
+strong {
+	font-size: inherit;
+}
+
+svg {
+	height: 100%;
+}
+
+picture {
+	display: flex;
+	justify-content: center;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	font-size: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 var(--spacer-sm);
+}
+
+section {
+	padding: var(--spacer-xl) 0;
+	background: var(--color-primary);
+
+	&.alt {
+		background: var(--color-secondary);
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.fill-current {
+	fill: currentColor;
+}
+
+.stroke-current {
+	stroke: currentColor;
+}
+
+.color-text {
+	color: var(--color-text);
+}
+
+.color-blue {
+	color: var(--color-blue);
+}
+
+.color-green {
+	color: var(--color-green);
+}
+
+.color-purple {
+	color: var(--color-purple);
+}
+
+.color-red {
+	color: var(--color-red);
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.h-full {
+	height: 100%;
+}
+
+
+
+/* Hero Sections */
+.hero {
+	text-align: center;
+}
+
+
+
+/* Buttons */
+.btn {
+	border: 2px solid transparent;
+	display: inline-block;
+	padding: 0.25em 1em;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--color-text);
+	background: var(--color-secondary);
+	border-radius: 0.25em;
+	box-shadow: var(--shadow-md);
+	will-change: background-color, color;
+	transition: color 150ms, background-color 150ms;
+
+	&:hover {
+		background: var(--color-accent);
+		color: var(--color-secondary);
+	}
+
+	&.btn--primary {
+		background: var(--color-primary);
+		color: var(--color-text);
+
+		&:hover {
+			background: var(--secondary);
+		}
+	}
+
+	&.btn--hollow {
+		background: transparent;
+		border-color: var(--color-text);
+		box-shadow: none;
+
+		&:hover {
+			background: var(--color-accent);
+			border-color: var(--color-accent);
+		}
+	}
+}
+
+
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+	display: flex;
+	cursor: pointer;
+	border-width: 0;
+	background-color: transparent;
+	padding: 0.5rem;
+	margin: -0.5rem;
+	line-height: 0.75rem;
+	overflow: visible;
+	transition: opacity linear 150ms;
+	will-change: opacity;
+}
+
+.hamburger:hover,
+.hamburger.is-active:hover {
+	opacity: 0.75;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner:before,
+.hamburger.is-active .hamburger-inner:after {
+	background: currentColor;
+}
+
+.hamburger-box {
+	height: calc(1rem + 4px);
+	width: 2rem;
+	position: relative;
+	display: inline-block;
+}
+
+.hamburger-inner {
+	top: 50%;
+	margin-top: -2px;
+	display: block;
+}
+.hamburger-inner,
+.hamburger-inner:before,
+.hamburger-inner:after {
+	background: currentColor;
+	border-radius: 9999px;
+	transition-timing-function: ease;
+	height: 2px;
+	width: 2rem;
+	position: absolute;
+	transition: transform ease-in-out 150ms;
+	will-change: transform;
+}
+
+.hamburger-inner:before,
+.hamburger-inner:after {
+	content: '';
+	display: block;
+}
+
+.hamburger-inner:before {
+	top: -0.5rem;
+}
+
+.hamburger-inner:after {
+	bottom: -0.5rem;
+}
+
+/*
+* Squeeze
+*/
+.hamburger--squeeze .hamburger-inner {
+	transition-duration: 0.075s;
+	transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze .hamburger-inner:before {
+	transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+
+.hamburger--squeeze .hamburger-inner:after {
+	transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+	transform: rotate(45deg);
+	transition-delay: 0.12s;
+	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner:before {
+	top: 0;
+	opacity: 0;
+	transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+
+.hamburger--squeeze.is-active .hamburger-inner:after {
+	bottom: 0;
+	transform: rotate(-90deg);
+	transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }

@@ -1,5 +1,13 @@
 <script>
-	import "../app.postcss";
+	import Footer from '$lib/Footer.svelte';
+	import Nav from '$lib/Nav.svelte';
+	import '../app.postcss';
 </script>
 
-<slot />
+<Nav />
+
+<main>
+	<slot />
+</main>
+
+<Footer />

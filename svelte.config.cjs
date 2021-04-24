@@ -8,7 +8,7 @@ module.exports = {
 	preprocess: [
 		preprocess({
 			postcss: true
-		})
+		}),
 	],
 
 	kit: {
