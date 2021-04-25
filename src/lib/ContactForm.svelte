@@ -1,29 +1,4 @@
-<script lang="ts">
-	let formElem: HTMLFormElement;
-
-	async function onSubmit() {
-		try {
-			const formData = new FormData(formElem);
-			const params = new URLSearchParams(formData as any);
-
-			await fetch('/#contact', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: params.toString()
-			});
-		} catch (err) {
-			console.log(err);
-		}
-	}
-</script>
-
-<form
-	bind:this={formElem}
-	name="contact"
-	on:submit|preventDefault={onSubmit}
-	netlify-honeypot="bot-field"
-	data-netlify="true"
->
+<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
 	<input type="hidden" name="form-name" value="contact" />
 	<p class="honeypot">
 		<label>
