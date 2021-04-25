@@ -279,31 +279,33 @@ section {
 
 /** Features Block */
 .features {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	row-gap: 4rem;
-}
 
-.feature {
-	display: grid;
+	& article {
+		display: flex;
+		flex-direction: column;
 
-	& .feature__title {
+		@media (min-width: 480px) {
+			& {
+				flex-direction: row;
+				column-gap: 2rem;
+				align-items: center;
+			}
+	
+			& :last-child {
+				flex: 1 0 0%;
+			}
+		}
+	}
+
+	& h4 {
 		margin-top: var(--spacer-sm);
 	}
 
 	& svg {
 		width: 4rem;
-	}
-
-	@media (min-width: 480px) {
-		& {
-		grid-template-columns: auto 1fr;
-		grid-template-rows: repeat(2, auto);
-		column-gap: 2rem;
-		}
-
-		& svg {
-			grid-row: 1 / 3;
-		}
 	}
 }
 

@@ -146,36 +146,42 @@
 		<h2>How Jamstack supports your business</h2>
 
 		<div class="features">
-			<div class="feature">
+			<article>
 				<Speedometer foreground="var(--color-red)" />
 
-				<h4 class="feature__title">Better Performance</h4>
-				<p>
-					Why wait for pages to build on the fly when you can generate them at deploy time? When it
-					comes to minimizing the time to first byte, nothing beats pre-built files served over a
-					CDN.
-				</p>
-			</div>
-			<div class="feature">
+				<div>
+					<h4>Better Performance</h4>
+					<p>
+						Why wait for pages to build on the fly when you can generate them at deploy time? When
+						it comes to minimizing the time to first byte, nothing beats pre-built files served over
+						a CDN.
+					</p>
+				</div>
+			</article>
+			<article>
 				<Shield foreground="var(--color-blue)" />
 
-				<h4 class="feature__title">Higher Security</h4>
-				<p>
-					Why wait for pages to build on the fly when you can generate them at deploy time? When it
-					comes to minimizing the time to first byte, nothing beats pre-built files served over a
-					CDN.
-				</p>
-			</div>
-			<div class="feature">
+				<div>
+					<h4>Higher Security</h4>
+					<p>
+						Why wait for pages to build on the fly when you can generate them at deploy time? When
+						it comes to minimizing the time to first byte, nothing beats pre-built files served over
+						a CDN.
+					</p>
+				</div>
+			</article>
+			<article>
 				<Money foreground="var(--color-green)" />
 
-				<h4 class="feature__title">Cheaper, Easier Scaling</h4>
-				<p>
-					When your deployment amounts to a stack of files that can be served anywhere, scaling is a
-					matter of serving those files in more places. CDNs are perfect for this, and often include
-					scaling in all of their plans.
-				</p>
-			</div>
+				<div>
+					<h4>Cheaper, Easier Scaling</h4>
+					<p>
+						When your deployment amounts to a stack of files that can be served anywhere, scaling is
+						a matter of serving those files in more places. CDNs are perfect for this, and often
+						include scaling in all of their plans.
+					</p>
+				</div>
+			</article>
 		</div>
 	</div>
 </section>
@@ -229,33 +235,39 @@
 		<h2>Our Services</h2>
 
 		<div class="features">
-			<div class="feature">
+			<article>
 				<PWA foreground="var(--color-red)" />
 
-				<h4 class="feature__title">Progressive Web Apps</h4>
-				<p>
-					Save time and money with a progressive web app instead of native apps for multiple
-					platforms. Jamstack PWA means great performance and low hosting costs.
-				</p>
-			</div>
-			<div class="feature">
+				<div>
+					<h4>Progressive Web Apps</h4>
+					<p>
+						Save time and money with a progressive web app instead of native apps for multiple
+						platforms. Jamstack PWA means great performance and low hosting costs.
+					</p>
+				</div>
+			</article>
+			<article>
 				<Blogging foreground="var(--color-blue)" />
 
-				<h4 class="feature__title">Static Websites</h4>
-				<p>
-					Get new customers with a faster website with higher SEO chances. We build them with proven
-					technologies: GatsbyJS, Hugo, Netlify, and many others.
-				</p>
-			</div>
-			<div class="feature">
+				<div>
+					<h4>Static Websites</h4>
+					<p>
+						Get new customers with a faster website with higher SEO chances. We build them with
+						proven technologies: GatsbyJS, Hugo, Netlify, and many others.
+					</p>
+				</div>
+			</article>
+			<article>
 				<Shopping foreground="var(--color-green)" />
 
-				<h4 class="feature__title">eCommerce Stores</h4>
-				<p>
-					Every second matters for online shoppers. There are no trade-offs between security,
-					performance and personalised experiences with Jamstack eCommerce solutions.
-				</p>
-			</div>
+				<div>
+					<h4>eCommerce Stores</h4>
+					<p>
+						Every second matters for online shoppers. There are no trade-offs between security,
+						performance and personalised experiences with Jamstack eCommerce solutions.
+					</p>
+				</div>
+			</article>
 		</div>
 	</div>
 </section>
