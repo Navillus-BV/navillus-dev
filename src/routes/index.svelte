@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ContactForm from '$lib/ContactForm.svelte';
 	import Blogging from '$lib/icons/Blogging.svelte';
 	import Money from '$lib/icons/Money.svelte';
 	import PWA from '$lib/icons/PWA.svelte';
@@ -222,7 +223,7 @@
 	</div>
 </section>
 
-<section class="alt">
+<section class="alt" id="services">
 	<div class="container">
 		<h3 class="text-sm bold">PRODUCTS WE CRAFT</h3>
 		<h2>Our Services</h2>
@@ -259,7 +260,7 @@
 	</div>
 </section>
 
-<section>
+<section id="contact">
 	<div class="container">
 		<h3 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h3>
 		<h2>Ready to join the Jamstack revolution?</h2>
@@ -267,6 +268,6 @@
 			Reach out, we'd be happy to answer any questions you may have about the Jamstack or jump right
 			into talking more about your needs and what the right solution for your business might be.
 		</p>
-		<a href="/contact" class="btn">Get in touch</a>
+		<ContactForm />
 	</div>
 </section>

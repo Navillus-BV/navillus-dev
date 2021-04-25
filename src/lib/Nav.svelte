@@ -32,7 +32,7 @@
 					<a href="/" aria-current={$page.path === '/'}>Home</a>
 				</li>
 				<li>
-					<a href="/services" aria-current={$page.path === '/services'}>Services</a>
+					<a href="/#services" aria-current={$page.path === '/#services'}>Services</a>
 				</li>
 				<li>
 					<a href="/portfolio" aria-current={$page.path === '/portfolio'}>Portfolio</a>
@@ -43,7 +43,7 @@
 			</ul>
 		</nav>
 
-		<a href="/contact" class="btn btn--hollow">Get in Touch</a>
+		<a href="/#contact" class="btn btn--hollow">Get in Touch</a>
 
 		<label
 			for="toggle"
@@ -72,7 +72,9 @@
 					<a href="/" class="text-lg" aria-current={$page.path === '/'}>Home</a>
 				</li>
 				<li>
-					<a href="/services" class="text-lg" aria-current={$page.path === '/services'}>Services</a>
+					<a href="/#services" class="text-lg" aria-current={$page.path === '/#services'}
+						>Services</a
+					>
 				</li>
 				<li>
 					<a href="/portfolio" class="text-lg" aria-current={$page.path === '/portfolio'}
@@ -83,7 +85,7 @@
 					<a href="/blog" class="text-lg" aria-current={$page.path === '/blog'}>Blog</a>
 				</li>
 				<li class="w-full">
-					<a href="/contact" aria-current={$page.path === '/contact'} class="btn w-full"
+					<a href="/#contact" aria-current={$page.path === '/#contact'} class="btn w-full"
 						>Get in Touch</a
 					>
 				</li>
