@@ -6,41 +6,122 @@
 	import Shopping from '$lib/icons/Shopping.svelte';
 	import Speedometer from '$lib/icons/Speedometer.svelte';
 
-	import {
-		Contentful,
-		Dato,
-		Forestry,
-		Netlify as NetlifyCMS,
-		Prismic,
-		Sanity,
-		Storyblok,
-		Strapi
-	} from '$lib/logos/cms';
-	import {
-		Eleventy,
-		Gatsby,
-		Gridsome,
-		Hugo,
-		Jekyll,
-		NextJS,
-		NuxtJS,
-		Sapper,
-		SvelteKit
-	} from '$lib/logos/ssg';
-	import {
-		AWS,
-		Azure,
-		Begin,
-		CloudflarePages,
-		Firebase,
-		Netlify,
-		Render,
-		Vercel
-	} from '$lib/logos/hosting';
+	const headlessCMS = [
+		{
+			logo: 'logos/contentful.svg',
+			title: 'Contentful'
+		},
+		{
+			logo: 'logos/dato.svg',
+			title: 'Dato CMS'
+		},
+		{
+			logo: 'logos/forestry.svg',
+			title: 'Forestry'
+		},
+		{
+			logo: 'logos/netlify-cms.svg',
+			title: 'Netlify CMS'
+		},
+		{
+			logo: 'logos/prismic.svg',
+			title: 'Prismic'
+		},
+		{
+			logo: 'logos/sanity.svg',
+			title: 'Sanity.io'
+		},
+		{
+			logo: 'logos/storyblok.svg',
+			title: 'Storyblok'
+		},
+		{
+			logo: 'logos/strapi.svg',
+			title: 'Strapi'
+		}
+	];
 
-	const headlessCms = [Contentful, Dato, Forestry, NetlifyCMS, Prismic, Sanity, Storyblok, Strapi];
-	const ssg = [Eleventy, Gatsby, Gridsome, Hugo, Jekyll, NextJS, NuxtJS, Sapper, SvelteKit];
-	const hosts = [AWS, Azure, Begin, CloudflarePages, Firebase, Netlify, Render, Vercel];
+	const ssg = [
+		{
+			logo: 'logos/11ty.svg',
+			title: '11ty'
+		},
+		{
+			logo: 'logos/gatsby.svg',
+			title: 'Gatsby'
+		},
+		{
+			logo: 'logos/gridsome.svg',
+			title: 'Gridsome'
+		},
+		{
+			logo: 'logos/hugo.svg',
+			title: 'Hugo'
+		},
+		{
+			logo: 'logos/jekyll.svg',
+			title: 'Jekyll'
+		},
+		{
+			logo: 'logos/nextjs.svg',
+			title: 'NextJS'
+		},
+		{
+			logo: 'logos/nuxtjs.svg',
+			title: 'NuxtJS'
+		},
+		{
+			logo: 'logos/scully.svg',
+			title: 'Scully'
+		},
+		{
+			logo: 'logos/sapper.svg',
+			title: 'Sapper'
+		},
+		{
+			logo: 'logos/sveltekit.svg',
+			title: 'SvelteKit'
+		}
+	];
+
+	const hosts = [
+		{
+			logo: 'logos/aws.svg',
+			title: 'AWS'
+		},
+		{
+			logo: 'logos/azure.svg',
+			title: 'Azure'
+		},
+		{
+			logo: 'logos/begin.svg',
+			title: 'Begin.com'
+		},
+		{
+			logo: 'logos/cloudflare-pages.svg',
+			title: 'Cloudflare Pages'
+		},
+		{
+			logo: 'logos/digital-ocean.svg',
+			title: 'Digital Ocean'
+		},
+		{
+			logo: 'logos/firebase.svg',
+			title: 'Firebase'
+		},
+		{
+			logo: 'logos/netlify.svg',
+			title: 'Netlify'
+		},
+		{
+			logo: 'logos/render.svg',
+			title: 'Render'
+		},
+		{
+			logo: 'logos/vercel.svg',
+			title: 'Vercel'
+		}
+	];
 </script>
 
 <section>
@@ -107,9 +188,9 @@
 			<h4 class="text-sm bold">HEADLESS CMS</h4>
 
 			<ul>
-				{#each headlessCms as item, i (i)}
+				{#each headlessCMS as { logo, title } (title)}
 					<li>
-						<svelte:component this={item} class="color-text fill-current" />
+						<img loading="lazy" class="badge__icon" src={logo} alt={title} />
 					</li>
 				{/each}
 			</ul>
@@ -119,9 +200,9 @@
 			<h4 class="text-sm bold">STATIC SITE GENERATOR</h4>
 
 			<ul>
-				{#each ssg as item, i (i)}
+				{#each ssg as { logo, title }, i (i)}
 					<li>
-						<svelte:component this={item} class="color-text fill-current" />
+						<img loading="lazy" class="badge__icon" src={logo} alt={title} />
 					</li>
 				{/each}
 			</ul>
@@ -131,9 +212,9 @@
 			<h4 class="text-base bold">DEPLOYMENT PLATFORMS</h4>
 
 			<ul>
-				{#each hosts as item, i (i)}
+				{#each hosts as { logo, title }, i (i)}
 					<li>
-						<svelte:component this={item} class="color-text fill-current" />
+						<img loading="lazy" class="badge__icon" src={logo} alt={title} />
 					</li>
 				{/each}
 			</ul>
