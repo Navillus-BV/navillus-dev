@@ -6,7 +6,7 @@
 			const formData = new FormData(formElem);
 			const params = new URLSearchParams(formData as any);
 
-			await fetch('/contact/#contact', {
+			await fetch('/#contact', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: params.toString()

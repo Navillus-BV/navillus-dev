@@ -5,6 +5,21 @@
 	import { page } from '$app/stores';
 	import Brand from '$lib/logos/Brand.svelte';
 
+	const routes = [
+		{
+			title: 'Home',
+			href: '/'
+		},
+		{
+			title: 'Services',
+			href: '/#services'
+		},
+		{
+			title: 'Contact',
+			href: '/#contact'
+		}
+	];
+
 	let innerWidth: number;
 	let menuOpen = false;
 	let mounted = false;
@@ -28,18 +43,11 @@
 
 		<nav>
 			<ul>
-				<li>
-					<a href="/" aria-current={$page.path === '/'}>Home</a>
-				</li>
-				<li>
-					<a href="/#services" aria-current={$page.path === '/#services'}>Services</a>
-				</li>
-				<li>
-					<a href="/portfolio" aria-current={$page.path === '/portfolio'}>Portfolio</a>
-				</li>
-				<li>
-					<a href="/blog" aria-current={$page.path === '/blog'}>Blog</a>
-				</li>
+				{#each routes as { title, href } (title)}
+					<li>
+						<a {href} aria-current={$page.path === href}>{title}</a>
+					</li>
+				{/each}
 			</ul>
 		</nav>
 
@@ -68,23 +76,12 @@
 			on:introend={() => (enableMenuLeave = true)}
 		>
 			<ul>
+				{#each routes as { title, href } (title)}
+					<li>
+						<a {href} class="text-lg" aria-current={$page.path === '/'}>{title}</a>
+					</li>
+				{/each}
 				<li>
-					<a href="/" class="text-lg" aria-current={$page.path === '/'}>Home</a>
-				</li>
-				<li>
-					<a href="/#services" class="text-lg" aria-current={$page.path === '/#services'}
-						>Services</a
-					>
-				</li>
-				<li>
-					<a href="/portfolio" class="text-lg" aria-current={$page.path === '/portfolio'}
-						>Portfolio</a
-					>
-				</li>
-				<li>
-					<a href="/blog" class="text-lg" aria-current={$page.path === '/blog'}>Blog</a>
-				</li>
-				<li class="w-full">
 					<a href="/#contact" aria-current={$page.path === '/#contact'} class="btn w-full"
 						>Get in Touch</a
 					>
@@ -136,13 +133,9 @@
 		margin-top: var(--spacer-sm);
 	}
 
-	nav a {
+	nav a:not(.btn) {
 		line-height: 2;
 		padding: 0 var(--spacer-sm);
-	}
-
-	[aria-current='true'] {
-		text-decoration: underline;
 	}
 
 	@media (min-width: 768px) {

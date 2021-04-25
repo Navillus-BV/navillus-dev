@@ -136,7 +136,7 @@
 			Maximize your business potential with performant websites built with the latest, innovative
 			technologies.
 		</p>
-		<a class="btn" href="/services">How we can help</a>
+		<a class="btn" href="/#services">How we can help</a>
 	</div>
 </section>
 
