@@ -112,13 +112,7 @@
 	}
 
 	.brand {
-		height: 1.5rem;
-
-		@media (min-width: 640px) {
-			& {
-				height: 2rem;
-			}
-		}
+		height: 2rem;
 	}
 
 	ul {

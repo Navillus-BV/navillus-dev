@@ -10,19 +10,19 @@
 	<div class="container">
 		<ul class="social">
 			<li>
-				<a href="mailto:info@kamfly.io">
-					<span class="sr-only">Email us at info@kamfly.io</span>
+				<a href="mailto:info@navillus.nl">
+					<span class="sr-only">Email us at info@navillus.nl</span>
 					<Email />
 				</a>
 			</li>
-			<li>
-				<a href="https://www.linkedin.com/company/kamfly">
+			<!--<li>
+				<a href="https://www.linkedin.com/company/kamflyio">
 					<span class="sr-only">Find us on LinkedIn</span>
 					<LinkedIn />
 				</a>
-			</li>
+			</li>-->
 			<li>
-				<a href="https://twitter.com/kamflyio">
+				<a href="https://twitter.com/navillus_dev">
 					<span class="sr-only">Find us on Twitter</span>
 					<Twitter />
 				</a>

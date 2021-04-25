@@ -24,7 +24,7 @@ For the purpose of these Terms and Conditions:
 - **Service** refers to the Website.
 - **Terms and Conditions** (also referred to as "Terms") means these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the Terms and Conditions Generator.
 - **Third-party Social Media Service** means any services or content (including data, information, products, or services) provided by a third-party that may be displayed, included, oor made available by the Service.
-- **Website** refers to Navillus B.V. doing business as Kamfly, accessible from https://kamfly.io.
+- **Website** refers to Navillus, accessible from [https://navillus.dev](https://navillus.dev).
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
 ## 2. Acknowledgement

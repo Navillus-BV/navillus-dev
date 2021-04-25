@@ -20,10 +20,10 @@ The following definitions shall have the same meaning regardless of whether they
 For the purposes of this Privacy Policy:
 
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Navillus B.V. doing business as Kamfly.
+- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Navillus B.V.
 - **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
 - **Account** means a unique account created for You to access our Service or parts of our Service.
-- **Website** refers to Kamfly, accessible from [https://kamfly.io](https://kamfly.io)
+- **Website** refers to Navillus, accessible from [https://navillus.dev](https://navillus.dev).
 - **Service** refers to the Website.
 - **Country** refers to: Netherlands
 - **Service Provider** means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.
