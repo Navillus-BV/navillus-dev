@@ -126,15 +126,16 @@
 </script>
 
 <section>
-	<div class="container text-center">
+	<div class="container">
+		<h3 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h3>
 		<h1>
 			Every problem is <strong>different</strong>.
 			<br />
 			Your <strong>solutions</strong> should be too.
 		</h1>
 		<p>
-			Maximize your business potential with performant websites built with the latest, innovative
-			technologies.
+			We specialize in Jamstack technologies to build simple solutions to complex business needs.
+			Grow your business, not your servers.
 		</p>
 		<a class="btn" href="/#services">How we can help</a>
 	</div>
@@ -143,7 +144,7 @@
 <section class="alt">
 	<div class="container">
 		<h3 class="text-sm bold">SITES WITH BENEFITS</h3>
-		<h2>How Jamstack supports your business</h2>
+		<h2>Why use the Jamstack?</h2>
 
 		<div class="features">
 			<article>
@@ -152,9 +153,9 @@
 				<div>
 					<h4>Better Performance</h4>
 					<p>
-						Why wait for pages to build on the fly when you can generate them at deploy time? When
-						it comes to minimizing the time to first byte, nothing beats pre-built files served over
-						a CDN.
+						47% of Users expect a maximum of 2 seconds loading time for an average website. When it
+						comes to minimizing the time to first byte, nothing beats pre-built files served over a
+						CDN.
 					</p>
 				</div>
 			</article>
@@ -164,9 +165,9 @@
 				<div>
 					<h4>Higher Security</h4>
 					<p>
-						Why wait for pages to build on the fly when you can generate them at deploy time? When
-						it comes to minimizing the time to first byte, nothing beats pre-built files served over
-						a CDN.
+						73.2% of the most popular WordPress installations are opened to vulnerabilities.
+						Statically rendered websites with no plugins are a fortress, protecting your customers
+						and your business.
 					</p>
 				</div>
 			</article>
@@ -252,8 +253,8 @@
 				<div>
 					<h4>Static Websites</h4>
 					<p>
-						Get new customers with a faster website with higher SEO chances. We build them with
-						proven technologies: GatsbyJS, Hugo, Netlify, and many others.
+						Static doesn't mean boring. We design and build sites with proven technologies to offer
+						dynamic, interactive designs that customers love.
 					</p>
 				</div>
 			</article>
@@ -277,7 +278,7 @@
 		<h3 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h3>
 		<h2>Ready to join the Jamstack revolution?</h2>
 		<p>
-			Reach out, we'd be happy to answer any questions you may have about the Jamstack or jump right
+			Reach out! We'd be happy to answer any questions you may have about the Jamstack or jump right
 			into talking more about your needs and what the right solution for your business might be.
 		</p>
 		<ContactForm />
