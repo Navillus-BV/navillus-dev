@@ -82,9 +82,7 @@
 					</li>
 				{/each}
 				<li>
-					<a href="/#contact" aria-current={$page.path === '/#contact'} class="btn w-full"
-						>Get in Touch</a
-					>
+					<a href="/#contact" aria-current={$page.path === '/#contact'} class="btn">Get in Touch</a>
 				</li>
 			</ul>
 		</nav>
@@ -136,6 +134,10 @@
 	nav a:not(.btn) {
 		line-height: 2;
 		padding: 0 var(--spacer-sm);
+	}
+
+	nav a.btn {
+		margin-bottom: var(--spacer-md);
 	}
 
 	@media (min-width: 768px) {

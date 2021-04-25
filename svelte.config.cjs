@@ -1,5 +1,7 @@
 const preprocess = require('svelte-preprocess');
 const adapter = require('@sveltejs/adapter-static');
+const { plugin: mdPlugin, Mode } = require('vite-plugin-markdown');
+const { resolve } = require('path');
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -15,6 +17,19 @@ module.exports = {
 		adapter: adapter(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+
+		vite: {
+			resolve: {
+				alias: {
+					$data: resolve('src/data')
+				}
+			},
+			plugins: [
+				mdPlugin({
+					mode: [Mode.HTML, Mode.TOC]
+				})
+			]
+		}
 	}
 };
