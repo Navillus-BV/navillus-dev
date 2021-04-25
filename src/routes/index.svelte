@@ -131,7 +131,7 @@
 		<h1>
 			Every problem is <strong>different</strong>.
 			<br />
-			Your <strong>solutions</strong> should be too.
+			Your <strong>solutions</strong> should be, too.
 		</h1>
 		<p>
 			We specialize in Jamstack technologies to build simple solutions to complex business needs.
@@ -165,7 +165,7 @@
 				<div>
 					<h4>Higher Security</h4>
 					<p>
-						73.2% of the most popular WordPress installations are opened to vulnerabilities.
+						73.2% of the most popular WordPress installations are open to vulnerabilities.
 						Statically rendered websites with no plugins are a fortress, protecting your customers
 						and your business.
 					</p>
@@ -178,8 +178,8 @@
 					<h4>Cheaper, Easier Scaling</h4>
 					<p>
 						When your deployment amounts to a stack of files that can be served anywhere, scaling is
-						a matter of serving those files in more places. CDNs are perfect for this, and often
-						include scaling in all of their plans.
+						a matter of serving those files in more places. Content Delivery Networks (CDNs) are
+						perfect for this, and often include scaling in all of their plans.
 					</p>
 				</div>
 			</article>
@@ -232,7 +232,7 @@
 
 <section class="alt" id="services">
 	<div class="container">
-		<h3 class="text-sm bold">PRODUCTS WE CRAFT</h3>
+		<h3 class="text-sm bold">WHAT WE OFFER</h3>
 		<h2>Our Services</h2>
 
 		<div class="features">
