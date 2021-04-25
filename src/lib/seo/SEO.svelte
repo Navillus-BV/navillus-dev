@@ -12,6 +12,11 @@
 <svelte:head>
 	<Meta {title} {description} />
 
+	<meta
+		name="keywords"
+		content="web development, consulting, jamstack, serverless, static site, netlify, svelte, software, engineering, software engineering, api development"
+	/>
+
 	<meta name="robots" content="index,follow" />
 	<meta name="author" content="Navillus.dev" />
 
