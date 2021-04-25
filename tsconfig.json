@@ -28,6 +28,9 @@
 			"$lib/*": [
 				"src/lib/*"
 			],
+			"$assets/*": [
+				"src/assets/*"
+			],
 			"$data/*": [
 				"src/data/*"
 			]
