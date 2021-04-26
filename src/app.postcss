@@ -97,29 +97,30 @@ h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.3;
+  font-size: var(--text-base);
 }
 
 h1, h3.text-sm + h2 {
   margin-top: 0;
 }
 
-h1, .text-4xl {
+.text-4xl {
 	font-size: clamp(var(--text-2xl), 8vw, var(--text-4xl));
 }
 
-h2, .text-3xl {
+.text-3xl {
 	font-size: clamp(var(--text-xl), 6vw, var(--text-3xl));
 }
 
-h3, .text-2xl {
+.text-2xl {
 	font-size: clamp(var(--text-lg), 5vw, var(--text-2xl));
 }
 
-h4, .text-xl {
+.text-xl {
 	font-size: clamp(var(--text-base), 5vw, var(--text-xl));
 }
 
-h5, .text-lg {
+.text-lg {
 	font-size: clamp(var(--text-base), 5vw, var(--text-lg));
 }
 
@@ -189,6 +190,10 @@ section {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border-width: 0;
+}
+
+.mt-0 {
+	margin-top: 0;
 }
 
 .fill-current {

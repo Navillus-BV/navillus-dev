@@ -127,12 +127,12 @@
 
 <section>
 	<div class="container">
-		<h3 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h3>
-		<h1>
+		<h1 class="text-sm bold mt-0">JAMSTACK DEVELOPERS FOR HIRE</h1>
+		<h2 class="text-4xl mt-0">
 			Every problem is <strong>different</strong>.
 			<br />
 			Your <strong>solutions</strong> should be, too.
-		</h1>
+		</h2>
 		<p>
 			We specialize in Jamstack technologies to build simple solutions to complex business needs.
 			Grow your business, not your servers.
@@ -143,15 +143,15 @@
 
 <section class="alt">
 	<div class="container">
-		<h3 class="text-sm bold">SITES WITH BENEFITS</h3>
-		<h2>Why use the Jamstack?</h2>
+		<h2 class="text-sm bold">SITES WITH BENEFITS</h2>
+		<h3 class="text-3xl mt-0">Why use the Jamstack?</h3>
 
 		<div class="features">
 			<article>
 				<Speedometer foreground="var(--color-red)" />
 
 				<div>
-					<h4>Better Performance</h4>
+					<h4 class="text-xl">Better Performance</h4>
 					<p>
 						47% of Users expect a maximum of 2 seconds loading time for an average website. When it
 						comes to minimizing the time to first byte, nothing beats pre-built files served over a
@@ -163,7 +163,7 @@
 				<Shield foreground="var(--color-blue)" />
 
 				<div>
-					<h4>Higher Security</h4>
+					<h4 class="text-xl">Higher Security</h4>
 					<p>
 						73.2% of the most popular WordPress installations are open to vulnerabilities.
 						Statically rendered websites with no plugins are a fortress, protecting your customers
@@ -175,7 +175,7 @@
 				<Money foreground="var(--color-green)" />
 
 				<div>
-					<h4>Cheaper, Easier Scaling</h4>
+					<h4 class="text-xl">Cheaper, Easier Scaling</h4>
 					<p>
 						When your deployment amounts to a stack of files that can be served anywhere, scaling is
 						a matter of serving those files in more places. Content Delivery Networks (CDNs) are
@@ -189,8 +189,8 @@
 
 <section>
 	<div class="container">
-		<h3 class="text-sm bold">TECHNOLOGY WE USE</h3>
-		<h2>Building the Modern Web</h2>
+		<h2 class="text-sm bold">TECHNOLOGY WE USE</h2>
+		<h3 class="text-3xl mt-0">Building the Modern Web</h3>
 
 		<div class="badges">
 			<h4 class="text-sm bold">HEADLESS CMS</h4>
@@ -217,7 +217,7 @@
 		</div>
 
 		<div class="badges">
-			<h4 class="text-base bold">DEPLOYMENT PLATFORMS</h4>
+			<h4 class="text-sm bold">DEPLOYMENT PLATFORMS</h4>
 
 			<ul>
 				{#each hosts as { logo, title }, i (i)}
@@ -232,15 +232,15 @@
 
 <section class="alt" id="services">
 	<div class="container">
-		<h3 class="text-sm bold">WHAT WE OFFER</h3>
-		<h2>Our Services</h2>
+		<h2 class="text-sm bold">WHAT WE OFFER</h2>
+		<h3 class="text-3xl mt-0">Our Services</h3>
 
 		<div class="features">
 			<article>
 				<PWA foreground="var(--color-red)" />
 
 				<div>
-					<h4>Progressive Web Apps</h4>
+					<h4 class="text-xl">Progressive Web Apps</h4>
 					<p>
 						Save time and money with a progressive web app instead of native apps for multiple
 						platforms. Jamstack PWA means great performance and low hosting costs.
@@ -251,7 +251,7 @@
 				<Blogging foreground="var(--color-blue)" />
 
 				<div>
-					<h4>Static Websites</h4>
+					<h4 class="text-xl">Static Websites</h4>
 					<p>
 						Static doesn't mean boring. We design and build sites with proven technologies to offer
 						dynamic, interactive designs that customers love.
@@ -262,7 +262,7 @@
 				<Shopping foreground="var(--color-green)" />
 
 				<div>
-					<h4>eCommerce Stores</h4>
+					<h4 class="text-xl">eCommerce Stores</h4>
 					<p>
 						Every second matters for online shoppers. There are no trade-offs between security,
 						performance and personalised experiences with Jamstack eCommerce solutions.
@@ -275,8 +275,8 @@
 
 <section id="contact">
 	<div class="container">
-		<h3 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h3>
-		<h2>Ready to join the Jamstack revolution?</h2>
+		<h2 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h2>
+		<h3 class="text-3xl mt-0">Ready to join the Jamstack revolution?</h3>
 		<p>
 			Reach out! We'd be happy to answer any questions you may have about the Jamstack or jump right
 			into talking more about your needs and what the right solution for your business might be.
