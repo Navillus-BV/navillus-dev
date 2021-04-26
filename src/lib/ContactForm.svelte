@@ -6,7 +6,7 @@
 			<input name="bot-field" />
 		</label>
 	</p>
-	<div class="form__row">
+	<div class="form__row form__row--split">
 		<div>
 			<label for="name">Your Name *</label>
 			<input id="name" name="name" type="text" required />
@@ -26,14 +26,17 @@
 	<button type="submit" class="btn btn">submit</button>
 </form>
 
-<style>
+<style style lang="postcss">
 	form {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--spacer-sm);
 	}
 
 	form label {
 		font-size: var(--text-sm);
-		margin-bottom: var(--spacing-1);
+		margin-bottom: var(--spacer-xs);
 		display: block;
 		text-align: start;
 	}
