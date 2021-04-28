@@ -1,7 +1,6 @@
 const autoprefixer = require("autoprefixer");
-const nesting = require("postcss-nesting");
-
 const cssnano = require("cssnano");
+const { default: nesting } = require("postcss-nesting");
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";

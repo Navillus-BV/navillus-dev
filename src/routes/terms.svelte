@@ -22,6 +22,7 @@
 <style>
 	h1 {
 		margin-bottom: var(--spacer-xs);
+		font-size: var(--text-4xl);
 	}
 
 	.legal__last-updated {
@@ -32,5 +33,13 @@
 	section :global(p) {
 		margin: 0.5rem 0;
 		line-height: 1.5;
+	}
+
+	section :global(h2) {
+		font-size: var(--text-3xl);
+	}
+
+	section :global(h3) {
+		font-size: var(--text-2xl);
 	}
 </style>
