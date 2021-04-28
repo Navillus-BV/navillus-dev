@@ -9,9 +9,6 @@ command = "npm run start"
 package = "netlify-plugin-a11y"
 
 [[plugins]]
-package = "netlify-plugin-subfont"
-
-[[plugins]]
 package = "@netlify/plugin-sitemap"
 
 [[plugins]]

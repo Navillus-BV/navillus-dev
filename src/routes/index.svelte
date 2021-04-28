@@ -148,7 +148,7 @@
 
 		<div class="features">
 			<article>
-				<Speedometer foreground="var(--color-red)" />
+				<img loading="lazy" src="/icons/speedometer.svg" aria-hidden alt="Better Performance" />
 
 				<div>
 					<h4 class="text-xl">Better Performance</h4>
@@ -170,7 +170,7 @@
 				</div>
 			</article>
 			<article>
-				<Shield foreground="var(--color-blue)" />
+				<img loading="lazy" src="/icons/shield.svg" aria-hidden alt="Higher Security" />
 
 				<div>
 					<h4 class="text-xl">Higher Security</h4>
@@ -188,7 +188,7 @@
 				</div>
 			</article>
 			<article>
-				<Money foreground="var(--color-green)" />
+				<img loading="lazy" src="/icons/money.svg" aria-hidden alt="Cheaper, Easier Scaling" />
 
 				<div>
 					<h4 class="text-xl">Cheaper, Easier Scaling</h4>
@@ -263,7 +263,7 @@
 
 		<div class="features">
 			<article>
-				<Blogging foreground="var(--color-blue)" />
+				<img loading="lazy" src="/icons/blogging.svg" aria-hidden alt="Web Design & Development" />
 
 				<div>
 					<h4 class="text-xl">Web Design & Development</h4>
@@ -274,7 +274,7 @@
 				</div>
 			</article>
 			<article>
-				<Shopping foreground="var(--color-green)" />
+				<img loading="lazy" src="/icons/shopping.svg" aria-hidden alt="eCommerce Stores" />
 
 				<div>
 					<h4 class="text-xl">eCommerce Stores</h4>
@@ -285,7 +285,12 @@
 				</div>
 			</article>
 			<article>
-				<Architecture foreground="var(--color-red)" />
+				<img
+					loading="lazy"
+					src="/icons/architecture.svg"
+					aria-hidden
+					alt="Software Architecture & Design"
+				/>
 
 				<div>
 					<h4 class="text-xl">Software Architecture & Design</h4>
