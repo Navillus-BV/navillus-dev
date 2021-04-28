@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Email from '$lib/icons/Email.svelte';
-	import LinkedIn from '$lib/icons/LinkedIn.svelte';
-	import Twitter from '$lib/icons/Twitter.svelte';
+	import contactSprites from '../assets/contact-sprites.svg';
 
 	const year = new Date().getFullYear();
 </script>
@@ -12,19 +10,25 @@
 			<li>
 				<a href="mailto:info@navillus.nl">
 					<span class="sr-only">Email us at info@navillus.nl</span>
-					<Email />
+					<svg>
+						<use xlink:href="{contactSprites}#email" />
+					</svg>
 				</a>
 			</li>
 			<!--<li>
 				<a href="https://www.linkedin.com/company/kamflyio">
 					<span class="sr-only">Find us on LinkedIn</span>
-					<LinkedIn />
+					<svg>
+						<use xlink:href="{contactSprites}#linkedin" />
+					</svg>
 				</a>
 			</li>-->
 			<li>
 				<a href="https://twitter.com/navillus_dev">
 					<span class="sr-only">Find us on Twitter</span>
-					<Twitter />
+					<svg>
+						<use xlink:href="{contactSprites}#twitter" />
+					</svg>
 				</a>
 			</li>
 		</ul>
@@ -76,8 +80,9 @@
 		gap: var(--spacer-sm);
 	}
 
-	.social :global(svg) {
+	.social svg {
 		height: var(--text-4xl);
+		width: var(--text-4xl);
 		overflow: visible;
 	}
 

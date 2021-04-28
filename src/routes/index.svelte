@@ -1,125 +1,121 @@
 <script lang="ts">
 	import ContactForm from '$lib/ContactForm.svelte';
-	import Architecture from '$lib/icons/Architecture.svelte';
-	import Blogging from '$lib/icons/Blogging.svelte';
-	import Money from '$lib/icons/Money.svelte';
-	import Shield from '$lib/icons/Shield.svelte';
-	import Shopping from '$lib/icons/Shopping.svelte';
-	import Speedometer from '$lib/icons/Speedometer.svelte';
+	import featureSprites from '../assets/feature-sprites.svg';
+	import toolSprites from '../assets/tool-sprites.svg';
 
 	const headlessCMS = [
 		{
-			logo: 'logos/contentful.svg',
+			logo: `${toolSprites}#contentful`,
 			title: 'Contentful'
 		},
 		{
-			logo: 'logos/dato.svg',
+			logo: `${toolSprites}#datocms`,
 			title: 'Dato CMS'
 		},
 		{
-			logo: 'logos/forestry.svg',
+			logo: `${toolSprites}#forestry`,
 			title: 'Forestry'
 		},
 		{
-			logo: 'logos/netlify-cms.svg',
+			logo: `${toolSprites}#netlify-cms`,
 			title: 'Netlify CMS'
 		},
 		{
-			logo: 'logos/prismic.svg',
+			logo: `${toolSprites}#prismic`,
 			title: 'Prismic'
 		},
 		{
-			logo: 'logos/sanity.svg',
+			logo: `${toolSprites}#sanity`,
 			title: 'Sanity.io'
 		},
 		{
-			logo: 'logos/storyblok.svg',
+			logo: `${toolSprites}#storyblok`,
 			title: 'Storyblok'
 		},
 		{
-			logo: 'logos/strapi.svg',
+			logo: `${toolSprites}#strapi`,
 			title: 'Strapi'
 		}
 	];
 
 	const ssg = [
 		{
-			logo: 'logos/11ty.svg',
+			logo: `${toolSprites}#11ty`,
 			title: '11ty'
 		},
 		{
-			logo: 'logos/gatsby.svg',
+			logo: `${toolSprites}#gatsby`,
 			title: 'Gatsby'
 		},
 		{
-			logo: 'logos/gridsome.svg',
+			logo: `${toolSprites}#gridsome`,
 			title: 'Gridsome'
 		},
 		{
-			logo: 'logos/hugo.svg',
+			logo: `${toolSprites}#hugo`,
 			title: 'Hugo'
 		},
 		{
-			logo: 'logos/jekyll.svg',
+			logo: `${toolSprites}#jekyll`,
 			title: 'Jekyll'
 		},
 		{
-			logo: 'logos/nextjs.svg',
+			logo: `${toolSprites}#nextjs`,
 			title: 'NextJS'
 		},
 		{
-			logo: 'logos/nuxtjs.svg',
+			logo: `${toolSprites}#nuxtjs`,
 			title: 'NuxtJS'
 		},
 		{
-			logo: 'logos/scully.svg',
-			title: 'Scully'
-		},
-		{
-			logo: 'logos/sapper.svg',
+			logo: `${toolSprites}#sapper`,
 			title: 'Sapper'
 		},
 		{
-			logo: 'logos/sveltekit.svg',
+			logo: `${toolSprites}#scully`,
+			title: 'Scully'
+		},
+		{
+			logo: `${toolSprites}#sveltekit`,
 			title: 'SvelteKit'
 		}
 	];
 
 	const hosts = [
 		{
-			logo: 'logos/aws.svg',
+			logo: `${toolSprites}#aws`,
 			title: 'AWS'
 		},
 		{
-			logo: 'logos/azure.svg',
+			logo: `${toolSprites}#azure`,
 			title: 'Azure'
 		},
 		{
-			logo: 'logos/begin.svg',
+			logo: `${toolSprites}#begin`,
 			title: 'Begin.com'
 		},
 		{
-			logo: 'logos/cloudflare-pages.svg',
+			logo: `${toolSprites}#cloudflare`,
 			title: 'Cloudflare Pages'
 		},
 		{
-			logo: 'logos/digital-ocean.svg',
+			logo: `${toolSprites}#digitalocean`,
 			title: 'Digital Ocean'
 		},
 		{
-			logo: 'logos/firebase.svg',
+			logo: `${toolSprites}#firebase`,
 			title: 'Firebase'
 		},
 		{
-			logo: 'logos/netlify.svg',
+			logo: `${toolSprites}#netlify`,
 			title: 'Netlify'
 		},
 		{
-			logo: 'logos/render.svg',
+			logo: `${toolSprites}#render`,
 			title: 'Render'
 		},
 		{
-			logo: 'logos/vercel.svg',
+			logo: `${toolSprites}#vercel`,
 			title: 'Vercel'
 		}
 	];
@@ -148,7 +144,9 @@
 
 		<div class="features">
 			<article>
-				<img loading="lazy" src="/icons/speedometer.svg" aria-hidden alt="Better Performance" />
+				<svg>
+					<use xlink:href="{featureSprites}#speedometer" />
+				</svg>
 
 				<div>
 					<h4 class="text-xl">Better Performance</h4>
@@ -170,7 +168,9 @@
 				</div>
 			</article>
 			<article>
-				<img loading="lazy" src="/icons/shield.svg" aria-hidden alt="Higher Security" />
+				<svg>
+					<use xlink:href="{featureSprites}#shield" />
+				</svg>
 
 				<div>
 					<h4 class="text-xl">Higher Security</h4>
@@ -188,7 +188,9 @@
 				</div>
 			</article>
 			<article>
-				<img loading="lazy" src="/icons/money.svg" aria-hidden alt="Cheaper, Easier Scaling" />
+				<svg>
+					<use xlink:href="{featureSprites}#money" />
+				</svg>
 
 				<div>
 					<h4 class="text-xl">Cheaper, Easier Scaling</h4>
@@ -224,7 +226,10 @@
 			<ul>
 				{#each headlessCMS as { logo, title } (title)}
 					<li>
-						<img loading="lazy" class="badge__icon" src={logo} alt={title} />
+						<svg class="badge__icon">
+							<title>{title}</title>
+							<use xlink:href={logo} />
+						</svg>
 					</li>
 				{/each}
 			</ul>
@@ -236,7 +241,10 @@
 			<ul>
 				{#each ssg as { logo, title }, i (i)}
 					<li>
-						<img loading="lazy" class="badge__icon" src={logo} alt={title} />
+						<svg class="badge__icon">
+							<title>{title}</title>
+							<use xlink:href={logo} />
+						</svg>
 					</li>
 				{/each}
 			</ul>
@@ -248,7 +256,10 @@
 			<ul>
 				{#each hosts as { logo, title }, i (i)}
 					<li>
-						<img loading="lazy" class="badge__icon" src={logo} alt={title} />
+						<svg class="badge__icon">
+							<title>{title}</title>
+							<use xlink:href={logo} />
+						</svg>
 					</li>
 				{/each}
 			</ul>
@@ -263,7 +274,9 @@
 
 		<div class="features">
 			<article>
-				<img loading="lazy" src="/icons/blogging.svg" aria-hidden alt="Web Design & Development" />
+				<svg>
+					<use xlink:href="{featureSprites}#blogging" />
+				</svg>
 
 				<div>
 					<h4 class="text-xl">Web Design & Development</h4>
@@ -274,7 +287,9 @@
 				</div>
 			</article>
 			<article>
-				<img loading="lazy" src="/icons/shopping.svg" aria-hidden alt="eCommerce Stores" />
+				<svg>
+					<use xlink:href="{featureSprites}#shopping" />
+				</svg>
 
 				<div>
 					<h4 class="text-xl">eCommerce Stores</h4>
@@ -285,12 +300,9 @@
 				</div>
 			</article>
 			<article>
-				<img
-					loading="lazy"
-					src="/icons/architecture.svg"
-					aria-hidden
-					alt="Software Architecture & Design"
-				/>
+				<svg>
+					<use xlink:href="{featureSprites}#architecture" />
+				</svg>
 
 				<div>
 					<h4 class="text-xl">Software Architecture & Design</h4>
