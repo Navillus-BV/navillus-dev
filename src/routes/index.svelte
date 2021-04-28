@@ -1,8 +1,8 @@
 <script lang="ts">
 	import ContactForm from '$lib/ContactForm.svelte';
+	import Architecture from '$lib/icons/Architecture.svelte';
 	import Blogging from '$lib/icons/Blogging.svelte';
 	import Money from '$lib/icons/Money.svelte';
-	import PWA from '$lib/icons/PWA.svelte';
 	import Shield from '$lib/icons/Shield.svelte';
 	import Shopping from '$lib/icons/Shopping.svelte';
 	import Speedometer from '$lib/icons/Speedometer.svelte';
@@ -263,21 +263,10 @@
 
 		<div class="features">
 			<article>
-				<PWA foreground="var(--color-red)" />
-
-				<div>
-					<h4 class="text-xl">Progressive Web Apps</h4>
-					<p>
-						Save time and money with a progressive web app instead of native apps for multiple
-						platforms. Jamstack PWA means great performance and low hosting costs.
-					</p>
-				</div>
-			</article>
-			<article>
 				<Blogging foreground="var(--color-blue)" />
 
 				<div>
-					<h4 class="text-xl">Static Websites</h4>
+					<h4 class="text-xl">Web Design & Development</h4>
 					<p>
 						Static doesn't mean boring. We design and build sites with proven technologies to offer
 						dynamic, interactive designs that customers love.
@@ -290,8 +279,19 @@
 				<div>
 					<h4 class="text-xl">eCommerce Stores</h4>
 					<p>
-						Every second matters for online shoppers. There are no trade-offs between security,
-						performance and personalised experiences with Jamstack eCommerce solutions.
+						Losing a visitor on your online shop costs your more than just impressions, it hits your
+						bottom line. We build modern, accessible eCommerce stores that grow with your business.
+					</p>
+				</div>
+			</article>
+			<article>
+				<Architecture foreground="var(--color-red)" />
+
+				<div>
+					<h4 class="text-xl">Software Architecture & Design</h4>
+					<p>
+						Whether you already have a development team or are still in the planning phase, we can
+						help you design your tech stack.
 					</p>
 				</div>
 			</article>
@@ -302,10 +302,10 @@
 <section id="contact">
 	<div class="container">
 		<h2 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h2>
-		<h3 class="text-3xl mt-0">Ready to join the Jamstack revolution?</h3>
+		<h3 class="text-3xl mt-0">Get in Touch</h3>
 		<p>
-			Reach out! We'd be happy to answer any questions you may have about the Jamstack or jump right
-			into talking more about your needs and what the right solution for your business might be.
+			We love what we do and are always up for an interesting conversation, whether you're ready to
+			get started or just have a few questions.
 		</p>
 		<ContactForm />
 	</div>
