@@ -22,7 +22,6 @@ module.exports = {
 		vite: {
 			resolve: {
 				alias: {
-					$assets: resolve('src/assets'),
 					$data: resolve('src/data')
 				}
 			},

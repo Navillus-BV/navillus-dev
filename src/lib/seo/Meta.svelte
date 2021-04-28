@@ -1,10 +1,8 @@
 <script lang="ts">
-	import shareImage from '$assets/share.png';
-
 	export let title = 'Jamstack Developers for Hire';
 	export let description =
 		"We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.";
-	export let image = shareImage;
+	export let image = '/share.png';
 </script>
 
 <svelte:head>

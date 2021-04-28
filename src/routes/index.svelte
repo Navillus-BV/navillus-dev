@@ -134,8 +134,8 @@
 			Your <strong>solutions</strong> should be, too.
 		</h2>
 		<p>
-			We specialize in Jamstack technologies to build simple solutions to complex business needs.
-			Grow your business, not your servers.
+			We specialize in finding simple solutions to complex software problems. We value data-driven
+			decisions and accessibility over this month's latest tech trends.
 		</p>
 		<a class="btn" href="/#services">How we can help</a>
 	</div>
@@ -153,9 +153,13 @@
 				<div>
 					<h4 class="text-xl">Better Performance</h4>
 					<p>
-						47% of Users expect a maximum of 2 seconds loading time for an average website. When it
-						comes to minimizing the time to first byte, nothing beats pre-built files served over a
-						CDN.
+						According to Google, 53% of visitors will leave a website if it takes longer than 3
+						seconds to load. Even worse, a whopping 79% of online shoppers will stay away from
+						online stores with performance hiccups.
+					</p>
+					<p>
+						Jamstack sites are built once and globally distributed - they don't depend on servers to
+						rebuild the page for every visitor.
 					</p>
 				</div>
 			</article>
@@ -165,9 +169,15 @@
 				<div>
 					<h4 class="text-xl">Higher Security</h4>
 					<p>
-						73.2% of the most popular WordPress installations are open to vulnerabilities.
-						Statically rendered websites with no plugins are a fortress, protecting your customers
-						and your business.
+						<a class="underline color-blue" href="https://www.enablesecurity.com/" rel="noopener"
+							>Enable Security</a
+						> found that over 70% of WordPress sites are vulnerable to hacker attacks. Chances are those
+						sites secure when first built, but without regular updates and maintenance they can quickly
+						fall behind and put businesses at risk.
+					</p>
+					<p>
+						Statically built websites are distributed globally as plain old files, skipping the web
+						servers to protect your customers and your business.
 					</p>
 				</div>
 			</article>
