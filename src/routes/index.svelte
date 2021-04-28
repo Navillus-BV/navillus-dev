@@ -153,9 +153,15 @@
 				<div>
 					<h4 class="text-xl">Better Performance</h4>
 					<p>
-						According to Google, 53% of visitors will leave a website if it takes longer than 3
-						seconds to load. Even worse, a whopping 79% of online shoppers will stay away from
-						online stores with performance hiccups.
+						According to <a
+							class="underline color-blue"
+							href="https://www.blog.google/products/admanager/increase-speed-of-your-mobile-site-wi/"
+							rel="noopener"
+						>
+							Google</a
+						>, 53% of visitors will leave a website if it takes longer than 3 seconds to load. Even
+						worse, a whopping 79% of online shoppers will stay away from online stores with
+						performance hiccups.
 					</p>
 					<p>
 						Jamstack sites are built once and globally distributed - they don't depend on servers to
@@ -169,11 +175,11 @@
 				<div>
 					<h4 class="text-xl">Higher Security</h4>
 					<p>
-						<a class="underline color-blue" href="https://www.enablesecurity.com/" rel="noopener"
-							>Enable Security</a
-						> found that over 70% of WordPress sites are vulnerable to hacker attacks. Chances are those
-						sites secure when first built, but without regular updates and maintenance they can quickly
-						fall behind and put businesses at risk.
+						<a class="underline color-blue" href="https://www.enablesecurity.com/" rel="noopener">
+							Enable Security
+						</a> found that over 70% of WordPress sites are vulnerable to hacker attacks. Chances are
+						those sites secure when first built, but without regular updates and maintenance they can
+						quickly fall behind and put businesses at risk.
 					</p>
 					<p>
 						Statically built websites are distributed globally as plain old files, skipping the web
@@ -187,9 +193,19 @@
 				<div>
 					<h4 class="text-xl">Cheaper, Easier Scaling</h4>
 					<p>
-						When your deployment amounts to a stack of files that can be served anywhere, scaling is
-						a matter of serving those files in more places. Content Delivery Networks (CDNs) are
-						perfect for this, and often include scaling in all of their plans.
+						Citrix saw an incredible <a
+							class="underline color-blue"
+							href="https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/"
+							rel="noopener"
+						>
+							65% cost savings
+						</a> after moving their business critical documentation sites over to Jamstack technologies.
+						Their documentation sites are visited by 3.5 million users annually and provide technical
+						support for all of their 15 products and related components.
+					</p>
+					<p>
+						Because Jamstack sites are built once and served as static files, they can be
+						distributed globally and available almost instantly to your customers around the world.
 					</p>
 				</div>
 			</article>
