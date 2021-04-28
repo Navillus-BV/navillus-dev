@@ -2,9 +2,9 @@
 	import { page } from '$app/stores';
 	import Meta from './Meta.svelte';
 
-	const title = 'Navillus: Jamstack developers for hire';
+	const title = 'Jamstack Developers for Hire';
 	const description =
-		'Lightning fast, secure, and SEO-friendly websites, web apps, and e-commerce. If that’s what you’re looking for - we’re the devs for you.';
+		"We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.";
 
 	$: url = `https://navillus.dev${$page.path}`;
 </script>

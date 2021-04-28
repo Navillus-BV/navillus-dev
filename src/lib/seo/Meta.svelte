@@ -1,9 +1,9 @@
 <script lang="ts">
-	import shareImage from '$assets/navillus-share.png';
+	import shareImage from '$assets/share.png';
 
-	export let title = 'Navillus: Jamstack developers for hire';
+	export let title = 'Jamstack Developers for Hire';
 	export let description =
-		'Lightning fast, secure, and SEO-friendly websites, web apps, and e-commerce. If that’s what you’re looking for - we’re the devs for you.';
+		"We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.";
 	export let image = shareImage;
 </script>
 
