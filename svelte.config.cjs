@@ -1,5 +1,7 @@
 const preprocess = require('svelte-preprocess');
 const adapter = require('@sveltejs/adapter-static');
+const markdownIt = require('markdown-it');
+const prism = require('markdown-it-prism');
 const { plugin: mdPlugin, Mode } = require('vite-plugin-markdown');
 const { resolve } = require('path');
 
@@ -29,7 +31,8 @@ module.exports = {
 			},
 			plugins: [
 				mdPlugin({
-					mode: [Mode.HTML, Mode.TOC]
+					mode: [Mode.HTML, Mode.TOC],
+					markdownIt: markdownIt({ html: true }).use(prism)
 				})
 			]
 		}
