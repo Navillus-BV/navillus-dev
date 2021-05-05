@@ -27,12 +27,35 @@
 
 <Meta title="Blog" />
 
-<h1>Blog Posts</h1>
+<section>
+	<div class="container">
+		<h1 class="text-sm bold mt-0">JAMSTACK DEVELOPERS FOR HIRE</h1>
+		<h2 class="text-4xl mt-0">The Navillus Blog</h2>
+		<p>Exploring the Jamstack and the future of web development.</p>
+	</div>
+</section>
 
-{#each posts as post (post.slug)}
-	<a href="/blog/{post.slug}" alt={post.title}>
-		<article>
-			<h2>{post.title}</h2>
-		</article>
-	</a>
-{/each}
+<section class="alt">
+	<div class="container">
+		<h2 class="text-3xl">All posts</h2>
+
+		{#each posts as post (post.slug)}
+			<article>
+				<a href="/blog/{post.slug}">
+					<h3 class="text-xl underline">{post.title}</h3>
+				</a>
+				<p>{post.description}</p>
+				<time class="text-sm" datetime={post.published_date}>{post.published_date}</time>
+			</article>
+		{/each}
+	</div>
+</section>
+
+<style style lang="postcss">
+	article {
+		& h3,
+		& p {
+			margin-bottom: 0.25em;
+		}
+	}
+</style>

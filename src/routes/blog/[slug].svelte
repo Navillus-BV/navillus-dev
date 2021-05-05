@@ -20,14 +20,60 @@
 
 <script lang="ts">
 	import Meta from '$lib/seo/Meta.svelte';
+	import './prism-hopscotch.postcss';
 
-	export let post: PageData<BlogPostData>;
+	export let post: MarkdownData<BlogPostData>;
 </script>
 
 <Meta title={post.attributes.title} description={post.attributes.description} />
 
 <section class="alt">
-	<div class="container">
+	<article class="container">
+		<header>
+			<small>
+				By
+				<strong>
+					{post.attributes.author.first_name}
+					{post.attributes.author.last_name}
+				</strong>
+				•
+				<time class="text-sm" datetime={post.attributes.published_date}>
+					{post.attributes.published_date}
+				</time>
+			</small>
+
+			<h1>{post.attributes.title}</h1>
+		</header>
+
 		{@html post.html}
-	</div>
+	</article>
 </section>
+
+<style style lang="postcss">
+	small {
+		margin-bottom: 1em;
+	}
+
+	.container {
+		& :global(h1) {
+			font-size: clamp(var(--text-2xl), 8vw, var(--text-4xl));
+		}
+
+		& :global(h2) {
+			font-size: clamp(var(--text-lg), 5vw, var(--text-2xl));
+		}
+
+		& :global(h3) {
+			font-size: clamp(var(--text-base), 5vw, var(--text-xl));
+		}
+
+		& :global(h4) {
+			font-size: clamp(var(--text-base), 5vw, var(--text-lg));
+		}
+
+		& :global(a) {
+			color: var(--color-link);
+			text-decoration: underline;
+		}
+	}
+</style>

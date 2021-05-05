@@ -3,21 +3,26 @@
 /// <reference types="vite/client" />
 
 declare module '*.md' {
-    const { attributes, toc, html }: PageData<unknown>;
-    export { attributes, toc, html };
+    const { attributes, toc, html }: MarkdownData<unknown>
+    export { attributes, toc, html }
 }
 
-declare type PageData<T> = {
-    attributes: T;
-    toc: { level: string, content: string }[];
-    html: string;
+declare type MarkdownData<T> = {
+    attributes: T
+    toc: { level: string, content: string }[]
+    html: string
 }
 
 declare type BlogPostData = {
-    title: string;
-    description: string;
-    published_date: Date | string;
-    slug: string;
-    author: string;
-    author_url: string;
+    title: string
+    description: string
+    published_date: string
+    slug: string
+    author: Author
+}
+
+declare type Author = {
+    first_name: string
+    last_name: string
+    slug: string
 }
