@@ -25,6 +25,10 @@
 	export let posts: BlogPostData[];
 </script>
 
+<svelte:head>
+	<link rel="alternate" type="application/rss+xml" title="Navillus blog" href="/blog/rss.xml" />
+</svelte:head>
+
 <Meta title="Blog" />
 
 <section>

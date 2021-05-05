@@ -19,6 +19,7 @@ declare type BlogPostData = {
     published_date: string
     slug: string
     author: Author
+    draft?: boolean
 }
 
 declare type Author = {
