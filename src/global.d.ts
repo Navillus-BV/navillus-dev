@@ -3,24 +3,27 @@
 /// <reference types="vite/client" />
 
 declare module '*.md' {
-    // "unknown" would be more detailed depends on how you structure frontmatter
-    const attributes: Record<string, unknown>;
+    const { attributes, toc, html }: MarkdownData<unknown>
+    export { attributes, toc, html }
+}
 
-    // When "Mode.TOC" is requested
-    const toc: { level: string, content: string }[];
+declare type MarkdownData<T> = {
+    attributes: T
+    toc: { level: string, content: string }[]
+    html: string
+}
 
-    // When "Mode.HTML" is requested
-    const html: string;
+declare type BlogPostData = {
+    title: string
+    description: string
+    published_date: string
+    slug: string
+    author: Author
+    draft?: boolean
+}
 
-    // When "Mode.React" is requested. VFC could take a generic like React.VFC<{ MyComponent: TypeOfMyComponent }>
-    import React from 'react'
-    const ReactComponent: React.VFC;
-
-    // When "Mode.Vue" is requested
-    import { ComponentOptions, Component } from 'vue';
-    const VueComponent: ComponentOptions;
-    const VueComponentWith: (components: Record<string, Component>) => ComponentOptions;
-
-    // Modify below per your usage
-    export { attributes, toc, html, ReactComponent, VueComponent, VueComponentWith };
+declare type Author = {
+    first_name: string
+    last_name: string
+    slug: string
 }

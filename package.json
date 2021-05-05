@@ -9,6 +9,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@fontsource/fira-mono": "^4.2.2",
     "@sveltejs/adapter-static": "^1.0.0-next.7",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
@@ -18,6 +19,8 @@
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-svelte3": "^3.2.0",
+    "markdown-it": "^12.0.6",
+    "markdown-it-prism": "^2.1.6",
     "postcss": "^8.2.10",
     "postcss-load-config": "^3.0.1",
     "postcss-nesting": "^8.0.0",
@@ -32,6 +35,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/poppins": "^4.2.2"
+    "@fontsource/poppins": "^4.2.2",
+    "netlify-cli": "^3.26.2"
   }
 }

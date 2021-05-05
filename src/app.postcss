@@ -15,6 +15,7 @@
 
 	/* Default Theme */
 	--color-text: var(--color-gray);
+	--color-link: var(--color-blue);
 	--color-primary: var(--color-orange);
 	--color-secondary: var(--color-white);
 	--color-accent: var(--color-gray);
@@ -29,6 +30,7 @@
 	--text-4xl: 3.052rem;
 
 	/* Spacer Sizes */
+	--spacer-tiny: 0.25rem;
 	--spacer-xs: 0.5rem;
 	--spacer-sm: 1rem;
 	--spacer-md: 2.5rem;
@@ -94,8 +96,12 @@ p {
 	padding: 0;
 }
 
-p {
-	margin-bottom: var(--spacer-sm);
+time {
+	font-size: inherit;
+}
+
+p + p {
+	margin-top: var(--spacer-sm);
 }
 
 h1, h2, h3, h4, h5 {
@@ -139,6 +145,10 @@ small, .text-sm {
 	letter-spacing: 0.025em;
 }
 
+small {
+	display: inline-block;
+}
+
 strong {
 	font-size: inherit;
 }
@@ -178,11 +188,17 @@ ul {
 }
 
 section {
-	padding: var(--spacer-xl) 0;
+	padding: var(--spacer-lg) 0;
 	background: var(--color-primary);
 
 	&.alt {
 		background: var(--color-secondary);
+	}
+
+	@media (min-width: 768px) {
+		& {
+			padding: var(--spacer-xl) 0;
+		}
 	}
 }
 
@@ -200,6 +216,10 @@ section {
 
 .mt-0 {
 	margin-top: 0;
+}
+
+.mb-0 {
+	margin-bottom: 0;
 }
 
 .fill-current {
@@ -240,6 +260,13 @@ section {
 
 .h-full {
 	height: 100%;
+}
+
+
+
+/* Hero Sections */
+.hero .btn {
+	margin-top: var(--spacer-md);
 }
 
 

@@ -31,7 +31,7 @@
 
 	section :global(li),
 	section :global(p) {
-		margin: 0.5rem 0;
+		margin: var(--spacer-xs) 0;
 		line-height: 1.5;
 	}
 

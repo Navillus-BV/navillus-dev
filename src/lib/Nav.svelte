@@ -15,6 +15,10 @@
 			href: '/#services'
 		},
 		{
+			title: 'Blog',
+			href: '/blog'
+		},
+		{
 			title: 'Contact',
 			href: '/#contact'
 		}
@@ -146,11 +150,16 @@
 
 		ul {
 			flex-direction: row;
-			gap: var(--spacer-xs);
 		}
 
 		ul li:last-of-type {
 			margin-top: 0;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		ul {
+			gap: var(--spacer-xs);
 		}
 	}
 </style>

@@ -122,7 +122,7 @@
 </script>
 
 <section>
-	<div class="container">
+	<div class="container hero">
 		<h1 class="text-sm bold mt-0">JAMSTACK DEVELOPERS FOR HIRE</h1>
 		<h2 class="text-4xl mt-0">
 			Every problem is <strong>different</strong>.
