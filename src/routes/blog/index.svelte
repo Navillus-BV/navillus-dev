@@ -59,7 +59,7 @@
 	article {
 		& h3,
 		& p {
-			margin-bottom: 0.25em;
+			margin-bottom: var(--spacer-tiny);
 		}
 	}
 </style>

@@ -51,7 +51,7 @@
 
 <style style lang="postcss">
 	small {
-		margin-bottom: 1em;
+		margin-bottom: var(--spacer-sm);
 	}
 
 	.container {

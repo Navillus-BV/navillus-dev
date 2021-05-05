@@ -30,6 +30,7 @@
 	--text-4xl: 3.052rem;
 
 	/* Spacer Sizes */
+	--spacer-tiny: 0.25rem;
 	--spacer-xs: 0.5rem;
 	--spacer-sm: 1rem;
 	--spacer-md: 2.5rem;
@@ -187,11 +188,17 @@ ul {
 }
 
 section {
-	padding: var(--spacer-xl) 0;
+	padding: var(--spacer-lg) 0;
 	background: var(--color-primary);
 
 	&.alt {
 		background: var(--color-secondary);
+	}
+
+	@media (min-width: 768px) {
+		& {
+			padding: var(--spacer-xl) 0;
+		}
 	}
 }
 
@@ -253,6 +260,13 @@ section {
 
 .h-full {
 	height: 100%;
+}
+
+
+
+/* Hero Sections */
+.hero .btn {
+	margin-top: var(--spacer-md);
 }
 
 
