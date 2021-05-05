@@ -22,7 +22,7 @@ npm i -s svelte-entity-store
 
 ## Usage
 
-> Check out ['/examples'](https://github.com/tony-sull/svelte-entity-store/tree/main/examples/todomvc) for a working TodoMVC demo based on SvelteKit.  More to come!
+> Check out [/examples](https://github.com/tony-sull/svelte-entity-store/tree/main/examples/todomvc) for a working TodoMVC demo based on SvelteKit.  More to come!
 
 ```ts
 <script lang="ts">
