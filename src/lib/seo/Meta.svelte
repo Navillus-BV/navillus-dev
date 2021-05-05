@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} | Navillus</title>
+	<title>{title} • Navillus</title>
 	<meta property="og:title" content="{title} | Navillus" />
 	<meta property="twitter:title" content="{title} | Navillus" />
 	<meta property="og:site_name" content={title} />

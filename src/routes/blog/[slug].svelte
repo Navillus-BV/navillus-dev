@@ -24,10 +24,10 @@
 	export let post: PageData<BlogPostData>;
 </script>
 
-<Meta title={post.attributes.title} description={post.attributes.excerpt} />
+<Meta title={post.attributes.title} description={post.attributes.description} />
 
-<article>
+<section class="alt">
 	<div class="container">
 		{@html post.html}
 	</div>
-</article>
+</section>

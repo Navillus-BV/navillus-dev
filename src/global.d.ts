@@ -15,7 +15,9 @@ declare type PageData<T> = {
 
 declare type BlogPostData = {
     title: string;
-    excerpt: string;
+    description: string;
     published_date: Date | string;
     slug: string;
+    author: string;
+    author_url: string;
 }
