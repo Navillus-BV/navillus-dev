@@ -43,10 +43,10 @@
 	<div class="container">
 		<h2 class="text-3xl">All posts</h2>
 
-		{#each posts as post (post.slug)}
+		{#each posts as post, i (post.slug)}
 			<article>
 				<a href="/blog/{post.slug}">
-					<h3 class="text-xl underline">{post.title}</h3>
+					<h3 class="text-xl underline" class:mt-0={i === 0}>{post.title}</h3>
 				</a>
 				<p>{post.description}</p>
 				<time class="text-sm" datetime={post.published_date}>{post.published_date}</time>
