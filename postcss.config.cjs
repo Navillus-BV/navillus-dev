@@ -11,8 +11,8 @@ module.exports = {
 		nesting,
 
 		!dev &&
-			cssnano({
-				preset: 'default'
-			})
+		cssnano({
+			preset: 'default'
+		})
 	]
 };

@@ -1,6 +1,4 @@
 /// <reference types="@sveltejs/kit" />
-/// <reference types="svelte" />
-/// <reference types="vite/client" />
 
 declare module '*.md' {
 	const { attributes, toc, html }: MarkdownData<unknown>;

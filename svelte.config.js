@@ -1,9 +1,9 @@
-const preprocess = require('svelte-preprocess');
-const adapter = require('@sveltejs/adapter-static');
-const markdownIt = require('markdown-it');
-const prism = require('markdown-it-prism');
-const { plugin: mdPlugin, Mode } = require('vite-plugin-markdown');
-const { resolve } = require('path');
+import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-static';
+import markdownIt from 'markdown-it';
+import prism from 'markdown-it-prism';
+import viteMd from 'vite-plugin-markdown';
+import { resolve } from 'path';
 
 const md = markdownIt({ html: true }).use(prism);
 
@@ -32,7 +32,7 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
 		if (relIdx < 0) {
 			tokens[idx].attrPush(['rel', 'noopener']);
 		} else {
-			tokens[id].attrs[relIdx][1] = 'noopener';
+			tokens[idx].attrs[relIdx][1] = 'noopener';
 		}
 	}
 
@@ -41,7 +41,7 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
 };
 
 /** @type {import('@sveltejs/kit').Config} */
-module.exports = {
+const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: [
@@ -65,11 +65,13 @@ module.exports = {
 				}
 			},
 			plugins: [
-				mdPlugin({
-					mode: [Mode.HTML, Mode.TOC],
+				viteMd.plugin({
+					mode: [viteMd.Mode.HTML, viteMd.Mode.TOC],
 					markdownIt: md
 				})
 			]
 		}
 	}
 };
+
+export default config;
