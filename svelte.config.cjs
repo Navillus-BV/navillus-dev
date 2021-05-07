@@ -5,16 +5,17 @@ const prism = require('markdown-it-prism');
 const { plugin: mdPlugin, Mode } = require('vite-plugin-markdown');
 const { resolve } = require('path');
 
-const md = markdownIt({ html: true })
-	.use(prism)
+const md = markdownIt({ html: true }).use(prism);
 
-const defaultRender = md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
-	return self.renderToken(tokens, idx, options);
-};
+const defaultRender =
+	md.renderer.rules.link_open ||
+	function (tokens, idx, options, env, self) {
+		return self.renderToken(tokens, idx, options);
+	};
 
 md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-	const hrefIdx = tokens[idx].attrIndex('href')
-	const href = tokens[idx].attrs[hrefIdx][1]
+	const hrefIdx = tokens[idx].attrIndex('href');
+	const href = tokens[idx].attrs[hrefIdx][1];
 
 	if (href.startsWith('http')) {
 		// If you are sure other plugins can't add `target` - drop check below
@@ -23,15 +24,15 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
 		if (targetIdx < 0) {
 			tokens[idx].attrPush(['target', '_blank']); // add new attribute
 		} else {
-			tokens[idx].attrs[targetIdx][1] = '_blank';    // replace value of existing attr
+			tokens[idx].attrs[targetIdx][1] = '_blank'; // replace value of existing attr
 		}
 
-		var relIdx = tokens[idx].attrIndex('rel')
+		var relIdx = tokens[idx].attrIndex('rel');
 
 		if (relIdx < 0) {
-			tokens[idx].attrPush(['rel', 'noopener'])
+			tokens[idx].attrPush(['rel', 'noopener']);
 		} else {
-			tokens[id].attrs[relIdx][1] = 'noopener'
+			tokens[id].attrs[relIdx][1] = 'noopener';
 		}
 	}
 
@@ -46,7 +47,7 @@ module.exports = {
 	preprocess: [
 		preprocess({
 			postcss: true
-		}),
+		})
 	],
 
 	kit: {
