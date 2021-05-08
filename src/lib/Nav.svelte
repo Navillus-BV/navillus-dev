@@ -3,8 +3,8 @@
 	import { cubicOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import { page } from '$app/stores';
-	import Brand from '$lib/logos/Brand.svelte';
 	import { enhance } from '$lib/actions/enhance';
+	import Brand from '$lib/logos/Brand.svelte';
 
 	const routes = [
 		{
@@ -26,14 +26,13 @@
 	];
 
 	let innerWidth: number;
-	let menuOpen = false;
-	let mounted = false;
+	let menuOpen = true;
 	let enableMenuLeave = false;
 
 	$: if (innerWidth > 640) menuOpen = false;
 
 	onMount(() => {
-		mounted = true;
+		menuOpen = false;
 	});
 </script>
 
@@ -63,6 +62,7 @@
 			aria-label="Open Menu"
 			class="hamburger hamburger--squeeze header__hamburger flex lg:hidden"
 			class:is-active={menuOpen}
+			use:enhance
 			on:click={() => (menuOpen = !menuOpen)}
 		>
 			<span class="hamburger-box">
@@ -73,7 +73,7 @@
 
 	<input type="checkbox" id="toggle" class="sr-only" use:enhance />
 
-	{#if !mounted || menuOpen}
+	{#if menuOpen}
 		<nav
 			class="container"
 			in:slide={{ duration: 300, easing: cubicOut }}
@@ -95,12 +95,14 @@
 </header>
 
 <style style lang="postcss">
-	#toggle:not(.js) + nav {
-		display: none;
-	}
+	#toggle:not(.js) {
+		& + nav {
+			display: none;
+		}
 
-	#toggle:not(.js):checked + nav {
-		display: block;
+		&:checked + nav {
+			display: block;
+		}
 	}
 
 	.top {
