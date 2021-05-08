@@ -4,6 +4,7 @@
 	import { slide } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Brand from '$lib/logos/Brand.svelte';
+	import { enhance } from '$lib/actions/enhance';
 
 	const routes = [
 		{
@@ -70,7 +71,7 @@
 		</label>
 	</div>
 
-	<input type="checkbox" id="toggle" class="sr-only" class:no-js={!mounted} />
+	<input type="checkbox" id="toggle" class="sr-only" use:enhance />
 
 	{#if !mounted || menuOpen}
 		<nav
@@ -94,11 +95,11 @@
 </header>
 
 <style style lang="postcss">
-	#toggle.no-js + nav {
+	#toggle:not(.js) + nav {
 		display: none;
 	}
 
-	#toggle.no-js:checked + nav {
+	#toggle:not(.js):checked + nav {
 		display: block;
 	}
 
