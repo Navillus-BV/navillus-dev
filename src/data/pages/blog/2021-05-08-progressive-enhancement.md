@@ -4,7 +4,7 @@ description: That's right! Your site built with a JS framework with client-side 
 author: tony-sull
 ---
 
-We've all heard about "mobile first" designs, but what about JavaScript last?  It'll need a catchier name to really stick, but many of us ignore how important it is that basic site functionality works even if JavaScript is disabled or has failed. Browsing the web with JavaScript disabled can be a real pain but it happens more then you'd expect.
+We've all heard about "mobile first" designs, but what about JavaScript last? It'll need a catchier name to really stick, but many of us ignore how important it is that basic site functionality works even if JavaScript is disabled or has failed. Browsing the web with JavaScript disabled can be a real pain but it happens more then you'd expect.
 
 My trusty [Kobo Aura H20](https://us.kobobooks.com/products/kobo-aura-h2o-edition-2) has a browser in it, but JavaScript is disabled and frankly there's no way the hardware could handle modern JS-heavy sites. Ride a subway in New York and you'll quickly realize how spotty your cell signal can be, and how broken a site will be if the markup loaded but the 1.3MB of JavaScript didn't finish before your connection dropped out.
 
@@ -12,7 +12,7 @@ My trusty [Kobo Aura H20](https://us.kobobooks.com/products/kobo-aura-h2o-editio
 
 ## Don't break your mobile menu
 
-The [hamburger menu](https://en.wikipedia.org/wiki/Hamburger_button) is still king of mobile navigation designs, for better or worse. With a hidden menu, the last thing you want is for a visitor to not even be able to move around your site because they chose to disable JS.  Even worse, if your site hits an unhandled exception that might break your JavaScript entirely.
+The [hamburger menu](https://en.wikipedia.org/wiki/Hamburger_button) is still king of mobile navigation designs, for better or worse. With a hidden menu, the last thing you want is for a visitor to not even be able to move around your site because they chose to disable JS. Even worse, if your site hits an unhandled exception that might break your JavaScript entirely.
 
 The menu is almost certainly going to be interacted with, making design and animations a high priority there. The key is to build your menu so that it works with HTML and CSS only. Your JavaScript should enhance the menu with things like notification badges or animations that can't be done well in CSS.
 
@@ -85,7 +85,7 @@ What's going on there exactly? Instead of a `<button>` there's a `<label>` tied 
 <script>
   import { onMount } from 'svelte'
   import { slide } from 'svelte/transition'
-  
+
   let menuOpen = true
   let mounted = false
 
@@ -129,7 +129,7 @@ First, `menuOpen` is set to true initially and reset to false in Svelte's [onMou
 
 We also added in a second boolean flag for `mounted`, and with `class:js={mounted}` we're telling Svelte to add the `js` class to our checkbox once the component's scripts have mounted.
 
-Finally, the CSS has been updated to change the menu's display only as long as the checkbox doesn't have the `js` class. That's the real magic, let CSS handle the show/hide functionality *until* JavaScript has mounted and Svelte's `slide` transition is ready to animate the menu.
+Finally, the CSS has been updated to change the menu's display only as long as the checkbox doesn't have the `js` class. That's the real magic, let CSS handle the show/hide functionality _until_ JavaScript has mounted and Svelte's `slide` transition is ready to animate the menu.
 
 ## Bonus points
 

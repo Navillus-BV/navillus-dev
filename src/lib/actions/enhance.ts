@@ -1,9 +1,9 @@
 export type EnhanceOptions = {
-    classname: string
-}
+	classname: string;
+};
 
 export function enhance(node: HTMLElement, options: Partial<EnhanceOptions> = {}): void {
-    const { classname } = { classname: 'js', ...options }
+	const { classname } = { classname: 'js', ...options };
 
-    node.classList.add(classname)
+	node.classList.add(classname);
 }
