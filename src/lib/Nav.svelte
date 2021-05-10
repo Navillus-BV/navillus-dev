@@ -31,6 +31,21 @@
 
 	$: if (innerWidth > 640) menuOpen = false;
 
+	let startOfContentElem: HTMLElement;
+
+	const onSkipToContent = () => {
+		if (!startOfContentElem) {
+			return;
+		}
+
+		const nextElem = startOfContentElem.nextElementSibling;
+
+		if (nextElem instanceof HTMLElement) {
+			nextElem.setAttribute('tabindex', '-1');
+			nextElem.focus();
+		}
+	};
+
 	onMount(() => {
 		menuOpen = false;
 	});
@@ -39,6 +54,11 @@
 <svelte:window bind:innerWidth />
 
 <header>
+	<a
+		href="#start-of-content"
+		class="sr-only sr-only-focusable"
+		on:click|preventDefault={onSkipToContent}>Skip to content</a
+	>
 	<div class="container top">
 		<a href="/" class="brand">
 			<span class="sr-only">Go to homepage</span>
@@ -94,7 +114,21 @@
 	{/if}
 </header>
 
+<div id="start-of-content" class="sr-only" bind:this={startOfContentElem} />
+
 <style style lang="postcss">
+	header {
+		position: relative;
+	}
+
+	a[href='#start-of-content'] {
+		top: 50%;
+		background: var(--color-text);
+		color: var(--color-secondary);
+		padding: var(--spacer-sm);
+		transform: translateY(-50%);
+	}
+
 	#toggle:not(.js) {
 		& + nav {
 			display: none;
