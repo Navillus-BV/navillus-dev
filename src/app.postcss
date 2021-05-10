@@ -218,6 +218,16 @@ section {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border-width: 0;
+
+	&.sr-only-focusable:focus {
+		width: auto;
+		height: auto;
+		padding: 0;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+		white-space: normal;
+	}
 }
 
 .mt-0 {
