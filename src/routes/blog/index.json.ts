@@ -1,15 +1,6 @@
-import { posts } from './_posts';
+import { sortedPosts } from './_posts';
 import type { RequestHandler } from '@sveltejs/kit';
 
-const body = {
-	posts: Object.values(posts)
-		.map(({ attributes }) => attributes)
-		.sort((a, b) => {
-			const aDate = new Date(a.published_date);
-			const bDate = new Date(b.published_date);
+const posts = sortedPosts.map(({ attributes }) => attributes)
 
-			return aDate > bDate ? -1 : 1;
-		})
-};
-
-export const get: RequestHandler = () => ({ body });
+export const get: RequestHandler = () => ({ body: { posts } });
