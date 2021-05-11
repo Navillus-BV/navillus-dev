@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { posts } from './_posts';
+import { sortedPosts } from './_posts';
 
 const months = ',Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'.split(',');
 
@@ -20,14 +20,8 @@ function escapeHTML(html) {
 	return html.replace(/["'&<>]/g, (c) => `&${chars[c]};`);
 }
 
-const allPosts = Object.values(posts)
-	.filter((post) => !post.attributes.draft)
-	.sort((a, b) => {
-		const aDate = new Date(a.attributes.published_date);
-		const bDate = new Date(b.attributes.published_date);
-
-		return aDate > bDate ? -1 : 1;
-	});
+const allPosts = sortedPosts
+	.filter((post) => !post.attributes.draft);
 
 const rss = `
 <?xml version="1.0" encoding="UTF-8" ?>

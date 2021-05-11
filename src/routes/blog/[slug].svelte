@@ -19,12 +19,15 @@
 </script>
 
 <script lang="ts">
+	import LDTag from '$lib/seo/LDTag.svelte';
 	import Meta from '$lib/seo/Meta.svelte';
+	import { blogPostSchema } from '$utils/json-ld';
 	import './prism-hopscotch.postcss';
 
 	export let post: MarkdownData<BlogPostData>;
 </script>
 
+<LDTag schema={blogPostSchema(post)} />
 <Meta title={post.attributes.title} description={post.attributes.description} />
 
 <section class="alt">

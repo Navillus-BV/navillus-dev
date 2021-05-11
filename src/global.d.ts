@@ -25,3 +25,8 @@ declare type Author = {
 	last_name: string;
 	slug: string;
 };
+
+declare type Link = {
+	title: string;
+	href: string;
+}

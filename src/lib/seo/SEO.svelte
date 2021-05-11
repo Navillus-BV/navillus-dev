@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import site from '$data/site.json';
 	import Meta from './Meta.svelte';
 
 	const title = 'Jamstack Developers for Hire';
 	const description =
 		"We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.";
 
-	$: url = `https://navillus.dev${$page.path}`;
+	$: url = `${site.url}${$page.path}`;
 </script>
 
 <svelte:head>
@@ -18,7 +19,7 @@
 	/>
 
 	<meta name="robots" content="index,follow" />
-	<meta name="author" content="Navillus.dev" />
+	<meta name="author" content={site.author} />
 
 	<link rel="canonical" href={url} />
 	<meta property="og:url" content={url} />
@@ -26,7 +27,7 @@
 
 	<meta property="og:type" content="website" />
 
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="navillus_dev" />
-	<meta name="twitter:creator" content="navillus_dev" />
+	<meta name="twitter:card" content={site.social.twitter_card} />
+	<meta name="twitter:site" content={site.social.twitter} />
+	<meta name="twitter:creator" content={site.social.twitter} />
 </svelte:head>

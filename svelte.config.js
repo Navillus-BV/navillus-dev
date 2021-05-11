@@ -46,7 +46,8 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		preprocess({
-			postcss: true
+			postcss: true,
+			preserve: ['ld+json']
 		})
 	],
 
@@ -61,7 +62,8 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
-					$data: resolve('src/data')
+					$data: resolve('src/data'),
+					$utils: resolve('src/utils')
 				}
 			},
 			plugins: [
