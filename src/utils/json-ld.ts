@@ -33,6 +33,8 @@ export const organizationSchema: WithContext<Organization> = {
 }
 
 export function blogPostSchema(post: MarkdownData<BlogPostData>): WithContext<BlogPosting> {
+    const { ['@context']: context, ...publisher } = organizationSchema as any
+
     return {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
@@ -40,15 +42,8 @@ export function blogPostSchema(post: MarkdownData<BlogPostData>): WithContext<Bl
         datePublished: new Date(post.attributes.published_date).toDateString(),
         headline: post.attributes.title,
         publisher: {
-            '@type': 'Organization',
-            '@id': `${site.url}#organization`,
-            url: site.url,
-            name: site.company.name,
-            description: site.description,
-            sameAs: [
-                `https://twitter.com/${site.social.twitter}`
-            ],
-            logo: `${site.url}/favicon.svg`
-        }
+            ...publisher
+        },
+        dateModified: post.attributes.modified_date && new Date(post.attributes.modified_date).toDateString()
     }
 }

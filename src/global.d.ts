@@ -15,6 +15,7 @@ declare type BlogPostData = {
 	title: string;
 	description: string;
 	published_date: string;
+	modified_date?: string;
 	slug: string;
 	author: Author;
 	draft?: boolean;
