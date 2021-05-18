@@ -2,8 +2,15 @@ import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 import markdownIt from 'markdown-it';
 import prism from 'markdown-it-prism';
+import 'prism-svelte';
+import 'prismjs/components/prism-bash.js';
+import 'prismjs/components/prism-json.js';
+import 'prismjs/components/prism-markdown.js';
+import 'prismjs/components/prism-typescript.js';
 import viteMd from 'vite-plugin-markdown';
 import { resolve } from 'path';
+
+console.log(Object.keys(Prism.languages))
 
 const md = markdownIt({ html: true }).use(prism);
 

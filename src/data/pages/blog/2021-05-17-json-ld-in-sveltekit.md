@@ -35,14 +35,14 @@ This is where JSON+LD really stands out compared to other structured data format
 
 ```js
 <script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Person",
-  "name": "Jane Doe",
-  "jobTitle": "Professor",
-  "telephone": "(425) 123-4567",
-  "url": "http://www.janedoe.com"
-}
+	{
+		"@context": "http://schema.org/",
+		"@type": "Person",
+		"name": "Jane Doe",
+		"jobTitle": "Professor",
+		"telephone": "(425) 123-4567",
+		"url": "http://www.janedoe.com"
+	}
 </script>
 ```
 

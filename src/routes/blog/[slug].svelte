@@ -16,6 +16,7 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
+
 </script>
 
 <script lang="ts">
@@ -25,6 +26,7 @@
 	import './prism-hopscotch.postcss';
 
 	export let post: MarkdownData<BlogPostData>;
+
 </script>
 
 <LDTag schema={blogPostSchema(post)} />
@@ -83,4 +85,5 @@
 			text-decoration: underline;
 		}
 	}
+
 </style>
