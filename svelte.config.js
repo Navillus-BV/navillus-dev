@@ -10,8 +10,6 @@ import 'prismjs/components/prism-typescript.js';
 import viteMd from 'vite-plugin-markdown';
 import { resolve } from 'path';
 
-console.log(Object.keys(Prism.languages))
-
 const md = markdownIt({ html: true }).use(prism);
 
 const defaultRender =
