@@ -1,33 +1,15 @@
 @import '@fontsource/poppins';
 @import '@fontsource/poppins/500.css';
 @import '@fontsource/poppins/700.css';
+@import 'chisel.css';
 
 :root {
-	--color-light-gray: #ebebeb;
-	--color-gray: #37322e;
-	--color-white: #ffffff;
-	--color-black: #000000;
-	--color-orange: #ffc331;
-	--color-red: #d72516;
-	--color-green: #21815b;
+	/* chisel.css overrides */
+	--chisel-primary: #ffc331;
+	--chisel-neutral-900: #37322e;
+
+	/* site colors */
 	--color-blue: #0b70ba;
-	--color-purple: #a259ff;
-
-	/* Default Theme */
-	--color-text: var(--color-gray);
-	--color-link: var(--color-blue);
-	--color-primary: var(--color-orange);
-	--color-secondary: var(--color-white);
-	--color-accent: var(--color-gray);
-
-	/* Font Sizes */
-	--text-sm: 0.8rem;
-	--text-base: 1rem;
-	--text-lg: 1.25rem;
-	--text-xl: 1.563rem;
-	--text-2xl: 1.953rem;
-	--text-3xl: 2.441rem;
-	--text-4xl: 3.052rem;
 
 	/* Spacer Sizes */
 	--spacer-tiny: 0.25rem;
@@ -40,14 +22,8 @@
 	/* Box Shadows */
 	--shadow-sm: -1px 1px 2px 0 rgba(0, 0, 0, 0.25);
 	--shadow-md: 0px 2px 4px 0 rgba(0, 0, 0, 0.25);
-}
 
-html {
 	font-size: 14px;
-	scroll-behavior: smooth;
-	background: var(--color-primary);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 
 	@media (min-width: 375px) {
 		& {
@@ -62,154 +38,13 @@ html {
 	}
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
+/** ADD TO CHISEL! **/
+:root {
+	--chisel-p: 1rem;
 
-body {
-	color: var(--color-text);
-	font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-		'Segoe UI Symbol', 'Noto Color Emoji';
-	font-size: var(--text-base);
-	line-height: 1.75;
-}
-
-#svelte {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-}
-
-#svelte main {
-	flex: 1 0 0;
-}
-
-*,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	margin: 0;
-	padding: 0;
-}
-
-time {
-	font-size: inherit;
-}
-
-p + p {
-	margin-top: var(--spacer-sm);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-	margin: 3em 0 1.38em;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	line-height: 1.3;
-	font-size: var(--text-base);
-}
-
-h1,
-h3.text-sm + h2 {
-	margin-top: 0;
-}
-
-.text-4xl {
-	font-size: clamp(var(--text-2xl), 8vw, var(--text-4xl));
-}
-
-.text-3xl {
-	font-size: clamp(var(--text-xl), 6vw, var(--text-3xl));
-}
-
-.text-2xl {
-	font-size: clamp(var(--text-lg), 5vw, var(--text-2xl));
-}
-
-.text-xl {
-	font-size: clamp(var(--text-base), 5vw, var(--text-xl));
-}
-
-.text-lg {
-	font-size: clamp(var(--text-base), 5vw, var(--text-lg));
-}
-
-.text-base {
-	font-size: var(--text-base);
-}
-
-small,
-.text-sm {
-	font-size: var(--text-sm);
-	letter-spacing: 0.025em;
-}
-
-small {
-	display: inline-block;
-}
-
-strong {
-	font-size: inherit;
-}
-
-svg {
-	height: 100%;
-}
-
-picture {
-	display: flex;
-	justify-content: center;
-}
-
-a {
-	display: inline-block;
-	text-decoration: none;
-	font-size: inherit;
-	color: inherit;
-}
-
-ul {
-	list-style: none;
-}
-
-.container {
-	width: 100%;
-	max-width: 1024px;
-	margin: 0 auto;
-	padding: 0 var(--spacer-sm);
-
-	& > h1:first-child,
-	& > h2:first-child,
-	& > h3:first-child,
-	& > h4:first-child,
-	& > h5:first-child {
-		margin-top: 0;
-	}
-}
-
-section {
-	padding: var(--spacer-lg) 0;
-	background: var(--color-primary);
-
-	&.alt {
-		background: var(--color-secondary);
-	}
-
-	@media (min-width: 768px) {
-		& {
-			padding: var(--spacer-xl) 0;
-		}
-	}
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .sr-only {
@@ -234,99 +69,81 @@ section {
 	}
 }
 
-.mt-0 {
-	margin-top: 0;
+svg {
+	max-height: 100%;
 }
 
-.mb-0 {
-	margin-bottom: 0;
+ul,
+li {
+	margin: 0;
+	padding: 0;
 }
 
-.fill-current {
-	fill: currentColor;
+.button {
+	line-height: unset;
+	display: inline-flex;
+	padding: 0 1.5em;
+	align-items: center;
+	justify-content: center;
+	transition: color 150ms, background-color 150ms, border-color 150ms;
+}
+/** END ADD TO CHISEL **/
+
+body {
+	background: var(--chisel-primary);
+	font-family: 'Poppins', sans-serif;
 }
 
-.stroke-current {
-	stroke: currentColor;
+section {
+	padding: var(--spacer-lg) 0;
+
+	&.alt {
+		background: var(--chisel-neutral-50);
+	}
+
+	@media (min-width: 768px) {
+		& {
+			padding: var(--spacer-xl) 0;
+		}
+	}
 }
 
-.underline {
-	text-decoration: underline;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.color-text {
-	color: var(--color-text);
-}
-
-.color-blue {
+a {
 	color: var(--color-blue);
 }
 
-.underline {
-	text-decoration: underline;
+ul {
+	list-style: none;
 }
 
-.bold {
-	font-weight: bold;
-}
-
-.w-full {
-	width: 100%;
-}
-
-.h-full {
-	height: 100%;
-}
-
-/* Hero Sections */
-.hero .btn {
-	margin-top: var(--spacer-md);
-}
-
-/* Buttons */
-.btn {
-	border: 2px solid transparent;
-	display: inline-block;
-	padding: var(--spacer-xs) var(--spacer-sm);
-	text-decoration: none;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-align: center;
-	color: var(--color-text);
-	background: var(--color-secondary);
-	border-radius: 0.25em;
+.button {
+	background: var(--chisel-neutral-50);
+	border-color: var(--chisel-neutral-50);
+	color: var(--chisel-neutral-900);
 	box-shadow: var(--shadow-md);
-	will-change: background-color, color;
-	transition: color 150ms, background-color 150ms;
 
+	&:focus,
 	&:hover {
-		background: var(--color-accent);
-		color: var(--color-secondary);
+		background-color: var(--chisel-neutral-900);
+		border-color: var(--chisel-neutral-900);
 	}
 
-	&.btn--primary {
-		background: var(--color-primary);
-		color: var(--color-text);
-
-		&:hover {
-			background: var(--secondary);
-		}
-	}
-
-	&.btn--hollow {
-		background: transparent;
-		border-color: var(--color-text);
+	&.button-outline {
+		color: var(--chisel-neutral-900);
+		border-color: var(--chisel-neutral-900);
 		box-shadow: none;
 
+		&:focus,
 		&:hover {
-			background: var(--color-accent);
-			border-color: var(--color-accent);
+			background-color: var(--chisel-neutral-900);
+			border-color: var(--chisel-neutral-900);
+			color: var(--chisel-neutral-50);
 		}
 	}
+}
+
+h2.h6 + h3.h2 {
+	margin-top: 0;
 }
 
 /** Features Block */
@@ -375,7 +192,7 @@ section {
 	}
 
 	& li {
-		background: var(--color-secondary);
+		background: var(--chisel-neutral-50);
 		width: 100%;
 		padding: var(--spacer-xs) var(--spacer-sm);
 		display: flex;

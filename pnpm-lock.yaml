@@ -1,13 +1,14 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@fontsource/fira-mono': ^4.2.2
-  '@fontsource/poppins': ^4.2.2
-  '@sveltejs/adapter-static': ^1.0.0-next.9
+  '@fontsource/fira-mono': ^4.3.0
+  '@fontsource/poppins': ^4.3.0
+  '@sveltejs/adapter-static': ^1.0.0-next.11
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^4.24.0
   '@typescript-eslint/parser': ^4.24.0
   autoprefixer: ^10.2.5
+  chisel.css: ^0.2.2
   cssnano: ^5.0.4
   eslint: ^7.27.0
   eslint-config-prettier: ^8.1.0
@@ -16,7 +17,7 @@ specifiers:
   markdown-it-prism: ^2.1.6
   postcss: ^8.3.0
   postcss-load-config: ^3.0.1
-  postcss-nesting: ^8.0.0
+  postcss-nesting: ^8.0.1
   prettier: ~2.2.1
   prettier-plugin-svelte: ^2.3.0
   prism-svelte: ^0.4.7
@@ -31,11 +32,12 @@ specifiers:
 devDependencies:
   '@fontsource/fira-mono': 4.3.0
   '@fontsource/poppins': 4.3.0
-  '@sveltejs/adapter-static': 1.0.0-next.9
+  '@sveltejs/adapter-static': 1.0.0-next.11_@sveltejs+kit@1.0.0-next.109
   '@sveltejs/kit': 1.0.0-next.109_svelte@3.38.2
   '@typescript-eslint/eslint-plugin': 4.24.0_793776cb10ece467d2ef6de95ba4fe34
   '@typescript-eslint/parser': 4.24.0_eslint@7.27.0+typescript@4.2.4
   autoprefixer: 10.2.5_postcss@8.3.0
+  chisel.css: 0.2.2
   cssnano: 5.0.4_postcss@8.3.0
   eslint: 7.27.0
   eslint-config-prettier: 8.3.0_eslint@7.27.0
@@ -138,8 +140,12 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.9:
-    resolution: {integrity: sha512-yqZ+4dzi+2+2jDPHCrI7WrLdXyQ/0U56a7aFdepmodpvpxhazF203D1ez+AtTo27FjMmHjfI+q0O2FivUOosxg==}
+  /@sveltejs/adapter-static/1.0.0-next.11_@sveltejs+kit@1.0.0-next.109:
+    resolution: {integrity: sha512-flqdt6nJxzRPfhYDZbvrw1iFmc87E3rLJ/Rz7K+d4or/slyqHSxH+yOmQ7CJKej5DidliuTpAOvulithuDc0yw==}
+    peerDependencies:
+      '@sveltejs/kit': 1.0.0-next.109
+    dependencies:
+      '@sveltejs/kit': 1.0.0-next.109_svelte@3.38.2
     dev: true
 
   /@sveltejs/kit/1.0.0-next.109_svelte@3.38.2:
@@ -190,8 +196,8 @@ packages:
     resolution: {integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==}
     dev: true
 
-  /@types/node/15.0.2:
-    resolution: {integrity: sha512-p68+a+KoxpoB47015IeYZYRrdqMUcpbK8re/zpFB8Ld46LHC1lPEbp3EXgkEhAYEcPvjJF6ZO+869SQ0aH1dcA==}
+  /@types/node/15.6.0:
+    resolution: {integrity: sha512-gCYSfQpy+LYhOFTKAeE8BkyGqaxmlFxe+n4DKM6DR0wzw/HISUE/hAmkC/KT8Sw5PCJblqg062b3z9gucv3k0A==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -205,7 +211,7 @@ packages:
   /@types/sass/1.16.0:
     resolution: {integrity: sha512-2XZovu4NwcqmtZtsBR5XYLw18T8cBCnU2USFHTnYLLHz9fkhnoEMoDsqShJIOFsFhn5aJHjweiUUdTrDGujegA==}
     dependencies:
-      '@types/node': 15.0.2
+      '@types/node': 15.6.0
     dev: true
 
   /@typescript-eslint/eslint-plugin/4.24.0_793776cb10ece467d2ef6de95ba4fe34:
@@ -402,9 +408,9 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.16.6
-      caniuse-lite: 1.0.30001227
+      caniuse-lite: 1.0.30001228
       colorette: 1.2.2
-      fraction.js: 4.0.13
+      fraction.js: 4.1.1
       normalize-range: 0.1.2
       postcss: 8.3.0
       postcss-value-parser: 4.1.0
@@ -437,11 +443,11 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001227
+      caniuse-lite: 1.0.30001228
       colorette: 1.2.2
-      electron-to-chromium: 1.3.727
+      electron-to-chromium: 1.3.736
       escalade: 3.1.1
-      node-releases: 1.1.71
+      node-releases: 1.1.72
     dev: true
 
   /callsites/3.1.0:
@@ -456,10 +462,6 @@ packages:
       caniuse-lite: 1.0.30001228
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
-    dev: true
-
-  /caniuse-lite/1.0.30001227:
-    resolution: {integrity: sha512-HHZT4QpUw4Pf45IE3xxKAPgAN3q2aRai/x5TSHP8lrrKzARoH0IeBviwStcRi5lsFlscTkBbXC7gXyms43151A==}
     dev: true
 
   /caniuse-lite/1.0.30001228:
@@ -486,6 +488,10 @@ packages:
   /cheap-watch/1.0.3:
     resolution: {integrity: sha512-xC5CruMhLzjPwJ5ecUxGu1uGmwJQykUhqd2QrCrYbwvsFYdRyviu6jG9+pccwDXJR/OpmOTOJ9yLFunVgQu9wg==}
     engines: {node: '>=8'}
+    dev: true
+
+  /chisel.css/0.2.2:
+    resolution: {integrity: sha512-QHWKU7T+q4XzOTq8i6GdOPvuosyN5bHBQBzzFImp7UysvVC7W3O+z+ccl20U3ko4u9jLORC/+zTETE/AoV805A==}
     dev: true
 
   /clipboard/2.0.8:
@@ -747,8 +753,8 @@ packages:
       domhandler: 4.2.0
     dev: true
 
-  /electron-to-chromium/1.3.727:
-    resolution: {integrity: sha512-Mfz4FIB4FSvEwBpDfdipRIrwd6uo8gUDoRDF4QEYb4h4tSuI3ov594OrjU6on042UlFHouIJpClDODGkPcBSbg==}
+  /electron-to-chromium/1.3.736:
+    resolution: {integrity: sha512-DY8dA7gR51MSo66DqitEQoUMQ0Z+A2DSXFi7tK304bdTVqczCAfUuyQw6Wdg8hIoo5zIxkU1L24RQtUce1Ioig==}
     dev: true
 
   /emoji-regex/8.0.0:
@@ -994,8 +1000,8 @@ packages:
     resolution: {integrity: sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==}
     dev: true
 
-  /fraction.js/4.0.13:
-    resolution: {integrity: sha512-E1fz2Xs9ltlUp+qbiyx9wmt2n9dRzPsS11Jtdb8D2o+cC7wr9xkkKsVKJuBX0ST+LVS+LhLO+SbLJNtfWcJvXA==}
+  /fraction.js/4.1.1:
+    resolution: {integrity: sha512-MHOhvvxHTfRFpF1geTK9czMIZ6xclsEor2wkIGYYq+PxcQqT7vStJqjhe6S1TenZrMZzo+wlqOufBDVepUEgPg==}
     dev: true
 
   /front-matter/4.0.2:
@@ -1366,8 +1372,8 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /node-releases/1.1.71:
-    resolution: {integrity: sha512-zR6HoT6LrLCRBwukmrVbHv0EpEQjksO6GmFcZQQuCAy139BEsoVKPYnf3jongYW83fAa1torLGYwxxky/p28sg==}
+  /node-releases/1.1.72:
+    resolution: {integrity: sha512-LLUo+PpH3dU6XizX3iVoubUNheF/owjXCZZ5yACDxNnPtgFuludV1ZL3ayK1kVep42Rmm0+R9/Y60NQbZ2bifw==}
     dev: true
 
   /normalize-range/0.1.2:
@@ -1375,8 +1381,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /normalize-url/4.5.0:
-    resolution: {integrity: sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==}
+  /normalize-url/4.5.1:
+    resolution: {integrity: sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==}
     engines: {node: '>=8'}
     dev: true
 
@@ -1683,7 +1689,7 @@ packages:
       postcss: ^8.2.15
     dependencies:
       is-absolute-url: 3.0.3
-      normalize-url: 4.5.0
+      normalize-url: 4.5.1
       postcss: 8.3.0
       postcss-value-parser: 4.1.0
     dev: true

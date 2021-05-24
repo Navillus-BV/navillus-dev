@@ -123,8 +123,8 @@
 
 <section>
 	<div class="container hero">
-		<h1 class="text-sm bold mt-0">JAMSTACK DEVELOPERS FOR HIRE</h1>
-		<h2 class="text-4xl mt-0">
+		<h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
+		<h2 class="h1">
 			Every problem is <strong>different</strong>.
 			<br />
 			Your <strong>solutions</strong> should be, too.
@@ -133,14 +133,14 @@
 			We specialize in finding simple solutions to complex software problems. We value data-driven
 			decisions and accessibility over this month's latest tech trends.
 		</p>
-		<a class="btn" href="/#services">How we can help</a>
+		<a class="button" href="/#services">How we can help</a>
 	</div>
 </section>
 
 <section class="alt">
 	<div class="container">
-		<h2 class="text-sm bold">SITES WITH BENEFITS</h2>
-		<h3 class="text-3xl mt-0">Why use the Jamstack?</h3>
+		<h2 class="h6"><strong>SITES WITH BENEFITS</strong></h2>
+		<h3 class="h2">Why use the Jamstack?</h3>
 
 		<div class="features">
 			<article>
@@ -149,12 +149,11 @@
 				</svg>
 
 				<div>
-					<h4 class="text-xl">Better Performance</h4>
+					<h4 class="h3">Better Performance</h4>
 					<p>
 						According to <a
 							class="underline color-blue"
 							href="https://www.blog.google/products/admanager/increase-speed-of-your-mobile-site-wi/"
-							rel="noopener"
 						>
 							Google</a
 						>, 53% of visitors will leave a website if it takes longer than 3 seconds to load. Even
@@ -173,9 +172,9 @@
 				</svg>
 
 				<div>
-					<h4 class="text-xl">Higher Security</h4>
+					<h4 class="h3">Higher Security</h4>
 					<p>
-						<a class="underline color-blue" href="https://www.enablesecurity.com/" rel="noopener">
+						<a class="underline color-blue" href="https://www.enablesecurity.com/">
 							Enable Security
 						</a> found that over 70% of WordPress sites are vulnerable to hacker attacks. Chances are
 						those sites secure when first built, but without regular updates and maintenance they can
@@ -193,12 +192,11 @@
 				</svg>
 
 				<div>
-					<h4 class="text-xl">Cheaper, Easier Scaling</h4>
+					<h4 class="h3">Cheaper, Easier Scaling</h4>
 					<p>
 						Citrix saw an incredible <a
 							class="underline color-blue"
 							href="https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/"
-							rel="noopener"
 						>
 							65% cost savings
 						</a> after moving their business critical documentation sites over to Jamstack technologies.
@@ -217,11 +215,11 @@
 
 <section>
 	<div class="container">
-		<h2 class="text-sm bold">TECHNOLOGY WE USE</h2>
-		<h3 class="text-3xl mt-0">Building the Modern Web</h3>
+		<h2 class="h6"><strong>TECHNOLOGY WE USE</strong></h2>
+		<h3 class="h2">Building the Modern Web</h3>
 
 		<div class="badges">
-			<h4 class="text-sm bold">HEADLESS CMS</h4>
+			<h4 class="h6"><strong>HEADLESS CMS</strong></h4>
 
 			<ul>
 				{#each headlessCMS as { logo, title } (title)}
@@ -236,7 +234,7 @@
 		</div>
 
 		<div class="badges">
-			<h4 class="text-sm bold">STATIC SITE GENERATOR</h4>
+			<h4 class="h6"><strong>STATIC SITE GENERATOR</strong></h4>
 
 			<ul>
 				{#each ssg as { logo, title }, i (i)}
@@ -251,7 +249,7 @@
 		</div>
 
 		<div class="badges">
-			<h4 class="text-sm bold">DEPLOYMENT PLATFORMS</h4>
+			<h4 class="h6"><strong>DEPLOYMENT PLATFORMS</strong></h4>
 
 			<ul>
 				{#each hosts as { logo, title }, i (i)}
@@ -269,8 +267,8 @@
 
 <section class="alt" id="services">
 	<div class="container">
-		<h2 class="text-sm bold">WHAT WE OFFER</h2>
-		<h3 class="text-3xl mt-0">Our Services</h3>
+		<h2 class="h6"><strong>WHAT WE OFFER</strong></h2>
+		<h3 class="h2">Our Services</h3>
 
 		<div class="features">
 			<article>
@@ -279,7 +277,7 @@
 				</svg>
 
 				<div>
-					<h4 class="text-xl">Web Design & Development</h4>
+					<h4 class="h3">Web Design & Development</h4>
 					<p>
 						Static doesn't mean boring. We design and build sites with proven technologies to offer
 						dynamic, interactive designs that customers love.
@@ -292,7 +290,7 @@
 				</svg>
 
 				<div>
-					<h4 class="text-xl">eCommerce Stores</h4>
+					<h4 class="h3">eCommerce Stores</h4>
 					<p>
 						Losing a visitor on your online shop costs your more than just impressions, it hits your
 						bottom line. We build modern, accessible eCommerce stores that grow with your business.
@@ -305,7 +303,7 @@
 				</svg>
 
 				<div>
-					<h4 class="text-xl">Software Architecture & Design</h4>
+					<h4 class="h3">Software Architecture & Design</h4>
 					<p>
 						Whether you already have a development team or are still in the planning phase, we can
 						help you design your tech stack.
@@ -318,8 +316,8 @@
 
 <section id="contact">
 	<div class="container">
-		<h2 class="text-sm bold">JAMSTACK DEVELOPERS FOR HIRE</h2>
-		<h3 class="text-3xl mt-0">Get in Touch</h3>
+		<h2 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h2>
+		<h3 class="h2">Get in Touch</h3>
 		<p>
 			We love what we do and are always up for an interesting conversation, whether you're ready to
 			get started or just have a few questions.

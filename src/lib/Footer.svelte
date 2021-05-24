@@ -35,13 +35,13 @@
 
 		<ul class="links">
 			<li>
-				<a href="/privacy">Privacy Policy</a>
+				<a class="h6" href="/privacy">Privacy Policy</a>
 			</li>
 			<li>
-				<a href="/terms">Terms & Conditions</a>
+				<a class="h6" href="/terms">Terms & Conditions</a>
 			</li>
 			<li>
-				<a href="/#contact">Contact Us</a>
+				<a class="h6" href="/#contact">Contact Us</a>
 			</li>
 		</ul>
 
@@ -62,7 +62,11 @@
 
 <style>
 	footer {
-		background: var(--color-secondary);
+		background: var(--chisel-neutral-50);
+	}
+
+	a {
+		color: var(--chisel-neutral-900);
 	}
 
 	.container {
@@ -81,8 +85,8 @@
 	}
 
 	.social svg {
-		height: var(--text-4xl);
-		width: var(--text-4xl);
+		height: var(--chisel-h1);
+		width: var(--chisel-h1);
 		overflow: visible;
 	}
 
@@ -94,12 +98,11 @@
 	.links a {
 		text-decoration: underline;
 		padding: 0 var(--spacer-xs);
-		font-size: var(--text-sm);
 
 		@media (min-width: 480px) {
 			& {
 				padding: 0 var(--spacer-sm);
-				font-size: var(--text-base);
+				font-size: var(--chisel-p);
 			}
 		}
 	}

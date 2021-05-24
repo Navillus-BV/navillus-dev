@@ -33,23 +33,23 @@
 
 <section>
 	<div class="container">
-		<h1 class="text-sm bold mt-0">JAMSTACK DEVELOPERS FOR HIRE</h1>
-		<h2 class="text-4xl mt-0">The Navillus Blog</h2>
+		<h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
+		<h2 class="h1">The Navillus Blog</h2>
 		<p>Exploring the Jamstack and the future of web development.</p>
 	</div>
 </section>
 
 <section class="alt">
 	<div class="container">
-		<h2 class="text-3xl">All posts</h2>
+		<h2 class="h6"><strong>ALL POSTS</strong></h2>
 
 		{#each posts as post, i (post.slug)}
 			<article>
 				<a href="/blog/{post.slug}">
-					<h3 class="text-xl underline" class:mt-0={i === 0}>{post.title}</h3>
+					<h3 class="underline" class:mt-0={i === 0}>{post.title}</h3>
 				</a>
 				<p>{post.description}</p>
-				<time class="text-sm" datetime={post.published_date}>{post.published_date}</time>
+				<time class="h6" datetime={post.published_date}>{post.published_date}</time>
 			</article>
 		{/each}
 	</div>
@@ -57,9 +57,18 @@
 
 <style style lang="postcss">
 	article {
+		&:not(:first-of-type) {
+			margin-top: var(--spacer-lg);
+		}
+
 		& h3,
 		& p {
 			margin-bottom: var(--spacer-tiny);
+		}
+
+		& a {
+			color: inherit;
+			text-decoration: none;
 		}
 	}
 </style>

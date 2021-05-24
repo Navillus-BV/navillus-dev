@@ -13,7 +13,7 @@
 	<div class="container">
 		<h1>{title}</h1>
 
-		<p class="legal__last-updated text-sm">Last Updated: {lastUpdated}</p>
+		<p class="legal__last-updated h6">Last Updated: {lastUpdated}</p>
 
 		{@html html}
 	</div>
@@ -22,7 +22,6 @@
 <style>
 	h1 {
 		margin-bottom: var(--spacer-xs);
-		font-size: var(--text-4xl);
 	}
 
 	.legal__last-updated {
@@ -33,13 +32,5 @@
 	section :global(p) {
 		margin: var(--spacer-xs) 0;
 		line-height: 1.5;
-	}
-
-	section :global(h2) {
-		font-size: var(--text-3xl);
-	}
-
-	section :global(h3) {
-		font-size: var(--text-2xl);
 	}
 </style>

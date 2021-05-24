@@ -8,53 +8,44 @@
 	</p>
 	<div class="form__row form__row--split">
 		<div>
-			<label for="name">Your Name *</label>
+			<label class="label-inline h6" for="name">Your Name *</label>
 			<input id="name" name="name" type="text" required />
 		</div>
 		<div>
-			<label for="email">Your Email Address *</label>
+			<label class="label-inline h6" for="email">Your Email Address *</label>
 			<input id="email" name="email" type="email" required />
 		</div>
 	</div>
 	<div>
 		<div>
-			<label for="message">Your Message *</label>
+			<label class="label-inline h6" for="message">Your Message *</label>
 			<textarea id="message" name="message" rows="6" required />
 		</div>
 	</div>
 
-	<button type="submit" class="btn btn">submit</button>
+	<button type="submit" class="button">submit</button>
 </form>
 
 <style style lang="postcss">
 	form {
-		width: 100%;
 		display: flex;
 		flex-direction: column;
 		row-gap: var(--spacer-sm);
-	}
-
-	form label {
-		font-size: var(--text-sm);
-		margin-bottom: var(--spacer-xs);
-		display: block;
-		text-align: start;
 	}
 
 	form .honeypot {
 		display: none;
 	}
 
+	.label-inline {
+		margin-left: 0;
+	}
+
 	input[type='text'],
 	input[type='email'],
 	textarea {
-		font-size: var(--text-base);
-		padding: var(--spacer-xs);
-		background: var(--color-secondary);
-		border-radius: 0.5em;
-		margin-bottom: var(--spacer-sm);
-		width: 100%;
-		border: none;
+		background: var(--chisel-neutral-50);
+		border-color: var(--chisel-neutral-50);
 	}
 
 	.form__row {
@@ -66,6 +57,12 @@
 				grid-template-columns: repeat(2, 1fr);
 				column-gap: var(--spacer-md);
 			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		[type='submit'] {
+			align-self: flex-start;
 		}
 	}
 </style>
