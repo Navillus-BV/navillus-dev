@@ -49,6 +49,7 @@
 	onMount(() => {
 		menuOpen = false;
 	});
+
 </script>
 
 <svelte:window bind:innerWidth />
@@ -119,6 +120,10 @@
 <div id="start-of-content" class="sr-only" bind:this={startOfContentElem} />
 
 <style style lang="postcss">
+	* + * {
+		margin-top: 0;
+	}
+
 	header {
 		position: relative;
 	}
@@ -161,6 +166,10 @@
 
 	.brand {
 		height: 2rem;
+
+		& :global(svg) {
+			margin-top: 0;
+		}
 	}
 
 	ul {
@@ -206,4 +215,5 @@
 			gap: var(--spacer-xs);
 		}
 	}
+
 </style>

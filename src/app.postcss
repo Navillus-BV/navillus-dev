@@ -7,10 +7,10 @@
 	/* chisel.css overrides */
 	--chisel-primary: #ffc331;
 	--chisel-neutral-900: #37322e;
+	--chisel-button-bg: var(--chisel-neutral-50);
+	--chisel-button-border: var(--chisel-neutral-50);
+	--chisel-button-fg: var(--chisel-neutral-900);
 	--chisel-container-max-w: 60rem;
-
-	/* site colors */
-	--color-blue: #0b70ba;
 
 	/* Spacer Sizes */
 	--spacer-tiny: 0.25rem;
@@ -39,57 +39,6 @@
 	}
 }
 
-/** ADD TO CHISEL! **/
-:root {
-	--chisel-p: 1rem;
-
-	scroll-behavior: smooth;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border-width: 0;
-
-	&.sr-only-focusable:focus {
-		width: auto;
-		height: auto;
-		padding: 0;
-		margin: 0;
-		overflow: visible;
-		clip: auto;
-		white-space: normal;
-	}
-}
-
-svg {
-	max-height: 100%;
-}
-
-ul,
-li {
-	margin: 0;
-	padding: 0;
-}
-
-.button {
-	line-height: unset;
-	display: inline-flex;
-	padding: 0 1.5em;
-	align-items: center;
-	justify-content: center;
-	transition: color 150ms, background-color 150ms, border-color 150ms;
-}
-/** END ADD TO CHISEL **/
-
 body {
 	background: var(--chisel-primary);
 	font-family: 'Poppins', sans-serif;
@@ -109,36 +58,33 @@ section {
 	}
 }
 
-a {
-	color: var(--color-blue);
-}
-
 ul {
 	list-style: none;
 }
 
+svg {
+	max-height: 100%;
+}
+
 .button {
-	background: var(--chisel-neutral-50);
-	border-color: var(--chisel-neutral-50);
-	color: var(--chisel-neutral-900);
 	box-shadow: var(--shadow-md);
 
-	&:focus,
-	&:hover {
-		background-color: var(--chisel-neutral-900);
-		border-color: var(--chisel-neutral-900);
+	&:focus:not([disabled]),
+	&:hover:not([disabled]) {
+		--chisel-button-bg: var(--chisel-neutral-900);
+		--chisel-button-border: var(--chisel-neutral-900);
 	}
 
 	&.button-outline {
-		color: var(--chisel-neutral-900);
-		border-color: var(--chisel-neutral-900);
+		--chisel-button-border: var(--chisel-neutral-900);
+		--chisel-button-fg: var(--chisel-neutral-900);
 		box-shadow: none;
 
-		&:focus,
-		&:hover {
-			background-color: var(--chisel-neutral-900);
-			border-color: var(--chisel-neutral-900);
-			color: var(--chisel-neutral-50);
+		&:focus:not([disabled]),
+		&:hover:not([disabled]) {
+			--chisel-button-bg: var(--chisel-neutral-900);
+			--chisel-button-border: var(--chisel-neutral-900);
+			--chisel-button-fg: var(--chisel-neutral-50);
 		}
 	}
 }
