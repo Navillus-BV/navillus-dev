@@ -4,13 +4,13 @@
 @import 'chisel.css';
 
 :root {
+	--color-blue: #0b70ba;
+	--color-orange: #ffc331;
+	--color-black: #37322e;
+
 	/* chisel.css overrides */
-	--chisel-primary: #ffc331;
-	--chisel-neutral-900: #37322e;
-	--chisel-button-bg: var(--chisel-neutral-50);
-	--chisel-button-border: var(--chisel-neutral-50);
-	--chisel-button-fg: var(--chisel-neutral-900);
-	--chisel-container-max-w: 60rem;
+	--chisel-primary: var(--color-orange);
+	--chisel-neutral-900: var(--color-black);
 
 	/* Spacer Sizes */
 	--spacer-tiny: 0.25rem;
@@ -37,11 +37,22 @@
 			font-size: 18px;
 		}
 	}
+
+	/* dark theme via HTML dataset */
+	&[data-chisel-theme='dark'] {
+		--chisel-primary: var(--color-orange);
+	}
 }
 
 body {
 	background: var(--chisel-primary);
 	font-family: 'Poppins', sans-serif;
+}
+
+.container {
+	width: 90vw;
+	max-width: 90rem;
+	margin: 0 auto;
 }
 
 section {
@@ -66,31 +77,39 @@ svg {
 	max-height: 100%;
 }
 
+a {
+	color: var(--color-blue);
+}
+
 .button {
 	box-shadow: var(--shadow-md);
 
-	&:focus:not([disabled]),
-	&:hover:not([disabled]) {
-		--chisel-button-bg: var(--chisel-neutral-900);
-		--chisel-button-border: var(--chisel-neutral-900);
-	}
-
-	&.button-outline {
-		--chisel-button-border: var(--chisel-neutral-900);
-		--chisel-button-fg: var(--chisel-neutral-900);
+	&.button--outline {
+		border-color: var(--chisel-neutral-900);
+		background-color: transparent;
+		color: var(--chisel-neutral-900);
 		box-shadow: none;
 
-		&:focus:not([disabled]),
-		&:hover:not([disabled]) {
-			--chisel-button-bg: var(--chisel-neutral-900);
-			--chisel-button-border: var(--chisel-neutral-900);
-			--chisel-button-fg: var(--chisel-neutral-50);
+		&:hover,
+		&:focus {
+			background-color: var(--chisel-neutral-900);
+			color: var(--chisel-neutral-50);
 		}
 	}
 }
 
 h2.h6 + h3.h2 {
 	margin-top: 0;
+}
+
+.hero {
+	& * {
+		margin-top: 0;
+	}
+
+	& .button {
+		margin-top: var(--spacer-md);
+	}
 }
 
 /** Features Block */
@@ -118,6 +137,12 @@ h2.h6 + h3.h2 {
 
 	& h4 {
 		margin-top: var(--spacer-sm);
+
+		@media (min-width: 480px) {
+			& {
+				margin-top: 0;
+			}
+		}
 	}
 
 	& svg,

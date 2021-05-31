@@ -60,9 +60,14 @@
 		}
 	}
 
+	.form__row > * {
+		margin-top: 0;
+	}
+
 	@media (min-width: 768px) {
 		[type='submit'] {
 			align-self: flex-start;
 		}
 	}
+
 </style>

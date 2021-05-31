@@ -8,7 +8,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^4.25.0
   '@typescript-eslint/parser': ^4.25.0
   autoprefixer: ^10.2.6
-  chisel.css: ^0.3.1
+  chisel.css: ^0.4.1
   cssnano: ^5.0.5
   eslint: ^7.27.0
   eslint-config-prettier: ^8.3.0
@@ -16,9 +16,10 @@ specifiers:
   markdown-it: ^12.0.6
   markdown-it-prism: ^2.1.6
   postcss: ^8.3.0
+  postcss-combine-media-query: ^1.0.1
   postcss-load-config: ^3.0.1
   postcss-nesting: ^8.0.1
-  prettier: ~2.2.1
+  prettier: ~2.3.0
   prettier-plugin-svelte: ^2.3.0
   prism-svelte: ^0.4.7
   prismjs: ^1.23.0
@@ -37,7 +38,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 4.25.0_ec7770e83475322b368bff30b543badb
   '@typescript-eslint/parser': 4.25.0_eslint@7.27.0+typescript@4.3.2
   autoprefixer: 10.2.6_postcss@8.3.0
-  chisel.css: 0.3.1
+  chisel.css: 0.4.1
   cssnano: 5.0.5_postcss@8.3.0
   eslint: 7.27.0
   eslint-config-prettier: 8.3.0_eslint@7.27.0
@@ -45,10 +46,11 @@ devDependencies:
   markdown-it: 12.0.6
   markdown-it-prism: 2.1.6
   postcss: 8.3.0
+  postcss-combine-media-query: 1.0.1
   postcss-load-config: 3.0.1
   postcss-nesting: 8.0.1_postcss@8.3.0
-  prettier: 2.2.1
-  prettier-plugin-svelte: 2.3.0_prettier@2.2.1+svelte@3.38.2
+  prettier: 2.3.0
+  prettier-plugin-svelte: 2.3.0_prettier@2.3.0+svelte@3.38.2
   prism-svelte: 0.4.7
   prismjs: 1.23.0
   schema-dts: 0.8.2_typescript@4.3.2
@@ -490,8 +492,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /chisel.css/0.3.1:
-    resolution: {integrity: sha512-Vq1zRjAvoQscbII3Wdtgv7hgrwwDAathkWd5FIi0dRh+ccRE7YsoP4ANhzRPeP+Cf3c8jDuqfEGNwF3nEec0UA==}
+  /chisel.css/0.4.1:
+    resolution: {integrity: sha512-53xZURoSp1GAyaUh+P7tRY8D2Z4rSe4rdbZX9pnfcGlCcQ6egLDS8veJ/IrrIfGbvlf7T90pP/ehpaQ8NQHz4Q==}
     dev: true
 
   /clipboard/2.0.8:
@@ -1474,6 +1476,12 @@ packages:
       postcss-value-parser: 4.1.0
     dev: true
 
+  /postcss-combine-media-query/1.0.1:
+    resolution: {integrity: sha512-DFSXuYy3ltDkC2esIF0ORoS9DCjlyfWhtoQkG9brZMuJY1ABOER95sm3dvccR6IEgSrYX4RgqiHD4Lq3JGrxyw==}
+    dependencies:
+      postcss: 7.0.35
+    dev: true
+
   /postcss-convert-values/5.0.1_postcss@8.3.0:
     resolution: {integrity: sha512-C3zR1Do2BkKkCgC0g3sF8TS0koF2G+mN8xxayZx3f10cIRmTaAnpgpRQZjNekTZxM2ciSPoh2IWJm0VZx8NoQg==}
     engines: {node: ^10 || ^12 || >=14.0}
@@ -1773,6 +1781,15 @@ packages:
     resolution: {integrity: sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==}
     dev: true
 
+  /postcss/7.0.35:
+    resolution: {integrity: sha512-3QT8bBJeX/S5zKTTjTCIjRF3If4avAT6kqxcASlTWEtAFCb9NH0OUxNDfgZSWdP5fJnBYCMEWkIFfWeugjzYMg==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      chalk: 2.4.2
+      source-map: 0.6.1
+      supports-color: 6.1.0
+    dev: true
+
   /postcss/8.3.0:
     resolution: {integrity: sha512-+ogXpdAjWGa+fdYY5BQ96V/6tAo+TdSSIMP5huJBIygdWwKtVoB5JWZ7yUd4xZ8r+8Kvvx4nyg/PQ071H4UtcQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -1787,18 +1804,18 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.3.0_prettier@2.2.1+svelte@3.38.2:
+  /prettier-plugin-svelte/2.3.0_prettier@2.3.0+svelte@3.38.2:
     resolution: {integrity: sha512-HTzXvSq7lWFuLsSaxYOUkGkVNCl3RrSjDCOgQjkBX5FQGmWjL8o3IFACSGhjPMMfWKADpapAr0zdbBWkND9mqw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
-      prettier: 2.2.1
+      prettier: 2.3.0
       svelte: 3.38.2
     dev: true
 
-  /prettier/2.2.1:
-    resolution: {integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==}
+  /prettier/2.3.0:
+    resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -2016,6 +2033,13 @@ packages:
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
+    dependencies:
+      has-flag: 3.0.0
+    dev: true
+
+  /supports-color/6.1.0:
+    resolution: {integrity: sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==}
+    engines: {node: '>=6'}
     dependencies:
       has-flag: 3.0.0
     dev: true

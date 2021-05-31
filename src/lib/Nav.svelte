@@ -76,7 +76,7 @@
 			</ul>
 		</nav>
 
-		<a href="/#contact" class="button button-outline">Get in Touch</a>
+		<a href="/#contact" class="button button--outline">Get in Touch</a>
 
 		<label
 			for="toggle"
