@@ -4,7 +4,6 @@
 @import 'chisel.css';
 
 :root {
-	--color-blue: #0b70ba;
 	--color-orange: #ffc331;
 	--color-black: #37322e;
 
@@ -36,11 +35,6 @@
 		& {
 			font-size: 18px;
 		}
-	}
-
-	/* dark theme via HTML dataset */
-	&[data-chisel-theme='dark'] {
-		--chisel-primary: var(--color-orange);
 	}
 }
 
@@ -77,12 +71,18 @@ svg {
 	max-height: 100%;
 }
 
-a {
-	color: var(--color-blue);
-}
-
 .button {
 	box-shadow: var(--shadow-md);
+	background-color: var(--chisel-neutral-900);
+	border-color: var(--chisel-neutral-900);
+	color: var(--chisel-neutral-50);
+
+	&:hover,
+	&:focus {
+		background-color: var(--chisel-neutral-50);
+		border-color: var(--chisel-neutral-50);
+		color: var(--chisel-neutral-900);
+	}
 
 	&.button--outline {
 		border-color: var(--chisel-neutral-900);
