@@ -63,6 +63,7 @@
 <style>
 	footer {
 		background: var(--chisel-neutral-50);
+		margin-top: 0;
 	}
 
 	a {
