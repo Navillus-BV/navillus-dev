@@ -49,7 +49,6 @@
 	onMount(() => {
 		menuOpen = false;
 	});
-
 </script>
 
 <svelte:window bind:innerWidth />
@@ -169,6 +168,7 @@
 
 		& :global(svg) {
 			margin-top: 0;
+			height: 100%;
 		}
 	}
 
@@ -215,5 +215,4 @@
 			gap: var(--spacer-xs);
 		}
 	}
-
 </style>
