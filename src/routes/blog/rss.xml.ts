@@ -20,8 +20,7 @@ function escapeHTML(html) {
 	return html.replace(/["'&<>]/g, (c) => `&${chars[c]};`);
 }
 
-const allPosts = sortedPosts
-	.filter((post) => !post.attributes.draft);
+const allPosts = sortedPosts.filter((post) => !post.attributes.draft);
 
 const rss = `
 <?xml version="1.0" encoding="UTF-8" ?>

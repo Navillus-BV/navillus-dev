@@ -22,18 +22,9 @@
 <style>
 	h1 {
 		margin-bottom: var(--spacer-xs);
-		font-size: var(--text-4xl);
 	}
 
 	.legal__last-updated {
 		margin-bottom: var(--spacer-md);
-	}
-
-	section :global(h2) {
-		font-size: var(--text-3xl);
-	}
-
-	section :global(h3) {
-		font-size: var(--text-2xl);
 	}
 </style>

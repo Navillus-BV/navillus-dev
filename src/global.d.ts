@@ -30,4 +30,4 @@ declare type Author = {
 declare type Link = {
 	title: string;
 	href: string;
-}
+};

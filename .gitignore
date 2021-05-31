@@ -3,6 +3,7 @@ node_modules
 /.svelte-kit
 /build
 /functions
+*.log
 
 # Local Netlify folder
 .netlify

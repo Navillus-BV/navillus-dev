@@ -19,3 +19,9 @@
 </main>
 
 <Footer />
+
+<style style lang="postcss">
+	main {
+		margin-top: 0;
+	}
+</style>

@@ -62,7 +62,7 @@
 	<div class="container top">
 		<a href="/" class="brand">
 			<span class="sr-only">Go to homepage</span>
-			<Brand class="fill-current" />
+			<Brand />
 		</a>
 
 		<nav>
@@ -75,7 +75,7 @@
 			</ul>
 		</nav>
 
-		<a href="/#contact" class="btn btn--hollow">Get in Touch</a>
+		<a href="/#contact" class="button button--outline">Get in Touch</a>
 
 		<label
 			for="toggle"
@@ -103,11 +103,13 @@
 			<ul>
 				{#each routes as { title, href } (title)}
 					<li>
-						<a {href} class="text-lg" aria-current={$page.path === '/'}>{title}</a>
+						<a {href} class="h5" aria-current={$page.path === '/'}>{title}</a>
 					</li>
 				{/each}
 				<li>
-					<a href="/#contact" aria-current={$page.path === '/#contact'} class="btn">Get in Touch</a>
+					<a href="/#contact" aria-current={$page.path === '/#contact'} class="button">
+						Get in Touch
+					</a>
 				</li>
 			</ul>
 		</nav>
@@ -117,14 +119,23 @@
 <div id="start-of-content" class="sr-only" bind:this={startOfContentElem} />
 
 <style style lang="postcss">
+	* + * {
+		margin-top: 0;
+	}
+
 	header {
 		position: relative;
 	}
 
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
 	a[href='#start-of-content'] {
 		top: 50%;
-		background: var(--color-text);
-		color: var(--color-secondary);
+		background: var(--chisel-neutral-900);
+		color: var(--chisel-neutral-50);
 		padding: var(--spacer-sm);
 		transform: translateY(-50%);
 	}
@@ -148,12 +159,17 @@
 	}
 
 	.top nav,
-	.top a.btn {
+	.top a.button {
 		display: none;
 	}
 
 	.brand {
 		height: 2rem;
+
+		& :global(svg) {
+			margin-top: 0;
+			height: 100%;
+		}
 	}
 
 	ul {
@@ -166,19 +182,19 @@
 		margin-top: var(--spacer-sm);
 	}
 
-	nav a:not(.btn) {
+	nav a:not(.button) {
 		line-height: 2;
 		padding: 0 var(--spacer-sm);
 	}
 
-	nav a.btn {
+	nav a.button {
 		margin-bottom: var(--spacer-md);
 	}
 
 	@media (min-width: 768px) {
 		.top nav,
-		.top a.btn {
-			display: inline-block;
+		.top a.button {
+			display: inline-flex;
 		}
 
 		label[for='toggle'] {

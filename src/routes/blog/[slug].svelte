@@ -16,7 +16,6 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
-
 </script>
 
 <script lang="ts">
@@ -26,7 +25,6 @@
 	import './prism-hopscotch.postcss';
 
 	export let post: MarkdownData<BlogPostData>;
-
 </script>
 
 <LDTag schema={blogPostSchema(post)} />
@@ -42,7 +40,7 @@
 					{post.attributes.author.last_name}
 				</strong>
 				•
-				<time class="text-sm" datetime={post.attributes.published_date}>
+				<time class="h6" datetime={post.attributes.published_date}>
 					{post.attributes.published_date}
 				</time>
 			</small>
@@ -63,27 +61,5 @@
 		& :global(h1, h2, h3, h4) {
 			margin: 1.5em 0 0.5em;
 		}
-
-		& :global(h1) {
-			font-size: clamp(var(--text-2xl), 8vw, var(--text-4xl));
-		}
-
-		& :global(h2) {
-			font-size: clamp(var(--text-xl), 6vw, var(--text-3xl));
-		}
-
-		& :global(h3) {
-			font-size: clamp(var(--text-lg), 5vw, var(--text-2xl));
-		}
-
-		& :global(h4) {
-			font-size: clamp(var(--text-base), 5vw, var(--text-xl));
-		}
-
-		& :global(a) {
-			color: var(--color-link);
-			text-decoration: underline;
-		}
 	}
-
 </style>
