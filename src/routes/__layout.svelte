@@ -5,7 +5,6 @@
 	import SEO from '$lib/seo/SEO.svelte';
 	import { organizationSchema, websiteSchema } from '$utils/json-ld';
 	import '../app.postcss';
-
 </script>
 
 <LDTag schema={organizationSchema} />
@@ -25,5 +24,4 @@
 	main {
 		margin-top: 0;
 	}
-
 </style>

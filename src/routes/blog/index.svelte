@@ -17,14 +17,12 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
-
 </script>
 
 <script lang="ts">
 	import Meta from '$lib/seo/Meta.svelte';
 
 	export let posts: BlogPostData[];
-
 </script>
 
 <svelte:head>
@@ -72,5 +70,4 @@
 			color: inherit;
 		}
 	}
-
 </style>

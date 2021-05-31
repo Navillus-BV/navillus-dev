@@ -69,5 +69,4 @@
 			align-self: flex-start;
 		}
 	}
-
 </style>
