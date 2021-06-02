@@ -18,10 +18,6 @@
 		{
 			title: 'Blog',
 			href: '/blog'
-		},
-		{
-			title: 'Contact',
-			href: '/#contact'
 		}
 	];
 
@@ -29,7 +25,8 @@
 	let menuOpen = true;
 	let enableMenuLeave = false;
 
-	$: if (innerWidth > 640) menuOpen = false;
+	$: if (innerWidth > 768) menuOpen = false;
+	$: console.log(innerWidth);
 
 	let startOfContentElem: HTMLElement;
 
@@ -49,6 +46,7 @@
 	onMount(() => {
 		menuOpen = false;
 	});
+
 </script>
 
 <svelte:window bind:innerWidth />
@@ -79,7 +77,7 @@
 
 		<label
 			for="toggle"
-			aria-label="Open Menu"
+			title="Open Menu"
 			class="hamburger hamburger--squeeze header__hamburger flex lg:hidden"
 			class:is-active={menuOpen}
 			use:enhance
@@ -127,7 +125,7 @@
 		position: relative;
 	}
 
-	a {
+	a:not(.button) {
 		color: inherit;
 		text-decoration: none;
 	}
@@ -215,4 +213,5 @@
 			gap: var(--spacer-xs);
 		}
 	}
+
 </style>
