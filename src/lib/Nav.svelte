@@ -26,7 +26,6 @@
 	let enableMenuLeave = false;
 
 	$: if (innerWidth > 768) menuOpen = false;
-	$: console.log(innerWidth);
 
 	let startOfContentElem: HTMLElement;
 
