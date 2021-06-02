@@ -88,7 +88,14 @@
 		</label>
 	</div>
 
-	<input type="checkbox" id="toggle" class="sr-only" use:enhance />
+	<input
+		type="checkbox"
+		id="toggle"
+		class="sr-only"
+		title="Open Menu"
+		use:enhance
+		bind:checked={menuOpen}
+	/>
 
 	{#if menuOpen}
 		<nav
