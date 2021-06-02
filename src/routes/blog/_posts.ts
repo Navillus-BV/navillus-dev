@@ -11,6 +11,7 @@ type BlogPostRaw = {
 	title: string;
 	description: string;
 	author: string;
+	modified_date?: string;
 };
 
 function toDateString(str: string) {
@@ -38,6 +39,7 @@ export const posts = Object.keys(found).reduce((acc, next) => {
 				...attributes,
 				author: authors[attributes.author],
 				published_date: toDateString(published_date),
+				modified_date: attributes.modified_date && toDateString(attributes.modified_date),
 				slug
 			}
 		};

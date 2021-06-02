@@ -16,6 +16,7 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
+
 </script>
 
 <script lang="ts">
@@ -25,6 +26,7 @@
 	import './prism-hopscotch.postcss';
 
 	export let post: MarkdownData<BlogPostData>;
+
 </script>
 
 <LDTag schema={blogPostSchema(post)} />
@@ -40,9 +42,15 @@
 					{post.attributes.author.last_name}
 				</strong>
 				•
-				<time class="h6" datetime={post.attributes.published_date}>
+				<time datetime={post.attributes.published_date}>
 					{post.attributes.published_date}
 				</time>
+				{#if post.attributes.modified_date}
+					<br />
+					<time datetime={post.attributes.modified_date}>
+						<em>Updated: {post.attributes.modified_date}</em>
+					</time>
+				{/if}
 			</small>
 
 			<h1>{post.attributes.title}</h1>
@@ -62,4 +70,5 @@
 			margin: 1.5em 0 0.5em;
 		}
 	}
+
 </style>

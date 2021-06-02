@@ -2,6 +2,7 @@
 title: Progressively enhancing Svelte with JavaScript
 description: That's right! Your site built with a JS framework with client-side code can still support users with JS disabled.
 author: tony-sull
+modified_date: 2021-06-02
 ---
 
 We've all heard about "mobile first" designs, but what about JavaScript last? It'll need a catchier name to really stick, but many of us ignore how important it is that basic site functionality works even if JavaScript is disabled or has failed. Browsing the web with JavaScript disabled can be a real pain but it happens more then you'd expect.
@@ -101,7 +102,7 @@ What's going on there exactly? Instead of a `<button>` there's a `<label>` tied 
     <label for="toggle">&#9776;</label>
   </div>
 
-  <input id="toggle" type="checkbox" class="sr-only" class:js={mounted} />
+  <input id="toggle" type="checkbox" class="sr-only" class:js={mounted} bind:checked={menuOpen} />
 
   {#if menuOpen}
   <nav>
@@ -130,6 +131,8 @@ First, `menuOpen` is set to true initially and reset to false in Svelte's [onMou
 We also added in a second boolean flag for `mounted`, and with `class:js={mounted}` we're telling Svelte to add the `js` class to our checkbox once the component's scripts have mounted.
 
 Finally, the CSS has been updated to change the menu's display only as long as the checkbox doesn't have the `js` class. That's the real magic, let CSS handle the show/hide functionality _until_ JavaScript has mounted and Svelte's `slide` transition is ready to animate the menu.
+
+> Oops! It's very easy to inadvertantly create accessibility bugs. When manually testing I realized the hidden checkbox wasn't binding to our `menuOpen` state in svelte. The code block above was updated June 2, 2021 to include `bind:checked={menuOpen}` to make sure keyboard users can toggle the menu after Svelte hydrates.
 
 ## Bonus points
 
