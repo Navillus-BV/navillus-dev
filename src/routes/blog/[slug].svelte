@@ -69,6 +69,10 @@
 		& :global(h1, h2, h3, h4) {
 			margin: 1.5em 0 0.5em;
 		}
+
+		& :global(pre + p) {
+			margin-top: var(--spacer-sm);
+		}
 	}
 
 </style>
