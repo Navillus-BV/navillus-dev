@@ -21,7 +21,7 @@
 
 <script lang="ts">
 	import LDTag from '$lib/seo/LDTag.svelte';
-	import Meta from '$lib/seo/Meta.svelte';
+	import SEO from '$lib/seo/SEO.svelte';
 	import { blogPostSchema } from '$utils/json-ld';
 	import './prism-hopscotch.postcss';
 
@@ -30,7 +30,7 @@
 </script>
 
 <LDTag schema={blogPostSchema(post)} />
-<Meta title={post.attributes.title} description={post.attributes.description} />
+<SEO title={post.attributes.title} description={post.attributes.description} />
 
 <section class="alt">
 	<article class="container">

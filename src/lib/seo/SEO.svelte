@@ -3,15 +3,17 @@
 	import site from '$data/site.json';
 	import Meta from './Meta.svelte';
 
-	const title = 'Jamstack Developers for Hire';
-	const description =
+	export let title = 'Jamstack Developers for Hire';
+	export let description =
 		"We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.";
+	export let image = '/share.png';
 
 	$: url = `${site.url}${$page.path}`;
+
 </script>
 
 <svelte:head>
-	<Meta {title} {description} />
+	<Meta {title} {description} {image} />
 
 	<meta
 		name="keywords"

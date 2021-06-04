@@ -17,19 +17,21 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
+
 </script>
 
 <script lang="ts">
-	import Meta from '$lib/seo/Meta.svelte';
+	import SEO from '$lib/seo/SEO.svelte';
 
 	export let posts: BlogPostData[];
+
 </script>
 
 <svelte:head>
 	<link rel="alternate" type="application/rss+xml" title="Navillus blog" href="/blog/rss.xml" />
 </svelte:head>
 
-<Meta title="Blog" />
+<SEO title="Blog" />
 
 <section>
 	<div class="container">
@@ -70,4 +72,5 @@
 			color: inherit;
 		}
 	}
+
 </style>

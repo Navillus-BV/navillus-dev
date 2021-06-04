@@ -1,13 +1,14 @@
 <script lang="ts">
-	import Meta from '$lib/seo/Meta.svelte';
+	import SEO from '$lib/seo/SEO.svelte';
 	import { attributes, html } from '$data/pages/privacy.md';
 
 	const title = attributes.title as string;
 	const last_updated = attributes.last_updated as string;
 	const lastUpdated = last_updated && new Date(last_updated).toDateString();
+
 </script>
 
-<Meta {title} />
+<SEO {title} />
 
 <section class="alt">
 	<div class="container">
@@ -27,4 +28,5 @@
 	.legal__last-updated {
 		margin-bottom: var(--spacer-md);
 	}
+
 </style>

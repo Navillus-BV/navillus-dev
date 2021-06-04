@@ -1,13 +1,14 @@
 <script lang="ts">
-	import Meta from '$lib/seo/Meta.svelte';
+	import SEO from '$lib/seo/SEO.svelte';
 	import { attributes, html } from '$data/pages/terms.md';
 
 	const title = attributes.title as string;
 	const last_updated = attributes.last_updated as string;
 	const lastUpdated = last_updated && new Date(last_updated).toDateString();
+
 </script>
 
-<Meta {title} />
+<SEO {title} />
 
 <section class="alt">
 	<div class="container">
@@ -33,4 +34,5 @@
 		margin: var(--spacer-xs) 0;
 		line-height: 1.5;
 	}
+
 </style>
