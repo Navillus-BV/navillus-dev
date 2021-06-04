@@ -22,8 +22,9 @@
 	];
 
 	let innerWidth: number;
-	let menuOpen = true;
+	let menuOpen = false;
 	let enableMenuLeave = false;
+	let mounted = false;
 
 	$: if (innerWidth > 768) menuOpen = false;
 
@@ -43,7 +44,7 @@
 	};
 
 	onMount(() => {
-		menuOpen = false;
+		mounted = true;
 	});
 
 </script>
@@ -80,7 +81,6 @@
 			class="hamburger hamburger--squeeze header__hamburger flex lg:hidden"
 			class:is-active={menuOpen}
 			use:enhance
-			on:click={() => (menuOpen = !menuOpen)}
 		>
 			<span class="hamburger-box">
 				<span class="hamburger-inner" />
@@ -97,7 +97,7 @@
 		bind:checked={menuOpen}
 	/>
 
-	{#if menuOpen}
+	{#if !mounted || menuOpen}
 		<nav
 			class="container"
 			in:slide={{ duration: 300, easing: cubicOut }}
