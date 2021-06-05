@@ -57,6 +57,7 @@
 				{/each}
 				<p>{post.description}</p>
 				<time class="h6" datetime={post.published_date}>{post.published_date}</time>
+				<small>• {post.minutes} min read</small>
 			</article>
 		{/each}
 	</div>

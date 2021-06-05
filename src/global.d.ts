@@ -19,6 +19,7 @@ declare type BlogPostData = {
 	slug: string;
 	author: Author;
 	tags: string[];
+	minutes: number;
 	image?: string;
 	draft?: boolean;
 };

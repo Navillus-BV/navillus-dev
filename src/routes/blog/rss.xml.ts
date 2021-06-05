@@ -48,6 +48,7 @@ const rss = `
 			<link>https://navillus.dev/blog/${post.attributes.slug}</link>
 			<description>${escapeHTML(post.attributes.description)}</description>
 			<pubDate>${formatPubdate(post.attributes.published_date)}</pubDate>
+			<guid>https://navillus.dev/blog/${post.attributes.slug}</guid>
 			${formatTags(post.attributes.tags)}
 		</item>
 	`

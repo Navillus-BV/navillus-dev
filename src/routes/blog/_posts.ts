@@ -1,3 +1,4 @@
+import { calculateReadingTime } from 'markdown-reading-time';
 import { authors } from './_authors';
 
 const found = import.meta.globEager('../../data/pages/blog/*.md') as Record<
@@ -33,17 +34,19 @@ export const posts = Object.keys(found).reduce((acc, next) => {
 	if (match) {
 		const [, published_date, slug] = match;
 
-		const { attributes, ...rest } = found[next];
+		const { attributes, html, ...rest } = found[next];
 
 		acc[slug] = {
 			...rest,
+			html,
 			attributes: {
 				...attributes,
 				author: authors[attributes.author],
 				published_date: toDateString(published_date),
 				modified_date: attributes.modified_date && toDateString(attributes.modified_date),
 				slug,
-				tags: attributes.tags || []
+				tags: attributes.tags || [],
+				minutes: calculateReadingTime(html).minutes,
 			}
 		};
 	}

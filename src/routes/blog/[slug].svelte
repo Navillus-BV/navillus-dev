@@ -51,7 +51,10 @@
 				<time datetime={post.attributes.published_date}>
 					{post.attributes.published_date}
 				</time>
+				•
+				<span>{post.attributes.minutes} min read</span>
 				{#if post.attributes.tags.length}
+					<br />
 					{#each post.attributes.tags as tag (tag)}
 						<code>{tag}</code>
 					{/each}
