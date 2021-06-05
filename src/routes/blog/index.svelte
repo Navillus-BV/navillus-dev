@@ -17,12 +17,14 @@
 			error: new Error(`Could not load ${url}`)
 		};
 	}
+
 </script>
 
 <script lang="ts">
 	import SEO from '$lib/seo/SEO.svelte';
 
 	export let posts: BlogPostData[];
+
 </script>
 
 <svelte:head>
@@ -48,14 +50,17 @@
 				<a href="/blog/{post.slug}">
 					<h3 class="underline" class:mt-0={i === 0}>{post.title}</h3>
 				</a>
+
+				<time class="h6" datetime={post.published_date}>{post.published_date}</time>
+				<small>• {post.minutes} min read</small>
+
+				<p>{post.description}</p>
+
 				{#each post.tags as tag (tag)}
 					<small>
 						<code>{tag}</code>
 					</small>
 				{/each}
-				<p>{post.description}</p>
-				<time class="h6" datetime={post.published_date}>{post.published_date}</time>
-				<small>• {post.minutes} min read</small>
 			</article>
 		{/each}
 	</div>
@@ -80,4 +85,5 @@
 			color: inherit;
 		}
 	}
+
 </style>
