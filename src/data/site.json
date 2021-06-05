@@ -9,5 +9,11 @@
 	},
 	"company": {
 		"name": "Navillus"
+	},
+	"analytics": {
+		"fathom": {
+			"id": "EMONWVXH",
+			"domain": "navillus.dev"
+		}
 	}
 }
