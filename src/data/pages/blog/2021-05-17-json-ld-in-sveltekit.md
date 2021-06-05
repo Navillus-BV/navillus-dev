@@ -3,6 +3,7 @@ title: Including json+ld structured data in Svelte
 description: Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!
 author: tony-sull
 image: /posts/2021-05-17-json-ld-in-sveltekit.jpg
+modified_date: 2021-06-05
 tags:
   - svelte
   - seo
@@ -50,7 +51,7 @@ This is where JSON+LD really stands out compared to other structured data format
 </script>
 ```
 
-Yep, that's really all there is to it. Wrap the JSON object in a `script` tag, mark it as a type of `application/ld+json` and you're all set. There's way more to the different kinds of schemas you may want to include - check out the [JSON-LD docs](https://json-ld.org/learn.html) for a much better walkthrough of all the details than I would ever fit into a single blog post.
+Yep, that's really all there is to it. Wrap the JSON object in a `script` tag, mark it as a type of `application/ld+json` and you're all set. There's way more to the different kinds of schemas you may want to include - check out the [JSON-LD docs](https://json-ld.org/learn.html) for a much better walk through of all the details than I would ever fit into a single blog post.
 
 ## JSON+LD in Svelte
 
@@ -90,7 +91,7 @@ export function serializeSchema(thing: Schema) {
 }
 ```
 
-`schema-dts` defines types for all of the different schema objects, see below for a more detailed example with an `Organization` obejct. This is a huge win, it's easy to accidentally structure the JSON wrong or have a typo in one of the property names. Setting it up to use TypeScript definitions we can make sure that our JSON objects are validated at build.
+`schema-dts` defines types for all of the different schema objects, see below for a more detailed example with an `Organization` object. This is a huge win, it's easy to accidentally structure the JSON wrong or have a typo in one of the property names. Setting it up to use TypeScript definitions we can make sure that our JSON objects are validated at build.
 
 ### Defining our Schema.org objects
 
@@ -111,7 +112,7 @@ export const organizationSchema: WithContext<Organization> = {
 };
 ```
 
-Data specific to our site is pulled in from a local JSON file. This could be data exposed through a Git-based CMS like [Forestry](https://forestry.io) or pulled down from a headless CMS like [Sanity](https://sanity.io). The important thing here is that our `Organziation` object is defined in TypeScript, verified at build-time, and can be unit tested if you want to make sure the `site.json` data is hooked up properly.
+Data specific to our site is pulled in from a local JSON file. This could be data exposed through a Git-based CMS like [Forestry](https://forestry.io) or pulled down from a headless CMS like [Sanity](https://sanity.io). The important thing here is that our `Organization` object is defined in TypeScript, verified at build-time, and can be unit tested if you want to make sure the `site.json` data is hooked up properly.
 
 What is `WithContext` doing? That's a clever setup from `schema-dts`, the top-level JSON+LD object should have a `@context` property. You can nest objects though, and they even have support for using an [object graph](https://json-ld.org/spec/latest/json-ld/#dfn-graph-objects) format for multiple objects. Any nested objects, or every object in the graph, doesn't need `@context`. `WithContext` is a TypeScript wrapper for another type, in the example above I could have removed `@context` from the object and it would be a valid `Organization` type.
 

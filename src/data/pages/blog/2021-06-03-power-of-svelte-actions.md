@@ -3,6 +3,7 @@ title: The power of Svelte actions
 description: When you should `use:` actions in Svelte.
 author: tony-sull
 image: /posts/2021-06-03-power-of-svelte-actions.jpg
+modified_date: 2021-06-05
 tags:
   - svelte
 ---
@@ -17,7 +18,7 @@ Let's take a look at a really common use for this - listening for clicks/taps ou
 
 ## Svelte actions
 
-Svelte's official tutorial has an excellent walkthrough of [what actions are](https://svelte.dev/tutorial/actions), but basically you can think of actions as lifecycle hooks for DOM elements themselves. An action works much like `onMount` or `onDestroy`, but actions are tied to DOM elements themselves rather than entire Svelte components.
+Svelte's official tutorial has an excellent walk through of [what actions are](https://svelte.dev/tutorial/actions), but basically you can think of actions as lifecycle hooks for DOM elements themselves. An action works much like `onMount` or `onDestroy`, but actions are tied to DOM elements themselves rather than entire Svelte components.
 
 ### Why bother with actions?
 

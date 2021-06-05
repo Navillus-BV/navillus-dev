@@ -3,7 +3,7 @@ title: Progressively enhancing Svelte with JavaScript
 description: That's right! Your site built with a JS framework with client-side code can still support users with JS disabled.
 author: tony-sull
 image: /posts/2021-05-08-progressive-enhancement.jpg
-modified_date: 2021-06-02
+modified_date: 2021-06-05
 tags:
   - svelte
   - accessibility
@@ -136,7 +136,7 @@ We also added in a second boolean flag for `mounted`, and with `class:js={mounte
 
 Finally, the CSS has been updated to change the menu's display only as long as the checkbox doesn't have the `js` class. That's the real magic, let CSS handle the show/hide functionality _until_ JavaScript has mounted and Svelte's `slide` transition is ready to animate the menu.
 
-> Oops! It's very easy to inadvertantly create accessibility bugs. When manually testing I realized the hidden checkbox wasn't binding to our `menuOpen` state in svelte. The code block above was updated June 2, 2021 to include `bind:checked={menuOpen}` to make sure keyboard users can toggle the menu after Svelte hydrates.
+> Oops! It's very easy to inadvertently create accessibility bugs. When manually testing I realized the hidden checkbox wasn't binding to our `menuOpen` state in svelte. The code block above was updated June 2, 2021 to include `bind:checked={menuOpen}` to make sure keyboard users can toggle the menu after Svelte hydrates.
 
 ## Bonus points
 

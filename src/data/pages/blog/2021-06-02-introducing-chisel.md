@@ -3,6 +3,7 @@ title: Introducing chisel.css
 description: A (work-in-progress) minimalist CSS framework.
 author: tony-sull
 image: /posts/2021-06-02-introducing-chisel.jpg
+modified_date: 2021-06-05
 tags:
   - intro
   - css
@@ -42,7 +43,7 @@ or from a CDN
 
 Minified and compressed the entire bundle is ~3.2KB, with full support for dark mode and basic app theming.
 
-## Eating our own dogfood
+## Eating our own dog food
 
 We recently updated [navillus.dev](https://navillus.dev) to use `chisel` as a basis for styling, you can see the complete [pull request](https://github.com/Navillus-BV/navillus-dev/pull/11/files?file-filters%5B%5D=.postcss&file-filters%5B%5D=.svelte) on GitHub. I'm always a fan of seeing a pull request full of red, gotta love code cleanup!
 
@@ -58,7 +59,7 @@ So what went wrong? If you take a look at v0.4.0, we added custom CSS properties
 
 ### There in lies the problem.
 
-At least on some browers, CSS variable scope isn't always what you'd expect.
+At least on some browsers, CSS variable scope isn't always what you'd expect.
 
 ```css
 [data-chisel-theme='dark'] {

@@ -3,6 +3,7 @@ title: 'Web Accessibility: Hidden links make all the difference'
 description: For visitors that use a keyboard or screen reader to navigate websites, hidden quick links can make a site much more enjoyable.
 author: tony-sull
 image: /posts/2021-05-10-accessibility-skip-to-content.jpg
+modified_date: 2021-06-05
 tags:
   - accessibility
 ---
@@ -49,7 +50,7 @@ Actually implementing this hidden button can be a bit confusing at first, Let's 
 
 Nothing to crazy here. You're exact implementation might look different, but the key is adding a new anchor tag at the top of the page and a new `div` immediately after the header.
 
-The `<a>` doesn't necessarily have to be the first child of the page's `body`, but it's imporant that it is the first focusable element in the DOM.
+The `<a>` doesn't necessarily have to be the first child of the page's `body`, but it's important that it is the first focusable element in the DOM.
 
 ### Add a little CSS
 

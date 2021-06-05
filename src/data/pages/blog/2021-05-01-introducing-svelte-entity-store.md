@@ -3,6 +3,7 @@ title: Introducing svelte-entity-store
 description: A (work-in-progress) generic entity store for Svelte projects.
 author: tony-sull
 image: /posts/2021-05-01-introducing-svelte-entity-store.jpg
+modified_date: 2021-06-05
 tags:
   - svelte
   - intro
@@ -16,7 +17,7 @@ Check out the [repo](https://github.com/tony-sull/svelte-entity-store/) for deta
 
 This is ultimately just a [custom store](https://svelte.dev/examples#custom-stores) built on top of [svelte/store](https://svelte.dev/docs#svelte_store). Like the rest of Svelte, the built in stores are excellent building blocks that aim to give you all the tools you need without trying to solve every single scenario out of the box.
 
-The goal with `svelte-entity-store` is to provide a simple, generic solution for storing collections of entity objects. Throwing an array of items into a basic `writeble` store doesn't scale well if you have a lot of items and need to quickly find or update one item in the store.
+The goal with `svelte-entity-store` is to provide a simple, generic solution for storing collections of entity objects. Throwing an array of items into a basic `writable` store doesn't scale well if you have a lot of items and need to quickly find or update one item in the store.
 
 ## Install
 
@@ -149,7 +150,7 @@ Because the store is returning [derived stores](https://svelte.dev/docs#derived)
 
 ### Updating the store
 
-Much like `get()`, `set()` havs a few different overrides. Calling `set` will blow away any old entity state, if you need to keep some of the old entitie's state check out `update()` instead (below).
+Much like `get()`, `set()` has a few different overrides. Calling `set` will blow away any old entity state, if you need to keep some of the old entities' state check out `update()` instead (below).
 
 ```ts
 // Replace the existing entity with ID 123, or add it if the ID doesn't exist yet
