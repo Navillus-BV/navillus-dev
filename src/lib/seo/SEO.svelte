@@ -9,7 +9,6 @@
 
 	$: url = `${site.url}${$page.path}`;
 	$: imageAbsolute = `${site.url}${image}`;
-
 </script>
 
 <svelte:head>

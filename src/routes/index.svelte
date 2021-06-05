@@ -120,7 +120,6 @@
 			title: 'Vercel'
 		}
 	];
-
 </script>
 
 <SEO />

@@ -6,7 +6,6 @@
 	import LDTag from '$lib/seo/LDTag.svelte';
 	import { organizationSchema, websiteSchema } from '$utils/json-ld';
 	import '../app.postcss';
-
 </script>
 
 {#if !dev}
@@ -28,5 +27,4 @@
 	main {
 		margin-top: 0;
 	}
-
 </style>

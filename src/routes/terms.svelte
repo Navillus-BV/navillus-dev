@@ -5,7 +5,6 @@
 	const title = attributes.title as string;
 	const last_updated = attributes.last_updated as string;
 	const lastUpdated = last_updated && new Date(last_updated).toDateString();
-
 </script>
 
 <SEO {title} />
@@ -34,5 +33,4 @@
 		margin: var(--spacer-xs) 0;
 		line-height: 1.5;
 	}
-
 </style>

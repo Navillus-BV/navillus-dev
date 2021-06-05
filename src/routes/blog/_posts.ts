@@ -46,7 +46,7 @@ export const posts = Object.keys(found).reduce((acc, next) => {
 				modified_date: attributes.modified_date && toDateString(attributes.modified_date),
 				slug,
 				tags: attributes.tags || [],
-				minutes: calculateReadingTime(html).minutes,
+				minutes: calculateReadingTime(html).minutes
 			}
 		};
 	}

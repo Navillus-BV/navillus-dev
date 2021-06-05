@@ -46,7 +46,6 @@
 	onMount(() => {
 		mounted = true;
 	});
-
 </script>
 
 <svelte:window bind:innerWidth />
@@ -219,5 +218,4 @@
 			gap: var(--spacer-xs);
 		}
 	}
-
 </style>

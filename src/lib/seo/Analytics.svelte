@@ -2,7 +2,6 @@
 	import site from '$data/site.json';
 
 	const { id, domain } = site.analytics.fathom;
-
 </script>
 
 <svelte:head>

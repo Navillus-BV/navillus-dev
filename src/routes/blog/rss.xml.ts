@@ -21,9 +21,7 @@ function escapeHTML(html) {
 }
 
 function formatTags(tags: string[] = []) {
-	return tags.map(tag => (
-		`<category>${tag}</category>`
-	)).join('')
+	return tags.map((tag) => `<category>${tag}</category>`).join('');
 }
 
 const allPosts = sortedPosts.filter((post) => !post.attributes.draft);
