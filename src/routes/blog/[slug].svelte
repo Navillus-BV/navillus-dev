@@ -42,8 +42,10 @@
 			<small>
 				By
 				<strong>
-					{post.attributes.author.first_name}
-					{post.attributes.author.last_name}
+					<a href={post.attributes.author.url}>
+						{post.attributes.author.first_name}
+						{post.attributes.author.last_name}
+					</a>
 				</strong>
 				•
 				<time datetime={post.attributes.published_date}>

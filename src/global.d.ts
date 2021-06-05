@@ -26,6 +26,7 @@ declare type BlogPostData = {
 declare type Author = {
 	first_name: string;
 	last_name: string;
+	url: string;
 	slug: string;
 };
 
