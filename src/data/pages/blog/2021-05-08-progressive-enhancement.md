@@ -4,6 +4,9 @@ description: That's right! Your site built with a JS framework with client-side 
 author: tony-sull
 image: /posts/2021-05-08-progressive-enhancement.jpg
 modified_date: 2021-06-02
+tags:
+  - svelte
+  - accessibility
 ---
 
 We've all heard about "mobile first" designs, but what about JavaScript last? It'll need a catchier name to really stick, but many of us ignore how important it is that basic site functionality works even if JavaScript is disabled or has failed. Browsing the web with JavaScript disabled can be a real pain but it happens more then you'd expect.

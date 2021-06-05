@@ -49,6 +49,11 @@
 				<time datetime={post.attributes.published_date}>
 					{post.attributes.published_date}
 				</time>
+				{#if post.attributes.tags.length}
+					{#each post.attributes.tags as tag (tag)}
+						<code>{tag}</code>
+					{/each}
+				{/if}
 				{#if post.attributes.modified_date}
 					<br />
 					<time datetime={post.attributes.modified_date}>

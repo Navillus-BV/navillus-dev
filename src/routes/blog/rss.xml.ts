@@ -20,6 +20,12 @@ function escapeHTML(html) {
 	return html.replace(/["'&<>]/g, (c) => `&${chars[c]};`);
 }
 
+function formatTags(tags: string[] = []) {
+	return tags.map(tag => (
+		`<category>${tag}</category>`
+	)).join('')
+}
+
 const allPosts = sortedPosts.filter((post) => !post.attributes.draft);
 
 const rss = `
@@ -42,6 +48,7 @@ const rss = `
 			<link>https://navillus.dev/blog/${post.attributes.slug}</link>
 			<description>${escapeHTML(post.attributes.description)}</description>
 			<pubDate>${formatPubdate(post.attributes.published_date)}</pubDate>
+			${formatTags(post.attributes.tags)}
 		</item>
 	`
 		)

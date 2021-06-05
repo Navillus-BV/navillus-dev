@@ -50,6 +50,11 @@
 				<a href="/blog/{post.slug}">
 					<h3 class="underline" class:mt-0={i === 0}>{post.title}</h3>
 				</a>
+				{#each post.tags as tag (tag)}
+					<small>
+						<code>{tag}</code>
+					</small>
+				{/each}
 				<p>{post.description}</p>
 				<time class="h6" datetime={post.published_date}>{post.published_date}</time>
 			</article>
@@ -66,6 +71,10 @@
 		& h3,
 		& p {
 			margin-bottom: var(--spacer-tiny);
+		}
+
+		& small + p {
+			margin-top: var(--spacer-sm);
 		}
 
 		& a {
