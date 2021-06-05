@@ -2,6 +2,7 @@
 title: Introducing svelte-entity-store
 description: A (work-in-progress) generic entity store for Svelte projects.
 author: tony-sull
+image: /posts/2021-05-01-introducing-svelte-entity-store.jpg
 ---
 
 A (**w**ork-**i**n-**p**rogress) generic entity store for Svelte projects.

@@ -18,6 +18,7 @@ declare type BlogPostData = {
 	modified_date?: string;
 	slug: string;
 	author: Author;
+	image?: string;
 	draft?: boolean;
 };
 

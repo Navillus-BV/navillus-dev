@@ -2,6 +2,7 @@
 title: The power of Svelte actions
 description: When you should `use:` actions in Svelte.
 author: tony-sull
+image: /posts/2021-06-03-power-of-svelte-actions.jpg
 ---
 
 Svelte does an excellent job of blurring the lines between frontend frameworks and plain old HTML/JS. Leaning on Svelte's [reactivity model](https://svelte.dev/docs#2_Assignments_are_reactive), [property binding](https://svelte.dev/docs#bind_element_property), and [event directives](https://svelte.dev/docs#on_element_event) will get you 99% of the way to a finished app, but every once in a while you just really need to work directly with the `HTMLElement`.

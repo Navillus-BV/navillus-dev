@@ -11,6 +11,7 @@ type BlogPostRaw = {
 	title: string;
 	description: string;
 	author: string;
+	image?: string;
 	modified_date?: string;
 };
 

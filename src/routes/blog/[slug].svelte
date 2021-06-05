@@ -30,7 +30,11 @@
 </script>
 
 <LDTag schema={blogPostSchema(post)} />
-<SEO title={post.attributes.title} description={post.attributes.description} />
+<SEO
+	title={post.attributes.title}
+	description={post.attributes.description}
+	image={post.attributes.image}
+/>
 
 <section class="alt">
 	<article class="container">
