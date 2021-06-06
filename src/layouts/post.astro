@@ -19,7 +19,7 @@ const minutes = readMinutes(content);
     {blogPostSchema(content)}
 </head>
 
-<Layout title={content.title} description={content.description} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
+<Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
     <Section alt>
         <header>
             <h1>{content.title}</h1>
