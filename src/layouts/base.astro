@@ -18,7 +18,6 @@ export let canonicalURL: string;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title}</title>
 
 		<link rel="icon" href="/favicon.svg" />
 		<link rel="”mask-icon”" href="/favicon-mask.svg" color="#37322E" />
@@ -32,37 +31,6 @@ export let canonicalURL: string;
 		<meta name="apple-mobile-web-app-title" content="Navillus" />
 
 		<link rel="stylesheet" href="/styles/global.css" />
-
-		<meta property="og:title" content={title} />
-		<meta property="twitter:title" content={title} />
-		<meta property="og:site_name" content={title} />
-
-		<meta name="description" content={description} />
-		<meta property="og:description" content={description} />
-		<meta name="twitter:description" content={description} />
-
-		<meta property="og:image" content={image} />
-		<meta name="twitter:image" content={image} />
-
-		<link rel="canonical" href={canonicalURL} />
-
-		<meta
-			name="keywords"
-			content="web development, consulting, jamstack, serverless, static site, netlify, svelte, software, engineering, software engineering, api development"
-		/>
-
-		<meta name="robots" content="index,follow" />
-		<meta name="author" content={site.author} />
-
-		<link rel="canonical" href={canonicalURL} />
-		<meta property="og:url" content={canonicalURL} />
-		<meta name="twitter:url" content={canonicalURL} />
-
-		<meta property="og:type" content="website" />
-
-		<meta name="twitter:card" content={site.social.twitter_card} />
-		<meta name="twitter:site" content={site.social.twitter} />
-		<meta name="twitter:creator" content={site.social.twitter} />
 	</head>
 
 	<body>
