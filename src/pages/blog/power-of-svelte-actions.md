@@ -3,7 +3,7 @@ layout: "../../layouts/post.astro"
 title: The power of Svelte actions
 description: When you should `use:` actions in Svelte.
 author: tony-sull
-image: /posts/2021-06-03-power-of-svelte-actions.jpg
+image: posts/2021-06-03-power-of-svelte-actions.jpg
 published_date: 2021-06-03
 modified_date: 2021-06-05
 tags:

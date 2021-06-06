@@ -3,7 +3,7 @@ layout: "../../layouts/post.astro"
 title: Introducing svelte-entity-store
 description: A (work-in-progress) generic entity store for Svelte projects.
 author: tony-sull
-image: /posts/2021-05-01-introducing-svelte-entity-store.jpg
+image: posts/2021-05-01-introducing-svelte-entity-store.jpg
 published_date: 2021-05-01
 modified_date: 2021-06-05
 tags:

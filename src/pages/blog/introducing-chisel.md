@@ -3,7 +3,7 @@ layout: "../../layouts/post.astro"
 title: Introducing chisel.css
 description: A (work-in-progress) minimalist CSS framework.
 author: tony-sull
-image: /posts/2021-06-02-introducing-chisel.jpg
+image: posts/2021-06-02-introducing-chisel.jpg
 published_date: 2021-06-02
 modified_date: 2021-06-05
 tags:

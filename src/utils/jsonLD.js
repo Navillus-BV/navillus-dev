@@ -46,5 +46,10 @@ export function blogPostSchema(post) {
       ...publisher,
     },
     dateModified: post.modified_date && formatDate(post.modified_date),
+    image: `${site.url}${post.image}`,
+    author: {
+      "@type": "Person",
+      name: "Tony Sullivan",
+    },
   });
 }

@@ -1,366 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "url": "/blog/json-ld-in-sveltekit",
-        "datePublished": "Mon May 17 2021",
-        "headline": "Including json+ld structured data in Svelte",
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://navillus.dev/#organization",
-          "url": "https://navillus.dev/",
-          "name": "Navillus",
-          "description": "We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.",
-          "sameAs": ["https://twitter.com/navillus_dev"],
-          "logo": "https://navillus.dev/favicon.svg"
-        },
-        "dateModified": "Sat Jun 05 2021"
-      }
-    </script>
-    <link rel="stylesheet" type="text/css" href="/_astro/common-Z1tFJFc.css" />
+<html lang="en"><head><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "url": "/blog/json-ld-in-sveltekit",
+  "datePublished": "Mon May 17 2021",
+  "headline": "Including json+ld structured data in Svelte",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://navillus.dev/#organization",
+    "url": "https://navillus.dev/",
+    "name": "Navillus",
+    "description": "We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.",
+    "sameAs": [
+      "https://twitter.com/navillus_dev"
+    ],
+    "logo": "https://navillus.dev/favicon.svg"
+  },
+  "dateModified": "Sat Jun 05 2021",
+  "image": "https://navillus.dev/posts/2021-05-17-json-ld-in-sveltekit.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Tony Sullivan"
+  }
+}</script>
+<link rel="stylesheet" type="text/css" href="/_astro/common-Z1tFJFc.css">
 
-    <title>Including json+ld structured data in Svelte • Navillus</title>
-    <meta
-      name="description"
-      content="Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!"
-    />
-    <meta
-      name="keywords"
-      content="web development, consulting, jamstack, serverless, static site, netlify, svelte, software, engineering, software engineering, api development"
-    />
-    <meta name="robots" content="index,follow" />
-    <meta name="author" content="Navillus" />
-    <link
-      rel="canonical"
-      href="https://navillus.dev/blog/json-ld-in-sveltekit/"
-    />
-    <meta
-      property="og:title"
-      content="Including json+ld structured data in Svelte"
-    />
-    <meta
-      property="og:site_name"
-      content="Including json+ld structured data in Svelte"
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!"
-    />
-    <meta property="og:image" content="https://navillus.dev/assets/share.png" />
-    <meta
-      property="og:url"
-      content="https://navillus.dev/blog/json-ld-in-sveltekit/"
-    />
-    <meta
-      name="twitter:title"
-      content="Including json+ld structured data in Svelte"
-    />
-    <meta
-      name="twitter:description"
-      content="Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://navillus.dev/assets/share.png"
-    />
-    <meta
-      name="twitter:url"
-      content="https://navillus.dev/blog/json-ld-in-sveltekit/"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="navillus_dev" />
-    <meta name="twitter:creator" content="navillus_dev" />
-    <link rel="sitemap" href="/sitemap.xml" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.svg" />
-    <link rel="”mask-icon”" href="/favicon-mask.svg" color="#37322E" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#ffc331" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="Navillus" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Navillus" />
-    <style type="text/css">
-      astro-root,
-      astro-fragment {
-        display: contents;
-      }
-    </style></head
-  ><!--!DOCTYPE-->
-  <body>
-    <astro-root uid="1RVRB4">
-      <header class="svelte-1mpqdiv">
-        <a
-          href="#start-of-content"
-          class="sr-only sr-only-focusable svelte-1mpqdiv"
-          >Skip to content</a
-        >
-        <div class="container top svelte-1mpqdiv">
-          <a href="/" class="brand svelte-1mpqdiv"
-            ><span class="sr-only svelte-1mpqdiv">Go to homepage</span>
-            <svg
-              viewBox="0 0 512 128"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="svelte-1mpqdiv"
-            >
-              <title class="svelte-1mpqdiv">Navillus</title>
-              <circle
-                cx="64"
-                cy="64"
-                r="64"
-                fill="var(--chisel-neutral-900)"
-                class="svelte-1mpqdiv"
-              ></circle>
-              <rect
-                x="44.1567"
-                y="38.5"
-                width="64"
-                height="8"
-                transform="rotate(45 44.1567 38.5)"
-                fill="var(--chisel-primary)"
-                class="svelte-1mpqdiv"
-              ></rect>
-              <rect
-                x="38.5"
-                y="83.7548"
-                width="64"
-                height="8"
-                transform="rotate(-45 38.5 83.7548)"
-                fill="var(--chisel-primary)"
-                class="svelte-1mpqdiv"
-              ></rect>
-              <path
-                d="M64 6.5L74.8253 25.25H53.1747L64 6.5Z"
-                fill="var(--chisel-neutral-50)"
-                class="svelte-1mpqdiv"
-              ></path>
-              <path
-                d="M64 121.5L53.1747 102.75H74.8253L64 121.5Z"
-                fill="var(--chisel-neutral-50)"
-                class="svelte-1mpqdiv"
-              ></path>
-              <path
-                d="M6.5 64L25.25 53.1747V74.8253L6.5 64Z"
-                fill="var(--chisel-neutral-50)"
-                class="svelte-1mpqdiv"
-              ></path>
-              <path
-                d="M121.5 64L102.75 74.8253V53.1747L121.5 64Z"
-                fill="var(--chisel-neutral-50)"
-                class="svelte-1mpqdiv"
-              ></path>
-              <rect
-                x="58"
-                y="109"
-                width="90"
-                height="12"
-                transform="rotate(-90 58 109)"
-                fill="var(--chisel-neutral-50)"
-                class="svelte-1mpqdiv"
-              ></rect>
-              <rect
-                x="19"
-                y="58"
-                width="90"
-                height="12"
-                fill="var(--chisel-neutral-50)"
-                class="svelte-1mpqdiv"
-              ></rect>
-              <path
-                d="M222.457 96H214.267L181.327 46.05V96H173.137V33.18H181.327L214.267 83.04V33.18H222.457V96ZM233.358 71.16C233.358 66.12 234.378 61.71 236.418 57.93C238.458 54.09 241.248 51.12 244.788 49.02C248.388 46.92 252.378 45.87 256.758 45.87C261.078 45.87 264.828 46.8 268.008 48.66C271.188 50.52 273.558 52.86 275.118 55.68V46.68H283.398V96H275.118V86.82C273.498 89.7 271.068 92.1 267.828 94.02C264.648 95.88 260.928 96.81 256.668 96.81C252.288 96.81 248.328 95.73 244.788 93.57C241.248 91.41 238.458 88.38 236.418 84.48C234.378 80.58 233.358 76.14 233.358 71.16ZM275.118 71.25C275.118 67.53 274.368 64.29 272.868 61.53C271.368 58.77 269.328 56.67 266.748 55.23C264.228 53.73 261.438 52.98 258.378 52.98C255.318 52.98 252.528 53.7 250.008 55.14C247.488 56.58 245.478 58.68 243.978 61.44C242.478 64.2 241.728 67.44 241.728 71.16C241.728 74.94 242.478 78.24 243.978 81.06C245.478 83.82 247.488 85.95 250.008 87.45C252.528 88.89 255.318 89.61 258.378 89.61C261.438 89.61 264.228 88.89 266.748 87.45C269.328 85.95 271.368 83.82 272.868 81.06C274.368 78.24 275.118 74.97 275.118 71.25ZM315.599 88.44L330.899 46.68H339.629L320.279 96H310.739L291.389 46.68H300.209L315.599 88.44ZM351.918 38.67C350.358 38.67 349.038 38.13 347.958 37.05C346.878 35.97 346.338 34.65 346.338 33.09C346.338 31.53 346.878 30.21 347.958 29.13C349.038 28.05 350.358 27.51 351.918 27.51C353.418 27.51 354.678 28.05 355.698 29.13C356.778 30.21 357.318 31.53 357.318 33.09C357.318 34.65 356.778 35.97 355.698 37.05C354.678 38.13 353.418 38.67 351.918 38.67ZM355.878 46.68V96H347.688V46.68H355.878ZM378.026 29.4V96H369.836V29.4H378.026ZM400.175 29.4V96H391.985V29.4H400.175ZM457.873 46.68V96H449.683V88.71C448.123 91.23 445.933 93.21 443.113 94.65C440.353 96.03 437.293 96.72 433.933 96.72C430.093 96.72 426.643 95.94 423.583 94.38C420.523 92.76 418.093 90.36 416.293 87.18C414.553 84 413.683 80.13 413.683 75.57V46.68H421.783V74.49C421.783 79.35 423.013 83.1 425.473 85.74C427.933 88.32 431.293 89.61 435.553 89.61C439.933 89.61 443.383 88.26 445.903 85.56C448.423 82.86 449.683 78.93 449.683 73.77V46.68H457.873ZM489.161 96.81C485.381 96.81 481.991 96.18 478.991 94.92C475.991 93.6 473.621 91.8 471.881 89.52C470.141 87.18 469.181 84.51 469.001 81.51H477.461C477.701 83.97 478.841 85.98 480.881 87.54C482.981 89.1 485.711 89.88 489.071 89.88C492.191 89.88 494.651 89.19 496.451 87.81C498.251 86.43 499.151 84.69 499.151 82.59C499.151 80.43 498.191 78.84 496.271 77.82C494.351 76.74 491.381 75.69 487.361 74.67C483.701 73.71 480.701 72.75 478.361 71.79C476.081 70.77 474.101 69.3 472.421 67.38C470.801 65.4 469.991 62.82 469.991 59.64C469.991 57.12 470.741 54.81 472.241 52.71C473.741 50.61 475.871 48.96 478.631 47.76C481.391 46.5 484.541 45.87 488.081 45.87C493.541 45.87 497.951 47.25 501.311 50.01C504.671 52.77 506.471 56.55 506.711 61.35H498.521C498.341 58.77 497.291 56.7 495.371 55.14C493.511 53.58 490.991 52.8 487.811 52.8C484.871 52.8 482.531 53.43 480.791 54.69C479.051 55.95 478.181 57.6 478.181 59.64C478.181 61.26 478.691 62.61 479.711 63.69C480.791 64.71 482.111 65.55 483.671 66.21C485.291 66.81 487.511 67.5 490.331 68.28C493.871 69.24 496.751 70.2 498.971 71.16C501.191 72.06 503.081 73.44 504.641 75.3C506.261 77.16 507.101 79.59 507.161 82.59C507.161 85.29 506.411 87.72 504.911 89.88C503.411 92.04 501.281 93.75 498.521 95.01C495.821 96.21 492.701 96.81 489.161 96.81Z"
-                fill="var(--chisel-neutral-900)"
-                class="svelte-1mpqdiv"
-              ></path></svg
-          ></a>
 
-          <nav class="svelte-1mpqdiv">
-            <ul class="svelte-1mpqdiv">
-              <li class="svelte-1mpqdiv">
-                <a href="/" aria-current="false" class="svelte-1mpqdiv">Home</a>
-              </li>
-              <li class="svelte-1mpqdiv">
-                <a href="/#services" aria-current="false" class="svelte-1mpqdiv"
-                  >Services</a
-                >
-              </li>
-              <li class="svelte-1mpqdiv">
-                <a href="/blog" aria-current="false" class="svelte-1mpqdiv"
-                  >Blog</a
-                >
-              </li>
-            </ul>
-          </nav>
 
-          <a href="/#contact" class="button button--outline svelte-1mpqdiv"
-            >Get in Touch</a
-          >
+<title>Including json+ld structured data in Svelte • Navillus</title><meta name="description" content="Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!"><meta name="keywords" content="web development, consulting, jamstack, serverless, static site, netlify, svelte, software, engineering, software engineering, api development"><meta name="robots" content="index,follow"><meta name="author" content="Navillus"><link rel="canonical" href="https://navillus.dev/blog/json-ld-in-sveltekit/"><meta property="og:title" content="Including json+ld structured data in Svelte"><meta property="og:site_name" content="Including json+ld structured data in Svelte"><meta property="og:type" content="website"><meta property="og:description" content="Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!"><meta property="og:image" content="https://navillus.dev/assets/share.png"><meta property="og:url" content="https://navillus.dev/blog/json-ld-in-sveltekit/"><meta name="twitter:title" content="Including json+ld structured data in Svelte"><meta name="twitter:description" content="Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!"><meta name="twitter:image" content="https://navillus.dev/assets/share.png"><meta name="twitter:url" content="https://navillus.dev/blog/json-ld-in-sveltekit/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="navillus_dev"><meta name="twitter:creator" content="navillus_dev"><link rel="sitemap" href="/sitemap.xml"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/favicon.svg"><link rel="”mask-icon”" href="/favicon-mask.svg" color="#37322E"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#ffc331"><link rel="manifest" href="/manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Navillus"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Navillus"><style type="text/css">astro-root, astro-fragment { display: contents; }</style></head><!--!DOCTYPE--><body><astro-root uid="1RVRB4">
 
-          <label
-            for="toggle"
-            title="Open Menu"
-            class="
-              hamburger hamburger--squeeze
-              header__hamburger
-              flex
-              lg:hidden
-              svelte-1mpqdiv
-            "
-            ><span class="hamburger-box"
-              ><span class="hamburger-inner"></span></span
-          ></label>
-        </div>
+<header class="svelte-1mpqdiv"><a href="#start-of-content" class="sr-only sr-only-focusable svelte-1mpqdiv">Skip to content</a>
+  <div class="container top svelte-1mpqdiv"><a href="/" class="brand svelte-1mpqdiv"><span class="sr-only svelte-1mpqdiv">Go to homepage</span>
+      <svg viewBox="0 0 512 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="svelte-1mpqdiv"><title class="svelte-1mpqdiv">Navillus</title><circle cx="64" cy="64" r="64" fill="var(--chisel-neutral-900)" class="svelte-1mpqdiv"></circle><rect x="44.1567" y="38.5" width="64" height="8" transform="rotate(45 44.1567 38.5)" fill="var(--chisel-primary)" class="svelte-1mpqdiv"></rect><rect x="38.5" y="83.7548" width="64" height="8" transform="rotate(-45 38.5 83.7548)" fill="var(--chisel-primary)" class="svelte-1mpqdiv"></rect><path d="M64 6.5L74.8253 25.25H53.1747L64 6.5Z" fill="var(--chisel-neutral-50)" class="svelte-1mpqdiv"></path><path d="M64 121.5L53.1747 102.75H74.8253L64 121.5Z" fill="var(--chisel-neutral-50)" class="svelte-1mpqdiv"></path><path d="M6.5 64L25.25 53.1747V74.8253L6.5 64Z" fill="var(--chisel-neutral-50)" class="svelte-1mpqdiv"></path><path d="M121.5 64L102.75 74.8253V53.1747L121.5 64Z" fill="var(--chisel-neutral-50)" class="svelte-1mpqdiv"></path><rect x="58" y="109" width="90" height="12" transform="rotate(-90 58 109)" fill="var(--chisel-neutral-50)" class="svelte-1mpqdiv"></rect><rect x="19" y="58" width="90" height="12" fill="var(--chisel-neutral-50)" class="svelte-1mpqdiv"></rect><path d="M222.457 96H214.267L181.327 46.05V96H173.137V33.18H181.327L214.267 83.04V33.18H222.457V96ZM233.358 71.16C233.358 66.12 234.378 61.71 236.418 57.93C238.458 54.09 241.248 51.12 244.788 49.02C248.388 46.92 252.378 45.87 256.758 45.87C261.078 45.87 264.828 46.8 268.008 48.66C271.188 50.52 273.558 52.86 275.118 55.68V46.68H283.398V96H275.118V86.82C273.498 89.7 271.068 92.1 267.828 94.02C264.648 95.88 260.928 96.81 256.668 96.81C252.288 96.81 248.328 95.73 244.788 93.57C241.248 91.41 238.458 88.38 236.418 84.48C234.378 80.58 233.358 76.14 233.358 71.16ZM275.118 71.25C275.118 67.53 274.368 64.29 272.868 61.53C271.368 58.77 269.328 56.67 266.748 55.23C264.228 53.73 261.438 52.98 258.378 52.98C255.318 52.98 252.528 53.7 250.008 55.14C247.488 56.58 245.478 58.68 243.978 61.44C242.478 64.2 241.728 67.44 241.728 71.16C241.728 74.94 242.478 78.24 243.978 81.06C245.478 83.82 247.488 85.95 250.008 87.45C252.528 88.89 255.318 89.61 258.378 89.61C261.438 89.61 264.228 88.89 266.748 87.45C269.328 85.95 271.368 83.82 272.868 81.06C274.368 78.24 275.118 74.97 275.118 71.25ZM315.599 88.44L330.899 46.68H339.629L320.279 96H310.739L291.389 46.68H300.209L315.599 88.44ZM351.918 38.67C350.358 38.67 349.038 38.13 347.958 37.05C346.878 35.97 346.338 34.65 346.338 33.09C346.338 31.53 346.878 30.21 347.958 29.13C349.038 28.05 350.358 27.51 351.918 27.51C353.418 27.51 354.678 28.05 355.698 29.13C356.778 30.21 357.318 31.53 357.318 33.09C357.318 34.65 356.778 35.97 355.698 37.05C354.678 38.13 353.418 38.67 351.918 38.67ZM355.878 46.68V96H347.688V46.68H355.878ZM378.026 29.4V96H369.836V29.4H378.026ZM400.175 29.4V96H391.985V29.4H400.175ZM457.873 46.68V96H449.683V88.71C448.123 91.23 445.933 93.21 443.113 94.65C440.353 96.03 437.293 96.72 433.933 96.72C430.093 96.72 426.643 95.94 423.583 94.38C420.523 92.76 418.093 90.36 416.293 87.18C414.553 84 413.683 80.13 413.683 75.57V46.68H421.783V74.49C421.783 79.35 423.013 83.1 425.473 85.74C427.933 88.32 431.293 89.61 435.553 89.61C439.933 89.61 443.383 88.26 445.903 85.56C448.423 82.86 449.683 78.93 449.683 73.77V46.68H457.873ZM489.161 96.81C485.381 96.81 481.991 96.18 478.991 94.92C475.991 93.6 473.621 91.8 471.881 89.52C470.141 87.18 469.181 84.51 469.001 81.51H477.461C477.701 83.97 478.841 85.98 480.881 87.54C482.981 89.1 485.711 89.88 489.071 89.88C492.191 89.88 494.651 89.19 496.451 87.81C498.251 86.43 499.151 84.69 499.151 82.59C499.151 80.43 498.191 78.84 496.271 77.82C494.351 76.74 491.381 75.69 487.361 74.67C483.701 73.71 480.701 72.75 478.361 71.79C476.081 70.77 474.101 69.3 472.421 67.38C470.801 65.4 469.991 62.82 469.991 59.64C469.991 57.12 470.741 54.81 472.241 52.71C473.741 50.61 475.871 48.96 478.631 47.76C481.391 46.5 484.541 45.87 488.081 45.87C493.541 45.87 497.951 47.25 501.311 50.01C504.671 52.77 506.471 56.55 506.711 61.35H498.521C498.341 58.77 497.291 56.7 495.371 55.14C493.511 53.58 490.991 52.8 487.811 52.8C484.871 52.8 482.531 53.43 480.791 54.69C479.051 55.95 478.181 57.6 478.181 59.64C478.181 61.26 478.691 62.61 479.711 63.69C480.791 64.71 482.111 65.55 483.671 66.21C485.291 66.81 487.511 67.5 490.331 68.28C493.871 69.24 496.751 70.2 498.971 71.16C501.191 72.06 503.081 73.44 504.641 75.3C506.261 77.16 507.101 79.59 507.161 82.59C507.161 85.29 506.411 87.72 504.911 89.88C503.411 92.04 501.281 93.75 498.521 95.01C495.821 96.21 492.701 96.81 489.161 96.81Z" fill="var(--chisel-neutral-900)" class="svelte-1mpqdiv"></path></svg></a>
 
-        <input
-          type="checkbox"
-          id="toggle"
-          class="sr-only svelte-1mpqdiv"
-          title="Open Menu"
-        />
+    <nav class="svelte-1mpqdiv"><ul class="svelte-1mpqdiv"><li class="svelte-1mpqdiv"><a href="/" aria-current="false" class="svelte-1mpqdiv">Home</a>
+          </li><li class="svelte-1mpqdiv"><a href="/#services" aria-current="false" class="svelte-1mpqdiv">Services</a>
+          </li><li class="svelte-1mpqdiv"><a href="/blog" aria-current="false" class="svelte-1mpqdiv">Blog</a>
+          </li></ul></nav>
 
-        <nav class="container svelte-1mpqdiv">
-          <ul class="svelte-1mpqdiv">
-            <li class="svelte-1mpqdiv">
-              <a href="/" class="h5 svelte-1mpqdiv" aria-current="false"
-                >Home</a
-              >
-            </li>
-            <li class="svelte-1mpqdiv">
-              <a
-                href="/#services"
-                class="h5 svelte-1mpqdiv"
-                aria-current="false"
-                >Services</a
-              >
-            </li>
-            <li class="svelte-1mpqdiv">
-              <a href="/blog" class="h5 svelte-1mpqdiv" aria-current="false"
-                >Blog</a
-              >
-            </li>
-            <li class="svelte-1mpqdiv">
-              <a
-                href="/#contact"
-                aria-current="false"
-                class="button svelte-1mpqdiv"
-                >Get in Touch
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+    <a href="/#contact" class="button button--outline svelte-1mpqdiv">Get in Touch</a>
 
-      <div id="start-of-content" class="sr-only svelte-1mpqdiv"></div
-    ></astro-root>
-    <script type="module">
-      import setup from "/_astro_frontend/hydrate/idle.js";
-      setup("1RVRB4", async () => {
-        const [{ default: Component }, { default: hydrate }] =
-          await Promise.all([
-            import("/_astro/src/components/Nav.svelte.js"),
-            import("/_snowpack/pkg/@astrojs.renderer-svelte.client.v0.1.0.js"),
-          ]);
-        return (el, children) =>
-          hydrate(el)(
-            Component,
-            {
-              pathname: "/blog/json-ld-in-sveltekit",
-            },
-            children
-          );
-      });
-    </script>
-    <main class="astro-olmHfk3M">
-      <section class="alt astro-FyjNtDnF" id="">
-        <div class="container astro-FyjNtDnF">
-          <header class="astro-r7BMd6KB">
-            <h1 class="astro-r7BMd6KB">
-              Including json+ld structured data in Svelte
-            </h1>
-            <small class="astro-r7BMd6KB">
-              By
-              <b class="astro-r7BMd6KB"
-                ><a href="https://tonysull.co" class="astro-r7BMd6KB"
-                  >Tony Sullivan</a
-                ></b
-              >
-              •
-              <time datetime="2021-05-17T00:00:00.000Z" class="astro-r7BMd6KB"
-                >Mon May 17 2021</time
-              >
-              • 4 min read </small
-            ><small class="astro-r7BMd6KB"
-              ><time datetime="2021-06-05T00:00:00.000Z" class="astro-r7BMd6KB"
-                ><i class="astro-r7BMd6KB">Updated: Sat Jun 05 2021</i></time
-              ></small
-            >
-          </header>
-          <article class="astro-r7BMd6KB">
-            <p class="astro-IRXE2O1Z">
-              Ever wonder how Google search results include shopping results for
-              products, or location results for local businesses? Their search
-              bot is constantly being improved to better find that kind of
-              content on your site, but ultimately if you care at all about SEO
-              on your site it's important to include
-              <a href="https://schema.org/" class="astro-IRXE2O1Z"
-                >structured data</a
-              >
-              on the page.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              Structured data allows you to give search bots scrubbing your page
-              a helping hand by adding metadata that describes your
-              <a href="https://schema.org/Organization" class="astro-IRXE2O1Z"
-                >business</a
-              >,
-              <a href="https://schema.org/Product" class="astro-IRXE2O1Z"
-                >product</a
-              >, or even your
-              <a href="https://schema.org/BlogPosting" class="astro-IRXE2O1Z"
-                >blog posts</a
-              >.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              <a href="https://json-ld.org/" class="astro-IRXE2O1Z">JSON+LD</a>
-              is a lightweight specification for including structured data as a
-              simple JSON object, something we're all comfortable with in the
-              frontend world.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              <strong class="astro-IRXE2O1Z">tl;dr;</strong> Check out this
-              <a
-                href="https://svelte.dev/repl/3382db29fc864d60b0a4ca47b3707a95?version=3.38.2"
-                class="astro-IRXE2O1Z"
-                >Svelte REPL</a
-              >
-              example for a working example in JS. Keep reading to get full
-              TypeScript validation for your Schema objects!
-            </p>
-            <h2 id="jsonld-by-example" class="astro-IRXE2O1Z">
-              JSON+LD by example
-            </h2>
-            <p class="astro-IRXE2O1Z">
-              Let's take a look at a basic example first. I pulled this straight
-              from the
-              <a href="https://json-ld.org/playground/" class="astro-IRXE2O1Z"
-                >JSON-LD Playground</a
-              >
-              - it's an excellent reference for quickly messing around with the
-              different schema and data types.
-            </p>
-            <pre
-              class="language-json astro-y5UYZ7uS"
-            ><code class="language-json astro-y5UYZ7uS"><span class="token punctuation">{</span>
+    <label for="toggle" title="Open Menu" class="hamburger hamburger--squeeze header__hamburger flex lg:hidden svelte-1mpqdiv"><span class="hamburger-box"><span class="hamburger-inner"></span></span></label></div>
+
+  <input type="checkbox" id="toggle" class="sr-only svelte-1mpqdiv" title="Open Menu">
+
+  <nav class="container svelte-1mpqdiv"><ul class="svelte-1mpqdiv"><li class="svelte-1mpqdiv"><a href="/" class="h5 svelte-1mpqdiv" aria-current="false">Home</a>
+          </li><li class="svelte-1mpqdiv"><a href="/#services" class="h5 svelte-1mpqdiv" aria-current="false">Services</a>
+          </li><li class="svelte-1mpqdiv"><a href="/blog" class="h5 svelte-1mpqdiv" aria-current="false">Blog</a>
+          </li>
+        <li class="svelte-1mpqdiv"><a href="/#contact" aria-current="false" class="button svelte-1mpqdiv">Get in Touch
+          </a></li></ul></nav></header>
+
+<div id="start-of-content" class="sr-only svelte-1mpqdiv"></div></astro-root>
+<script type="module">
+import setup from '/_astro_frontend/hydrate/idle.js';
+setup("1RVRB4", async () => {
+  const [{ default: Component }, { default: hydrate }] = await Promise.all([import("/_astro/src/components/Nav.svelte.js"), import("/_snowpack/pkg/@astrojs.renderer-svelte.client.v0.1.0.js")]);
+  return (el, children) => hydrate(el)(Component, {
+  "pathname": "/blog/json-ld-in-sveltekit"
+}, children);
+});
+</script><main class="astro-olmHfk3M"><section class="alt astro-FyjNtDnF" id=""><div class="container astro-FyjNtDnF"><header class="astro-r7BMd6KB"><h1 class="astro-r7BMd6KB">Including json+ld structured data in Svelte</h1><small class="astro-r7BMd6KB">
+                By
+                <b class="astro-r7BMd6KB"><a href="https://tonysull.co" class="astro-r7BMd6KB">Tony Sullivan</a></b>
+                •
+                <time datetime="2021-05-17T00:00:00.000Z" class="astro-r7BMd6KB">Mon May 17 2021</time>
+                • 4 min read
+            </small><small class="astro-r7BMd6KB"><time datetime="2021-06-05T00:00:00.000Z" class="astro-r7BMd6KB"><i class="astro-r7BMd6KB">Updated: Sat Jun 05 2021</i></time></small></header>
+<article class="astro-r7BMd6KB"><p class="astro-IRXE2O1Z">Ever wonder how Google search results include shopping results for products, or location results for local businesses? Their search bot is constantly being improved to better find that kind of content on your site, but ultimately if you care at all about SEO on your site it's important to include <a href="https://schema.org/" class="astro-IRXE2O1Z">structured data</a> on the page.</p><p class="astro-IRXE2O1Z">Structured data allows you to give search bots scrubbing your page a helping hand by adding metadata that describes your <a href="https://schema.org/Organization" class="astro-IRXE2O1Z">business</a>, <a href="https://schema.org/Product" class="astro-IRXE2O1Z">product</a>, or even your <a href="https://schema.org/BlogPosting" class="astro-IRXE2O1Z">blog posts</a>.</p><p class="astro-IRXE2O1Z"><a href="https://json-ld.org/" class="astro-IRXE2O1Z">JSON+LD</a> is a lightweight specification for including structured data as a simple JSON object, something we're all comfortable with in the frontend world.</p><p class="astro-IRXE2O1Z"><strong class="astro-IRXE2O1Z">tl;dr;</strong> Check out this <a href="https://svelte.dev/repl/3382db29fc864d60b0a4ca47b3707a95?version=3.38.2" class="astro-IRXE2O1Z">Svelte REPL</a> example for a working example in JS. Keep reading to get full TypeScript validation for your Schema objects!</p><h2 id="jsonld-by-example" class="astro-IRXE2O1Z">JSON+LD by example</h2><p class="astro-IRXE2O1Z">Let's take a look at a basic example first. I pulled this straight from the <a href="https://json-ld.org/playground/" class="astro-IRXE2O1Z">JSON-LD Playground</a> - it's an excellent reference for quickly messing around with the different schema and data types.</p><pre class="language-json astro-y5UYZ7uS"><code class="language-json astro-y5UYZ7uS"><span class="token punctuation">{</span>
   <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"http://schema.org/"</span><span class="token punctuation">,</span>
   <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Person"</span><span class="token punctuation">,</span>
   <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Jane Doe"</span><span class="token punctuation">,</span>
@@ -368,26 +74,7 @@
   <span class="token property">"telephone"</span><span class="token operator">:</span> <span class="token string">"(425) 123-4567"</span><span class="token punctuation">,</span>
   <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"http://www.janedoe.com"</span>
 <span class="token punctuation">}</span>
-</code></pre>
-            <p class="astro-IRXE2O1Z">
-              Nothing crazy going on there (yet). When a search bot comes by to
-              index a page with this JSON, it's guaranteed to find Professor
-              Jane Doe's contact information. This contact information is
-              probably included elsewhere on the page, say in a sidebar or page
-              footer, but chances are the way the HTML is setup could prevent
-              the search from connecting the link from a phone number to the
-              person's name.
-            </p>
-            <h3 id="how-do-you-include-it-on-a-page" class="astro-IRXE2O1Z">
-              How do you include it on a page?
-            </h3>
-            <p class="astro-IRXE2O1Z">
-              This is where JSON+LD really stands out compared to other
-              structured data formats that require special HTML attributes.
-            </p>
-            <pre
-              class="language-js astro-y5UYZ7uS"
-            ><code class="language-js astro-y5UYZ7uS"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"application/ld+json"</span><span class="token operator">&gt;</span>
+</code></pre><p class="astro-IRXE2O1Z">Nothing crazy going on there (yet). When a search bot comes by to index a page with this JSON, it's guaranteed to find Professor Jane Doe's contact information. This contact information is probably included elsewhere on the page, say in a sidebar or page footer, but chances are the way the HTML is setup could prevent the search from connecting the link from a phone number to the person's name.</p><h3 id="how-do-you-include-it-on-a-page" class="astro-IRXE2O1Z">How do you include it on a page?</h3><p class="astro-IRXE2O1Z">This is where JSON+LD really stands out compared to other structured data formats that require special HTML attributes.</p><pre class="language-js astro-y5UYZ7uS"><code class="language-js astro-y5UYZ7uS"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"application/ld+json"</span><span class="token operator">&gt;</span>
 	<span class="token punctuation">{</span>
 		<span class="token string">"@context"</span><span class="token operator">:</span> <span class="token string">"http://schema.org/"</span><span class="token punctuation">,</span>
 		<span class="token string">"@type"</span><span class="token operator">:</span> <span class="token string">"Person"</span><span class="token punctuation">,</span>
@@ -397,107 +84,10 @@
 		<span class="token string">"url"</span><span class="token operator">:</span> <span class="token string">"http://www.janedoe.com"</span>
 	<span class="token punctuation">}</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
-</code></pre>
-            <p class="astro-IRXE2O1Z">
-              Yep, that's really all there is to it. Wrap the JSON object in a
-              <code class="astro-IRXE2O1Z">script</code> tag, mark it as a type
-              of <code class="astro-IRXE2O1Z">application/ld+json</code> and
-              you're all set. There's way more to the different kinds of schemas
-              you may want to include - check out the
-              <a href="https://json-ld.org/learn.html" class="astro-IRXE2O1Z"
-                >JSON-LD docs</a
-              >
-              for a much better walk through of all the details than I would
-              ever fit into a single blog post.
-            </p>
-            <h2 id="jsonld-in-svelte" class="astro-IRXE2O1Z">
-              JSON+LD in Svelte
-            </h2>
-            <p class="astro-IRXE2O1Z">
-              The beauty of
-              <a href="https://svelte.dev" class="astro-IRXE2O1Z">Svelte</a> is
-              how closely it follows standard web technologies. Components are
-              written in a single file with a
-              <code class="astro-IRXE2O1Z">script</code> tag for all the
-              JavaScript, <code class="astro-IRXE2O1Z">style</code> tag for the
-              component's CSS, and one or more HTML elements for the actual DOM
-              elements.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              While that makes authoring Svelte components a nearly frictionless
-              experience for web developers, it can throw a wrench in the
-              JSON+LD department. Tooling built for Svelte like the
-              <a
-                href="https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode"
-                class="astro-IRXE2O1Z"
-                >VS Code plugin</a
-              >, and even the Svelte compiler itself, can cause headaches if you
-              try to write an
-              <code class="astro-IRXE2O1Z">application/ld+json</code> script in
-              your components.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              This may very well get cleaned up in the future, but for now
-              you'll likely run into warnings and errors related to having more
-              than one <code class="astro-IRXE2O1Z">script</code> tag in a
-              component. A Google search will lead you down a rabbit hole of
-              different combinations of Svelte's
-              <a href="https://svelte.dev/docs#html" class="astro-IRXE2O1Z"
-                >@html</a
-              >
-              expressions and string literals to get it to compile.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              There's a much better way to do this though, and even better it
-              can be combined with TypeScript to add extra type validations for
-              your JSON schema objects.
-            </p>
-            <h3 id="serialize-your-jsonld-to-a-script" class="astro-IRXE2O1Z">
-              Serialize your JSON+LD to a script
-            </h3>
-            <p class="astro-IRXE2O1Z">
-              The first part of the magic trick is getting around issues related
-              to parsing extra <code class="astro-IRXE2O1Z">script</code> tags
-              in your Svelte component. This is where many will reach for some
-              combination of <code class="astro-IRXE2O1Z">{$html}</code> and
-              string literals.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              I prefer to move this out of the Svelte component all together.
-              With the logic in a plain old JavaScript file it can be unit
-              tested and will never run into issues with tools trying to parse
-              <code class="astro-IRXE2O1Z">.svelte</code> files.
-            </p>
-            <pre
-              class="language-js astro-y5UYZ7uS"
-            ><code class="language-js astro-y5UYZ7uS"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">serializeSchema</span><span class="token punctuation">(</span><span class="token parameter">thing</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre><p class="astro-IRXE2O1Z">Yep, that's really all there is to it. Wrap the JSON object in a <code class="astro-IRXE2O1Z">script</code> tag, mark it as a type of <code class="astro-IRXE2O1Z">application/ld+json</code> and you're all set. There's way more to the different kinds of schemas you may want to include - check out the <a href="https://json-ld.org/learn.html" class="astro-IRXE2O1Z">JSON-LD docs</a> for a much better walk through of all the details than I would ever fit into a single blog post.</p><h2 id="jsonld-in-svelte" class="astro-IRXE2O1Z">JSON+LD in Svelte</h2><p class="astro-IRXE2O1Z">The beauty of <a href="https://svelte.dev" class="astro-IRXE2O1Z">Svelte</a> is how closely it follows standard web technologies. Components are written in a single file with a <code class="astro-IRXE2O1Z">script</code> tag for all the JavaScript, <code class="astro-IRXE2O1Z">style</code> tag for the component's CSS, and one or more HTML elements for the actual DOM elements.</p><p class="astro-IRXE2O1Z">While that makes authoring Svelte components a nearly frictionless experience for web developers, it can throw a wrench in the JSON+LD department. Tooling built for Svelte like the <a href="https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode" class="astro-IRXE2O1Z">VS Code plugin</a>, and even the Svelte compiler itself, can cause headaches if you try to write an <code class="astro-IRXE2O1Z">application/ld+json</code> script in your components.</p><p class="astro-IRXE2O1Z">This may very well get cleaned up in the future, but for now you'll likely run into warnings and errors related to having more than one <code class="astro-IRXE2O1Z">script</code> tag in a component. A Google search will lead you down a rabbit hole of different combinations of Svelte's <a href="https://svelte.dev/docs#html" class="astro-IRXE2O1Z">@html</a> expressions and string literals to get it to compile.</p><p class="astro-IRXE2O1Z">There's a much better way to do this though, and even better it can be combined with TypeScript to add extra type validations for your JSON schema objects.</p><h3 id="serialize-your-jsonld-to-a-script" class="astro-IRXE2O1Z">Serialize your JSON+LD to a script</h3><p class="astro-IRXE2O1Z">The first part of the magic trick is getting around issues related to parsing extra <code class="astro-IRXE2O1Z">script</code> tags in your Svelte component. This is where many will reach for some combination of <code class="astro-IRXE2O1Z">{$html}</code> and string literals.</p><p class="astro-IRXE2O1Z">I prefer to move this out of the Svelte component all together. With the logic in a plain old JavaScript file it can be unit tested and will never run into issues with tools trying to parse <code class="astro-IRXE2O1Z">.svelte</code> files.</p><pre class="language-js astro-y5UYZ7uS"><code class="language-js astro-y5UYZ7uS"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">serializeSchema</span><span class="token punctuation">(</span><span class="token parameter">thing</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;script type="application/ld+json"&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>thing<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/script&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-            <p class="astro-IRXE2O1Z">
-              There's not much magic going on here, the function just takes in a
-              JavaScript object and spits out the
-              <code class="astro-IRXE2O1Z">ld+json</code> script tag for it.
-            </p>
-            <h3 id="type-checking-with-typescript" class="astro-IRXE2O1Z">
-              Type checking with TypeScript
-            </h3>
-            <p class="astro-IRXE2O1Z">
-              We'll lean on the
-              <a
-                href="https://github.com/google/schema-dts"
-                class="astro-IRXE2O1Z"
-                >schema-dts</a
-              >
-              package for full
-              <a href="https://schema.org/" class="astro-IRXE2O1Z"
-                >Schema.org</a
-              >
-              type definitions.
-            </p>
-            <pre
-              class="language-ts astro-y5UYZ7uS"
-            ><code class="language-ts astro-y5UYZ7uS"><span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span> Thing<span class="token punctuation">,</span> WithContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"schema-dts"</span><span class="token punctuation">;</span>
+</code></pre><p class="astro-IRXE2O1Z">There's not much magic going on here, the function just takes in a JavaScript object and spits out the <code class="astro-IRXE2O1Z">ld+json</code> script tag for it.</p><h3 id="type-checking-with-typescript" class="astro-IRXE2O1Z">Type checking with TypeScript</h3><p class="astro-IRXE2O1Z">We'll lean on the <a href="https://github.com/google/schema-dts" class="astro-IRXE2O1Z">schema-dts</a> package for full <a href="https://schema.org/" class="astro-IRXE2O1Z">Schema.org</a> type definitions.</p><pre class="language-ts astro-y5UYZ7uS"><code class="language-ts astro-y5UYZ7uS"><span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span> Thing<span class="token punctuation">,</span> WithContext <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"schema-dts"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Schema</span> <span class="token operator">=</span> Thing <span class="token operator">|</span> WithContext<span class="token operator">&lt;</span>Thing<span class="token operator">&gt;</span><span class="token punctuation">;</span>
 
@@ -508,27 +98,7 @@
     <span class="token number">2</span>
   <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/script&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
-            <p class="astro-IRXE2O1Z">
-              <code class="astro-IRXE2O1Z">schema-dts</code> defines types for
-              all of the different schema objects, see below for a more detailed
-              example with an
-              <code class="astro-IRXE2O1Z">Organization</code> object. This is a
-              huge win, it's easy to accidentally structure the JSON wrong or
-              have a typo in one of the property names. Setting it up to use
-              TypeScript definitions we can make sure that our JSON objects are
-              validated at build.
-            </p>
-            <h3 id="defining-our-schemaorg-objects" class="astro-IRXE2O1Z">
-              Defining our Schema.org objects
-            </h3>
-            <p class="astro-IRXE2O1Z">
-              Here's the <code class="astro-IRXE2O1Z">Organization</code> object
-              used by this very site.
-            </p>
-            <pre
-              class="language-ts astro-y5UYZ7uS"
-            ><code class="language-ts astro-y5UYZ7uS"><span class="token keyword">import</span> site <span class="token keyword">from</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">$data/site.json</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</code></pre><p class="astro-IRXE2O1Z"><code class="astro-IRXE2O1Z">schema-dts</code> defines types for all of the different schema objects, see below for a more detailed example with an <code class="astro-IRXE2O1Z">Organization</code> object. This is a huge win, it's easy to accidentally structure the JSON wrong or have a typo in one of the property names. Setting it up to use TypeScript definitions we can make sure that our JSON objects are validated at build.</p><h3 id="defining-our-schemaorg-objects" class="astro-IRXE2O1Z">Defining our Schema.org objects</h3><p class="astro-IRXE2O1Z">Here's the <code class="astro-IRXE2O1Z">Organization</code> object used by this very site.</p><pre class="language-ts astro-y5UYZ7uS"><code class="language-ts astro-y5UYZ7uS"><span class="token keyword">import</span> site <span class="token keyword">from</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">$data/site.json</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">const</span> organizationSchema<span class="token operator">:</span> WithContext<span class="token operator">&lt;</span>Organization<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token string">"@context"</span><span class="token operator">:</span> <span class="token string">"https://schema.org"</span><span class="token punctuation">,</span>
@@ -540,53 +110,7 @@
   sameAs<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://twitter.com/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>site<span class="token punctuation">.</span>social<span class="token punctuation">.</span>twitter<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   logo<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>site<span class="token punctuation">.</span>url<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/favicon.svg</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-            <p class="astro-IRXE2O1Z">
-              Data specific to our site is pulled in from a local JSON file.
-              This could be data exposed through a Git-based CMS like
-              <a href="https://forestry.io" class="astro-IRXE2O1Z">Forestry</a>
-              or pulled down from a headless CMS like
-              <a href="https://sanity.io" class="astro-IRXE2O1Z">Sanity</a>. The
-              important thing here is that our
-              <code class="astro-IRXE2O1Z">Organization</code> object is defined
-              in TypeScript, verified at build-time, and can be unit tested if
-              you want to make sure the
-              <code class="astro-IRXE2O1Z">site.json</code> data is hooked up
-              properly.
-            </p>
-            <p class="astro-IRXE2O1Z">
-              What is <code class="astro-IRXE2O1Z">WithContext</code> doing?
-              That's a clever setup from
-              <code class="astro-IRXE2O1Z">schema-dts</code>, the top-level
-              JSON+LD object should have a
-              <code class="astro-IRXE2O1Z">@context</code> property. You can
-              nest objects though, and they even have support for using an
-              <a
-                href="https://json-ld.org/spec/latest/json-ld/#dfn-graph-objects"
-                class="astro-IRXE2O1Z"
-                >object graph</a
-              >
-              format for multiple objects. Any nested objects, or every object
-              in the graph, doesn't need
-              <code class="astro-IRXE2O1Z">@context</code>.
-              <code class="astro-IRXE2O1Z">WithContext</code> is a TypeScript
-              wrapper for another type, in the example above I could have
-              removed <code class="astro-IRXE2O1Z">@context</code> from the
-              object and it would be a valid
-              <code class="astro-IRXE2O1Z">Organization</code> type.
-            </p>
-            <h3 id="importing-into-svelte" class="astro-IRXE2O1Z">
-              Importing into Svelte
-            </h3>
-            <p class="astro-IRXE2O1Z">
-              Finally, let's add the JSON+LD into the DOM. Most of our projects
-              end up with a
-              <code class="astro-IRXE2O1Z">LDTag.svelte</code> component similar
-              to
-            </p>
-            <pre
-              class="language-html astro-y5UYZ7uS"
-            ><code class="language-html astro-y5UYZ7uS"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+</code></pre><p class="astro-IRXE2O1Z">Data specific to our site is pulled in from a local JSON file. This could be data exposed through a Git-based CMS like <a href="https://forestry.io" class="astro-IRXE2O1Z">Forestry</a> or pulled down from a headless CMS like <a href="https://sanity.io" class="astro-IRXE2O1Z">Sanity</a>. The important thing here is that our <code class="astro-IRXE2O1Z">Organization</code> object is defined in TypeScript, verified at build-time, and can be unit tested if you want to make sure the <code class="astro-IRXE2O1Z">site.json</code> data is hooked up properly.</p><p class="astro-IRXE2O1Z">What is <code class="astro-IRXE2O1Z">WithContext</code> doing? That's a clever setup from <code class="astro-IRXE2O1Z">schema-dts</code>, the top-level JSON+LD object should have a <code class="astro-IRXE2O1Z">@context</code> property. You can nest objects though, and they even have support for using an <a href="https://json-ld.org/spec/latest/json-ld/#dfn-graph-objects" class="astro-IRXE2O1Z">object graph</a> format for multiple objects. Any nested objects, or every object in the graph, doesn't need <code class="astro-IRXE2O1Z">@context</code>. <code class="astro-IRXE2O1Z">WithContext</code> is a TypeScript wrapper for another type, in the example above I could have removed <code class="astro-IRXE2O1Z">@context</code> from the object and it would be a valid <code class="astro-IRXE2O1Z">Organization</code> type.</p><h3 id="importing-into-svelte" class="astro-IRXE2O1Z">Importing into Svelte</h3><p class="astro-IRXE2O1Z">Finally, let's add the JSON+LD into the DOM. Most of our projects end up with a <code class="astro-IRXE2O1Z">LDTag.svelte</code> component similar to</p><pre class="language-html astro-y5UYZ7uS"><code class="language-html astro-y5UYZ7uS"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
   <span class="token keyword">import</span> <span class="token punctuation">{</span> serializeSchema <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"$utils/json-ld"</span><span class="token punctuation">;</span>
   <span class="token keyword">import</span> type <span class="token punctuation">{</span> Schema <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"$utils/json-ld"</span><span class="token punctuation">;</span>
 
@@ -596,103 +120,10 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">svelte:</span>head</span><span class="token punctuation">&gt;</span></span>
   {@html serializeSchema(schema)}
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">svelte:</span>head</span><span class="token punctuation">&gt;</span></span>
-</code></pre>
-            <p class="astro-IRXE2O1Z">
-              Multiple Svelte components on a page can inject their own
-              <code class="astro-IRXE2O1Z">application/ld+json</code> script
-              into the document's head. This works great with
-              <a href="https://kit.svelte.dev" class="astro-IRXE2O1Z"
-                >SvelteKit</a
-              >
-              too, a
-              <a
-                href="https://kit.svelte.dev/docs#layouts"
-                class="astro-IRXE2O1Z"
-                >layout</a
-              >
-              or
-              <a
-                href="https://kit.svelte.dev/docs#routing-pages"
-                class="astro-IRXE2O1Z"
-                >route</a
-              >
-              component could inject page-level schemas.
-            </p>
-            <h2 id="working-repl-example" class="astro-IRXE2O1Z">
-              Working REPL example
-            </h2>
-            <p class="astro-IRXE2O1Z">
-              Take a look at our
-              <a
-                href="https://svelte.dev/repl/3382db29fc864d60b0a4ca47b3707a95?version=3.38.2"
-                class="astro-IRXE2O1Z"
-                >Svelte REPL</a
-              >
-              example to see a full working JavaScript example.
-            </p>
-          </article>
-        </div>
-      </section>
-    </main>
-    <footer class="astro-n31rkg6Y">
-      <div class="container astro-n31rkg6Y">
-        <ul class="social astro-n31rkg6Y">
-          <li class="astro-n31rkg6Y">
-            <a href="mailto:info@navillus.nl" class="astro-n31rkg6Y"
-              ><span class="sr-only astro-n31rkg6Y"
-                >Email us at info@navillus.nl</span
-              ><svg class="astro-n31rkg6Y">
-                <use
-                  xlink:href="/assets/contact-sprites.svg#email"
-                  class="astro-n31rkg6Y"
-                ></use></svg
-            ></a>
-          </li>
-          <li class="astro-n31rkg6Y">
-            <a href="https://twitter.com/navillus_dev" class="astro-n31rkg6Y"
-              ><span class="sr-only astro-n31rkg6Y">Find us on Twitter</span
-              ><svg class="astro-n31rkg6Y">
-                <use
-                  xlink:href="/assets/contact-sprites.svg#twitter"
-                  class="astro-n31rkg6Y"
-                ></use></svg
-            ></a>
-          </li>
-        </ul>
-        <ul class="links astro-n31rkg6Y">
-          <li class="astro-n31rkg6Y">
-            <a class="h6 astro-n31rkg6Y" href="/privacy">Privacy Policy</a>
-          </li>
-          <li class="astro-n31rkg6Y">
-            <a class="h6 astro-n31rkg6Y" href="/terms"
-              >Terms &amp; Conditions</a
-            >
-          </li>
-          <li class="astro-n31rkg6Y">
-            <a class="h6 astro-n31rkg6Y" href="/#contact">Contact Us</a>
-          </li>
-        </ul>
-        <div class="legal astro-n31rkg6Y">
-          <div class="astro-n31rkg6Y">© 2021 Navillus B.V.</div>
-          <small class="astro-n31rkg6Y">
-            Icons made by
-            <a
-              href="https://www.freepik.com"
-              class="underline astro-n31rkg6Y"
-              title="Freepik"
-              >Freepik</a
-            >
-            from
-            <a
-              href="https://www.flaticon.com/"
-              class="underline astro-n31rkg6Y"
-              title="Flaticon"
-            >
-              www.flaticon.com
-            </a></small
-          >
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+</code></pre><p class="astro-IRXE2O1Z">Multiple Svelte components on a page can inject their own <code class="astro-IRXE2O1Z">application/ld+json</code> script into the document's head. This works great with <a href="https://kit.svelte.dev" class="astro-IRXE2O1Z">SvelteKit</a> too, a <a href="https://kit.svelte.dev/docs#layouts" class="astro-IRXE2O1Z">layout</a> or <a href="https://kit.svelte.dev/docs#routing-pages" class="astro-IRXE2O1Z">route</a> component could inject page-level schemas.</p><h2 id="working-repl-example" class="astro-IRXE2O1Z">Working REPL example</h2><p class="astro-IRXE2O1Z">Take a look at our <a href="https://svelte.dev/repl/3382db29fc864d60b0a4ca47b3707a95?version=3.38.2" class="astro-IRXE2O1Z">Svelte REPL</a> example to see a full working JavaScript example.</p></article></div></section></main><footer class="astro-n31rkg6Y"><div class="container astro-n31rkg6Y"><ul class="social astro-n31rkg6Y"><li class="astro-n31rkg6Y"><a href="mailto:info@navillus.nl" class="astro-n31rkg6Y"><span class="sr-only astro-n31rkg6Y">Email us at info@navillus.nl</span><svg class="astro-n31rkg6Y"><use xlink:href="/assets/contact-sprites.svg#email" class="astro-n31rkg6Y"></use></svg></a></li><li class="astro-n31rkg6Y"><a href="https://twitter.com/navillus_dev" class="astro-n31rkg6Y"><span class="sr-only astro-n31rkg6Y">Find us on Twitter</span><svg class="astro-n31rkg6Y"><use xlink:href="/assets/contact-sprites.svg#twitter" class="astro-n31rkg6Y"></use></svg></a></li></ul><ul class="links astro-n31rkg6Y"><li class="astro-n31rkg6Y"><a class="h6 astro-n31rkg6Y" href="/privacy">Privacy Policy</a></li><li class="astro-n31rkg6Y"><a class="h6 astro-n31rkg6Y" href="/terms">Terms &amp; Conditions</a></li><li class="astro-n31rkg6Y"><a class="h6 astro-n31rkg6Y" href="/#contact">Contact Us</a></li></ul><div class="legal astro-n31rkg6Y"><div class="astro-n31rkg6Y">© 2021 Navillus B.V.</div><small class="astro-n31rkg6Y">
+				Icons made by
+				<a href="https://www.freepik.com" class="underline astro-n31rkg6Y" title="Freepik">Freepik</a>
+				from
+				<a href="https://www.flaticon.com/" class="underline astro-n31rkg6Y" title="Flaticon">
+					www.flaticon.com
+				</a></small></div></div></footer></body></html>
