@@ -1,5 +1,5 @@
 {
-  "name": "-navillus-dev-2",
+  "name": "navillus-dev",
   "version": "0.0.1",
   "scripts": {
     "start": "astro dev",

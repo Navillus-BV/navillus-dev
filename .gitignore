@@ -5,6 +5,9 @@ dist
 node_modules/
 .snowpack/
 
+# Local Netlify folder
+.netlify
+
 # logs
 npm-debug.log*
 yarn-debug.log*
