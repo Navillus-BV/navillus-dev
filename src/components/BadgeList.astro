@@ -1,0 +1,19 @@
+---
+export let title: string;
+export let badges: [{ title: string, logo: string }]
+---
+
+<div class="badges">
+    <h4 class="h6"><strong>{title}<strong></h4>
+
+    <ul>
+        {badges.map(({ logo, title }) => (
+            <li>
+                <svg class='badge__icon'>
+                    <title>{title}</title>
+                    <use xlink:href={logo} />
+                </svg>
+            </li>
+        ))}
+    </ul>
+</div>

@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/base.astro';
+import PostPreview from '../components/PostPreview.astro';
+import Section from '../components/Section.astro';
+import site from '../data/site.json';
+import { readMinutes } from '../utils/readMinutes';
+
+let title = 'Blog | Navillus';
+
+export let collection: any;
+
+export async function createCollection() {
+    function includeReadingTime(post) {
+        return {
+            ...post,
+            minutes: readMinutes(post)
+        }
+    }
+
+    return {
+        /** Load posts, sort newest -> oldest */
+        async data() {
+            const allPosts = Astro.fetchContent('./blog/*.md');
+            return allPosts
+                .map(includeReadingTime)
+                .sort((a, b) => new Date(b.published_date) - new Date(a.published_date));
+        },
+
+        /** Set page size */
+        pageSize: 10,
+        
+        /** Generate RSS feed (only for main /posts/ feed) */
+        rss: {
+            title: 'Blog | Navillus',
+            description: site.description,
+            customDate: '<language>en-us</language>',
+            item: (item) => ({
+                title: item.title,
+                description: item.description,
+                link: item.url,
+                pubDate: item.published_date,
+            })
+        }
+    }
+}
+---
+
+<Layout title="Blog" pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
+    <section>
+        <div class="container hero">
+            <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
+            <h2 class="h1">The Navillus Blog</h2>
+            <p>Exploring the Jamstack and the future of web development.</p>
+        </div>
+    </section>
+
+    <Section alt title="All Posts">
+        {collection.data.map((post) => (
+            <PostPreview post={post} />
+        ))}
+    </Section>
+</Layout>

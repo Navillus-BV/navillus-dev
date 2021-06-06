@@ -1,0 +1,21 @@
+---
+export let title: string;
+export let subtitle: string;
+export let alt = false;
+export let id: string | undefined;
+---
+
+<section class="{ alt && 'alt'}" id={id || ''}>
+    <div class="container">
+        {title && <h2 class="h6"><strong>{title}</strong></h2>}
+        {subtitle && <h3 class="h2">{subtitle}</h3>}
+
+        <slot />
+    </div>
+</section>
+
+<style lang="scss">
+    h2 {
+        text-transform: uppercase;
+    }
+</style>
