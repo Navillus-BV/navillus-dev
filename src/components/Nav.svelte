@@ -21,7 +21,7 @@
     },
   ];
 
-  let innerWidth = 0;
+  let innerWidth;
   let menuOpen = false;
   let enableMenuLeave = false;
   let mounted = false;
@@ -131,7 +131,7 @@
     <label
       for="toggle"
       title="Open Menu"
-      class="hamburger hamburger--squeeze header__hamburger flex lg:hidden"
+      class="hamburger hamburger--squeeze header__hamburger"
       class:is-active={menuOpen}
       use:enhance
     >
@@ -146,8 +146,8 @@
     id="toggle"
     class="sr-only"
     title="Open Menu"
-    use:enhance
     bind:checked={menuOpen}
+    use:enhance
   />
 
   {#if !mounted || menuOpen}
@@ -179,8 +179,8 @@
 
 <div id="start-of-content" class="sr-only" bind:this={startOfContentElem} />
 
-<style lang="scss">
-  * + * {
+<style style lang="postcss">
+  * + *:not(.hamburger) {
     margin-top: 0;
   }
 
@@ -201,14 +201,12 @@
     transform: translateY(-50%);
   }
 
-  #toggle:not(.js) {
-    & + nav {
-      display: none;
-    }
+  #toggle:not(.js) + nav {
+    display: none;
+  }
 
-    &:checked + nav {
-      display: block;
-    }
+  #toggle:not(.js):checked + nav {
+    display: block;
   }
 
   .top {
@@ -216,22 +214,27 @@
     padding-bottom: var(--spacer-sm);
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
 
   .top nav,
   .top a.button {
     display: none;
+    margin-top: 0;
   }
 
   .brand {
     height: 2rem;
+    flex: 1 0 0%;
+  }
 
-    & svg {
-      margin-top: 0;
-      height: 100%;
-      fill: currentColor;
-    }
+  .brand svg {
+    margin-top: 0;
+    height: 100%;
+  }
+
+  .hamburger,
+  a.button--outline {
+    margin-left: 1em;
   }
 
   ul {
@@ -254,9 +257,18 @@
   }
 
   @media (min-width: 768px) {
+    .brand {
+      flex: initial;
+    }
+
     .top nav,
     .top a.button {
       display: inline-flex;
+    }
+
+    .top nav {
+      flex: 1 0 0%;
+      justify-content: center;
     }
 
     label[for="toggle"] {
