@@ -70,7 +70,11 @@ svg {
   max-height: 100%;
 }
 
-.button {
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   box-shadow: var(--shadow-md);
   background-color: var(--chisel-neutral-900);
   border-color: var(--chisel-neutral-900);
@@ -88,6 +92,22 @@ svg {
     background-color: transparent;
     color: var(--chisel-neutral-900);
     box-shadow: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--chisel-neutral-900);
+      color: var(--chisel-neutral-50);
+    }
+  }
+
+  &.button--icon {
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--chisel-neutral-900);
+    box-shadow: none;
+    padding: 0.25em;
+    min-height: 40px;
+    min-width: 40px;
 
     &:hover,
     &:focus {

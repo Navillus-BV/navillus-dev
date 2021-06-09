@@ -3,6 +3,7 @@
   import { cubicOut } from "svelte/easing";
   import { slide } from "svelte/transition";
   import { enhance } from "./actions/enhance";
+  import ThemeToggle from "./ThemeToggle.svelte";
 
   export let pathname = "/";
 
@@ -126,6 +127,8 @@
       </ul>
     </nav>
 
+    <ThemeToggle />
+
     <a href="/#contact" class="button button--outline">Get in Touch</a>
 
     <label
@@ -180,7 +183,8 @@
 <div id="start-of-content" class="sr-only" bind:this={startOfContentElem} />
 
 <style style lang="postcss">
-  * + *:not(.hamburger) {
+  * + *:not(.hamburger),
+  * + :global(*:not(.hamburger)) {
     margin-top: 0;
   }
 
