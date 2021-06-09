@@ -2,12 +2,13 @@
 dist/
 
 
+
 # dependencies
 node_modules/
 .snowpack/
 
 # Local Netlify folder
-.netlify
+.netlify/
 
 # logs
 npm-debug.log*
