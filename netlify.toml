@@ -12,6 +12,18 @@ package = "netlify-plugin-a11y"
 package = "netlify-plugin-subfont"
 
 [[redirects]]
+from = "https://navillus.nl"
+to = "https://navillus.dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://navillus.nl/"
+to = "https://navillus.dev/"
+status = 301
+force = true
+
+[[redirects]]
 from = "https://navillus.nl/*"
 to = "https://navillus.dev/*"
 status = 301
