@@ -25,6 +25,6 @@ force = true
 
 [[redirects]]
 from = "https://navillus.nl/*"
-to = "https://navillus.dev/*"
+to = "https://navillus.dev/:splat"
 status = 301
 force = true
