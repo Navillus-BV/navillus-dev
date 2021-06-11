@@ -1,8 +1,8 @@
 ---
 import site from '../data/site.json';
 import Footer from '../components/Footer.astro';
+import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.svelte';
-import SEO from '../components/SEO.astro';
 
 export let title = site.title;
 export let description = site.description;
@@ -11,26 +11,10 @@ export let pathname: string | undefined;
 export let canonicalURL: string;
 ---
 
-<SEO title={title} description={description} image={image} canonicalURL={canonicalURL} />
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link rel="icon" href="/favicon.svg" />
-		<link rel="”mask-icon”" href="/favicon-mask.svg" color="#37322E" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<meta name="theme-color" content="#ffc331" />
-		<link rel="manifest" href="/manifest.json" />
-		<meta name="mobile-web-app-capable" content="yes" />
-		<meta name="application-name" content="Navillus" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<meta name="apple-mobile-web-app-title" content="Navillus" />
-
-		<link rel="stylesheet" href="/styles/global.css" />
+		<MainHead title={title} description={description} image={image} canonicalURL={canonicalURL} />
 	</head>
 
 	<body>

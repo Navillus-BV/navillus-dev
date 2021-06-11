@@ -15,11 +15,11 @@ const authorName = author ? `${author.first_name} ${author.last_name}` : content
 const minutes = readMinutes(content);
 ---
 
-<head>
-    {blogPostSchema(content)}
-</head>
-
 <Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
+    <head>
+        {blogPostSchema(content)}
+    </head>
+    
     <Section alt>
         <header>
             <h1>{content.title}</h1>

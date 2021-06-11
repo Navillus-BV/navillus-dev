@@ -10,12 +10,12 @@ const ssg = Astro.fetchContent('../data/tools/ssg/*.md');
 const hosts = Astro.fetchContent('../data/tools/hosts/*.md');
 ---
 
-<head>
-    {websiteSchema}
-    {organizationSchema}
-</head>
-
 <Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
+    <head>
+        {websiteSchema}
+        {organizationSchema}
+    </head>
+
     <section>
         <div class="container hero">
             <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
