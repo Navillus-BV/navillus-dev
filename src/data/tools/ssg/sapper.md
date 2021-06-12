@@ -1,4 +1,4 @@
 ---
 title: Sapper
-logo: /assets/tool-sprites.svg#sapper
+logo: /assets/sprites.svg#sapper
 ---

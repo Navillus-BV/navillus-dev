@@ -1,4 +1,4 @@
 ---
 title: Strapi
-logo: /assets/tool-sprites.svg#strapi
+logo: /assets/sprites.svg#strapi
 ---

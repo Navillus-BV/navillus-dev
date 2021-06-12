@@ -1,4 +1,4 @@
 ---
 title: Vercel
-logo: /assets/tool-sprites.svg#vercel
+logo: /assets/sprites.svg#vercel
 ---

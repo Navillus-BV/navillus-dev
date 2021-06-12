@@ -1,4 +1,4 @@
 ---
 title: Contentful
-logo: /assets/tool-sprites.svg#contentful
+logo: /assets/sprites.svg#contentful
 ---

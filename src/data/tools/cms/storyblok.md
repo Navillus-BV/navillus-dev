@@ -1,4 +1,4 @@
 ---
 title: Storyblok
-logo: /assets/tool-sprites.svg#storyblok
+logo: /assets/sprites.svg#storyblok
 ---

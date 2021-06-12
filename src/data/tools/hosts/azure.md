@@ -1,4 +1,4 @@
 ---
 title: Azure
-logo: /assets/tool-sprites.svg#azure
+logo: /assets/sprites.svg#azure
 ---

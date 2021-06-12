@@ -1,4 +1,4 @@
 ---
 title: Gatsby
-logo: /assets/tool-sprites.svg#gatsby
+logo: /assets/sprites.svg#gatsby
 ---

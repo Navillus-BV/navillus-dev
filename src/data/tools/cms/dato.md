@@ -1,4 +1,4 @@
 ---
 title: Dato CMS
-logo: /assets/tool-sprites.svg#datocms
+logo: /assets/sprites.svg#datocms
 ---

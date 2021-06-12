@@ -1,4 +1,4 @@
 ---
 title: Hugo
-logo: /assets/tool-sprites.svg#hugo
+logo: /assets/sprites.svg#hugo
 ---

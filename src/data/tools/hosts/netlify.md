@@ -1,4 +1,4 @@
 ---
 title: Netlify
-logo: /assets/tool-sprites.svg#netlify
+logo: /assets/sprites.svg#netlify
 ---

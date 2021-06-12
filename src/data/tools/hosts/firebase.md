@@ -1,4 +1,4 @@
 ---
 title: Firebase
-logo: /assets/tool-sprites.svg#firebase
+logo: /assets/sprites.svg#firebase
 ---

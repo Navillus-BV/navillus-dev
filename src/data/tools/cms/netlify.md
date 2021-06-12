@@ -1,4 +1,4 @@
 ---
 title: Netlify CMS
-logo: /assets/tool-sprites.svg#netlify-cms
+logo: /assets/sprites.svg#netlify-cms
 ---

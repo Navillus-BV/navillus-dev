@@ -1,4 +1,4 @@
 ---
 title: Jekyll
-logo: /assets/tool-sprites.svg#jekyll
+logo: /assets/sprites.svg#jekyll
 ---

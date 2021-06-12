@@ -1,4 +1,4 @@
 ---
 title: Prismic
-logo: /assets/tool-sprites.svg#prismic
+logo: /assets/sprites.svg#prismic
 ---

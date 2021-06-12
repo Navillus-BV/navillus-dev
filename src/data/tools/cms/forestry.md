@@ -1,4 +1,4 @@
 ---
 title: Forestry
-logo: /assets/tool-sprites.svg#forestry
+logo: /assets/sprites.svg#forestry
 ---

@@ -1,4 +1,4 @@
 ---
 title: Render
-logo: /assets/tool-sprites.svg#render
+logo: /assets/sprites.svg#render
 ---

@@ -1,4 +1,4 @@
 ---
 title: NuxtJS
-logo: /assets/tool-sprites.svg#nuxtjs
+logo: /assets/sprites.svg#nuxtjs
 ---

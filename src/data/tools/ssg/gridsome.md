@@ -1,4 +1,4 @@
 ---
 title: Gridsome
-logo: /assets/tool-sprites.svg#gridsome
+logo: /assets/sprites.svg#gridsome
 ---

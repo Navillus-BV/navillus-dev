@@ -1,4 +1,4 @@
 ---
 title: NextJS
-logo: /assets/tool-sprites.svg#nextjs
+logo: /assets/sprites.svg#nextjs
 ---

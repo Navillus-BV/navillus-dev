@@ -1,4 +1,4 @@
 ---
 title: Scully
-logo: /assets/tool-sprites.svg#scully
+logo: /assets/sprites.svg#scully
 ---
