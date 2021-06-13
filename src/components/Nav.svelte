@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import { cubicOut } from "svelte/easing";
   import { slide } from "svelte/transition";
@@ -7,7 +7,12 @@
 
   export let pathname = "/";
 
-  const routes = [
+  interface Route {
+    title: string;
+    href: string;
+  }
+
+  const routes: Route[] = [
     {
       title: "Home",
       href: "/",
@@ -22,14 +27,14 @@
     },
   ];
 
-  let innerWidth;
+  let innerWidth: number;
   let menuOpen = false;
   let enableMenuLeave = false;
   let mounted = false;
 
   $: if (innerWidth > 768) menuOpen = false;
 
-  let startOfContentElem;
+  let startOfContentElem: HTMLElement;
 
   const onSkipToContent = () => {
     if (!startOfContentElem) {
