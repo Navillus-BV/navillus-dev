@@ -1,6 +1,8 @@
 <script>
   import { onMount } from "svelte";
 
+  const STORAGE_KEY = "navillus:darktheme";
+
   export let dark = false;
 
   let mounted = false;
@@ -17,13 +19,17 @@
   onMount(() => {
     mounted = true;
 
+    const storedDark = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
     const prefersDark =
       window &&
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    dark = dark || prefersDark;
+    dark = storedDark || prefersDark;
   });
+
+  $: if (mounted) localStorage.setItem(STORAGE_KEY, JSON.stringify(dark));
 </script>
 
 <button class="button--icon" on:click={toggle}>
