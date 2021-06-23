@@ -100,8 +100,15 @@ let year = new Date().getFullYear();
 		}
 	}
 
-	.links li:not(:last-of-type) {
-		border-right: 1px solid currentColor;
+	.links li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		&:not(:last-of-type) {
+			border-right: 1px solid currentColor;
+		}
 	}
 
 	.legal {
