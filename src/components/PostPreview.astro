@@ -2,6 +2,13 @@
 import { formatDate } from '../utils/formatDate';
 
 export let post;
+
+const tagsData = post.tags.map((tag) => {
+    return {
+        tag,
+        url: `/tags/${tag}`
+    }
+})
 ---
 
 <article>
@@ -14,8 +21,8 @@ export let post;
 
     <p>{post.description}</p>
 
-    {post.tags.map((tag) => (
-        <code>{tag}</code>
+    {tagsData.map(({ tag, url }) => (
+        <a href={url}><code>{tag}</code></a>
     ))}
 </article>
 

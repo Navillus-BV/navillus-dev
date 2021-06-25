@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/base.astro';
+import PostPreview from '../components/PostPreview.astro';
+import Section from '../components/Section.astro';
+import site from '../data/site.json';
+import { readMinutes } from '../utils/readMinutes';
+import { uniq } from '../utils/uniq';
+
+export let collection: any;
+
+export async function createCollection() {
+    function includeReadingTime(post) {
+        return {
+            ...post,
+            minutes: readMinutes(post)
+        }
+    }
+
+    function title(tag) {
+        return `Posts tagged "${tag}"`;
+    }
+
+    function description(tag) {
+        return `All posts from the Navillus Blog tagged with “${tag}”`;
+    }
+
+    const allPosts = Astro.fetchContent('./blog/*.md');
+    const allTags = uniq(
+        allPosts
+            .map(({ tags }) => tags)
+            .flat()
+    );
+
+    return {
+        // `routes` defines the total collection of routes as data objects.
+        routes: allTags.map((tag) => {
+            const params = {
+                name: tag,
+                title: title(tag),
+                description: description(tag),
+            };
+            return params;
+        }),
+
+        // `permalink` defines the final URL for each route object defined in `routes`.
+        permalink: ({ params }) => `/tags/${params.name}`,
+
+        // `data` is now responsible for return the data for each page.
+        // Luckily we had already loaded all of the data at the top of the function,
+        // so we just filter the data here to group pages by first letter.
+        // If you needed to fetch more data for each page, you can do that here as well.
+        async data ({ params }) {
+            return allPosts.filter(p => p.tags.indexOf(params.name) >= 0);
+        },
+
+        // Finally, `pageSize` and `pagination` is still on by default. Because
+        // we don't want to paginate the already-grouped pages a second time, we'll
+        // disable pagination.
+        pageSize: 10,
+    }
+}
+---
+
+<Layout title="Blog" pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
+    <section>
+        <div class="container hero">
+            <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
+            <h2 class="h1">The Navillus Blog</h2>
+            <p>Exploring the Jamstack and the future of web development.</p>
+        </div>
+    </section>
+
+    <Section alt title={collection.params.title}>
+        {collection.data.map((post) => (
+            <PostPreview post={post} />
+        ))}
+    </Section>
+</Layout>

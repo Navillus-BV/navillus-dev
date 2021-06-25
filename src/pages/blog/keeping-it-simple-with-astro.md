@@ -8,6 +8,7 @@ published_date: 2021-06-14
 modified_date: 2021-06-25
 tags:
   - astro
+  - svelte
   - performance
 ---
 
