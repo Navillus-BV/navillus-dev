@@ -16,6 +16,7 @@ const {
 }: Props = Astro.props;
 
 const imageAbsolute = `${site.url}${image}`;
+const blogRssFeed = `${site.url}feed/blog.xml`;
 ---
 
 <!-- Common -->
@@ -30,6 +31,7 @@ const imageAbsolute = `${site.url}${image}`;
 <meta name="robots" content="index,follow" />
 <meta name="author" content={site.author} />
 <link rel="canonical" href={canonicalURL} />
+<link rel="alternate" type="application/rss+xml" title="Blog | Navillus" href={blogRssFeed} />
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.svg" />
