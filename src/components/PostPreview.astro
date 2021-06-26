@@ -1,7 +1,7 @@
 ---
 import { formatDate } from '../utils/formatDate';
 
-export let post;
+const { post } = Astro.props;
 
 const tagsData = post.tags.map((tag) => {
     return {

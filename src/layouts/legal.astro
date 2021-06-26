@@ -2,10 +2,14 @@
 import Layout from './base.astro';
 import Section from '../components/Section.astro';
 
-export let content: {
-    title: string,
-    last_updated: string | undefined
-};
+interface Props {
+	content: {
+		title: string;
+		last_updated?: string;
+	}
+}
+
+const { content }: Props = Astro.props;
 
 const lastUpdated = content.last_updated && new Date(content.last_updated).toDateString();
 ---

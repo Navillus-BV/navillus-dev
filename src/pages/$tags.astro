@@ -6,7 +6,7 @@ import site from '../data/site.json';
 import { readMinutes } from '../utils/readMinutes';
 import { uniq } from '../utils/uniq';
 
-export let collection: any;
+const { collection } = Astro.props;
 
 export async function createCollection() {
     function includeReadingTime(post) {

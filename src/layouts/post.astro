@@ -5,7 +5,7 @@ import { readMinutes } from '../utils/readMinutes';
 import { formatDate } from '../utils/formatDate';
 import { blogPostSchema } from '../utils/jsonLD';
 
-export let content;
+const { content } = Astro.props;
 
 const allAuthors = Astro.fetchContent('../data/authors/*.md');
 const author = allAuthors.find((author) => author.slug === content.author);

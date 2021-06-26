@@ -7,7 +7,7 @@ import { readMinutes } from '../utils/readMinutes';
 
 let title = 'Blog | Navillus';
 
-export let collection: any;
+const { collection } = Astro.props;
 
 export async function createCollection() {
     function includeReadingTime(post) {

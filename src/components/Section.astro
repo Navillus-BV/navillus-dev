@@ -1,8 +1,12 @@
 ---
-export let title: string;
-export let subtitle: string;
-export let alt = false;
-export let id: string | undefined;
+interface Props {
+    title: string;
+    subtitle: string;
+    alt: boolean;
+    id?: string;
+}
+
+const { title, subtitle, id, alt = false }: Props = Astro.props;
 ---
 
 <section class="{ alt && 'alt'}" id={id || ''}>

@@ -1,6 +1,10 @@
 ---
-export let title: string;
-export let badges: [{ title: string, logo: string }]
+interface Props {
+    title: string;
+    badges: { title: string, logo: string }[];
+}
+
+const { title, badges }: Props = Astro.props;
 ---
 
 <div class="badges">

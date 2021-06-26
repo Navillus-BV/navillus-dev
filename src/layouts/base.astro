@@ -4,11 +4,21 @@ import Footer from '../components/Footer.astro';
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.svelte';
 
-export let title = site.title;
-export let description = site.description;
-export let image = site.social.image;
-export let pathname: string | undefined;
-export let canonicalURL: string;
+interface Props {
+	title: string;
+	description: string;
+	image: string;
+	pathname?: string;
+	canonicalURL: string;
+}
+
+const {
+	title = site.title,
+	description = site.description,
+	image = site.image,
+	pathname,
+	canonicalURL
+}: Props = Astro.props;
 ---
 
 <!doctype html>

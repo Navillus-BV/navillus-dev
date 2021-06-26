@@ -1,10 +1,19 @@
 ---
 import site from '../data/site.json';
 
-export let title = site.title;
-export let description = site.description;
-export let image = site.social.image;
-export let canonicalURL: string;
+interface Props {
+	title: string;
+	description: string;
+	image: string;
+	canonicalURL: string;
+}
+
+const {
+	title = site.title,
+	description = site.description,
+	image = site.social.image,
+	canonicalURL
+}: Props = Astro.props;
 
 const imageAbsolute = `${site.url}${image}`;
 ---
