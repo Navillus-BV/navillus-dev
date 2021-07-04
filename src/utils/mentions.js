@@ -8,7 +8,7 @@ const { domain } = site;
 // Define Cache Location and API Endpoint
 const CACHE_FILE_PATH = "_cache/webmentions.json";
 const API = "https://webmention.io/api";
-const TOKEN = process.env.WEBMENTION_IO_TOKEN || "j98Q_feckGryLPxpSXceoQ";
+const TOKEN = process.env.WEBMENTION_IO_TOKEN;
 
 async function fetchWebmentions(since, perPage = 1000) {
   console.log(domain);
@@ -74,8 +74,8 @@ export async function getAllMentions() {
   if (cache.children.length) {
     console.log(`>>> ${cache.children.length} webmentions loaded from cache`);
   }
-  // Only fetch new mentions in production
-  if (process.env.NODE_ENV === "production") {
+  // Only fetch new mentions when TOKEN is set, usually disabled in dev
+  if (TOKEN) {
     console.log(">>> Checking for new webmentions...");
     const feed = await fetchWebmentions(cache.lastFetched);
     if (feed) {
