@@ -8,9 +8,6 @@ command = "npm run start"
 [[plugins]]
 package = "netlify-plugin-a11y"
 
-[[plugins]]
-package = "netlify-plugin-subfont"
-
 [[redirects]]
 from = "https://navillus.nl"
 to = "https://navillus.dev"

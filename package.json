@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "scripts": {
     "start": "astro dev",
+    "prebuild": "cp -r node_modules/@fontsource public/styles",
     "build": "astro build"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.4.5",
+    "@fontsource/poppins": "^4.4.5",
     "astro": "latest",
     "chisel.css": "^0.5.1",
     "markdown-reading-time": "^0.1.1"

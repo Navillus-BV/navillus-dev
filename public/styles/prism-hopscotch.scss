@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+@use "./@fontsource/fira-mono/scss/mixins" as FiraMono;
+
+@include FiraMono.fontFace(
+  $weight: 400,
+  $display: fallback,
+  $fontDir: "/styles/@fontsource/fira-mono/files"
+);
 
 /**
  * Custom styles
