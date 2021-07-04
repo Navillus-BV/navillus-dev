@@ -10,7 +10,7 @@
   $: if (mounted) {
     document.documentElement.setAttribute(
       "data-chisel-theme",
-      dark ? "dark" : undefined
+      dark ? "dark" : "light"
     );
   }
 
@@ -26,7 +26,7 @@
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    dark = storedDark || prefersDark;
+    dark = typeof storedDark === "boolean" ? storedDark : prefersDark;
   });
 
   $: if (mounted) localStorage.setItem(STORAGE_KEY, JSON.stringify(dark));
