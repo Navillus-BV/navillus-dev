@@ -1,27 +1,35 @@
 [build]
-command = "npm run build"
-publish = "dist"
+    command = "yarn build"
+    publish = "dist"
 
 [dev]
-command = "npm run start"
+    command = "yarn start"
+
+[functions]
+    directory = "lambda"
 
 [[plugins]]
-package = "netlify-plugin-a11y"
+    package = "netlify-plugin-a11y"
 
 [[redirects]]
-from = "https://navillus.nl"
-to = "https://navillus.dev"
-status = 301
-force = true
+    from = "/api/*"
+    to = "/.netlify/functions/:splat"
+    status = 200
 
 [[redirects]]
-from = "https://navillus.nl/"
-to = "https://navillus.dev/"
-status = 301
-force = true
+    from = "https://navillus.nl"
+    to = "https://navillus.dev"
+    status = 301
+    force = true
 
 [[redirects]]
-from = "https://navillus.nl/*"
-to = "https://navillus.dev/:splat"
-status = 301
-force = true
+    from = "https://navillus.nl/"
+    to = "https://navillus.dev/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "https://navillus.nl/*"
+    to = "https://navillus.dev/:splat"
+    status = 301
+    force = true
