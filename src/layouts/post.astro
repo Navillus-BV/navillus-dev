@@ -1,11 +1,11 @@
 ---
 import Layout from './base.astro';
 import Section from '../components/Section.astro';
-import WebMentions from '../components/WebMentions.astro';
+import WebMentions from '../components/WebMentions.svelte';
 import { readMinutes } from '../utils/readMinutes';
 import { formatDate } from '../utils/formatDate';
 import { blogPostSchema } from '../utils/jsonLD';
-import { getAllMentions } from '../utils/mentions';
+import { getAllMentions, isForUrl } from '../utils/mentions';
 
 const { content } = Astro.props;
 
@@ -16,7 +16,8 @@ const authorName = author ? `${author.first_name} ${author.last_name}` : content
 
 const minutes = readMinutes(content);
 
-const { children: webmentions } = await getAllMentions();
+const allMentions = await getAllMentions();
+const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonicalURL.href));
 ---
 
 <Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
@@ -50,7 +51,7 @@ const { children: webmentions } = await getAllMentions();
         </article>
 
         <footer id="webmentions">
-            <WebMentions webmentions={webmentions} url={Astro.request.canonicalURL.href} />
+            <WebMentions {webmentions} url={Astro.request.canonicalURL.href} />
         </footer>
     </Section>
 </Layout>
@@ -91,6 +92,7 @@ const { children: webmentions } = await getAllMentions();
     }
 
     footer {
-        margin-top: var(--spacer-xl);
+        margin-top: var(--spacer-xl
+        );
     }
 </style>
