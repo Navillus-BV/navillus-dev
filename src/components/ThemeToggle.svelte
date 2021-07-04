@@ -17,16 +17,9 @@
   const toggle = () => (dark = !dark);
 
   onMount(() => {
+    dark =
+      document?.documentElement?.getAttribute("data-chisel-theme") === "dark";
     mounted = true;
-
-    const storedDark = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
-    const prefersDark =
-      window &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    dark = typeof storedDark === "boolean" ? storedDark : prefersDark;
   });
 
   $: if (mounted) localStorage.setItem(STORAGE_KEY, JSON.stringify(dark));
