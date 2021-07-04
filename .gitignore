@@ -1,6 +1,7 @@
 # build output
 dist/
-public/styles/@fontsource
+_cache/
+public/styles/@fontsource/
 
 # dependencies
 node_modules/

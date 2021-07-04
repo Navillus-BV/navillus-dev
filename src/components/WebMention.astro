@@ -1,0 +1,23 @@
+---
+import Avatar from "./Avatar.astro";
+
+const { webmention } = Astro.props;
+---
+
+{webmention.url ? (
+    <a href={webmention.url} target="_blank" rel="noopener noreferrer">
+        <Avatar src={webmention.author.photo} alt={webmention.author.name} />
+    </a>
+) : (
+    <Avatar src={webmention.author.photo} alt={webmention.author.name} />
+)}
+
+<style>
+    a {
+        margin: 0;
+    }
+
+    a:hover :global(img) {
+        filter: var(--shadow-secondary);
+    }
+</style>

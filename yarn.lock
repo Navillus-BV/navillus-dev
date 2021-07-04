@@ -1881,6 +1881,11 @@ lodash.camelcase@^4.3.0:
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
 
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 longest-streak@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-2.0.4.tgz#b8599957da5b5dab64dee3fe316fa774597d90e4"
@@ -2364,6 +2369,11 @@ negotiator@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
+
+netlify-plugin-cache-folder@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/netlify-plugin-cache-folder/-/netlify-plugin-cache-folder-0.0.8.tgz#eccee0a053a72ec644aee21e8b05c0fde2c22a8d"
+  integrity sha512-Zj5C/OVI5+njzo19bQAgnpHpv91mZCqrOg9MpS9bMpSZhBkmPmgSV1LUqxvVzQszbZXC23hXoaLQXFqPvxNRrg==
 
 nlcst-to-string@^2.0.0:
   version "2.0.4"

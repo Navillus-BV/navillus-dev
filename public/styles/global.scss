@@ -36,9 +36,23 @@
   --spacer-lg: 4rem;
   --spacer-xl: 6rem;
 
+  /* Font Scale */
+  --chisel-h1: 2.488rem;
+  --chisel-h2: 2.074rem;
+  --chisel-h3: 1.728rem;
+  --chisel-h4: 1.44rem;
+  --chisel-h5: 1.2rem;
+  --chisel-h6: 0.833rem;
+
   /* Box Shadows */
-  --shadow-sm: -1px 1px 2px 0 rgba(0, 0, 0, 0.25);
-  --shadow-md: 0px 2px 4px 0 rgba(0, 0, 0, 0.25);
+  --shadow-sm: drop-shadow(-1px 1px 2px rgba(0, 0, 0, 0.25));
+  --shadow-md: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+  --shadow-secondary: drop-shadow(3px 5px 10px var(--chisel-secondary));
+
+  &[data-chisel-theme="dark"] {
+    --shadow-sm: drop-shadow(-1px 1px 2px rgba(255, 255, 255, 0.25));
+    --shadow-md: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.25));
+  }
 
   font-size: 14px;
 
@@ -67,6 +81,7 @@ body {
 }
 
 section {
+  margin-top: 0;
   padding: var(--spacer-lg) 0;
 
   &.alt {
@@ -320,4 +335,8 @@ h2.h6 + h3.h2 {
   transform: rotate(-90deg);
   transition: bottom 0.075s ease,
     transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+pre > code {
+  padding: 0;
 }

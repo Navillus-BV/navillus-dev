@@ -11,6 +11,9 @@
     "@fontsource/poppins": "^4.4.5",
     "astro": "latest",
     "chisel.css": "^0.5.1",
-    "markdown-reading-time": "^0.1.1"
+    "lodash": "^4.17.21",
+    "markdown-reading-time": "^0.1.1",
+    "netlify-plugin-cache-folder": "^0.0.8",
+    "node-fetch": "^2.6.1"
   }
 }
