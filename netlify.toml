@@ -5,9 +5,6 @@
 [dev]
     command = "yarn start"
 
-[functions]
-    directory = "lambda"
-
 [[plugins]]
     package = "netlify-plugin-a11y"
 
