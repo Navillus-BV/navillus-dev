@@ -64,12 +64,8 @@ function readFromCache() {
   };
 }
 
-let mentionedLoaded = false;
-export async function getAllMentions() {
+async function _getAllMentions() {
   const cache = readFromCache();
-  if (mentionedLoaded) {
-    return cache;
-  }
   console.log(">>> Reading webmentions from cache...");
   if (cache.children.length) {
     console.log(`>>> ${cache.children.length} webmentions loaded from cache`);
@@ -84,12 +80,16 @@ export async function getAllMentions() {
         children: mergeWebmentions(cache, feed),
       };
       writeToCache(webmentions);
-      mentionedLoaded = true;
       return webmentions;
     }
   }
-  mentionedLoaded = true;
   return cache;
+}
+
+let _mentionsPromise;
+export async function getAllMentions() {
+  _mentionsPromise = _mentionsPromise || _getAllMentions();
+  return await _mentionsPromise;
 }
 
 function compareUrls(a, b) {
