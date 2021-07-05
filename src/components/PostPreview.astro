@@ -21,14 +21,20 @@ const tagsData = post.tags.map((tag) => {
 
     <p>{post.description}</p>
 
-    {tagsData.map(({ tag, url }) => (
-        <a href={url}><code>{tag}</code></a>
-    ))}
+    <div class="tags">
+        {tagsData.map(({ tag, url }) => (
+            <a href={url}><code>{tag}</code></a>
+        ))}
+    </div>
 </article>
 
 <style lang="scss">
     article:not(:first-of-type) {
         margin-top: var(--spacer-lg)
+    }
+
+    article > a {
+        display: block;
     }
 
     h3, p {
@@ -49,6 +55,26 @@ const tagsData = post.tags.map((tag) => {
 
         &:first-of-type {
             margin-left: 0;
+        }
+    }
+
+    .tags {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacer-sm);
+        flex-wrap: wrap;
+
+        & a {
+            filter: var(--shadow-sm);
+            margin: 0;
+
+            &:hover {
+                filter: var(--shadow-secondary-sm);
+            }
+
+            & code {
+                margin-right: 0;
+            }
         }
     }
 </style>
