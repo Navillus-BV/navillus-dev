@@ -227,8 +227,9 @@
   }
 
   .brand {
-    height: 2rem;
+    height: 40px;
     flex: 1 0 0%;
+    padding: 4px 0;
   }
 
   .brand svg {
