@@ -85,7 +85,7 @@
   </form>
 </div>
 
-<style>
+<style lang="scss">
   h2 {
     margin-bottom: 0;
   }
@@ -103,13 +103,14 @@
     flex-wrap: wrap;
     gap: var(--spacer-xs);
     margin: 0;
-  }
 
-  .facepile a {
-    text-decoration: none;
-  }
-  .facepile a:hover :global(img) {
-    filter: var(--shadow-secondary);
+    & a {
+      text-decoration: none;
+
+      &:hover :global(img) {
+        filter: var(--shadow-secondary);
+      }
+    }
   }
 
   .webmentions__form {

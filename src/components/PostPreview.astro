@@ -29,12 +29,14 @@ const tagsData = post.tags.map((tag) => {
 </article>
 
 <style lang="scss">
-    article:not(:first-of-type) {
-        margin-top: var(--spacer-lg)
-    }
+    article {
+        &:not(:first-of-type) {
+            margin-top: var(--spacer-lg);
+        }
 
-    article > a {
-        display: block;
+        & > a {
+            display: block;
+        }
     }
 
     h3, p {

@@ -43,14 +43,14 @@
   </div>
 </article>
 
-<style>
+<style lang="scss">
   article {
     padding: var(--spacer-sm);
     background: var(--chisel-neutral-200);
-  }
 
-  article:not(:last-of-type) {
-    margin-bottom: var(--spacer-md);
+    &:not(:last-of-type) {
+      margin-bottom: var(--spacer-md);
+    }
   }
 
   .meta {
@@ -58,28 +58,28 @@
     flex-direction: row;
     gap: var(--spacer-xs);
     align-items: center;
-  }
 
-  .meta a {
-    margin-top: 0;
-  }
+    & a {
+      margin-top: 0;
+    }
 
-  .meta strong {
-    font-weight: 500;
-  }
+    & strong {
+      font-weight: 500;
+    }
 
-  .meta time {
-    flex: 1 0 0%;
-    text-align: end;
-    margin-top: 0;
+    & time {
+      flex: 1 0 0%;
+      text-align: end;
+      margin-top: 0;
+    }
   }
 
   .content a {
     font-size: 0.875em;
     margin-left: var(--spacer-xs);
-  }
 
-  .content a svg {
-    margin-left: var(--spacer-tiny);
+    & svg {
+      margin-left: var(--spacer-tiny);
+    }
   }
 </style>

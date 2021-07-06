@@ -75,39 +75,39 @@ const year = new Date().getFullYear();
 		display: flex;
 		flex-direction: row;
 		gap: var(--spacer-sm);
-	}
 
-	.social svg {
-		height: var(--chisel-h1);
-		width: var(--chisel-h1);
-		overflow: visible;
+		& svg {
+			height: var(--chisel-h1);
+			width: var(--chisel-h1);
+			overflow: visible;
+		}
 	}
 
 	.links {
 		display: flex;
 		flex-direction: row;
-	}
 
-	.links a {
-		text-decoration: underline;
-		padding: 0 var(--spacer-xs);
+		& a {
+			text-decoration: underline;
+			padding: 0 var(--spacer-xs);
 
-		@media (min-width: 480px) {
-			& {
-				padding: 0 var(--spacer-sm);
-				font-size: var(--chisel-p);
+			@media (min-width: 480px) {
+				& {
+					padding: 0 var(--spacer-sm);
+					font-size: var(--chisel-p);
+				}
 			}
 		}
-	}
 
-	.links li {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
+		& li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
 
-		&:not(:last-of-type) {
-			border-right: 1px solid currentColor;
+			&:not(:last-of-type) {
+				border-right: 1px solid currentColor;
+			}
 		}
 	}
 

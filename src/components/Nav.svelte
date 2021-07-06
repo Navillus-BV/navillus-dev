@@ -220,23 +220,23 @@
     padding-bottom: var(--spacer-sm);
     display: flex;
     align-items: center;
-  }
 
-  .top nav,
-  .top a.button {
-    display: none;
-    margin-top: 0;
+    & nav,
+    & a.button {
+      display: none;
+      margin-top: 0;
+    }
   }
 
   .brand {
     height: 40px;
     flex: 1 0 0%;
     padding: 4px 0;
-  }
 
-  .brand svg {
-    margin-top: 0;
-    height: 100%;
+    & svg {
+      margin-top: 0;
+      height: 100%;
+    }
   }
 
   .hamburger,
@@ -248,22 +248,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    & li:last-of-type {
+      margin-top: var(--spacer-sm);
+    }
   }
 
-  ul li:last-of-type {
-    margin-top: var(--spacer-sm);
-  }
+  nav {
+    & a.button {
+      margin-bottom: var(--spacer-md);
+    }
 
-  nav a:not(.button) {
-    line-height: 2;
-  }
+    & a:not(.button) {
+      line-height: 2;
+    }
 
-  nav li {
-    padding: 0 var(--spacer-sm);
-  }
-
-  nav a.button {
-    margin-bottom: var(--spacer-md);
+    & li {
+      padding: 0 var(--spacer-sm);
+    }
   }
 
   @media (min-width: 768px) {
@@ -287,10 +289,10 @@
 
     ul {
       flex-direction: row;
-    }
 
-    ul li:last-of-type {
-      margin-top: 0;
+      & li:last-of-type {
+        margin-top: 0;
+      }
     }
   }
 

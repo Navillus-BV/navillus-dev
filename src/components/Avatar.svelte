@@ -6,17 +6,17 @@
 
 <img {src} width="48" height="48" {alt} loading="lazy" class:small />
 
-<style>
+<style lang="scss">
   img {
     height: 48px;
     width: 48px;
     border-radius: 50%;
     object-fit: cover;
     filter: var(--shadow-md);
-  }
 
-  img.small {
-    height: 24px;
-    width: 24px;
+    &.small {
+      height: 24px;
+      width: 24px;
+    }
   }
 </style>
