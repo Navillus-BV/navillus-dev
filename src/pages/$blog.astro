@@ -34,12 +34,15 @@ export async function createCollection() {
             title: 'Blog | Navillus',
             description: site.description,
             customData: `<language>en-us</language>`,
-            item: (item) => ({
-                title: item.title,
-                description: item.description,
-                link: item.url,
-                pubDate: item.published_date,
-            }),
+            item: (item) => {
+                return {
+                    title: item.title,
+                    description: item.description,
+                    link: item.url,
+                    pubDate: item.published_date,
+                    customData: `<id>${item.url}</id>${item.modified_date ? `<updated>${item.modified_date}</updated>` : ""}<content type="md"><![CDATA[ ${item.astro.source} ]]></content>`
+                }
+            },
         }
     }
 }
