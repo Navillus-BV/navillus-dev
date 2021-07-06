@@ -121,7 +121,9 @@
       <ul>
         {#each routes as { title, href } (title)}
           <li>
-            <a {href} aria-current={pathname === href}>{title}</a>
+            <a class="hover:outline" {href} aria-current={pathname === href}>
+              {title}
+            </a>
           </li>
         {/each}
       </ul>
@@ -182,7 +184,7 @@
 
 <div id="start-of-content" class="sr-only" bind:this={startOfContentElem} />
 
-<style style lang="postcss">
+<style style lang="scss">
   * + *:not(.hamburger),
   * + :global(*:not(.hamburger)) {
     margin-top: 0;
@@ -254,6 +256,9 @@
 
   nav a:not(.button) {
     line-height: 2;
+  }
+
+  nav li {
     padding: 0 var(--spacer-sm);
   }
 

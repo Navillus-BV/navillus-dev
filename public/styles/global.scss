@@ -75,7 +75,8 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-:focus {
+:focus,
+.hover\:outline:hover {
   outline: 2px dashed var(--chisel-secondary);
   outline-offset: 0.25rem;
 }
