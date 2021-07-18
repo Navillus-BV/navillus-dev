@@ -1,7 +1,7 @@
 ---
 import Layout from './base.astro';
 import Section from '../components/Section.astro';
-import WebMentions from '../components/WebMentions.svelte';
+import WebMentions from '../components/WebMentions.astro';
 import { readMinutes } from '../utils/readMinutes';
 import { formatDate } from '../utils/formatDate';
 import { blogPostSchema } from '../utils/jsonLD';
@@ -51,7 +51,7 @@ const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonical
         </article>
 
         <footer id="webmentions">
-            <WebMentions {webmentions} url={Astro.request.canonicalURL.href} />
+            <WebMentions webmentions={webmentions} url={Astro.request.canonicalURL.href} />
         </footer>
     </Section>
 </Layout>
