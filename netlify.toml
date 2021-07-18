@@ -14,7 +14,7 @@
 [[headers]]
     for = "/*"
     [headers.values]
-        Content-Security-Policy = "default-src unsafe-inline 'self' cdn.fathom.com;"
+        Content-Security-Policy = "default-src 'self' unsafe-inline; script-src https://cdn.usefathom.com"
 
 [[redirects]]
     from = "/api/*"
