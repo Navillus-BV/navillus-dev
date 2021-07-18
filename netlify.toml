@@ -11,6 +11,11 @@
 [[plugins]]
     package = "netlify-plugin-cache-folder"
 
+[[headers]]
+    for = "/*"
+    [headers.values]
+        Content-Security-Policy = "default-src 'self';"
+
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/:splat"

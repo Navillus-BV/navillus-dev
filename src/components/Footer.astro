@@ -29,12 +29,14 @@ const year = new Date().getFullYear();
 	<div class="container">
 		<ul class="social">
 			{socialLinks.map(({ href, title, icon }) => (
-				<a href={href} rel="me">
-					<span class="sr-only">{title}</span>
-					<svg>
-						<use xlink:href={`/assets/sprites.svg#${icon}`} />
-					</svg>
-				</a>
+				<li>
+					<a href={href} rel="me">
+						<span class="sr-only">{title}</span>
+						<svg>
+							<use xlink:href={`/assets/sprites.svg#${icon}`} />
+						</svg>
+					</a>
+				</li>
 			))}
 		</ul>
 
