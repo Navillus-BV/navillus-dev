@@ -1,35 +1,45 @@
 [build]
-    command = "yarn build"
-    publish = "dist"
+command = "yarn build"
+publish = "dist"
 
 [dev]
-    command = "yarn start"
+command = "yarn start"
 
 [[plugins]]
-    package = "netlify-plugin-a11y"
+package = "netlify-plugin-a11y"
 
 [[plugins]]
-    package = "netlify-plugin-cache-folder"
+package = "netlify-plugin-cache-folder"
+
+[[plugins]]
+package = "netlify-plugin-webmentions"
+[plugins.inputs]
+# The base url of your site (optional, default: main URL set in Netlify)
+baseUrl = "https://navillus.dev"
+# Path to the feed URL (optional, default: /feed.xml)
+feedPath = "/feed/blog.xml"
+# Maximum number of feed entries to check for mentions (optional, default: 1)
+limit = 25
 
 [[redirects]]
-    from = "/api/*"
-    to = "/.netlify/functions/:splat"
-    status = 200
+from = "/api/*"
+to = "/.netlify/functions/:splat"
+status = 200
 
 [[redirects]]
-    from = "https://navillus.nl"
-    to = "https://navillus.dev"
-    status = 301
-    force = true
+from = "https://navillus.nl"
+to = "https://navillus.dev"
+status = 301
+force = true
 
 [[redirects]]
-    from = "https://navillus.nl/"
-    to = "https://navillus.dev/"
-    status = 301
-    force = true
+from = "https://navillus.nl/"
+to = "https://navillus.dev/"
+status = 301
+force = true
 
 [[redirects]]
-    from = "https://navillus.nl/*"
-    to = "https://navillus.dev/:splat"
-    status = 301
-    force = true
+from = "https://navillus.nl/*"
+to = "https://navillus.dev/:splat"
+status = 301
+force = true
