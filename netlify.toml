@@ -18,6 +18,11 @@
         X-Content-Security-Policy = "default-src 'self' https://*.usefathom.com; script-src 'self' 'unsafe-inline' https://*.usefathom.com; object-src 'none'"
         X-WebKit-CSP = "default-src 'self' https://*.usefathom.com; script-src 'self' 'unsafe-inline' https://*.usefathom.com; object-src 'none'"
 
+[[headers]]
+    for = "https://cdn.usefathom.com/*"
+    [headers.values]
+        Cache-Control = "max-age=86400, public"
+
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/:splat"
