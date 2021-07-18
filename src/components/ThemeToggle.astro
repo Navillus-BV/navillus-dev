@@ -2,7 +2,7 @@
 <button
     class="button--icon"
     id="theme-toggle"
-    aria-hidden="true"
+    hidden
 >
     <svg class="theme-icon-light" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <path
@@ -25,7 +25,7 @@
 
     const themeToggleElem = document.getElementById('theme-toggle')
     themeToggleElem.classList.add('visible')
-    themeToggleElem.removeAttribute('aria-hidden')
+    themeToggleElem.removeAttribute('hidden')
 
     themeToggleElem.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-chisel-theme') === 'dark'
