@@ -231,13 +231,13 @@ h2.h6 + h3.h2 {
 }
 
 .hamburger:hover,
-.hamburger.js.is-active:hover {
+.hamburger.is-active:hover {
   opacity: 0.75;
 }
 
-.hamburger.js.is-active .hamburger-inner,
-.hamburger.js.is-active .hamburger-inner:before,
-.hamburger.js.is-active .hamburger-inner:after {
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner:before,
+.hamburger.is-active .hamburger-inner:after {
   background: currentColor;
 }
 
@@ -297,19 +297,19 @@ h2.h6 + h3.h2 {
     transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.hamburger--squeeze.js.is-active .hamburger-inner {
+.hamburger--squeeze.is-active .hamburger-inner {
   transform: rotate(45deg);
   transition-delay: 0.12s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.hamburger--squeeze.js.is-active .hamburger-inner:before {
+.hamburger--squeeze.is-active .hamburger-inner:before {
   top: 0;
   opacity: 0;
   transition: top 0.075s ease, opacity 0.075s 0.12s ease;
 }
 
-.hamburger--squeeze.js.is-active .hamburger-inner:after {
+.hamburger--squeeze.is-active .hamburger-inner:after {
   bottom: 0;
   transform: rotate(-90deg);
   transition: bottom 0.075s ease,

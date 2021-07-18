@@ -2,7 +2,7 @@
 import site from '../data/site.json';
 import Footer from '../components/Footer.astro';
 import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.svelte';
+import Nav from '../components/Nav.astro';
 
 interface Props {
 	title: string;
@@ -19,6 +19,21 @@ const {
 	pathname,
 	canonicalURL
 }: Props = Astro.props;
+
+const routes = [
+  {
+	title: "Home",
+	href: "/",
+  },
+  {
+	title: "Services",
+	href: "/#services",
+  },
+  {
+	title: "Blog",
+	href: "/blog",
+  },
+];
 ---
 
 <!doctype html>
@@ -44,9 +59,18 @@ const {
 	</head>
 
 	<body>
-		<Nav client:idle pathname={pathname} />
+		<a
+			id="skip-to-content"
+			href="#start-of-content"
+			class="sr-only sr-only-focusable"
+		>
+			Skip to content
+		</a>
+
+		<Nav pathname={pathname} navItems={routes} />
 
         <main>
+			<div id="start-of-content" class="sr-only" />
 			<slot />
         </main>
 
@@ -70,4 +94,28 @@ const {
 		flex: 1 0 0;
 		margin-top: 0;
 	}
+
+	a[href="#start-of-content"].sr-only.sr-only-focusable {
+		top: var(--spacer-xs);
+		left: var(--spacer-xs);
+		background: var(--chisel-neutral-900);
+		color: var(--chisel-neutral-50);
+		padding: var(--spacer-xs);
+		z-index: 1;
+	}
 </style>
+
+<script>
+	/** Connect skip to content button */
+    const skipToContentElem = document.getElementById('skip-to-content')
+    const startOfContentElem = document.getElementById('start-of-content')
+
+    skipToContentElem.addEventListener('click', () => {
+        const nextElem = startOfContentElem.nextElementSibling;
+
+        if (nextElem instanceof HTMLElement) {
+            nextElem.setAttribute("tabindex", "-1");
+            nextElem.focus();
+        }
+    })
+</script>
