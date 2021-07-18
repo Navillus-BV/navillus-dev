@@ -1,0 +1,26 @@
+---
+interface Props {
+    src: string;
+    alt: string;
+    small: boolean;
+}
+
+const { src = '/img/avatar.svg', alt = '', small = false }: Props = Astro.props;
+---
+
+<img src={src} width="48" height="48" alt={alt} loading="lazy" class={small ? 'small' : ''} />
+
+<style lang="scss">
+  img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: var(--shadow-md);
+
+    &.small {
+      height: 24px;
+      width: 24px;
+    }
+  }
+</style>

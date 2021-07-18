@@ -1,67 +1,79 @@
-<script>
-  import Avatar from "./Avatar.svelte";
-  import WebMentionReply from "./WebMentionReply.svelte";
-  import { isMentionType } from "../utils/mentions.js";
-  import site from "../data/site.json";
+---
+import Avatar from './Avatar.astro';
+import WebMentionReply from './WebMentionReply.astro';
+import { isMentionType } from '../utils/mentions.js';
+import site from '../data/site.json';
 
-  export let webmentions;
-  export let url;
+interface WebMention {
+  author?: {
+    photo: string;
+    name: string;
+  };
+  url?: string;
+  published: Date;
+  content: {
+    text: string;
+  }
+}
 
-  const reposts = webmentions.filter(isMentionType("repost-of"));
-  const likes = webmentions.filter(isMentionType("like-of"));
-  const replies = webmentions.filter(isMentionType("in-reply-to"));
-</script>
+interface Props {
+    webmentions: WebMention[];
+    url: string;
+}
+
+const { webmentions, url }: Props = Astro.props;
+const reposts = webmentions.filter(isMentionType("repost-of"));
+const likes = webmentions.filter(isMentionType("like-of"));
+const replies = webmentions.filter(isMentionType("in-reply-to"));
+---
 
 <h2 class="h3">Webmentions</h2>
 
-{#if likes.length}
+{likes.length ? (
   <div class="facepile">
     <h3 class="h4">{likes.length} Like{likes.length > 1 ? "s" : ""}</h3>
 
-    {#each likes as mention}
-      {#if mention.url}
+    {likes.map((mention) => mention.url ? (
         <a href={mention.url} target="_blank" rel="noopener noreferrer">
           <Avatar src={mention.author.photo} alt={mention.author.name} />
         </a>
-      {:else}
+    ) : (
         <Avatar src={mention.author.photo} alt={mention.author.name} />
-      {/if}
-    {/each}
+    ))}
   </div>
-{/if}
+) : (<></>)}
 
-{#if reposts.length}
+{reposts.length ? (
   <div class="facepile">
-    <h3 class="h4">{reposts.length} Repost{likes.length > 1 ? "s" : ""}</h3>
+    <h3 class="h4">{reposts.length} Repost{reposts.length > 1 ? "s" : ""}</h3>
 
-    {#each reposts as mention}
-      {#if mention.url}
+    {reposts.map((mention) => mention.url ? (
         <a href={mention.url} target="_blank" rel="noopener noreferrer">
           <Avatar src={mention.author.photo} alt={mention.author.name} />
         </a>
-      {:else}
+    ) : (
         <Avatar src={mention.author.photo} alt={mention.author.name} />
-      {/if}
-    {/each}
+    ))}
   </div>
-{/if}
+) : (<></>)}
 
-{#if replies.length}
+{replies.length ? (
   <div>
     <h3 class="h4">
       {replies.length}
       {replies.length === 1 ? "Reply" : "Replies"}
     </h3>
 
-    {#each replies as mention}
-      <WebMentionReply {mention} />
-    {/each}
+    {replies.map((mention) => (
+        <WebMentionReply mention={mention} />
+    ))}
   </div>
-{/if}
+) : (<></>)}
+
 
 <div class="webmentions__form">
   <p class="h5">
-    These are <a href="https://indieweb.org/Webmention">webmentions</a> via the
+    {webmentions.length > 0 ? "These are " : "We support "} <a href="https://indieweb.org/Webmention">webmentions</a> via the
     <a href="https://indieweb.org/">IndieWeb</a>
     and
     <a href="https://webmention.io/">webmention.io</a>. Mention this post from
