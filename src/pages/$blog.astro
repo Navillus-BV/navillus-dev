@@ -11,6 +11,10 @@ let title = 'Blog | Navillus';
 const { collection } = Astro.props;
 
 export async function createCollection() {
+    function isPublished(post) {
+        return !post.draft;
+    }
+
     function includeReadingTime(post) {
         return {
             ...post,
@@ -23,6 +27,7 @@ export async function createCollection() {
         async data() {
             const allPosts = Astro.fetchContent('./blog/*.md');
             return allPosts
+                .filter(isPublished)
                 .map(includeReadingTime)
                 .sort((a, b) => new Date(b.published_date) - new Date(a.published_date));
         },
