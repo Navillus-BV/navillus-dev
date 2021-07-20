@@ -11,7 +11,7 @@ tags:
 
 Not too long ago, the Navillus site was rewritten from the ground up in [Astro](https://astro.build). Since then we've had quite a bit of interest in why we jumped to Astro, how it went, and what we learned. I'll do my best to answer the common questions here, but feel free to reach out on [Twitter](https://twitter.com/navillus_dev) if we missed anything!
 
-**tl;dr;**Our homepage makes fewer requests (10 vs. 21), is smaller (77kB vs. 123kB), and our JavaScript footprint went down from 31kB to a whopping 2kB!
+**tl;dr;** Our homepage makes fewer requests (10 vs. 21), is smaller (77kB vs. 123kB), and our JavaScript footprint went down from 31kB to a whopping 2kB!
 
 ## Why we moved to Astro
 
@@ -32,13 +32,11 @@ The main change will be related to conditional rendering syntax, like hiding/sho
 In Svelte...
 
 ```html
-{#if open}
-  ...
-{/if}
+{#if open} ... {/if}
 
 <ul>
   {#each items as item}
-    <li>{item}</li>
+  <li>{item}</li>
   {/each}
 </ul>
 ```
