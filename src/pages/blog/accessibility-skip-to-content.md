@@ -5,7 +5,7 @@ description: For visitors that use a keyboard or screen reader to navigate websi
 author: tony-sull
 image: posts/2021-05-10-accessibility-skip-to-content.jpg
 published_date: 2021-05-10
-modified_date: 2021-06-05
+modified_date: 2021-07-20
 tags:
   - accessibility
 ---
@@ -60,15 +60,17 @@ The `<a>` doesn't necessarily have to be the first child of the page's `body`, b
 
 ```css
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
+    clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+    white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
 
 .sr-only.sr-only-focusable:focus {
@@ -78,15 +80,20 @@ The `<a>` doesn't necessarily have to be the first child of the page's `body`, b
   margin: 0;
   overflow: visible;
   clip: auto;
+  clip-path: initial;
   white-space: normal;
 }
 ```
+
+> Update: `.sr-only` class updated based on some excellent feedback from Inclusivity Hub on [dev.to](https://dev.to/navillusbv/web-accessibility-hidden-links-make-all-the-difference-27a7)
 
 You have likely seen `sr-only` helper classes elsewhere, most CSS frameworks like [Bootstrap](https://getbootstrap.com/) and [Tailwind](https://tailwindcss.com/) include them out of the box.
 
 If you haven't seen `sr-only-focusable` before, that's just an extra helper class that allows the element to be visible _only_ when it has `:focus`.
 
 ### Enhance it with JavaScript
+
+> Update: Looking for a no-JS solution? Skip the JS logic and point your "Skip to Content" link straight to your `<main id="main">` block!
 
 This feature already works as-is, no JavaScript at all. There is a catch though, clicking anchor tags with with `href="#start-of-content"` will update the URL in the address bar. That's not always ideal and could even break your page if you are using hash routing.
 
