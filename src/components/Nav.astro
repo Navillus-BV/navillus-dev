@@ -130,10 +130,12 @@ const { navItems, pathname }: Props = Astro.props;
       max-height: 0;
       overflow: hidden;
       transition: max-height 300ms cubic-bezier(0.33, 1, 0.68, 1);
+      visibility: hidden;
   }
 
   #toggle.animate:checked + nav {
       max-height: 16rem;
+      visibility: visible;
   }
 
   .top {
