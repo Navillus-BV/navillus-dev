@@ -61,7 +61,7 @@ const routes = [
 	<body>
 		<a
 			id="skip-to-content"
-			href="#start-of-content"
+			href="#main"
 			class="sr-only sr-only-focusable"
 		>
 			Skip to content
@@ -69,8 +69,7 @@ const routes = [
 
 		<Nav pathname={pathname} navItems={routes} />
 
-        <main>
-			<div id="start-of-content" class="sr-only" />
+        <main id="main">
 			<slot />
         </main>
 
@@ -95,7 +94,7 @@ const routes = [
 		margin-top: 0;
 	}
 
-	a[href="#start-of-content"].sr-only.sr-only-focusable {
+	a[href="#main"].sr-only.sr-only-focusable {
 		top: var(--spacer-xs);
 		left: var(--spacer-xs);
 		background: var(--chisel-neutral-900);
@@ -104,18 +103,3 @@ const routes = [
 		z-index: 1;
 	}
 </style>
-
-<script>
-	/** Connect skip to content button */
-    const skipToContentElem = document.getElementById('skip-to-content')
-    const startOfContentElem = document.getElementById('start-of-content')
-
-    skipToContentElem.addEventListener('click', () => {
-        const nextElem = startOfContentElem.nextElementSibling;
-
-        if (nextElem instanceof HTMLElement) {
-            nextElem.setAttribute("tabindex", "-1");
-            nextElem.focus();
-        }
-    })
-</script>
