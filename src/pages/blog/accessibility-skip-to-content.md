@@ -5,7 +5,7 @@ description: For visitors that use a keyboard or screen reader to navigate websi
 author: tony-sull
 image: posts/2021-05-10-accessibility-skip-to-content.jpg
 published_date: 2021-05-10
-modified_date: 2021-07-20
+modified_date: 2021-07-21
 tags:
   - accessibility
 ---
@@ -36,9 +36,9 @@ Actually implementing this hidden button can be a bit confusing at first, Let's 
 
 ```html
 <body>
-  <a href="#start-of-content" class="sr-only sr-only-focusable"
-    >Skip to content</a
-  >
+  <a href="#start-of-content" class="sr-only sr-only-focusable">
+    Skip to content
+  </a>
 
   <header>
     <!-- Your header content goes here -->
@@ -61,16 +61,20 @@ The `<a>` doesn't necessarily have to be the first child of the page's `body`, b
 ```css
 .sr-only {
   border: 0;
-    padding: 0;
-    margin: 0;
-    position: absolute !important;
-    height: 1px; 
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-    clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
-    clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
-    white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
 }
 
 .sr-only.sr-only-focusable:focus {
