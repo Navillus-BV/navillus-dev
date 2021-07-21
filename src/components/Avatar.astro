@@ -8,7 +8,7 @@ interface Props {
 const { src = '/img/avatar.svg', alt = '', small = false }: Props = Astro.props;
 ---
 
-<img src={src} width="48" height="48" alt={alt} loading="lazy" class={small ? 'small' : ''} />
+<img src={src} width="48" height="48" alt={alt} loading="lazy" class={`u-photo${small ? ' small' : ''}`} />
 
 <style lang="scss">
   img {

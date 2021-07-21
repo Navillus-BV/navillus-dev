@@ -6,10 +6,10 @@ interface Props {
     id?: string;
 }
 
-const { title, subtitle, id, alt = false }: Props = Astro.props;
+const { title, subtitle, id, class: className = '', alt = false }: Props = Astro.props;
 ---
 
-<section class="{ alt && 'alt'}" id={id || ''}>
+<section class={`${alt && 'alt'} ${className}`} id={id || ''}>
     <div class="container">
         {title && <h2 class="h6"><strong>{title}</strong></h2>}
         {subtitle && <h3 class="h2">{subtitle}</h3>}

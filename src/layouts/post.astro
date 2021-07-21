@@ -25,28 +25,31 @@ const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonical
         {blogPostSchema(content)}
     </head>
     
-    <Section alt>
+    <Section alt class="h-entry">
         <header>
-            <h1>{content.title}</h1>
+            <h1 class="p-name">{content.title}</h1>
+
+            <p class="p-summary h5 lead">{content.description}</p>
 
             <small>
-                By
-                <b><a href={author.url}>{authorName}</a></b>
-                •
-                <time datetime={content.published_date}>{formatDate(content.published_date)}</time>
+                <time class="dt-published" datetime={content.published_date}>{formatDate(content.published_date)}</time>
+                by
+                <b class="h-card p-author">
+                    <a class="u-url" href={author.url}>{authorName}</a>
+                </b>
                 • {minutes} min read
             </small>
 
             {content.modified_date &&
                 <small>
-                    <time datetime={content.modified_date}>
+                    <time class="dt-updated" datetime={content.modified_date}>
                         <i>Updated: {formatDate(content.modified_date)}</i>
                     </time>
                 </small>
             }
         </header>
 
-        <article>
+        <article class="e-content">
             <slot />
         </article>
 
@@ -74,6 +77,10 @@ const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonical
                     font-size: var(--chisel-h2);
                 }
             }
+        }
+
+        & .lead {
+            color: var(--chisel-neutral-700);
         }
     }
 

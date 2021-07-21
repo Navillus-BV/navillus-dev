@@ -23,17 +23,17 @@ const { mention }: Props = Astro.props;
 const id = `webmention-${mention['wm=id]']}`;
 ---
 
-<article id={id}>
+<article class="h-entry" id={id}>
   <div class="meta">
     {mention.author ? (
       <>
         <Avatar src={mention.author.photo} alt={mention.author.name} small />
-        <a href={mention.url} target="_blank" rel="noreferrer noopener">
+        <a class="h-card u-url p-author" href={mention.url} target="_blank" rel="noreferrer noopener">
           <span>
-            <strong>{mention.author.name}</strong>
+            <strong class="p-name">{mention.author.name}</strong>
           </span>
         </a>
-        <time class="h6" datetime={mention.published}>
+        <time class="h6 dt-published" datetime={mention.published}>
           {formatDate(mention.published)}
         </time>
       </>
@@ -42,11 +42,11 @@ const id = `webmention-${mention['wm=id]']}`;
     )}
   </div>
 
-  <div class="content">
+  <div class="content p-content">
     {mention.content.text}
 
-    {mention.text && (
-      <a href={mention.url} target="_blank" rel="noopener noreferrer">
+    {mention.content.text && (
+      <a class="u-url" href={mention.url} target="_blank" rel="noopener noreferrer">
         <span>source</span>
         <svg
           aria-hidden="true"

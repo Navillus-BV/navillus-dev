@@ -34,7 +34,7 @@ const replies = webmentions.filter(isMentionType("in-reply-to"));
     <h3 class="h4">{likes.length} Like{likes.length > 1 ? "s" : ""}</h3>
 
     {likes.map((mention) => mention.url ? (
-        <a href={mention.url} target="_blank" rel="noopener noreferrer">
+        <a class="h-card u-url" href={mention.url} target="_blank" rel="noopener noreferrer">
           <Avatar src={mention.author.photo} alt={mention.author.name} />
         </a>
     ) : (
@@ -48,7 +48,7 @@ const replies = webmentions.filter(isMentionType("in-reply-to"));
     <h3 class="h4">{reposts.length} Repost{reposts.length > 1 ? "s" : ""}</h3>
 
     {reposts.map((mention) => mention.url ? (
-        <a href={mention.url} target="_blank" rel="noopener noreferrer">
+        <a class="h-card u-url" href={mention.url} target="_blank" rel="noopener noreferrer">
           <Avatar src={mention.author.photo} alt={mention.author.name} />
         </a>
     ) : (
