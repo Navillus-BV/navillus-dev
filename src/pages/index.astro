@@ -4,10 +4,9 @@ import BadgeList from '../components/BadgeList.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Section from '../components/Section.astro';
 import { organizationSchema, websiteSchema } from '../utils/jsonLD';
-
-const cms = Astro.fetchContent('../data/tools/cms/*.md');
-const ssg = Astro.fetchContent('../data/tools/ssg/*.md');
-const hosts = Astro.fetchContent('../data/tools/hosts/*.md');
+import cms from '../data/tools/cms.json';
+import hosts from '../data/tools/hosts.json';
+import ssg from '../data/tools/ssg.json';
 ---
 
 <Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
@@ -104,9 +103,9 @@ const hosts = Astro.fetchContent('../data/tools/hosts/*.md');
     </Section>
 
     <Section title="TECHNOLOGY WE USE" subtitle="Building the Modern Web">
-        <BadgeList title="HEADLESS CMS" badges={cms} />
-        <BadgeList title="STATIC SITE GENERATOR" badges={ssg} />
-        <BadgeList title="DEPLOYMENT PLATFORMS" badges={hosts} />
+        <BadgeList title={cms.title} badges={cms.items} />
+        <BadgeList title={ssg.title} badges={ssg.items} />
+        <BadgeList title={hosts.title} badges={hosts.items} />
     </Section>
 
     <Section alt id="services" title="WHAT WE OFFER" subtitle="Our Services">

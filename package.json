@@ -1,6 +1,6 @@
 {
   "name": "navillus-dev",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "astro dev",
     "prebuild": "cp -r node_modules/@fontsource public/styles",
@@ -9,7 +9,7 @@
   "devDependencies": {
     "@fontsource/fira-mono": "^4.4.5",
     "@fontsource/poppins": "^4.4.5",
-    "astro": "latest",
+    "astro": "^0.18.1",
     "chisel.css": "^0.5.1",
     "lodash": "^4.17.21",
     "markdown-reading-time": "^0.1.1",
