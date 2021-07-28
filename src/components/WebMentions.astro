@@ -29,7 +29,9 @@ const replies = webmentions.filter(isMentionType("in-reply-to"))
 
 <h2 class="h3">Webmentions</h2>
 
-{likes.length ? (
+<slot />
+
+{likes.length > 0 && (
   <div class="facepile">
     <h3 class="h4">{likes.length} Like{likes.length > 1 ? "s" : ""}</h3>
 
@@ -41,9 +43,9 @@ const replies = webmentions.filter(isMentionType("in-reply-to"))
         <Avatar src={mention.author.photo} alt={mention.author.name} />
     ))}
   </div>
-) : (<></>)}
+)}
 
-{reposts.length ? (
+{reposts.length > 0 && (
   <div class="facepile">
     <h3 class="h4">{reposts.length} Repost{reposts.length > 1 ? "s" : ""}</h3>
 
@@ -55,9 +57,9 @@ const replies = webmentions.filter(isMentionType("in-reply-to"))
         <Avatar src={mention.author.photo} alt={mention.author.name} />
     ))}
   </div>
-) : (<></>)}
+)}
 
-{replies.length ? (
+{replies.length > 0 && (
   <div>
     <h3 class="h4">
       {replies.length}
@@ -68,7 +70,7 @@ const replies = webmentions.filter(isMentionType("in-reply-to"))
         <WebMentionReply mention={mention} />
     ))}
   </div>
-) : (<></>)}
+)}
 
 
 <div class="webmentions__form">

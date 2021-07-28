@@ -5,6 +5,7 @@ description: A handy trick to make your Svelte components feel even more like pl
 author: tony-sull
 image: posts/2021-06-25-svelte-class-props.jpg
 published_date: 2021-06-25
+tweetId: 1408488530779717636
 tags:
   - svelte
   - react

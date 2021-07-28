@@ -5,6 +5,7 @@ description: Static sites powered by a git-based CMS, made easy.
 author: tony-sull
 image: posts/2021-06-23-astro-plus-netlify-cms.jpg
 published_date: 2021-06-23
+tweetId: 1407792706546458625
 tags:
   - astro
   - cms
@@ -55,7 +56,12 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "string",
+          default: "Anonymous",
+        }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -65,23 +71,22 @@ In this excerpt from the demo's `config.yml`, note that `folder` is pointing to 
 
 ### Loading and rendering in Astro
 
-Loading local data is handled with the [Astro.fetchContent](https://github.com/snowpackjs/astro#-fetching-data) API. 
+Loading local data is handled with the [Astro.fetchContent](https://github.com/snowpackjs/astro#-fetching-data) API.
 
 ```js
 export let collection: any;
 
 export async function createCollection() {
-    return {
-        /** Load posts, sort newest -> oldest */
-        async data() {
-            const allPosts = Astro.fetchContent('./posts/*.md');
-            return allPosts
-                .sort((a, b) => new Date(b.date) - new Date(a.date));
-        },
+  return {
+    /** Load posts, sort newest -> oldest */
+    async data() {
+      const allPosts = Astro.fetchContent("./posts/*.md");
+      return allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    },
 
-        /** Set page size */
-        pageSize: 10,
-    }
+    /** Set page size */
+    pageSize: 10,
+  };
 }
 ```
 

@@ -5,6 +5,7 @@ description: Scalable e-commerce made easy with the Jamstack.
 author: tony-sull
 image: posts/2021-07-02-astro-plus-snipcart.jpg
 published_date: 2021-07-03
+tweetId: 1411055265479368707
 tags:
   - astro
   - snipcart

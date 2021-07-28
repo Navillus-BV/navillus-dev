@@ -11,8 +11,6 @@ const API = "https://webmention.io/api";
 const TOKEN = process.env.WEBMENTION_IO_TOKEN;
 
 async function fetchWebmentions(since, perPage = 1000) {
-  console.log(domain);
-
   // If we don't have a domain name or token, abort
   if (!domain || !TOKEN) {
     console.warn(">>> unable to fetch webmentions: missing domain or token");

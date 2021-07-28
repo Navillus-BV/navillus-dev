@@ -18,6 +18,10 @@ const minutes = readMinutes(content);
 
 const allMentions = await getAllMentions();
 const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonicalURL.href));
+
+const tweetId = content.tweetId;
+const shareLink = `https://twitter.com/intent/tweet/?text=${encodeURI(`${content.title} | ${content.description} by @navillus_dev`)}&amp;url=${encodeURI(Astro.request.canonicalURL.href)}`;
+const findLink = `https://twitter.com/search?f=tweets&src=typd&q=${encodeURI(Astro.request.canonicalURL.href)}`;
 ---
 
 <Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
@@ -54,7 +58,25 @@ const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonical
         </article>
 
         <footer id="webmentions">
-            <WebMentions webmentions={webmentions} url={Astro.request.canonicalURL.href} />
+            <WebMentions webmentions={webmentions} url={Astro.request.canonicalURL.href}>
+                <div class="share">
+                    <svg aria-hidden="true" fill="#55acee" width="24" height="24">
+                        <use xlink:href="/assets/sprites.svg#twitter" />
+                    </svg>
+
+                    {tweetId ? (<small>
+                        <a href={`https://twitter.com/intent/tweet?in_reply_to=${tweetId }`}>Join the conversation</a> on
+                        Twitter. Or, if you liked this article and think others should read it, please
+                        <a href={`https://twitter.com/intent/retweet?tweet_id=${tweetId }`}>retweet it</a>.
+                    </small>) : (<small>
+                        If you liked this article and think others should read it, please
+                        <a href={shareLink}>share it</a>.
+                        Or,
+                        <a href={findLink}>find the conversation</a>
+                        on Twitter.
+                    </small>)}
+                </div>
+            </WebMentions>
         </footer>
     </Section>
 </Layout>
@@ -100,5 +122,16 @@ const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonical
 
     footer {
         margin-top: var(--spacer-xl);
+
+        & :global(.share) {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: var(--spacer-sm);
+
+            & * + * {
+                margin-top: 0;
+            }
+        }
     }
 </style>

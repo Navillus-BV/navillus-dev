@@ -5,6 +5,7 @@ description: Static sites powered by Forestry's git-based CMS, made easy.
 author: tony-sull
 image: posts/2021-06-28-astro-plus-forestry.jpg
 published_date: 2021-06-28
+tweetId: 1409606618854088714
 tags:
   - astro
   - cms

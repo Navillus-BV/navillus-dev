@@ -25,21 +25,15 @@ const id = `webmention-${mention['wm=id]']}`
 
 <article class="h-entry" id={id}>
   <div class="meta">
-    {mention.author ? (
-      <>
-        <Avatar src={mention.author.photo} alt={mention.author.name} small />
-        <a class="h-card u-url p-author" href={mention.url} target="_blank" rel="noreferrer noopener">
-          <span>
-            <strong class="p-name">{mention.author.name}</strong>
-          </span>
-        </a>
-        <time class="h6 dt-published" datetime={mention.published}>
-          {formatDate(mention.published)}
-        </time>
-      </>
-    ) : (
-      <strong>Anonymous</strong>
-    )}
+    <Avatar src={mention.author.photo} alt={mention.author.name} small />
+    <a class="h-card u-url p-author" href={mention.url} target="_blank" rel="noreferrer noopener">
+      <span>
+        <strong class="p-name">{mention.author.name}</strong>
+      </span>
+    </a>
+    <time class="h6 dt-published" datetime={mention.published}>
+      {formatDate(mention.published)}
+    </time>
   </div>
 
   <div class="content p-content">
