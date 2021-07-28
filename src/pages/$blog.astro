@@ -1,14 +1,14 @@
 ---
-import marked from 'marked';
-import Layout from '../layouts/base.astro';
-import PostPreview from '../components/PostPreview.astro';
-import Section from '../components/Section.astro';
-import site from '../data/site.json';
-import { readMinutes } from '../utils/readMinutes';
+import marked from 'marked'
+import Layout from '../layouts/base.astro'
+import PostPreview from '../components/PostPreview.astro'
+import Section from '../components/Section.astro'
+import site from '../data/site.json'
+import { readMinutes } from '../utils/readMinutes'
 
 export async function createCollection() {
     function isPublished(post) {
-        return !post.draft;
+        return !post.draft
     }
 
     function includeReadingTime(post) {
@@ -58,7 +58,7 @@ export async function createCollection() {
     }
 }
 
-const { posts } = Astro.props;
+const { posts } = Astro.props
 ---
 
 <Layout title="Blog" pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>

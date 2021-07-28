@@ -1,11 +1,11 @@
 ---
 interface Props {
-    src: string;
-    alt: string;
-    small: boolean;
+  src: string
+  alt: string
+  small: boolean
 }
 
-const { src = '/img/avatar.svg', alt = '', small = false }: Props = Astro.props;
+const { src = '/img/avatar.svg', alt = '', small = false } = Astro.props as Props
 ---
 
 <img src={src} width="48" height="48" alt={alt} loading="lazy" class={`u-photo${small ? ' small' : ''}`} />

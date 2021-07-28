@@ -1,26 +1,26 @@
 ---
-import Avatar from './Avatar.astro';
-import { formatDate } from '../utils/formatDate';
+import Avatar from './Avatar.astro'
+import { formatDate } from '../utils/formatDate'
 
 interface WebMention {
   author?: {
-    photo: string;
-    name: string;
+    photo: string
+    name: string
   };
-  url?: string;
-  published: Date;
+  url?: string
+  published: Date
   content: {
-    text: string;
+    text: string
   }
 }
 
 interface Props {
-  mention: WebMention;
+  mention: WebMention
 }
 
-const { mention }: Props = Astro.props;
+const { mention } = Astro.props as Props
 
-const id = `webmention-${mention['wm=id]']}`;
+const id = `webmention-${mention['wm=id]']}`
 ---
 
 <article class="h-entry" id={id}>

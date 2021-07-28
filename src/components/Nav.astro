@@ -1,18 +1,18 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
-import Logo from './Logo.astro';
+import ThemeToggle from './ThemeToggle.astro'
+import Logo from './Logo.astro'
 
 interface NavItem {
-    title: string;
-    href: string;
+  title: string
+  href: string
 }
 
 interface Props {
-    navItems: NavItem[];
-    pathname: string;
+  navItems: NavItem[]
+  pathname: string
 }
 
-const { navItems, pathname }: Props = Astro.props;
+const { navItems, pathname } = Astro.props as props
 ---
 
 <header>
@@ -77,29 +77,29 @@ const { navItems, pathname }: Props = Astro.props;
 </header>
 
 <script>
-    /** Connect hamburger icon animation */
-    const toggleElem = document.getElementById('toggle')
-    const hamburgerElem = document.querySelector('[for=toggle]')
+  /** Connect hamburger icon animation */
+  const toggleElem = document.getElementById('toggle')
+  const hamburgerElem = document.querySelector('[for=toggle]')
 
-    toggleElem.addEventListener('change', () => {
-        toggleElem.checked
-            ? hamburgerElem.classList.add('is-active')
-            : hamburgerElem.classList.remove('is-active')
-    })
+  toggleElem.addEventListener('change', () => {
+    toggleElem.checked
+      ? hamburgerElem.classList.add('is-active')
+      : hamburgerElem.classList.remove('is-active')
+  })
 
-    /** Close mobile menu when window resizes to desktop */
-    let innerWidth = window.innerWidth;
-    window.addEventListener('resize', () => {
-        if (innerWidth < 768 && window.innerWidth >= 768) {
-            toggleElem.checked = false
-            hamburgerElem.classList.remove('is-active')
-        }
+  /** Close mobile menu when window resizes to desktop */
+  let innerWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (innerWidth < 768 && window.innerWidth >= 768) {
+      toggleElem.checked = false
+      hamburgerElem.classList.remove('is-active')
+    }
 
-        innerWidth = window.innerWidth
-    })
+    innerWidth = window.innerWidth
+  })
 
-    /** Progressively enhance mobile menu with animations */
-    toggleElem.classList.add('animate')
+  /** Progressively enhance mobile menu with animations */
+  toggleElem.classList.add('animate')
 </script>
 
 <style lang="scss">

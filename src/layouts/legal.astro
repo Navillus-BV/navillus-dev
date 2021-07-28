@@ -9,7 +9,7 @@ interface Props {
 	}
 }
 
-const { content }: Props = Astro.props;
+const { content } = Astro.props as props;
 
 const lastUpdated = content.last_updated && new Date(content.last_updated).toDateString();
 ---

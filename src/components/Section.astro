@@ -1,25 +1,25 @@
 ---
 interface Props {
-    title: string;
-    subtitle: string;
-    alt: boolean;
-    id?: string;
+  title: string
+  subtitle: string
+  alt: boolean
+  id?: string
 }
 
-const { title, subtitle, id, class: className = '', alt = false }: Props = Astro.props;
+const { title, subtitle, id, class: className = '', alt = false } = Astro.props as props
 ---
 
 <section class={`${alt && 'alt'} ${className}`} id={id || ''}>
-    <div class="container">
-        {title && <h2 class="h6"><strong>{title}</strong></h2>}
-        {subtitle && <h3 class="h2">{subtitle}</h3>}
+  <div class="container">
+    {title && <h2 class="h6"><strong>{title}</strong></h2>}
+    {subtitle && <h3 class="h2">{subtitle}</h3>}
 
-        <slot />
-    </div>
+    <slot />
+  </div>
 </section>
 
 <style lang="scss">
-    h2 {
-        text-transform: uppercase;
-    }
+  h2 {
+    text-transform: uppercase;
+  }
 </style>

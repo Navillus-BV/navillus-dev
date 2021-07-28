@@ -1,82 +1,82 @@
 ---
-import { formatDate } from '../utils/formatDate';
+import { formatDate } from '../utils/formatDate'
 
-const { post } = Astro.props;
+const { post } = Astro.props
 
 const tagsData = post.tags.map((tag) => {
-    return {
-        tag,
-        url: `/tags/${tag}`
-    }
+  return {
+    tag,
+    url: `/tags/${tag}`
+  }
 })
 ---
 
 <article>
-    <a href={post.url}>
-        <h3 class="underline">{post.title}</h3>
-    </a>
+  <a href={post.url}>
+    <h3 class="underline">{post.title}</h3>
+  </a>
     
-    <time class="h6" datetime={post.published_date}>{formatDate(post.published_date)}</time>
-    <small> • {post.minutes} min read</small>
+  <time class="h6" datetime={post.published_date}>{formatDate(post.published_date)}</time>
+  <small> • {post.minutes} min read</small>
 
-    <p>{post.description}</p>
+  <p>{post.description}</p>
 
-    <div class="tags">
-        {tagsData.map(({ tag, url }) => (
-            <a href={url}><code>{tag}</code></a>
-        ))}
-    </div>
+  <div class="tags">
+    {tagsData.map(({ tag, url }) => (
+      <a href={url}><code>{tag}</code></a>
+    ))}
+  </div>
 </article>
 
 <style lang="scss">
-    article {
-        &:not(:first-of-type) {
-            margin-top: var(--spacer-lg);
-        }
-
-        & > a {
-            display: block;
-        }
+  article {
+    &:not(:first-of-type) {
+      margin-top: var(--spacer-lg);
     }
 
-    h3, p {
-        margin-bottom: var(--spacer-tiny);
+    & > a {
+      display: block;
     }
+  }
 
-    small + p {
-        margin-top: var(--spacer-sm);
+  h3, p {
+    margin-bottom: var(--spacer-tiny);
+  }
+
+  small + p {
+    margin-top: var(--spacer-sm);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  code {
+    margin-top: var(--spacer-xs);
+    display: inline-block;
+
+    &:first-of-type {
+      margin-left: 0;
     }
+  }
 
-    a {
-        color: inherit;
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacer-sm);
+    flex-wrap: wrap;
+
+    & a {
+      filter: var(--shadow-sm);
+      margin: 0;
+
+      &:hover {
+        filter: var(--shadow-secondary-sm);
+      }
+
+      & code {
+        margin-right: 0;
+      }
     }
-
-    code {
-        margin-top: var(--spacer-xs);
-        display: inline-block;
-
-        &:first-of-type {
-            margin-left: 0;
-        }
-    }
-
-    .tags {
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacer-sm);
-        flex-wrap: wrap;
-
-        & a {
-            filter: var(--shadow-sm);
-            margin: 0;
-
-            &:hover {
-                filter: var(--shadow-secondary-sm);
-            }
-
-            & code {
-                margin-right: 0;
-            }
-        }
-    }
+  }
 </style>

@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/base.astro';
-import BadgeList from '../components/BadgeList.astro';
-import ContactForm from '../components/ContactForm.astro';
-import Section from '../components/Section.astro';
-import { organizationSchema, websiteSchema } from '../utils/jsonLD';
-import cms from '../data/tools/cms.json';
-import hosts from '../data/tools/hosts.json';
-import ssg from '../data/tools/ssg.json';
+import Layout from '../layouts/base.astro'
+import BadgeList from '../components/BadgeList.astro'
+import ContactForm from '../components/ContactForm.astro'
+import Section from '../components/Section.astro'
+import tools from '../data/tools.json'
+import { organizationSchema, websiteSchema } from '../utils/jsonLD'
+
+const { cms, hosts, ssg } = tools
 ---
 
 <Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>

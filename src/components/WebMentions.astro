@@ -1,30 +1,30 @@
 ---
-import Avatar from './Avatar.astro';
-import WebMentionReply from './WebMentionReply.astro';
-import { isMentionType } from '../utils/mentions.js';
-import site from '../data/site.json';
+import Avatar from './Avatar.astro'
+import WebMentionReply from './WebMentionReply.astro'
+import { isMentionType } from '../utils/mentions.js'
+import site from '../data/site.json'
 
 interface WebMention {
   author?: {
-    photo: string;
-    name: string;
+    photo: string
+    name: string
   };
-  url?: string;
-  published: Date;
+  url?: string
+  published: Date
   content: {
-    text: string;
+    text: string
   }
 }
 
 interface Props {
-    webmentions: WebMention[];
-    url: string;
+  webmentions: WebMention[]
+  url: string
 }
 
-const { webmentions, url }: Props = Astro.props;
-const reposts = webmentions.filter(isMentionType("repost-of"));
-const likes = webmentions.filter(isMentionType("like-of"));
-const replies = webmentions.filter(isMentionType("in-reply-to"));
+const { webmentions, url } = Astro.props as props
+const reposts = webmentions.filter(isMentionType("repost-of"))
+const likes = webmentions.filter(isMentionType("like-of"))
+const replies = webmentions.filter(isMentionType("in-reply-to"))
 ---
 
 <h2 class="h3">Webmentions</h2>
