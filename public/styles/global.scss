@@ -1,5 +1,5 @@
-@use './prism-hopscotch.scss';
 @use 'chisel.css/dist/chisel.css';
+@use 'chisel.css/dist/chisel-prism.css';
 @use "./@fontsource/poppins/scss/mixins" as Poppins;
 
 @include Poppins.fontFace(
@@ -88,7 +88,6 @@ body {
 }
 
 section {
-  margin-top: 0;
   padding: var(--spacer-lg) 0;
 
   &.alt {
@@ -162,10 +161,6 @@ h2.h6 + h3.h2 {
 }
 
 .hero {
-  & * {
-    margin-top: 0;
-  }
-
   & .button {
     margin-top: var(--spacer-md);
   }

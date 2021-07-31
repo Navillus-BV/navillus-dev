@@ -103,11 +103,6 @@ const { navItems, pathname } = Astro.props as props
 </script>
 
 <style lang="scss">
-  * + *:not(.hamburger),
-  * + :global(*:not(.hamburger)) {
-    margin-top: 0;
-  }
-
   header {
     position: relative;
   }
@@ -147,7 +142,6 @@ const { navItems, pathname } = Astro.props as props
     & nav,
     & a.button {
       display: none;
-      margin-top: 0;
     }
   }
 

@@ -95,7 +95,7 @@ const replies = webmentions.filter(isMentionType("in-reply-to"))
       required=""
     />
     <input type="hidden" name="target" value={url} />
-    <input type="submit" class="button button-small" value="Send Webmention" />
+    <button type="submit">Send Webmention</button>
   </form>
 </div>
 
@@ -129,5 +129,9 @@ const replies = webmentions.filter(isMentionType("in-reply-to"))
 
   .webmentions__form {
     margin-top: var(--spacer-lg);
+  }
+
+  button[type=submit] {
+    margin-top: var(--spacer-sm);
   }
 </style>

@@ -10,7 +10,7 @@
     "@fontsource/fira-mono": "^4.4.5",
     "@fontsource/poppins": "^4.4.5",
     "astro": "^0.18.1",
-    "chisel.css": "^0.5.1",
+    "chisel.css": "^0.6.0",
     "lodash": "^4.17.21",
     "markdown-reading-time": "^0.1.1",
     "marked": "^2.1.3",

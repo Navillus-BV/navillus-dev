@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <button type="submit" class="button">submit</button>
+  <button type="submit">submit</button>
 </form>
 
 <style lang="scss">
@@ -51,10 +51,7 @@
   .form__row {
     display: grid;
     grid-template-columns: 1fr;
-
-    & > * {
-      margin-top: 0;
-    }
+    row-gap: var(--spacer-sm);
 
     @media (min-width: 768px) {
       & {
