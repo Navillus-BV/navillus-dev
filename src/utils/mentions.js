@@ -105,3 +105,12 @@ export function isMentionType(type) {
     return !!webmention[type];
   };
 }
+
+export function sortMentions(descending) {
+  return function (a, b) {
+    const aDate = new Date(a.published);
+    const bDate = new Date(b.published);
+
+    return descending ? aDate - bDate : bDate - aDate;
+  };
+}

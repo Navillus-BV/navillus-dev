@@ -5,7 +5,7 @@ import WebMentions from '../components/WebMentions.astro';
 import { readMinutes } from '../utils/readMinutes';
 import { formatDate } from '../utils/formatDate';
 import { blogPostSchema } from '../utils/jsonLD';
-import { getAllMentions, isForUrl } from '../utils/mentions';
+import { getAllMentions, isForUrl, sortMentions } from '../utils/mentions';
 
 const { content } = Astro.props;
 
@@ -17,7 +17,9 @@ const authorName = author ? `${author.first_name} ${author.last_name}` : content
 const minutes = readMinutes(content);
 
 const allMentions = await getAllMentions();
-const webmentions = allMentions.children.filter(isForUrl(Astro.request.canonicalURL.href));
+const webmentions = allMentions.children
+    .filter(isForUrl(Astro.request.canonicalURL.href))
+    .sort(sortMentions(true));
 
 const tweetId = content.tweetId;
 const shareLink = `https://twitter.com/intent/tweet/?text=${encodeURI(`${content.title} | ${content.description} by @navillus_dev`)}&amp;url=${encodeURI(Astro.request.canonicalURL.href)}`;
