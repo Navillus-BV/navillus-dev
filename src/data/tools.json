@@ -85,6 +85,10 @@
                 "logo": "/assets/sprites.svg#11ty"
             },
             {
+                "title": "Astro",
+                "logo": "/assets/sprites.svg#astro"
+            },
+            {
                 "title": "Gatsby",
                 "logo": "/assets/sprites.svg#gatsby"
             },
