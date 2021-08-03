@@ -4,8 +4,8 @@ title: Astro + Foresty CMS Revisited
 description: Static sites powered by Forestry's git-based CMS, made even easier.
 author: tony-sull
 image: posts/2021-08-03-astro-plus-forestry-revisited.jpg
+tweetId: 1422604180984934404
 published_date: 2021-08-03
-tweetId: 1409606618854088714
 tags:
   - astro
   - cms
