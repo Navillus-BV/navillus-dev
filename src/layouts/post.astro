@@ -21,6 +21,8 @@ const webmentions = allMentions.children
     .filter(isForUrl(Astro.request.canonicalURL.href))
     .sort(sortMentions(true));
 
+console.log(webmentions);
+
 const tweetId = content.tweetId;
 const shareLink = `https://twitter.com/intent/tweet/?text=${encodeURI(`${content.title} | ${content.description} by @navillus_dev`)}&amp;url=${encodeURI(Astro.request.canonicalURL.href)}`;
 const findLink = `https://twitter.com/search?f=tweets&src=typd&q=${encodeURI(Astro.request.canonicalURL.href)}`;

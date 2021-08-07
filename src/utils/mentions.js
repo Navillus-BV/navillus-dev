@@ -114,3 +114,9 @@ export function sortMentions(descending) {
     return descending ? aDate - bDate : bDate - aDate;
   };
 }
+
+export const MENTION_TYPE = {
+  Like: "like-of",
+  Reply: "in-reply-to",
+  Share: "repost-of",
+};

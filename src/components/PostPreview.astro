@@ -1,14 +1,25 @@
 ---
+import TagsList from './TagsList.astro'
+import WebMentionsCount from './WebMentionsCount.astro'
+import site from '../data/site.json'
+import { getAllMentions, isForUrl } from '../utils/mentions.js'
 import { formatDate } from '../utils/formatDate'
+import { pathJoin } from '../utils/pathJoin'
 
 const { post } = Astro.props
 
-const tagsData = post.tags.map((tag) => {
+const tags = post.tags.map((tag) => {
   return {
     tag,
     url: `/tags/${tag}`
   }
 })
+
+const URL = `https://${pathJoin(site.domain, post.url)}`
+
+const allMentions = await getAllMentions();
+const webMentions = allMentions.children
+    .filter(isForUrl(URL))
 ---
 
 <article>
@@ -21,11 +32,13 @@ const tagsData = post.tags.map((tag) => {
 
   <p>{post.description}</p>
 
-  <div class="tags">
-    {tagsData.map(({ tag, url }) => (
-      <a href={url}><code>{tag}</code></a>
-    ))}
-  </div>
+  <footer>
+    {webMentions.length > 0 && (
+      <WebMentionsCount webMentions={webMentions} />
+    )}
+
+    <TagsList tags={tags} />
+  </footer>
 </article>
 
 <style lang="scss">
@@ -39,43 +52,34 @@ const tagsData = post.tags.map((tag) => {
     }
   }
 
-  h3, p {
+  h3 {
     margin-bottom: var(--spacer-tiny);
   }
 
-  small + p {
-    margin-top: var(--spacer-sm);
+  p {
+    margin: var(--spacer-sm) 0;
   }
 
   a {
     color: inherit;
   }
 
-  code {
-    margin-top: var(--spacer-xs);
-    display: inline-block;
-
-    &:first-of-type {
-      margin-left: 0;
-    }
-  }
-
-  .tags {
+  footer {
     display: flex;
-    flex-direction: row;
-    gap: var(--spacer-sm);
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: var(--spacer-xs);
 
-    & a {
-      filter: var(--shadow-sm);
-      margin: 0;
-
-      &:hover {
-        filter: var(--shadow-secondary-sm);
+    @media (min-width: 480px) {
+      & {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacer-sm);
       }
+    }
 
-      & code {
-        margin-right: 0;
+    @media (min-width: 768px) {
+      & {
+        gap: var(--spacer-md);
       }
     }
   }
