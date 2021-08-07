@@ -6,7 +6,7 @@ author: tony-sull
 image: posts/2021-05-07-jamstack-2_0.jpg
 published_date: 2021-05-07
 modified_date: 2021-06-05
-tweetId: 1401184029832007680
+tweetId: "1401184029832007680"
 tags:
   - jamstack
 ---

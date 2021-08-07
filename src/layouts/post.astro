@@ -23,6 +23,8 @@ const webMentions = allMentions.children
     .sort(sortMentions(true))
 
 const tweetId = content.tweetId
+
+console.log(content)
 ---
 
 <Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>

@@ -5,7 +5,7 @@ description: Static doesn't mean boring! Easily add client routing and page tran
 author: tony-sull
 image: posts/2021-07-24-astro-plus-swup.jpg
 published_date: 2021-07-24
-tweetId: 1418952288476012545
+tweetId: "1418952288476012545"
 tags:
   - astro
 ---

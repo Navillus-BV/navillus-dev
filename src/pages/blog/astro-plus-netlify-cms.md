@@ -5,7 +5,7 @@ description: Static sites powered by a git-based CMS, made easy.
 author: tony-sull
 image: posts/2021-06-23-astro-plus-netlify-cms.jpg
 published_date: 2021-06-23
-tweetId: 1407792706546458625
+tweetId: "1407792706546458625"
 tags:
   - astro
   - cms
