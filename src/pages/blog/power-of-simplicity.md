@@ -5,7 +5,7 @@ description: It's easy to get swept up in the latest libraries and platforms, bu
 author: tony-sull
 image: posts/2021-08-07-power-of-simplicity.jpg
 published_date: 2021-08-07
-tweetId: 1418952288476012545
+tweetId: 1424057461368135681
 tags:
   - jamstack
   - intro
