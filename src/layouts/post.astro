@@ -1,31 +1,28 @@
 ---
-import Layout from './base.astro';
-import Section from '../components/Section.astro';
-import WebMentions from '../components/WebMentions.astro';
-import { readMinutes } from '../utils/readMinutes';
-import { formatDate } from '../utils/formatDate';
-import { blogPostSchema } from '../utils/jsonLD';
-import { getAllMentions, isForUrl, sortMentions } from '../utils/mentions';
+import Layout from './base.astro'
+import Section from '../components/Section.astro'
+import TwitterShare from '../components/TwitterShare.astro'
+import WebMentions from '../components/WebMentions.astro'
+import { readMinutes } from '../utils/readMinutes'
+import { formatDate } from '../utils/formatDate'
+import { blogPostSchema } from '../utils/jsonLD'
+import { getAllMentions, isForUrl, sortMentions } from '../utils/mentions'
 
-const { content } = Astro.props;
+const { content } = Astro.props
 
-const allAuthors = Astro.fetchContent('../data/authors/*.md');
-const author = allAuthors.find((author) => author.slug === content.author);
+const allAuthors = Astro.fetchContent('../data/authors/*.md')
+const author = allAuthors.find((author) => author.slug === content.author)
 
-const authorName = author ? `${author.first_name} ${author.last_name}` : content.author;
+const authorName = author ? `${author.first_name} ${author.last_name}` : content.author
 
-const minutes = readMinutes(content);
+const minutes = readMinutes(content)
 
-const allMentions = await getAllMentions();
-const webmentions = allMentions.children
+const allMentions = await getAllMentions()
+const webMentions = allMentions.children
     .filter(isForUrl(Astro.request.canonicalURL.href))
-    .sort(sortMentions(true));
+    .sort(sortMentions(true))
 
-console.log(webmentions);
-
-const tweetId = content.tweetId;
-const shareLink = `https://twitter.com/intent/tweet/?text=${encodeURI(`${content.title} | ${content.description} by @navillus_dev`)}&amp;url=${encodeURI(Astro.request.canonicalURL.href)}`;
-const findLink = `https://twitter.com/search?f=tweets&src=typd&q=${encodeURI(Astro.request.canonicalURL.href)}`;
+const tweetId = content.tweetId
 ---
 
 <Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
@@ -62,24 +59,13 @@ const findLink = `https://twitter.com/search?f=tweets&src=typd&q=${encodeURI(Ast
         </article>
 
         <footer id="webmentions">
-            <WebMentions webmentions={webmentions} url={Astro.request.canonicalURL.href}>
-                <div class="share">
-                    <svg aria-hidden="true" fill="#55acee" width="24" height="24">
-                        <use xlink:href="/assets/sprites.svg#twitter" />
-                    </svg>
-
-                    {tweetId ? (<small>
-                        <a href={`https://twitter.com/intent/tweet?in_reply_to=${tweetId }`}>Join the conversation</a> on
-                        Twitter. Or, if you liked this article and think others should read it, please
-                        <a href={`https://twitter.com/intent/retweet?tweet_id=${tweetId }`}>retweet it</a>.
-                    </small>) : (<small>
-                        If you liked this article and think others should read it, please
-                        <a href={shareLink}>share it</a>.
-                        Or,
-                        <a href={findLink}>find the conversation</a>
-                        on Twitter.
-                    </small>)}
-                </div>
+            <WebMentions webMentions={webMentions} url={Astro.request.canonicalURL.href}>
+                <TwitterShare
+                    description={content.description}
+                    title={content.title}
+                    tweetId={tweetId}
+                    url={Astro.request.canonicalURL.href}
+                />
             </WebMentions>
         </footer>
     </Section>
@@ -126,12 +112,5 @@ const findLink = `https://twitter.com/search?f=tweets&src=typd&q=${encodeURI(Ast
 
     footer {
         margin-top: var(--spacer-xl);
-
-        & :global(.share) {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: var(--spacer-sm);
-        }
     }
 </style>

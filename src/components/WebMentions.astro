@@ -17,14 +17,14 @@ interface WebMention {
 }
 
 interface Props {
-  webmentions: WebMention[]
+  webMentions: WebMention[]
   url: string
 }
 
-const { webmentions, url } = Astro.props as props
-const reposts = webmentions.filter(isMentionType(MENTION_TYPE.Share))
-const likes = webmentions.filter(isMentionType(MENTION_TYPE.Like))
-const replies = webmentions.filter(isMentionType(MENTION_TYPE.Reply))
+const { webMentions, url } = Astro.props as props
+const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share))
+const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
+const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
 ---
 
 <h2 class="h3">Webmentions</h2>
@@ -75,7 +75,7 @@ const replies = webmentions.filter(isMentionType(MENTION_TYPE.Reply))
 
 <div class="webmentions__form">
   <p class="h5">
-    {webmentions.length > 0 ? "These are " : "We support "} <a href="https://indieweb.org/Webmention">webmentions</a> via the
+    {webMentions.length > 0 ? "These are " : "We support "} <a href="https://indieweb.org/Webmention">webmentions</a> via the
     <a href="https://indieweb.org/">IndieWeb</a>
     and
     <a href="https://webmention.io/">webmention.io</a>. Mention this post from
@@ -101,7 +101,7 @@ const replies = webmentions.filter(isMentionType(MENTION_TYPE.Reply))
 
 <style lang="scss">
   h2 {
-    margin-bottom: 0;
+    margin-bottom: var(--spacer-xs);
   }
 
   h3 {
