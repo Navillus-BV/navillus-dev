@@ -1,4 +1,3 @@
-
 <button
   class="button--icon"
   id="theme-toggle"
@@ -48,12 +47,11 @@
       fill: currentColor;
     }
   }
+</style>
 
-  :global(:root[data-chisel-theme=dark]) #theme-toggle .theme-icon-dark {
-    display: none;
-  }
-
-  :global(:root:not([data-chisel-theme=dark])) #theme-toggle .theme-icon-light {
+<style global>
+  :root[data-chisel-theme=dark] #theme-toggle .theme-icon-dark,
+  :root:not([data-chisel-theme=dark]) #theme-toggle .theme-icon-light {
     display: none;
   }
 </style>
