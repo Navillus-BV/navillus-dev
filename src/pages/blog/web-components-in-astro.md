@@ -5,6 +5,7 @@ description: Building custom elements in plain old JavaScript + trying out the n
 author: tony-sull
 image: posts/2021-08-23-web-components-in-astro.jpg
 published_date: 2021-08-23
+tweetId: "1429903001574068232"
 tags:
   - astro
   - web components
