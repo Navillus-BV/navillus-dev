@@ -3,9 +3,8 @@ layout: "../../layouts/post.astro"
 title: How to use Web Components in Astro
 description: Building custom elements in plain old JavaScript + trying out the new Astro.resolve() API!
 author: tony-sull
-image: posts/2021-08-20-web-components-in-astro.jpg
-published_date: 2021-08-20
-draft: true
+image: posts/2021-08-23-web-components-in-astro.jpg
+published_date: 2021-08-23
 tags:
   - astro
   - web components
