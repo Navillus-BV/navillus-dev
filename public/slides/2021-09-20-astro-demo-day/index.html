@@ -319,7 +319,7 @@
             <h4>Typescript Definitions</h4>
 
             <pre>
-              <code class="hljs" data-trim data-line-numbers>
+              <code class="hljs" data-trim data-line-numbers="3-11|13">
                 // src/types/cms.d.ts
 
                 export namespace CMS {
@@ -342,7 +342,7 @@
             <h4>Astro Components</h4>
 
             <pre>
-              <code class="hljs ts" data-trim data-line-numbers="2-3|6-7|10">
+              <code class="hljs ts" data-trim data-line-numbers="2-4|6-7|10">
                 ---
                 interface Props {
                   data: CMS.HeroBlock
@@ -378,7 +378,7 @@
           <section>
             <h4>Project structure</h4>
             <pre>
-              <code class="hljs sh" data-trim data-line-numbers="5-6|8-9">
+              <code class="hljs sh" data-trim data-line-numbers="1-5|1,6-8">
                 src/
                 |-- data
                 |   |-- pages/
@@ -395,8 +395,10 @@
             <h4>[slug].astro</h4>
 
             <pre>
-              <code class="hljs ts" data-trim data-line-numbers="2-12|14">
+              <code class="hljs ts" data-trim data-line-numbers="2-14|16-19">
                 ---
+                import Layout from '../layouts/Page.astro'
+
                 export async function getStaticPaths() {
                   const allPages = Astro
                     .fetchContent('../data/pages/*.md')
@@ -411,6 +413,8 @@
 
                 const { page } = Astro.props
                 ---
+
+                &lt;Layout content={page} /&gt;
               </code>
             </pre>
           </section>
