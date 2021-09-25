@@ -1,12 +1,13 @@
 ---
 interface Props {
-  title: string
-  subtitle: string
-  alt: boolean
+  title?: string
+  subtitle?: string
+  alt?: boolean
   id?: string
+  class?: string
 }
 
-const { title, subtitle, id, class: className = '', alt = false } = Astro.props as props
+const { title, subtitle, id, class: className = '', alt = false } = Astro.props as Props
 ---
 
 <section class={`${alt && 'alt'} ${className}`} id={id || ''}>

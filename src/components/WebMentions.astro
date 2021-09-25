@@ -21,7 +21,7 @@ interface Props {
   url: string
 }
 
-const { webMentions, url } = Astro.props as props
+const { webMentions, url } = Astro.props as Props
 const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share))
 const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
 const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))

@@ -1,8 +1,8 @@
 ---
 interface Props {
   src: string
-  alt: string
-  small: boolean
+  alt?: string
+  small?: boolean
 }
 
 const { src = '/img/avatar.svg', alt = '', small = false } = Astro.props as Props

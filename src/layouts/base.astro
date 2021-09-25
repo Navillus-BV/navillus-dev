@@ -5,9 +5,9 @@ import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 
 interface Props {
-	title: string;
-	description: string;
-	image: string;
+	title?: string;
+	description?: string;
+	image?: string;
 	pathname?: string;
 	canonicalURL: string;
 }
@@ -18,7 +18,7 @@ const {
 	image = site.image,
 	pathname,
 	canonicalURL
-} = Astro.props as props;
+} = Astro.props as Props;
 
 const routes = [
   {

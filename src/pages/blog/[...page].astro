@@ -19,7 +19,7 @@ export async function getStaticPaths({ paginate, rss }) {
     }
 
     function sortPosts(a, b) {
-        return new Date(b.published_date) - new Date(a.published_date)
+        return new Date(b.published_date).getTime() - new Date(a.published_date).getTime()
     }
 
     const allPosts = Astro.fetchContent('../blog/*.md')

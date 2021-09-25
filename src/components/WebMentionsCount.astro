@@ -5,7 +5,7 @@ interface Props {
     webMentions: any[];
 }
 
-const { webMentions } = Astro.props as mentions;
+const { webMentions } = Astro.props as Props;
 
 const likesCount = webMentions
   .filter(isMentionType(MENTION_TYPE.Like))

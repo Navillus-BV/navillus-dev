@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "astro dev",
     "prebuild": "cp -r node_modules/@fontsource public/styles",
-    "build": "astro build"
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.4.5",

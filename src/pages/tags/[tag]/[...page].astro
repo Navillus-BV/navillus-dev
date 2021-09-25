@@ -2,18 +2,10 @@
 import Layout from '../../../layouts/base.astro'
 import PostPreview from '../../../components/PostPreview.astro'
 import Section from '../../../components/Section.astro'
-import site from '../../../data/site.json'
 import { readMinutes } from '../../../utils/readMinutes'
 import { uniq } from '../../../utils/uniq'
 
 export async function getStaticPaths({ paginate }) {
-    function includeReadingTime(post) {
-        return {
-            ...post,
-            minutes: readMinutes(post)
-        }
-    }
-
     function title(tag) {
         return `Posts tagged "${tag}"`
     }
@@ -46,7 +38,7 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page } = Astro.props;
-const { tag, title, description, data: posts } = page
+const { title, description, data: posts } = page
 ---
 
 <Layout title={title} description={description} pathname={Astro.request.url.pathname} canonicalURL={page.url.current}>
