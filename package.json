@@ -10,8 +10,8 @@
   "devDependencies": {
     "@fontsource/fira-mono": "^4.4.5",
     "@fontsource/poppins": "^4.4.5",
-    "astro": "^0.20.7",
-    "chisel.css": "^0.7.4",
+    "astro": "^0.20.12",
+    "chisel.css": "^0.7.5",
     "lodash": "^4.17.21",
     "markdown-reading-time": "^0.1.1",
     "marked": "^2.1.3",
