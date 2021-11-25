@@ -32,12 +32,14 @@ export async function getStaticPaths({ paginate, rss }) {
         description: site.description,
         customData: `<language>en-us</language>`,
         items: allPosts.map((item) => {
+            const content = `<content><![CDATA[ ${item.content.html} ]]></content>`
+
             return {
                 title: item.title,
                 description: item.description,
                 link: item.url,
                 pubDate: item.published_date,
-                customData: `<id>${item.url}</id>${item.modified_date ? `<updated>${item.modified_date}</updated>` : ""}<content type="html"><![CDATA[ ${marked(item.astro.source)} ]]></content>`
+                customData: `<id>${item.url}</id>${item.modified_date ? `<updated>${item.modified_date}</updated>` : ""}${content}`
             }
         }),
         dest: '/feed/blog.xml'

@@ -1,11 +1,5 @@
 <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
   <input type="hidden" name="form-name" value="contact" />
-  <p class="honeypot">
-    <label>
-      Don’t fill this out if you're human:
-      <input name="bot-field" />
-    </label>
-  </p>
   <div class="form__row form__row--split">
     <div>
       <label class="label-inline h6" for="name">Your Name *</label>
@@ -19,7 +13,7 @@
   <div>
     <div>
       <label class="label-inline h6" for="message">Your Message *</label>
-      <textarea id="message" name="message" rows="6" required />
+      <textarea id="message" name="message" rows="6" required></textarea>
     </div>
   </div>
 
