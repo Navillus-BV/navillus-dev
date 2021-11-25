@@ -1,5 +1,4 @@
 import fs from "fs";
-import fetch from "node-fetch";
 import unionBy from "lodash/unionBy";
 import site from "../data/site.json";
 
