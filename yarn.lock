@@ -879,10 +879,10 @@ character-reference-invalid@^2.0.0:
   resolved "https://registry.yarnpkg.com/character-reference-invalid/-/character-reference-invalid-2.0.0.tgz#a0bdeb89c051fe7ed5d3158b2f06af06984f2813"
   integrity sha512-pE3Z15lLRxDzWJy7bBHBopRwfI20sbrMVLQTC7xsPglCHf4Wv1e167OgYAFP78co2XlhojDyAqA+IAJse27//g==
 
-chisel.css@^0.7.5:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/chisel.css/-/chisel.css-0.7.5.tgz#7223057640dd6d18795b78747f38023b5e348b3a"
-  integrity sha512-aBwEGOEd20cAQbvyNZT+oHgsE49BK+kgB0whrsCXeAo/FfqumE731fFifMfLtQKwXpcFOXZmepaJsWoP62XX/w==
+chisel.css@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/chisel.css/-/chisel.css-0.8.1.tgz#ca9db770e2515330b48940e8f63bcabb9f0b7cad"
+  integrity sha512-MQNpsGUhGx1qRyZJ3CIxuLe2NpevPRiKi3Hp19oEnXBKEuLaxPdmJ8qK8F+iep8+vhYXdLAKUOCtHbfTc9SzqQ==
 
 "chokidar@>=3.0.0 <4.0.0":
   version "3.5.2"
