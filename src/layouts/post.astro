@@ -26,10 +26,6 @@ const tweetId = content.tweetId
 ---
 
 <Layout title={content.title} description={content.description} image={content.image} pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
-    <head>
-        {blogPostSchema(content)}
-    </head>
-    
     <Section alt class="h-entry">
         <header>
             <h1 class="p-name">{content.title}</h1>
@@ -69,6 +65,9 @@ const tweetId = content.tweetId
             </WebMentions>
         </footer>
     </Section>
+
+
+    {blogPostSchema(content)}
 </Layout>
 
 <style lang="scss">

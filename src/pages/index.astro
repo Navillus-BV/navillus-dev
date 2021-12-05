@@ -10,11 +10,6 @@ const { cms, hosts, ssg } = tools
 ---
 
 <Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
-    <head>
-        {websiteSchema}
-        {organizationSchema}
-    </head>
-
     <section>
         <div class="container hero">
             <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
@@ -159,4 +154,7 @@ const { cms, hosts, ssg } = tools
         </p>
         <ContactForm />
     </Section>
+
+    {websiteSchema}
+    {organizationSchema}
 </Layout>

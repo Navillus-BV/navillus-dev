@@ -2,28 +2,30 @@
 # yarn lockfile v1
 
 
-"@astrojs/compiler@^0.3.9":
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.3.9.tgz#6674a984be2075b749127cc417e9d9a10b855d8d"
-  integrity sha512-TzmIzpB6bpGD3vghcj+cXPckXkRCf6zHcVupf6F2b9WpFkMAvrXoafkKJIids2Mq9aU4p7ooVcIDGZ9tpqZpyw==
+"@astrojs/compiler@^0.5.7":
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.5.7.tgz#378a65afbc8d9945aa2bce2b80af1d2bf8808560"
+  integrity sha512-SMmgApjroKy6PGSjofTBbl9kIQb7/ywtiP0hYpa/x2yuiCQQoe+QLusOnNgmGDgJBmV/5UVEf1+EA+77s4acHQ==
   dependencies:
     typescript "^4.3.5"
 
-"@astrojs/language-server@^0.7.16":
-  version "0.7.19"
-  resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-0.7.19.tgz#28475a8b6ce2d96362d07a69ba2fed893b68dff4"
-  integrity sha512-6ZZtId4NGvMyXILbOdsAE6gllCxd7tpFL6zrMdtQcVvd1XZAABq7hmUDAD1BIfG0HHVz7cHxe5Wxq+cLWIYyVw==
+"@astrojs/language-server@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-0.8.2.tgz#4cb52e8d0b477c91c8665d999ee0018ecf701e84"
+  integrity sha512-AD2KDWM5CJMyhvD+ME8yJNvppliLizY34zRO+sFJ0xZ0YDIcIW9+Q0Y2gdYGoPLsr0xCu5SLpF0EmlHmTtfYEw==
   dependencies:
     lodash "^4.17.21"
     source-map "^0.7.3"
     ts-morph "^12.0.0"
-    typescript "^4.3.1-rc"
+    typescript "^4.5.1-rc"
     vscode-css-languageservice "^5.1.1"
     vscode-emmet-helper "2.1.2"
     vscode-html-languageservice "^3.0.3"
     vscode-languageserver "6.1.1"
     vscode-languageserver-protocol "^3.16.0"
     vscode-languageserver-textdocument "^1.0.1"
+    vscode-languageserver-types "^3.16.0"
+    vscode-uri "^3.0.2"
 
 "@astrojs/markdown-remark@^0.5.0":
   version "0.5.0"
@@ -55,37 +57,37 @@
   resolved "https://registry.yarnpkg.com/@astrojs/prism/-/prism-0.3.0.tgz#cf18797ea884eec1857909186bd16fc26bfe6156"
   integrity sha512-5U+jcgfibLKW8PwnHQEdmgb+uZVeMVLz+paEr3vxKgikYfjXDjQu6qEDLOW3WTc/cIWrOF9rAtTKy8R/ArPscw==
 
-"@astrojs/renderer-preact@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/renderer-preact/-/renderer-preact-0.3.0.tgz#44e160a9a94e5ce77860d7ed51e96558f2ad218b"
-  integrity sha512-gw+LpSdJXeSXdMTc9aIvVHiOyBs9w37D1yGogE/cleStIN9nTM6TVeU06gtZkIHOViOGAsMXTCrM7enr6VBMKQ==
+"@astrojs/renderer-preact@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/renderer-preact/-/renderer-preact-0.3.1.tgz#19d93a0b518a12d3d7b5353f2afb9869ae6e6364"
+  integrity sha512-NEcUEtir2H0g4bV4/GwBxqE6bJpOH4WV/FfFRAO6yxqVx3VCdRJ7163fLmMqqznczoqg9w64uEGejx+NdHAFIg==
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.16.0"
     preact "^10.5.15"
     preact-render-to-string "^5.1.19"
 
-"@astrojs/renderer-react@0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/renderer-react/-/renderer-react-0.3.0.tgz#740803cc68b14293006670ac246db9c76544a3a7"
-  integrity sha512-pb9gKVHJwtFNoYrtSnBfOPm/0IerEGe6MCDrgys5lwVPWiZ9Di+7uK+C2/UdBuHDM8NEKw+zXA+6qZi/endy+g==
+"@astrojs/renderer-react@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/renderer-react/-/renderer-react-0.3.1.tgz#ad6d7e30abd683ccf631be4a0087bfb3dc79956e"
+  integrity sha512-TqwQyVHhzbFKuF8+jMOlrxM767nubzZzCKuKTAzmrCRLa8vMXPqcPS7JXWD7Q6s6gXln3yhat6+3iodwgurwlw==
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.16.0"
     react "^17.0.2"
     react-dom "^17.0.2"
 
-"@astrojs/renderer-svelte@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/renderer-svelte/-/renderer-svelte-0.2.1.tgz#bf5f92b89c73eb02e130d9d6d9613d51a5612a0e"
-  integrity sha512-0pifE/w+K6eLrDT0urBYPOBJzF7e4sL3+td7o1p4a3yGXPQsr5eKKQ66lyIKl7sgg5bXOVQhVMQbnm6rGqHxVA==
+"@astrojs/renderer-svelte@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@astrojs/renderer-svelte/-/renderer-svelte-0.2.2.tgz#ff8182aabb3228126f77176bbe7a407cbb1e6c1b"
+  integrity sha512-6fs/skQURDvn2K/TVAgOmqcMUaGuocV7EwAzthHTJzlfRQUbNEWmyLtuvjcSCZnY+28vupKjEarWl3IsyqJh6Q==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.30"
     svelte "^3.44.2"
     svelte-preprocess "^4.9.8"
 
-"@astrojs/renderer-vue@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/renderer-vue/-/renderer-vue-0.2.0.tgz#3fe77aad1dceb41fb07c557e2c1f04036cc7331d"
-  integrity sha512-YfQwghT0/n/tNbi/93wWsqNUwUxRCi76CdNvBRNyP01JVTZisQyqtT8yOJYGgMgqxQEscpPmD467dK89knd5gQ==
+"@astrojs/renderer-vue@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/renderer-vue/-/renderer-vue-0.2.1.tgz#619b0b2e55d400ab17e49067b6811136781d2942"
+  integrity sha512-nawWIzwL40M8ran4zQaYckAdHwn1HeD6zTRH3LKCENeAjn3bJ4wxJ2KD9dZw4twACP+yBZm3y2N7iX+6CyueIQ==
   dependencies:
     "@vitejs/plugin-vue" "^1.9.4"
     vue "^3.2.22"
@@ -718,19 +720,19 @@ astring@^1.7.5:
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.8.1.tgz#a91c4afd4af3523e11f31242a3d5d9af62bb6cc6"
   integrity sha512-Aj3mbwVzj7Vve4I/v2JYOPFkCGM2YS7OqQTNSxmUR+LECRpokuPgAYghePgr6SALDo5bD5DlfbSaYjOzGJZOLQ==
 
-astro@^0.21.4:
-  version "0.21.4"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-0.21.4.tgz#cb6e8b9919de88ab1382aaf3a5067d6886d9519e"
-  integrity sha512-LDGPBbRDb54NZxRKzYEypphyoyVY5WwL3Lg/i9DiUlYmojfm5q/tw8kRgVj+nP0VNrJ/SrzIeVgtJmXMhwa3UQ==
+astro@^0.21.10:
+  version "0.21.10"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-0.21.10.tgz#95d0d0c6a21b5041576a95686604cdb90b71fbb2"
+  integrity sha512-TTTNs/bFOyzsiuM1Djanwo1NkL0zzOFcmriXLcTaKBZiQE1AkMuUEN8joZNIbmjVMrVHI8RWFDgQNY1pGEO8hQ==
   dependencies:
-    "@astrojs/compiler" "^0.3.9"
-    "@astrojs/language-server" "^0.7.16"
+    "@astrojs/compiler" "^0.5.7"
+    "@astrojs/language-server" "^0.8.2"
     "@astrojs/markdown-remark" "^0.5.0"
     "@astrojs/prism" "0.3.0"
-    "@astrojs/renderer-preact" "^0.3.0"
-    "@astrojs/renderer-react" "0.3.0"
-    "@astrojs/renderer-svelte" "0.2.1"
-    "@astrojs/renderer-vue" "0.2.0"
+    "@astrojs/renderer-preact" "^0.3.1"
+    "@astrojs/renderer-react" "0.3.1"
+    "@astrojs/renderer-svelte" "0.2.2"
+    "@astrojs/renderer-vue" "0.2.1"
     "@babel/core" "^7.15.8"
     "@babel/traverse" "^7.15.4"
     "@proload/core" "^0.2.1"
@@ -3356,12 +3358,7 @@ type-fest@^0.13.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.13.1.tgz#0172cb5bce80b0bd542ea348db50c7e21834d934"
   integrity sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==
 
-typescript@^4.3.1-rc:
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
-  integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
-
-typescript@^4.3.5:
+typescript@^4.3.5, typescript@^4.5.1-rc:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
   integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
