@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Animated page transitions in Astro with Swup
 description: Static doesn't mean boring! Easily add client routing and page transition animations with swup.js
 author: tony-sull

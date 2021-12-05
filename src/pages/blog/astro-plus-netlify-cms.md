@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Astro + Netlify CMS
 description: Static sites powered by a git-based CMS, made easy.
 author: tony-sull

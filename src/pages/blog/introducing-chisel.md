@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Introducing chisel.css
 description: A (work-in-progress) minimalist CSS framework.
 author: tony-sull

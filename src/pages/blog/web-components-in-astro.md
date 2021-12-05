@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: How to use Web Components in Astro
 description: Building custom elements in plain old JavaScript + trying out the new Astro.resolve() API!
 author: tony-sull

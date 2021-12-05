@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Keeping it simple with Astro
 description: Do you really need all that JavaScript?
 author: tony-sull

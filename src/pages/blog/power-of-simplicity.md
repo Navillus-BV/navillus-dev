@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: The power of simplicity
 description: It's easy to get swept up in the latest libraries and platforms, but don't underestimate the time savings of "boring" tech.
 author: tony-sull

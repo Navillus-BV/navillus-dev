@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Astro + Foresty CMS
 description: Static sites powered by Forestry's git-based CMS, made easy.
 author: tony-sull

@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: The power of Svelte actions
 description: When you should `use:` actions in Svelte.
 author: tony-sull

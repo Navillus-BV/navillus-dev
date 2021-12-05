@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Converting our site to Astro
 description: Spoiler - you probably don't need a kitchen sink framework.
 author: tony-sull

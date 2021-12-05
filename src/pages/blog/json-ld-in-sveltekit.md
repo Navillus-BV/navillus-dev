@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Including json+ld structured data in Svelte
 description: Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!
 author: tony-sull

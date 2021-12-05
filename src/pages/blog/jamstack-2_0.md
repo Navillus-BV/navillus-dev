@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Jamstack 2.0
 description: The Jamstack is evolving. Where did it start, and what does it look like in 2021?
 author: tony-sull

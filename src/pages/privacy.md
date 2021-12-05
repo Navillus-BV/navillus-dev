@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/legal.astro
+layout: ../layouts/Legal.astro
 title: Privacy Policy
 last_updated: 2020-05-03
 ---

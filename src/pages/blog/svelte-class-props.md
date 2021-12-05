@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Class properties in Svelte
 description: A handy trick to make your Svelte components feel even more like plain old HTML.
 author: tony-sull

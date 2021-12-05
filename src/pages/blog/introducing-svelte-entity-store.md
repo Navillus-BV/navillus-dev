@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Introducing svelte-entity-store
 description: A (work-in-progress) generic entity store for Svelte projects.
 author: tony-sull

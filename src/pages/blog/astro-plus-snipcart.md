@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/post.astro'
+layout: '../../layouts/Post.astro'
 title: Astro + Snipcart
 description: Scalable e-commerce made easy with the Jamstack.
 author: tony-sull
