@@ -1,11 +1,11 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: How to use Web Components in Astro
 description: Building custom elements in plain old JavaScript + trying out the new Astro.resolve() API!
 author: tony-sull
 image: posts/2021-08-23-web-components-in-astro.jpg
 published_date: 2021-08-23
-tweetId: "1429903001574068232"
+tweetId: '1429903001574068232'
 tags:
   - astro
   - web components
@@ -48,13 +48,13 @@ Web components are meant to be reusable, and for that to be possible you need to
 This can be done a few different ways, but the most common way is to use template literals right in your web component's JS file. I'll be using one of the excellent examples from [webcomponents.dev](https://webcomponents.dev/edit/ZCUsvyx06Au5j0yZzgG7?pm=1) as a starting point.
 
 ```js
-const template = document.createElement("template");
+const template = document.createElement('template')
 template.innerHTML = `
   <style>
     /* your styles */
   </style>
   <span id="count"></span>
-`;
+`
 ```
 
 Feels a little weird writing HTML in a template literal, right? It gets the job done though, and in my opinion plain JS web components really shine with small components so this shouldn't get too crazy to maintain.
@@ -70,16 +70,16 @@ But you can make your own `<my-counter>` component, that's definitely not part o
 ```js
 class MyCounter extends HTMLElement {
   constructor() {
-    super();
-    this.count = 0;
+    super()
+    this.count = 0
     // open mode keeps all elements accessible to the outside world
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' })
   }
   // ...
 }
 
 // tell the browser to use this class for all `<my-counter>` elements
-customElements.define("my-counter", MyCounter);
+customElements.define('my-counter', MyCounter)
 ```
 
 Notice the `open` mode there? I mentioned earlier that you can avoid the one-way encapsulation of the shadow DOM, that's all it takes. It's a shame having to turn off one of the key features of custom elements, but theming and styling really can be a big problem for real world apps!
@@ -99,7 +99,7 @@ Maybe one of these days I'll find the time to build a full [OpenUI](https://open
 ### Oops, our web component breaks SSR!
 
 ```js
-const template = document.createElement("template");
+const template = document.createElement('template')
 ```
 
 Well that didn't take long, literally the first line of code breaks our Astro build 🤣
@@ -113,23 +113,23 @@ const template = `
     /* your styles */
   </style>
   <span id="count"></span>
-`;
+`
 
 class MyCounter extends HTMLElement {
   constructor() {
-    super();
+    super()
 
-    const elem = document.createElement("template");
-    elem.innerHTML = template;
+    const elem = document.createElement('template')
+    elem.innerHTML = template
 
-    this.count = 0;
-    this.attachShadow({ mode: "open" }).appendChild(
+    this.count = 0
+    this.attachShadow({ mode: 'open' }).appendChild(
       elem.content.cloneNode(true)
-    );
+    )
   }
 }
 
-customElements.define("my-counter", MyCounter);
+customElements.define('my-counter', MyCounter)
 ```
 
 There we go! Don't touch the document element at all until the constructor is called. Note that this really could/should be cleaned up to move `elem` outside the class and only initialize it once, but for the sake of this demo I kept the code easier to follow.
@@ -146,7 +146,8 @@ In the demo project, the web component is defined in `src/components/my-counter.
 <head>
   <title>Welcome to Astro</title>
 
-  <script type="module" src={Astro.resolve('../components/my-counter.js')}></script>
+  <script type="module" src={Astro.resolve('../components/my-counter.js')}
+  ></script>
 </head>
 
 <body>

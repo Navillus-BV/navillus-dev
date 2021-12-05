@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: Performance wins with Astro
 draft: true
 description: Does your site really need all that JS?

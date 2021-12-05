@@ -1,12 +1,12 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: Keeping it simple with Astro
 description: Do you really need all that JavaScript?
 author: tony-sull
 image: posts/2021-06-14-keeping-it-simple-with-astro.jpg
 published_date: 2021-06-14
 modified_date: 2021-06-25
-tweetId: "1404538796767694857"
+tweetId: '1404538796767694857'
 tags:
   - astro
   - svelte

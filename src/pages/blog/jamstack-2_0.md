@@ -1,12 +1,12 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: Jamstack 2.0
 description: The Jamstack is evolving. Where did it start, and what does it look like in 2021?
 author: tony-sull
 image: posts/2021-05-07-jamstack-2_0.jpg
 published_date: 2021-05-07
 modified_date: 2021-06-05
-tweetId: "1401184029832007680"
+tweetId: '1401184029832007680'
 tags:
   - jamstack
 ---

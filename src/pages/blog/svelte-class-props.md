@@ -1,11 +1,11 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: Class properties in Svelte
 description: A handy trick to make your Svelte components feel even more like plain old HTML.
 author: tony-sull
 image: posts/2021-06-25-svelte-class-props.jpg
 published_date: 2021-06-25
-tweetId: "1408488530779717636"
+tweetId: '1408488530779717636'
 tags:
   - svelte
   - react
@@ -37,7 +37,7 @@ If you're like me you probably hit this once, banged your head against the neare
 
 ```html
 <script>
-  export let className = "";
+  export let className = ''
 </script>
 
 <div class="{className}">...</div>
@@ -49,8 +49,8 @@ Writing Svelte is so close to HTML that you can almost forget there's a framewor
 
 ```html
 <script>
-  let className = "";
-  export { className as class };
+  let className = ''
+  export { className as class }
 </script>
 
 <div class="{className}">...</div>

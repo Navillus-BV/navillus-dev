@@ -1,26 +1,26 @@
 @use 'chisel.css/dist/chisel.css';
 @use 'chisel.css/dist/chisel-prism.css';
-@use "./@fontsource/poppins/scss/mixins" as Poppins;
+@use './@fontsource/poppins/scss/mixins' as Poppins;
 
 @include Poppins.fontFace(
   $weight: 400,
   $display: fallback,
-  $fontDir: "/styles/@fontsource/poppins/files"
+  $fontDir: '/styles/@fontsource/poppins/files'
 );
 
 @include Poppins.fontFace(
   $weight: 500,
   $display: fallback,
-  $fontDir: "/styles/@fontsource/poppins/files"
+  $fontDir: '/styles/@fontsource/poppins/files'
 );
 
 @include Poppins.fontFace(
   $weight: 700,
   $display: fallback,
-  $fontDir: "/styles/@fontsource/poppins/files"
+  $fontDir: '/styles/@fontsource/poppins/files'
 );
 
-:root {
+:where(:root) {
   --color-orange: #ffc331;
   --color-black: #37322e;
 
@@ -50,11 +50,6 @@
   --shadow-secondary-sm: drop-shadow(2px 3px 6px var(--chisel-secondary));
   --shadow-secondary: drop-shadow(3px 5px 10px var(--chisel-secondary));
 
-  &[data-chisel-theme="dark"] {
-    --shadow-sm: drop-shadow(-1px 1px 2px rgba(255, 255, 255, 0.25));
-    --shadow-md: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.25));
-  }
-
   font-size: 14px;
 
   @media (min-width: 375px) {
@@ -70,9 +65,15 @@
   }
 }
 
+:where(:root[data-chisel-theme='dark']) {
+  --chisel-primary: #002244;
+  --shadow-sm: drop-shadow(-1px 1px 2px rgba(255, 255, 255, 0.25));
+  --shadow-md: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.25));
+}
+
 body {
   background: var(--chisel-primary);
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 :focus,
@@ -111,9 +112,9 @@ svg {
 
 .button,
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   box-shadow: var(--shadow-md);
   background-color: var(--chisel-neutral-900);
   border-color: var(--chisel-neutral-900);
@@ -263,7 +264,7 @@ h2.h6 + h3.h2 {
 
 .hamburger-inner:before,
 .hamburger-inner:after {
-  content: "";
+  content: '';
   display: block;
 }
 

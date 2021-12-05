@@ -23,15 +23,15 @@ const { navItems, pathname } = Astro.props as Props
     </a>
 
     <nav>
-        <ul>
-            {navItems.map(({ title, href }) => (
+      <ul>
+        {navItems.map(({ title, href }) => (
                 <li>
                     <a class="hover:outline" {href} aria-current={pathname === href}>
                         {title}
                     </a>
                 </li>
             ))}
-        </ul>
+      </ul>
     </nav>
 
     <ThemeToggle />
@@ -44,36 +44,33 @@ const { navItems, pathname } = Astro.props as Props
       class="hamburger hamburger--squeeze header__hamburger"
     >
       <span class="hamburger-box">
-        <span class="hamburger-inner" />
+        <span class="hamburger-inner"></span>
       </span>
     </label>
   </div>
 
-  <input
-    type="checkbox"
-    id="toggle"
-    class="sr-only"
-    title="Open Menu"
-  />
+  <input type="checkbox" id="toggle" class="sr-only" title="Open Menu" />
 
   <nav class="container">
-      <ul>
-        {navItems.map(({ title, href }) => (
-            <li>
-                <a href={href} class="h5" aria-current={pathname === "/"}>{title}</a>
-            </li>
-        ))}
+    <ul>
+      {navItems.map(({ title, href }) => (
         <li>
-          <a
-            href="/#contact"
-            aria-current={pathname === "/#contact"}
-            class="button"
-          >
-            Get in Touch
+          <a href={href} class="h5" aria-current={pathname === '/'}>
+            {title}
           </a>
         </li>
-      </ul>
-    </nav>
+      ))}
+      <li>
+        <a
+          href="/#contact"
+          aria-current={pathname === '/#contact'}
+          class="button"
+        >
+          Get in Touch
+        </a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <script>
@@ -88,7 +85,7 @@ const { navItems, pathname } = Astro.props as Props
   })
 
   /** Close mobile menu when window resizes to desktop */
-  let innerWidth = window.innerWidth;
+  let innerWidth = window.innerWidth
   window.addEventListener('resize', () => {
     if (innerWidth < 768 && window.innerWidth >= 768) {
       toggleElem.checked = false
@@ -121,16 +118,16 @@ const { navItems, pathname } = Astro.props as Props
   }
 
   #toggle.animate + nav {
-      display: block;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 300ms cubic-bezier(0.33, 1, 0.68, 1);
-      visibility: hidden;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms cubic-bezier(0.33, 1, 0.68, 1);
+    visibility: hidden;
   }
 
   #toggle.animate:checked + nav {
-      max-height: 16rem;
-      visibility: visible;
+    max-height: 16rem;
+    visibility: visible;
   }
 
   .top {
@@ -195,7 +192,7 @@ const { navItems, pathname } = Astro.props as Props
       justify-content: center;
     }
 
-    label[for="toggle"] {
+    label[for='toggle'] {
       display: none;
     }
 
@@ -208,7 +205,7 @@ const { navItems, pathname } = Astro.props as Props
     }
 
     #toggle.animate + nav {
-        transition: none;
+      transition: none;
     }
   }
 

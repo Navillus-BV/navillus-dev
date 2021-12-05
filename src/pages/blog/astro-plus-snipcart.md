@@ -1,11 +1,11 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: Astro + Snipcart
 description: Scalable e-commerce made easy with the Jamstack.
 author: tony-sull
 image: posts/2021-07-02-astro-plus-snipcart.jpg
 published_date: 2021-07-03
-tweetId: "1411055265479368707"
+tweetId: '1411055265479368707'
 tags:
   - astro
   - snipcart
@@ -49,7 +49,7 @@ I didn't want to stray too far from the original 11ty project, and that meant st
 You can see the full details [in GitHub](https://github.com/Navillus-BV/demo-astro-snipcart/blob/main/src/utils/loadMenu.js), but the basic solution here takes advantage of [glob imports](https://vitejs.dev/guide/features.html#glob-import).
 
 ```js
-import.meta.glob("../data/menus/*.json");
+import.meta.glob('../data/menus/*.json')
 ```
 
 The code above is a bit of import magic that allows you to use a [glob pattern](https://www.npmjs.com/package/glob) to load multiple files at once.
