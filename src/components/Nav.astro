@@ -13,9 +13,11 @@ interface Props {
   pathname: string
 }
 
-const {input:HbugrInput, label:HbugrLbl} = XElement
+const {input: MenuInput, label: MenuButton } = XElement
 
 const { navItems, pathname } = Astro.props as Props
+
+console.log(pathname, navItems)
 ---
 
 <header>
@@ -41,7 +43,7 @@ const { navItems, pathname } = Astro.props as Props
 
     <a href="/#contact" class="button button--outline">Get in Touch</a>
 
-    <HbugrLbl
+    <MenuButton
       for="toggle"
       title="Open Menu"
       class="hamburger hamburger--squeeze header__hamburger"
@@ -49,10 +51,10 @@ const { navItems, pathname } = Astro.props as Props
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
-    </HbugrLbl>
+    </MenuButton>
   </div>
 
-  <HbugrInput
+  <MenuInput
     type="checkbox"
     id="toggle"
     class="sr-only"
@@ -84,7 +86,7 @@ const { navItems, pathname } = Astro.props as Props
     <ul>
       {navItems.map(({ title, href }) => (
         <li>
-          <a href={href} class="h5" aria-current={pathname === '/'}>
+          <a href={href} class="h5" aria-current={pathname === href}>
             {title}
           </a>
         </li>
@@ -107,9 +109,13 @@ const { navItems, pathname } = Astro.props as Props
     position: relative;
   }
 
-  a:not(.button) {
+  a {
     color: inherit;
     text-decoration: none;
+  }
+
+  a[aria-current] {
+    text-decoration: underline;
   }
 
   #toggle ~ nav {
