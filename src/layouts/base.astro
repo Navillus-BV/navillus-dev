@@ -98,4 +98,332 @@ const routes = [
     padding: var(--spacer-xs);
     z-index: 1;
   }
+</style><style global lang="scss">
+  @use 'chisel.css/dist/chisel.css';
+  @use 'chisel.css/dist/chisel-prism.css';
+
+  /* poppins-regular - latin */
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+      url('/fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('/fonts/poppins-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* poppins-500 - latin */
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''), url('/fonts/poppins-v15-latin-500.woff2') format('woff2'),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('/fonts/poppins-v15-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* poppins-700 - latin */
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''), url('/fonts/poppins-v15-latin-700.woff2') format('woff2'),
+      /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('/fonts/poppins-v15-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  :where(:root) {
+    --color-orange: #ffc331;
+    --color-black: #37322e;
+
+    /* chisel.css overrides */
+    --chisel-primary: var(--color-orange);
+    --chisel-neutral-900: var(--color-black);
+
+    /* Spacer Sizes */
+    --spacer-tiny: 0.25rem;
+    --spacer-xs: 0.5rem;
+    --spacer-sm: 1rem;
+    --spacer-md: 2.5rem;
+    --spacer-lg: 4rem;
+    --spacer-xl: 6rem;
+
+    /* Font Scale */
+    --chisel-h1: 2.488rem;
+    --chisel-h2: 2.074rem;
+    --chisel-h3: 1.728rem;
+    --chisel-h4: 1.44rem;
+    --chisel-h5: 1.2rem;
+    --chisel-h6: 0.833rem;
+
+    /* Box Shadows */
+    --shadow-sm: drop-shadow(-1px 1px 2px rgba(0, 0, 0, 0.25));
+    --shadow-md: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+    --shadow-secondary-sm: drop-shadow(2px 3px 6px var(--chisel-secondary));
+    --shadow-secondary: drop-shadow(3px 5px 10px var(--chisel-secondary));
+
+    font-size: 14px;
+
+    @media (min-width: 375px) {
+      & {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      & {
+        font-size: 18px;
+      }
+    }
+  }
+
+  :where(:root[data-chisel-theme='dark']) {
+    --chisel-primary: #002244;
+    --shadow-sm: drop-shadow(-1px 1px 2px rgba(255, 255, 255, 0.25));
+    --shadow-md: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.25));
+  }
+
+  body {
+    background: var(--chisel-primary);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  :focus,
+  .hover\:outline:hover {
+    outline: 2px dashed var(--chisel-secondary);
+    outline-offset: 0.25rem;
+  }
+
+  .container {
+    width: 90vw;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: var(--spacer-lg) 0;
+
+    &.alt {
+      background: var(--chisel-neutral-50);
+    }
+
+    @media (min-width: 768px) {
+      & {
+        padding: var(--spacer-xl) 0;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  svg {
+    max-height: 100%;
+  }
+
+  .button,
+  button,
+  input[type='button'],
+  input[type='reset'],
+  input[type='submit'] {
+    box-shadow: var(--shadow-md);
+    background-color: var(--chisel-neutral-900);
+    border-color: var(--chisel-neutral-900);
+    color: var(--chisel-neutral-50);
+
+    &:hover,
+    &:focus {
+      background-color: var(--chisel-neutral-50);
+      border-color: var(--chisel-neutral-50);
+      color: var(--chisel-neutral-900);
+    }
+
+    &.button--outline {
+      border-color: var(--chisel-neutral-900);
+      background-color: transparent;
+      color: var(--chisel-neutral-900);
+      box-shadow: none;
+
+      &:hover,
+      &:focus {
+        background-color: var(--chisel-neutral-900);
+        color: var(--chisel-neutral-50);
+      }
+    }
+
+    &.button--icon {
+      border-color: transparent;
+      background-color: transparent;
+      color: var(--chisel-neutral-900);
+      box-shadow: none;
+      padding: 0.25em;
+      min-height: 40px;
+      min-width: 40px;
+
+      &:hover,
+      &:focus {
+        background-color: var(--chisel-neutral-900);
+        color: var(--chisel-neutral-50);
+      }
+    }
+  }
+
+  h2.h6 + h3.h2 {
+    margin-top: 0;
+  }
+
+  .hero {
+    & .button {
+      margin-top: var(--spacer-md);
+    }
+  }
+
+  /** Features Block */
+  .features {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+
+    & article {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 480px) {
+        & {
+          flex-direction: row;
+          column-gap: 2rem;
+          align-items: center;
+        }
+
+        & :last-child {
+          flex: 1 0 0%;
+        }
+      }
+    }
+
+    & h4 {
+      margin-top: var(--spacer-sm);
+
+      @media (min-width: 480px) {
+        & {
+          margin-top: 0;
+        }
+      }
+    }
+
+    & svg,
+    & img {
+      width: 4rem;
+    }
+  }
+
+  /*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+    border-width: 0;
+    background-color: transparent;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    line-height: 0.75rem;
+    overflow: visible;
+    transition: opacity linear 150ms;
+    will-change: opacity;
+  }
+
+  .hamburger:hover,
+  .hamburger.is-active:hover {
+    opacity: 0.75;
+  }
+
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner:before,
+  .hamburger.is-active .hamburger-inner:after {
+    background: currentColor;
+  }
+
+  .hamburger-box {
+    height: calc(1rem + 4px);
+    width: 2rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .hamburger-inner {
+    top: 50%;
+    margin-top: -2px;
+    display: block;
+  }
+  .hamburger-inner,
+  .hamburger-inner:before,
+  .hamburger-inner:after {
+    background: currentColor;
+    border-radius: 9999px;
+    transition-timing-function: ease;
+    height: 2px;
+    width: 2rem;
+    position: absolute;
+    transition: transform ease-in-out 150ms;
+    will-change: transform;
+  }
+
+  .hamburger-inner:before,
+  .hamburger-inner:after {
+    content: '';
+    display: block;
+  }
+
+  .hamburger-inner:before {
+    top: -0.5rem;
+  }
+
+  .hamburger-inner:after {
+    bottom: -0.5rem;
+  }
+
+  /*
+* Squeeze
+*/
+  .hamburger--squeeze .hamburger-inner {
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .hamburger--squeeze .hamburger-inner:before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  }
+
+  .hamburger--squeeze .hamburger-inner:after {
+    transition: bottom 0.075s 0.12s ease,
+      transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .hamburger--squeeze.is-active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .hamburger--squeeze.is-active .hamburger-inner:before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  }
+
+  .hamburger--squeeze.is-active .hamburger-inner:after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease,
+      transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  pre > code {
+    padding: 0;
+  }
 </style>
