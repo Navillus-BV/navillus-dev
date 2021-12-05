@@ -23,24 +23,21 @@ interface MenuInputElement extends HTMLInputElement {
 
 const initMenuInput = (element: MenuInputElement) => {
   const hamburgerElem = document.querySelector('[for="toggle"]')
-    element.onchange = () => {
-      element.checked
-        ? hamburgerElem.classList.add('is-active')
-        : hamburgerElem.classList.remove('is-active')
-    }
-
-    let innerWidth = window.innerWidth
-    window.addEventListener('resize', () => {
-      if (innerWidth < 768 && window.innerWidth >= 768) {
-        element.checked = false
-        hamburgerElem.classList.remove('is-active')
-      }
-
-      innerWidth = window.innerWidth
-    })
-
-    element.classList.add('animate')
+  element.onchange = () => {
+    element.checked
+      ? hamburgerElem.classList.add('is-active')
+      : hamburgerElem.classList.remove('is-active')
   }
+
+  matchMedia('(min-width: 768px)').onchange = (event) => {
+    if (event.matches) {
+      hamburgerElem.classList.remove('is-active')
+      element.checked = false
+    }
+  }
+
+  element.classList.add('animate')
+}
 ---
 
 <header>
