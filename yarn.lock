@@ -349,11 +349,6 @@
   resolved "https://registry.yarnpkg.com/@emmetio/scanner/-/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==
 
-"@fontsource/fira-mono@^4.4.5":
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/fira-mono/-/fira-mono-4.5.0.tgz#bea97a54b60dc269d1c78469b007835af44dfa7f"
-  integrity sha512-KE+d3wmgq/YKM0BqgUF7p2yeBNi805Nfof1lC1wJ7E9i2EWoC363sGdKG+MQBVm+ei3GYZu+Bo8Xha1w1pkB7g==
-
 "@ljharb/has-package-exports-patterns@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@ljharb/has-package-exports-patterns/-/has-package-exports-patterns-0.0.1.tgz#70f07047b058e0909488a0ab1928afb95a9326d0"
@@ -769,6 +764,11 @@ astring@^1.7.5:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.8.1.tgz#a91c4afd4af3523e11f31242a3d5d9af62bb6cc6"
   integrity sha512-Aj3mbwVzj7Vve4I/v2JYOPFkCGM2YS7OqQTNSxmUR+LECRpokuPgAYghePgr6SALDo5bD5DlfbSaYjOzGJZOLQ==
+
+astro-xelement@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/astro-xelement/-/astro-xelement-3.0.0.tgz#510be352c18e3062b29f65fc6961d813c4faf8c6"
+  integrity sha512-kjPRqISDYL1X+alRKPsuM2SDq9mpnbXnXssft4LbpRHuEfaX7iJk8c/XhReDTw0YAuzNzw+9L0FFxIQFJn2Udg==
 
 astro@^0.21.10:
   version "0.21.10"

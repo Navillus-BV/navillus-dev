@@ -40,22 +40,6 @@ const routes = [
 <html lang="en">
   <head>
     <MainHead {title} {description} {image} {canonicalURL} />
-
-    <script>
-      const storedDark = JSON.parse(localStorage.getItem('navillus:darktheme'))
-
-      const prefersDark =
-        window &&
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-
-      const dark = typeof storedDark === 'boolean' ? storedDark : prefersDark
-
-      document.documentElement.setAttribute(
-        'data-chisel-theme',
-        dark ? 'dark' : 'light'
-      )
-    </script>
   </head>
 
   <body>

@@ -1,4 +1,5 @@
 ---
+import XElement from 'astro-xelement'
 import ThemeToggle from './ThemeToggle.astro'
 import Logo from './Logo.astro'
 
@@ -12,7 +13,31 @@ interface Props {
   pathname: string
 }
 
+const {input: MenuInput, label: MenuButton } = XElement
+
 const { navItems, pathname } = Astro.props as Props
+
+interface MenuInputElement extends HTMLInputElement {
+
+}
+
+const initMenuInput = (element: MenuInputElement) => {
+  const hamburgerElem = document.querySelector('[for="toggle"]')
+  element.onchange = () => {
+    element.checked
+      ? hamburgerElem.classList.add('is-active')
+      : hamburgerElem.classList.remove('is-active')
+  }
+
+  matchMedia('(min-width: 768px)').onchange = (event) => {
+    if (event.matches) {
+      hamburgerElem.classList.remove('is-active')
+      element.checked = false
+    }
+  }
+
+  element.classList.add('animate')
+}
 ---
 
 <header>
@@ -38,7 +63,7 @@ const { navItems, pathname } = Astro.props as Props
 
     <a href="/#contact" class="button button--outline">Get in Touch</a>
 
-    <label
+    <MenuButton
       for="toggle"
       title="Open Menu"
       class="hamburger hamburger--squeeze header__hamburger"
@@ -46,16 +71,22 @@ const { navItems, pathname } = Astro.props as Props
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
-    </label>
+    </MenuButton>
   </div>
 
-  <input type="checkbox" id="toggle" class="sr-only" title="Open Menu" />
+  <MenuInput
+    type="checkbox"
+    id="toggle"
+    class="sr-only"
+    title="Open Menu"
+    @do={initMenuInput}
+  />
 
   <nav class="container">
     <ul>
       {navItems.map(({ title, href }) => (
         <li>
-          <a href={href} class="h5" aria-current={pathname === '/'}>
+          <a href={href} class="h5" aria-current={pathname === href}>
             {title}
           </a>
         </li>
@@ -73,32 +104,6 @@ const { navItems, pathname } = Astro.props as Props
   </nav>
 </header>
 
-<script>
-  /** Connect hamburger icon animation */
-  const toggleElem = document.getElementById('toggle')
-  const hamburgerElem = document.querySelector('[for=toggle]')
-
-  toggleElem.addEventListener('change', () => {
-    toggleElem.checked
-      ? hamburgerElem.classList.add('is-active')
-      : hamburgerElem.classList.remove('is-active')
-  })
-
-  /** Close mobile menu when window resizes to desktop */
-  let innerWidth = window.innerWidth
-  window.addEventListener('resize', () => {
-    if (innerWidth < 768 && window.innerWidth >= 768) {
-      toggleElem.checked = false
-      hamburgerElem.classList.remove('is-active')
-    }
-
-    innerWidth = window.innerWidth
-  })
-
-  /** Progressively enhance mobile menu with animations */
-  toggleElem.classList.add('animate')
-</script>
-
 <style lang="scss">
   header {
     position: relative;
@@ -109,15 +114,19 @@ const { navItems, pathname } = Astro.props as Props
     text-decoration: none;
   }
 
-  #toggle + nav {
+  a[aria-current] {
+    text-decoration: underline;
+  }
+
+  #toggle ~ nav {
     display: none;
   }
 
-  #toggle:checked + nav {
+  #toggle:checked ~ nav {
     display: block;
   }
 
-  #toggle.animate + nav {
+  #toggle.animate ~ nav {
     display: block;
     max-height: 0;
     overflow: hidden;
@@ -125,7 +134,7 @@ const { navItems, pathname } = Astro.props as Props
     visibility: hidden;
   }
 
-  #toggle.animate:checked + nav {
+  #toggle.animate:checked ~ nav {
     max-height: 16rem;
     visibility: visible;
   }
