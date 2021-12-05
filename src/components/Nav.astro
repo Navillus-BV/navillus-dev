@@ -17,7 +17,30 @@ const {input: MenuInput, label: MenuButton } = XElement
 
 const { navItems, pathname } = Astro.props as Props
 
-console.log(pathname, navItems)
+interface MenuInputElement extends HTMLInputElement {
+
+}
+
+const initMenuInput = (element: MenuInputElement) => {
+  const hamburgerElem = document.querySelector('[for="toggle"]')
+    element.onchange = () => {
+      element.checked
+        ? hamburgerElem.classList.add('is-active')
+        : hamburgerElem.classList.remove('is-active')
+    }
+
+    let innerWidth = window.innerWidth
+    window.addEventListener('resize', () => {
+      if (innerWidth < 768 && window.innerWidth >= 768) {
+        element.checked = false
+        hamburgerElem.classList.remove('is-active')
+      }
+
+      innerWidth = window.innerWidth
+    })
+
+    element.classList.add('animate')
+  }
 ---
 
 <header>
@@ -59,27 +82,7 @@ console.log(pathname, navItems)
     id="toggle"
     class="sr-only"
     title="Open Menu"
-    @do={() => {
-      const hamburgerElem = document.querySelector('[for="toggle"]')
-
-      this.onchange = () => {
-        this.checked
-          ? hamburgerElem.classList.add('is-active')
-          : hamburgerElem.classList.remove('is-active')
-      }
-
-      let innerWidth = window.innerWidth
-      window.addEventListener('resize', () => {
-        if (innerWidth < 768 && window.innerWidth >= 768) {
-          this.checked = false
-          hamburgerElem.classList.remove('is-active')
-        }
-
-        innerWidth = window.innerWidth
-      })
-
-      this.classList.add('animate')
-    }}
+    @do={initMenuInput}
   />
 
   <nav class="container">

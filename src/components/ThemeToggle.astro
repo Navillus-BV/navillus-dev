@@ -6,6 +6,34 @@ export interface Props {
 }
 const { button: ToggleButton } = XElement
 const { storageKey = 'theme' } = Astro.props as Props
+
+type Theme = 'dark' | 'light'
+
+interface ToggleButtonState {
+  theme: Theme
+}
+
+interface ToggleButtonElement extends HTMLButtonElement {
+  setTheme(theme: Theme): void;
+  toggle(): void;
+}
+
+const initToggleButton = (element: ToggleButtonElement, store: ToggleButtonState) => {
+    element.classList.add('visible')
+    element.removeAttribute('hidden')
+
+    store.theme = document.documentElement.getAttribute('data-chisel-theme') as Theme
+    element.setAttribute('data-theme', store.theme)
+
+    element.setTheme = (theme) => {
+      store.theme = theme
+      element.setAttribute('data-theme', store.theme)
+      document.documentElement.setAttribute('data-chisel-theme', store.theme)
+      localStorage.setItem(storageKey, store.theme)
+    }
+
+    element.toggle = () => element.setTheme(store.theme === 'dark' ? 'light' : 'dark')
+  }
 ---
 
 <!-- global script resets the theme before first paint -->
@@ -32,22 +60,7 @@ const { storageKey = 'theme' } = Astro.props as Props
 <ToggleButton
   class="button--icon"
   define:vars={{ storageKey }}
-  @do={(element, store) => {
-    this.classList.add('visible')
-    this.removeAttribute('hidden')
-
-    store.theme = document.documentElement.getAttribute('data-chisel-theme')
-    this.setAttribute('data-theme', store.theme)
-
-    this.setTheme = (theme) => {
-      store.theme = theme
-      this.setAttribute('data-theme', store.theme)
-      document.documentElement.setAttribute('data-chisel-theme', store.theme)
-      localStorage.setItem(storageKey, store.theme)
-    }
-
-    this.toggle = () => this.setTheme(store.theme === 'dark' ? 'light' : 'dark')
-  }}
+  @do={initToggleButton}
   @click={() => this.toggle()}
 >
   <svg
