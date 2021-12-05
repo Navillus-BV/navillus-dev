@@ -13,6 +13,8 @@ interface Props {
   pathname: string
 }
 
+const {input:HbugrInput, label:HbugrLbl} = XElement
+
 const { navItems, pathname } = Astro.props as Props
 ---
 
@@ -39,7 +41,7 @@ const { navItems, pathname } = Astro.props as Props
 
     <a href="/#contact" class="button button--outline">Get in Touch</a>
 
-    <XElement.label
+    <HbugrLbl
       for="toggle"
       title="Open Menu"
       class="hamburger hamburger--squeeze header__hamburger"
@@ -47,10 +49,10 @@ const { navItems, pathname } = Astro.props as Props
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
-    </XElement.label>
+    </HbugrLbl>
   </div>
 
-  <XElement.input
+  <HbugrInput
     type="checkbox"
     id="toggle"
     class="sr-only"
@@ -76,7 +78,7 @@ const { navItems, pathname } = Astro.props as Props
 
       this.classList.add('animate')
     }}
-  ></XElement.input>
+  />
 
   <nav class="container">
     <ul>

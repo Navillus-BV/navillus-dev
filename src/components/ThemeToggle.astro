@@ -4,7 +4,7 @@ import XElement from 'astro-xelement'
 export interface Props {
   storageKey?: string
 }
-
+const {button:ToggleBtn} = XElement
 const { storageKey = 'theme' } = Astro.props as Props
 ---
 
@@ -24,7 +24,7 @@ const { storageKey = 'theme' } = Astro.props as Props
   }
 </script>
 
-<XElement.button
+<ToggleBtn
   class='button--icon'
   define:vars={{ storageKey }}
   @do={(element, store) => {
@@ -60,7 +60,7 @@ const { storageKey = 'theme' } = Astro.props as Props
     />
     <span class="sr-only">Switch to dark theme</span>
   </svg>
-</XElement.button>
+</ToggleBtn>
 
 <style lang="scss">
   button {
