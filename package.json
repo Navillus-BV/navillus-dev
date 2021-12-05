@@ -5,7 +5,8 @@
     "dev": "astro dev",
     "prebuild": "cp -r node_modules/@fontsource public/styles",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier -w src"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.4.5",
@@ -15,5 +16,9 @@
     "lodash": "^4.17.21",
     "markdown-reading-time": "^0.1.1",
     "netlify-plugin-cache-folder": "^0.0.8"
+  },
+  "dependencies": {
+    "prettier": "^2.5.1",
+    "prettier-plugin-astro": "^0.0.11"
   }
 }

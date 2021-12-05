@@ -5,10 +5,21 @@ interface Props {
   small?: boolean
 }
 
-const { src = '/img/avatar.svg', alt = '', small = false } = Astro.props as Props
+const {
+  src = '/img/avatar.svg',
+  alt = '',
+  small = false,
+} = Astro.props as Props
 ---
 
-<img src={src} width="48" height="48" alt={alt} loading="lazy" class={`u-photo${small ? ' small' : ''}`} />
+<img
+  {src}
+  width="48"
+  height="48"
+  {alt}
+  loading="lazy"
+  class={`u-photo${small ? ' small' : ''}`}
+/>
 
 <style lang="scss">
   img {

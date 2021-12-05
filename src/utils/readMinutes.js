@@ -1,7 +1,7 @@
-import { calculateReadingTime } from "markdown-reading-time";
+import { calculateReadingTime } from 'markdown-reading-time'
 
 export function readMinutes(post) {
-  const { minutes } = calculateReadingTime(post.astro.source);
+  const { minutes } = calculateReadingTime(post.astro.source)
 
-  return minutes;
+  return minutes
 }

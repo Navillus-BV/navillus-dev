@@ -1,7 +1,7 @@
 ---
 interface Props {
-    title: string
-    badges: { title: string, logo: string }[]
+  title: string
+  badges: { title: string; logo: string }[]
 }
 
 const { title, badges } = Astro.props as Props
@@ -19,7 +19,7 @@ const { title, badges } = Astro.props as Props
         </svg>
       </li>
     ))}
-    </ul>
+  </ul>
 </div>
 
 <style lang="scss">

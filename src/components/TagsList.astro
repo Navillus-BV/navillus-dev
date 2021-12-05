@@ -8,13 +8,15 @@ interface Props {
   tags: Tag[]
 }
 
-const { tags = [] } = Astro.props as Props 
+const { tags = [] } = Astro.props as Props
 ---
 
 {tags.length > 0 && (
   <div class="tags">
     {tags.map(({ tag, url }) => (
-      <a href={url}><code>{tag}</code></a>
+      <a href={url}>
+        <code>{tag}</code>
+      </a>
     ))}
   </div>
 )}

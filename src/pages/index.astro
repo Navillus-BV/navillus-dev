@@ -9,152 +9,169 @@ import { organizationSchema, websiteSchema } from '../utils/jsonLD'
 const { cms, hosts, ssg } = tools
 ---
 
-<Layout pathname={Astro.request.url.pathname} canonicalURL={Astro.request.canonicalURL.href}>
-    <section>
-        <div class="container hero">
-            <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
-            <h2 class="h1">
-                Every problem is <strong>different</strong>.
-                <br />
-                Your <strong>solutions</strong> should be, too.
-            </h2>
-            <p>
-                We specialize in finding simple solutions to complex software problems. We value data-driven
-                decisions and accessibility over this month's latest tech trends.
-            </p>
-            <a class="button" href="/#services">How we can help</a>
+<Layout
+  pathname={Astro.request.url.pathname}
+  canonicalURL={Astro.request.canonicalURL.href}
+>
+  <section>
+    <div class="container hero">
+      <h1 class="h6"><strong>JAMSTACK DEVELOPERS FOR HIRE</strong></h1>
+      <h2 class="h1">
+        Every problem is <strong>different</strong>.
+        <br />
+        Your <strong>solutions</strong> should be, too.
+      </h2>
+      <p>
+        We specialize in finding simple solutions to complex software problems.
+        We value data-driven decisions and accessibility over this month's
+        latest tech trends.
+      </p>
+      <a class="button" href="/#services">How we can help</a>
+    </div>
+  </section>
+
+  <Section alt title="SITES WITH BENEFITS" subtitle="Why use the Jamstack?">
+    <div class="features">
+      <article>
+        <svg>
+          <use xlink:href="/assets/sprites.svg#speedometer"></use>
+        </svg>
+
+        <div>
+          <h4 class="h3">Better Performance</h4>
+          <p>
+            According to <a
+              class="underline color-blue"
+              href="https://www.blog.google/products/admanager/increase-speed-of-your-mobile-site-wi/"
+            >
+              Google</a
+            >, 53% of visitors will leave a website if it takes longer than 3
+            seconds to load. Even worse, a whopping 79% of online shoppers will
+            stay away from online stores with performance hiccups.
+          </p>
+          <p>
+            Jamstack sites are built once and globally distributed - they don't
+            depend on servers to rebuild the page for every visitor.
+          </p>
         </div>
-    </section>
+      </article>
+      <article>
+        <svg>
+          <use xlink:href="/assets/sprites.svg#shield"></use>
+        </svg>
 
-    <Section alt title="SITES WITH BENEFITS" subtitle="Why use the Jamstack?">
-        <div class="features">
-            <article>
-                <svg>
-                    <use xlink:href="/assets/sprites.svg#speedometer" />
-                </svg>
-
-                <div>
-                    <h4 class="h3">Better Performance</h4>
-                    <p>
-                        According to <a
-                            class="underline color-blue"
-                            href="https://www.blog.google/products/admanager/increase-speed-of-your-mobile-site-wi/"
-                        >
-                            Google</a
-                        >, 53% of visitors will leave a website if it takes longer than 3 seconds to load. Even
-                        worse, a whopping 79% of online shoppers will stay away from online stores with
-                        performance hiccups.
-                    </p>
-                    <p>
-                        Jamstack sites are built once and globally distributed - they don't depend on servers to
-                        rebuild the page for every visitor.
-                    </p>
-                </div>
-            </article>
-            <article>
-                <svg>
-                    <use xlink:href="/assets/sprites.svg#shield" />
-                </svg>
-
-                <div>
-                    <h4 class="h3">Higher Security</h4>
-                    <p>
-                        <a class="underline color-blue" href="https://www.enablesecurity.com/">
-                            Enable Security
-                        </a> found that over 70% of WordPress sites are vulnerable to hacker attacks. Chances are
-                        those sites secure when first built, but without regular updates and maintenance they can
-                        quickly fall behind and put businesses at risk.
-                    </p>
-                    <p>
-                        Statically built websites are distributed globally as plain old files, skipping the web
-                        servers to protect your customers and your business.
-                    </p>
-                </div>
-            </article>
-            <article>
-                <svg>
-                    <use xlink:href="/assets/sprites.svg#money" />
-                </svg>
-
-                <div>
-                    <h4 class="h3">Cheaper, Easier Scaling</h4>
-                    <p>
-                        Citrix saw an incredible <a
-                            class="underline color-blue"
-                            href="https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/"
-                        >
-                            65% cost savings
-                        </a> after moving their business critical documentation sites over to Jamstack technologies.
-                        Their documentation sites are visited by 3.5 million users annually and provide technical
-                        support for all of their 15 products and related components.
-                    </p>
-                    <p>
-                        Because Jamstack sites are built once and served as static files, they can be
-                        distributed globally and available almost instantly to your customers around the world.
-                    </p>
-                </div>
-            </article>
+        <div>
+          <h4 class="h3">Higher Security</h4>
+          <p>
+            <a
+              class="underline color-blue"
+              href="https://www.enablesecurity.com/"
+            >
+              Enable Security
+            </a> found that over 70% of WordPress sites are vulnerable to hacker
+            attacks. Chances are those sites secure when first built, but without
+            regular updates and maintenance they can quickly fall behind and put
+            businesses at risk.
+          </p>
+          <p>
+            Statically built websites are distributed globally as plain old
+            files, skipping the web servers to protect your customers and your
+            business.
+          </p>
         </div>
-    </Section>
+      </article>
+      <article>
+        <svg>
+          <use xlink:href="/assets/sprites.svg#money"></use>
+        </svg>
 
-    <Section title="TECHNOLOGY WE USE" subtitle="Building the Modern Web">
-        <BadgeList title={cms.title} badges={cms.items} />
-        <BadgeList title={ssg.title} badges={ssg.items} />
-        <BadgeList title={hosts.title} badges={hosts.items} />
-    </Section>
-
-    <Section alt id="services" title="WHAT WE OFFER" subtitle="Our Services">
-        <div class="features">
-            <article>
-                <svg>
-                    <use xlink:href="/assets/sprites.svg#blogging" />
-                </svg>
-
-                <div>
-                    <h4 class="h3">Web Design & Development</h4>
-                    <p>
-                        Static doesn't mean boring. We design and build sites with proven technologies to offer
-                        dynamic, interactive designs that customers love.
-                    </p>
-                </div>
-            </article>
-            <article>
-                <svg>
-                    <use xlink:href="/assets/sprites.svg#shopping" />
-                </svg>
-
-                <div>
-                    <h4 class="h3">eCommerce Stores</h4>
-                    <p>
-                        Losing a visitor on your online shop costs your more than just impressions, it hits your
-                        bottom line. We build modern, accessible eCommerce stores that grow with your business.
-                    </p>
-                </div>
-            </article>
-            <article>
-                <svg>
-                    <use xlink:href="/assets/sprites.svg#architecture" />
-                </svg>
-
-                <div>
-                    <h4 class="h3">Software Architecture & Design</h4>
-                    <p>
-                        Whether you already have a development team or are still in the planning phase, we can
-                        help you design your tech stack.
-                    </p>
-                </div>
-            </article>
+        <div>
+          <h4 class="h3">Cheaper, Easier Scaling</h4>
+          <p>
+            Citrix saw an incredible <a
+              class="underline color-blue"
+              href="https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/"
+            >
+              65% cost savings
+            </a> after moving their business critical documentation sites over to
+            Jamstack technologies. Their documentation sites are visited by 3.5 million
+            users annually and provide technical support for all of their 15 products
+            and related components.
+          </p>
+          <p>
+            Because Jamstack sites are built once and served as static files,
+            they can be distributed globally and available almost instantly to
+            your customers around the world.
+          </p>
         </div>
-    </Section>
+      </article>
+    </div>
+  </Section>
 
-    <Section id="contact" title="JAMSTACK DEVELOPERS FOR HIRE" subtitle="Get in Touch">
-        <p>
-            We love what we do and are always up for an interesting conversation, whether you're ready to
-            get started or just have a few questions.
-        </p>
-        <ContactForm />
-    </Section>
+  <Section title="TECHNOLOGY WE USE" subtitle="Building the Modern Web">
+    <BadgeList title={cms.title} badges={cms.items} />
+    <BadgeList title={ssg.title} badges={ssg.items} />
+    <BadgeList title={hosts.title} badges={hosts.items} />
+  </Section>
 
-    {websiteSchema}
-    {organizationSchema}
+  <Section alt id="services" title="WHAT WE OFFER" subtitle="Our Services">
+    <div class="features">
+      <article>
+        <svg>
+          <use xlink:href="/assets/sprites.svg#blogging"></use>
+        </svg>
+
+        <div>
+          <h4 class="h3">Web Design & Development</h4>
+          <p>
+            Static doesn't mean boring. We design and build sites with proven
+            technologies to offer dynamic, interactive designs that customers
+            love.
+          </p>
+        </div>
+      </article>
+      <article>
+        <svg>
+          <use xlink:href="/assets/sprites.svg#shopping"></use>
+        </svg>
+
+        <div>
+          <h4 class="h3">eCommerce Stores</h4>
+          <p>
+            Losing a visitor on your online shop costs your more than just
+            impressions, it hits your bottom line. We build modern, accessible
+            eCommerce stores that grow with your business.
+          </p>
+        </div>
+      </article>
+      <article>
+        <svg>
+          <use xlink:href="/assets/sprites.svg#architecture"></use>
+        </svg>
+
+        <div>
+          <h4 class="h3">Software Architecture & Design</h4>
+          <p>
+            Whether you already have a development team or are still in the
+            planning phase, we can help you design your tech stack.
+          </p>
+        </div>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    id="contact"
+    title="JAMSTACK DEVELOPERS FOR HIRE"
+    subtitle="Get in Touch"
+  >
+    <p>
+      We love what we do and are always up for an interesting conversation,
+      whether you're ready to get started or just have a few questions.
+    </p>
+    <ContactForm />
+  </Section>
+
+  {websiteSchema}
+  {organizationSchema}
 </Layout>

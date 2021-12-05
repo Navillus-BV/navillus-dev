@@ -1,11 +1,11 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: Converting our site to Astro
 description: Spoiler - you probably don't need a kitchen sink framework.
 author: tony-sull
 image: posts/2021-07-20-converting-navillus-to-astro.jpg
 published_date: 2021-07-20
-tweetId: "1417535981058764809"
+tweetId: '1417535981058764809'
 tags:
   - astro
 ---
@@ -49,9 +49,7 @@ becomes...
   ...
 )}
 
-{items.map((item) => (
-  <li>{item}</li>
-))}
+{items.map((item) => <li>{item}</li>)}
 ```
 
 Coming from Svelte this feels a little too React-y for my taste, but it is really handy to be able to use JavaScript right in the template. I haven't actually tried this yet, but I assume you could `sort()` or `filter()` the array right in your template!

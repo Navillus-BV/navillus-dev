@@ -1,11 +1,11 @@
 ---
-layout: "../../layouts/post.astro"
+layout: '../../layouts/post.astro'
 title: Animated page transitions in Astro with Swup
 description: Static doesn't mean boring! Easily add client routing and page transition animations with swup.js
 author: tony-sull
 image: posts/2021-07-24-astro-plus-swup.jpg
 published_date: 2021-07-24
-tweetId: "1418952288476012545"
+tweetId: '1418952288476012545'
 tags:
   - astro
 ---
@@ -55,9 +55,9 @@ npm install --save-dev swup
 Initialize swup in `/public/app.js`...
 
 ```js
-import Swup from "swup";
+import Swup from 'swup'
 
-const swup = new Swup();
+const swup = new Swup()
 ```
 
 Finally, import `app.js` in the shared layout...
@@ -80,12 +80,12 @@ npm install --save-dev @swup/slide-theme
 ```
 
 ```js
-import Swup from "swup";
-import SwupSlideTheme from "@swup/slide-theme";
+import Swup from 'swup'
+import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
   plugins: [new SwupSlideTheme()],
-});
+})
 ```
 
 ### Supported scoped styles
@@ -101,13 +101,13 @@ npm install --save-dev @swup/head-plugin
 ```
 
 ```js
-import Swup from "swup";
-import SwupHeadPlugin from "@swup/head-plugin";
-import SwupSlideTheme from "@swup/slide-theme";
+import Swup from 'swup'
+import SwupHeadPlugin from '@swup/head-plugin'
+import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
   plugins: [new SwupHeadPlugin(), new SwupSlideTheme()],
-});
+})
 ```
 
 Plugins to the rescue again! This plugin will replace the old `<head>` with the version in the new page when navigating - it even has [config options](https://swup.js.org/plugins/head-plugin#options) should you need to persist some styles or meta tags on every page!
@@ -123,14 +123,14 @@ npm install --save-dev @swup/a11y-plugin
 ```
 
 ```js
-import Swup from "swup";
-import SwupA11yPlugin from "@swup/a11y-plugin";
-import SwupHeadPlugin from "@swup/head-plugin";
-import SwupSlideTheme from "@swup/slide-theme";
+import Swup from 'swup'
+import SwupA11yPlugin from '@swup/a11y-plugin'
+import SwupHeadPlugin from '@swup/head-plugin'
+import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
   plugins: [new SwupA11yPlugin(), new SwupHeadPlugin(), new SwupSlideTheme()],
-});
+})
 ```
 
 ## Progressively enhanced, for free!

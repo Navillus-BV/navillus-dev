@@ -7,12 +7,22 @@ interface Props {
   class?: string
 }
 
-const { title, subtitle, id, class: className = '', alt = false } = Astro.props as Props
+const {
+  title,
+  subtitle,
+  id,
+  class: className = '',
+  alt = false,
+} = Astro.props as Props
 ---
 
 <section class={`${alt && 'alt'} ${className}`} id={id || ''}>
   <div class="container">
-    {title && <h2 class="h6"><strong>{title}</strong></h2>}
+    {title && (
+      <h2 class="h6">
+        <strong>{title}</strong>
+      </h2>
+    )}
     {subtitle && <h3 class="h2">{subtitle}</h3>}
 
     <slot />

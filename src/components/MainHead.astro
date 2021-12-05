@@ -12,7 +12,7 @@ const {
   title = site.title,
   description = site.description,
   image = site.social.image,
-  canonicalURL
+  canonicalURL,
 } = Astro.props as Props
 
 const imageAbsolute = `${site.url}${image}`
@@ -31,7 +31,12 @@ const blogRssFeed = `${site.url}feed/blog.xml`
 <meta name="robots" content="index,follow" />
 <meta name="author" content={site.author} />
 <link rel="canonical" href={canonicalURL} />
-<link rel="alternate" type="application/rss+xml" title="Blog | Navillus" href={blogRssFeed} />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="Blog | Navillus"
+  href={blogRssFeed}
+/>
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.svg" />
@@ -40,10 +45,11 @@ const blogRssFeed = `${site.url}feed/blog.xml`
 <meta name="theme-color" content="#ffc331" />
 <link rel="manifest" href="/manifest.json" />
 <meta name="mobile-web-app-capable" content="yes" />
-<meta name="application-name" content="{site.company.name}" />
+<meta name="application-name" content={site.company.name} />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="{site.title}" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"
+/>
+<meta name="apple-mobile-web-app-title" content={site.title} />
 
 <!-- Open Graph -->
 <meta property="og:title" content={title} />
@@ -66,7 +72,7 @@ const blogRssFeed = `${site.url}feed/blog.xml`
 <link rel="sitemap" href="/sitemap.xml" />
 
 <!-- Global Styles -->
-<link rel="stylesheet" href={Astro.resolve("../assets/global.scss")} />
+<link rel="stylesheet" href={Astro.resolve('../assets/global.scss')} />
 
 <!-- WebMentions -->
 <link rel="webmention" href="https://webmention.io/navillus.dev/webmention" />
