@@ -1,0 +1,13 @@
+---
+import FeaturesBlockItem from './FeaturesBlockItem.astro'
+import UIBlock from './UIBlock.astro'
+
+const block = Astro.props as CMS.FeaturesBlock
+const { items } = block
+---
+
+<UIBlock {...block}>
+  <div class='features'>
+    {items.map(item => (<FeaturesBlockItem {...item} />))}
+  </div>
+</UIBlock>

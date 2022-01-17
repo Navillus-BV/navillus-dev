@@ -50,6 +50,7 @@ declare namespace CMS {
   interface ContentPage extends Page {
     template: "page";
     hero?: Hero;
+    blocks: Block[];
   }
 
   interface Link {
@@ -63,4 +64,24 @@ declare namespace CMS {
     content: string;
     cta: Link;
   }
+
+  interface UIBlock {
+    title?: string;
+    subtitle?: string;
+    alt?: boolean;
+    id?: string;
+  }
+
+  interface FeaturesBlockItem {
+    icon: string;
+    title: string;
+    content: string;
+  }
+
+  interface FeaturesBlock extends UIBlock {
+    template: "featuresblock";
+    items: [FeaturesBlockItem];
+  }
+
+  type Block = FeaturesBlock;
 }

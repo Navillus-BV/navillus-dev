@@ -174,12 +174,6 @@ h2.h6 + h3.h2 {
   margin-top: 0;
 }
 
-.hero {
-  & .button {
-    margin-top: var(--spacer-md);
-  }
-}
-
 /** Features Block */
 .features {
   display: flex;

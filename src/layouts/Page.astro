@@ -1,12 +1,13 @@
 ---
 import Layout from './Base.astro'
+import Block from '../components/Block.astro'
 import Hero from '../components/Hero.astro'
 
-const { hero, permalink, seo } = Astro.props as CMS.ContentPage
+const { blocks, hero, permalink, seo } = Astro.props as CMS.ContentPage
 ---
 
 <Layout permalink={permalink} seo={seo}>
   {hero && (<Hero {...hero} />)}
 
-  <slot />
+  {blocks.map(block => (<Block block={block} />))}
 </Layout>

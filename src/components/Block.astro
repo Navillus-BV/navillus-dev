@@ -1,0 +1,18 @@
+---
+import FeaturesBlock from './blocks/FeaturesBlock.astro'
+import Show from './Show.astro'
+
+interface Props {
+  block: CMS.Block
+}
+
+const { block } = Astro.props as Props
+
+function isFeaturesBlock(block: CMS.Block): block is CMS.FeaturesBlock {
+  return block.template === 'featuresblock'
+}
+---
+
+<Show when={isFeaturesBlock(block)}>
+  <FeaturesBlock {...block} />
+</Show>
