@@ -1,31 +1,7 @@
 ---
-const socialLinks = [
-  {
-    title: 'Email us at info@navillus.nl',
-    href: 'mailto:info@navillus.nl',
-    icon: 'email',
-  },
-  {
-    title: 'Find us on Twitter',
-    href: 'https://twitter.com/navillus_dev',
-    icon: 'twitter',
-  },
-  {
-    title: 'Find us on dev.to',
-    href: 'https://dev.to/navillus_dev',
-    icon: 'devto',
-  },
-  {
-    title: 'Find us on Github',
-    href: 'https://github.com/navillus-bv',
-    icon: 'github',
-  },
-  {
-    title: 'RSS Feed',
-    href: 'https://navillus.dev/feed/blog.xml',
-    icon: 'rss',
-  },
-]
+import navigation from '../data/navigation.json'
+
+const { legal, social } = navigation as CMS.Navigation
 
 const year = new Date().getFullYear()
 ---
@@ -33,7 +9,7 @@ const year = new Date().getFullYear()
 <footer>
   <div class="container">
     <ul class="social">
-      {socialLinks.map(({ href, title, icon }) => (
+      {social.map(({ href, title, icon }) => (
         <li>
           <a href={href} rel="me">
             <span class="sr-only">{title}</span>
@@ -46,15 +22,11 @@ const year = new Date().getFullYear()
     </ul>
 
     <ul class="links">
-      <li>
-        <a class="h6" href="/privacy">Privacy Policy</a>
-      </li>
-      <li>
-        <a class="h6" href="/terms">Terms & Conditions</a>
-      </li>
-      <li>
-        <a class="h6" href="/#contact">Contact Us</a>
-      </li>
+      {legal.map(({ title, href }) => (
+        <li>
+          <a class='h6' href={href}>{title}</a>
+        </li>
+      ))}
     </ul>
 
     <div class="legal">

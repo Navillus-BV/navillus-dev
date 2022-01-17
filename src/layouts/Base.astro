@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro'
 import MainHead from '../components/MainHead.astro'
+import Nav from '../components/Nav.astro'
 
 const { permalink, seo } = Astro.props as CMS.Page
 ---
@@ -14,6 +15,8 @@ const { permalink, seo } = Astro.props as CMS.Page
     <a id="skip-to-content" href="#main" class="sr-only sr-only-focusable">
       Skip to content
     </a>
+
+  <Nav pathname={Astro.request.url.pathname} />
 
 	<main id='main'>
 	  <slot />

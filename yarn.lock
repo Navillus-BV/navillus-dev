@@ -677,6 +677,11 @@ astring@^1.7.5:
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.8.1.tgz#a91c4afd4af3523e11f31242a3d5d9af62bb6cc6"
   integrity sha512-Aj3mbwVzj7Vve4I/v2JYOPFkCGM2YS7OqQTNSxmUR+LECRpokuPgAYghePgr6SALDo5bD5DlfbSaYjOzGJZOLQ==
 
+astro-xelement@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/astro-xelement/-/astro-xelement-3.1.0.tgz#067087603606c1b9ba8f43f09ef5ce0e80edfee8"
+  integrity sha512-ASx1ZRDljoMdoiTAzROwwBMrR2zTXnjhsrGx4zBwzBGievdKUXEp6FKtNksacVNtSWZUoKte8yrjlgsj69kr6w==
+
 astro@^0.22.13:
   version "0.22.13"
   resolved "https://registry.yarnpkg.com/astro/-/astro-0.22.13.tgz#6383c8e937b8950ca0c144e4e62288b0b938de9b"

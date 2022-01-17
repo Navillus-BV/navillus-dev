@@ -15,6 +15,18 @@ declare namespace CMS {
     };
   }
 
+  interface NavigationItem {
+    title: string;
+    href: string;
+    icon?: string;
+  }
+
+  interface Navigation {
+    main: [NavigationItem];
+    legal: [NavigationItem];
+    social: [NavigationItem];
+  }
+
   interface SEO {
     title?: string;
     description?: string;
