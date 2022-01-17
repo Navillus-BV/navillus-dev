@@ -8,7 +8,7 @@
     "format": "prettier -w src"
   },
   "devDependencies": {
-    "astro": "^0.22.1",
+    "astro": "^0.22.13",
     "astro-xelement": "^3.0.0",
     "chisel.css": "^0.8.1",
     "lodash": "^4.17.21",
