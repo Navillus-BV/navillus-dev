@@ -1,0 +1,34 @@
+---
+import Show from './Show.astro'
+import { mdToHtml } from '../utils/markdown.ts'
+
+const {
+  title,
+  subtitle,
+  content,
+  cta
+} = Astro.props as CMS.Hero
+---
+
+<section>
+  <div class='container hero'>
+    <Show when={!!title}>
+      <h1 class='h6'>{mdToHtml(title)}</h1>
+    </Show>
+    <Show when={!!subtitle}>
+      <h2 class='h1'>{mdToHtml(subtitle)}</h2>
+    </Show>
+    <Show when={!!content}>
+      <p>{mdToHtml(content)}</p>
+    </Show>
+    <Show when={!!cta}>
+      <a class='button' href={cta.href}>{cta.text}</a>
+    </Show>
+  </div>
+</section>
+
+<style>
+  h2 :global(p) {
+    margin-bottom: 0;
+  }
+</style>

@@ -1,0 +1,19 @@
+{
+  "name": "Navillus",
+  "short_name": "Navillus",
+  "description": "We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.",
+  "dir": "auto",
+  "lang": "en-US",
+  "display": "fullscreen",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "/?homescreen=1",
+  "background_color": "#ffc331",
+  "theme_color": "#ffc331",
+  "icons": [
+    {
+      "src": "google-touch-icon.png",
+      "sizes": "512x512"
+    }
+  ]
+}

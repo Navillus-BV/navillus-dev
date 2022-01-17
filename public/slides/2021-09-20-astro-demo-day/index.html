@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Astro + Forestry + Netlify</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/dist/theme/white.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Integrating a CMS</h2>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 1rem;
+              padding: 1em 0;
+            "
+          >
+            <img
+              src="https://forestry.io/img/forestry-pos-full.svg"
+              alt="Forestry.io"
+              style="height: 7vh"
+            />
+            +
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              height="10vh"
+              viewBox="0 0 134 40"
+            >
+              <defs>
+                <linearGradient
+                  id="netlify-logo-gradient"
+                  x1="39.8%"
+                  x2="63%"
+                  y1="-34.5%"
+                  y2="143.9%"
+                >
+                  <stop offset="0%" stop-color="#00C7B7"></stop>
+                  <stop offset="100%" stop-color="#4D9ABF"></stop>
+                </linearGradient>
+                <radialGradient
+                  id="netlify-logo-inner-gradient"
+                  cy="0%"
+                  r="100.1%"
+                  fx="50%"
+                  fy="0%"
+                  gradientTransform="matrix(0 .9989 -1.152 0 .5 -.5)"
+                >
+                  <stop offset="0%" stop-color="#20C6B7"></stop>
+                  <stop offset="100%" stop-color="#4D9ABF"></stop>
+                </radialGradient>
+              </defs>
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  fill="#0E1E25"
+                  d="M59.1 12.5l.1 1.7c1.1-1.3 2.6-2 4.3-2 3.1 0 4.7 1.8 4.7 5.3v9.8H65v-9.6c0-1-.2-1.6-.6-2-.4-.5-1-.8-2-.8-1.3 0-2.3.6-3 1.9v10.5H56V12.5h3.1zm19 15c-2 0-3.8-.6-5-2-1.4-1.3-2-3-2-5.2v-.4c0-1.5.2-2.8.8-4a6.3 6.3 0 0 1 5.8-3.7c2 0 3.6.7 4.7 2a8.2 8.2 0 0 1 1.7 5.4v1.3h-9.7c.1 1.3.5 2.2 1.2 3 .7.7 1.6 1 2.7 1 1.5 0 2.8-.6 3.7-1.8l1.8 1.7a6 6 0 0 1-2.3 2c-1 .5-2.1.8-3.4.8zM77.7 15c-.9 0-1.6.3-2.2 1a5 5 0 0 0-1 2.6h6.3v-.2a4 4 0 0 0-.9-2.6c-.5-.5-1.2-.8-2.2-.8zm13.1-6v3.6h2.6V15h-2.6v8.2c0 .6.1 1 .3 1.2.3.3.7.4 1.2.4l1.2-.1v2.5a8.2 8.2 0 0 1-2.2.4c-2.5 0-3.8-1.4-3.8-4.3V15H85v-2.5h2.4V8.9h3.3zm8.7 18.4h-3.3v-21h3.3v21zm7.1 0h-3.3V12.5h3.3v14.8zm-3.5-18.6c0-.6.2-1 .5-1.3.3-.4.8-.5 1.4-.5.6 0 1 .1 1.4.5.3.3.5.7.5 1.3 0 .5-.2.9-.5 1.2-.3.3-.8.5-1.4.5-.6 0-1-.2-1.4-.5-.3-.3-.5-.7-.5-1.2zm8.3 18.6V15h-2.2v-2.5h2.2v-1.4c0-1.6.5-2.9 1.4-3.8.9-.9 2.2-1.3 3.8-1.3.6 0 1.2 0 1.9.2l-.1 2.6a6.5 6.5 0 0 0-1.3 0c-1.6 0-2.4.7-2.4 2.4v1.3h3V15h-3v12.3h-3.3zm14-4.8l3-10h3.5l-5.9 17c-.9 2.5-2.4 3.8-4.6 3.8a6 6 0 0 1-1.6-.3v-2.6h.7c.8 0 1.4 0 1.9-.4a3 3 0 0 0 1-1.5l.4-1.3-5.2-14.7h3.6l3.2 10z"
+                ></path>
+                <path
+                  fill="url(#netlify-logo-gradient)"
+                  fill-rule="nonzero"
+                  d="M82 14c0-2.3.5-4.1 1.5-5.5 1-1.4 2.3-2.1 4.1-2.1a4.5 4.5 0 0 1 3.7 1.8v-8h3.2V21h-2.7l-.3-1.8c-.5.7-1 1.2-1.7 1.6-.6.3-1.4.5-2.2.5-1.8 0-3.1-.7-4.1-2-1-1.2-1.5-3-1.5-5V14zm3.2.3c0 1.3.3 2.4.8 3.2.5.8 1.3 1.1 2.4 1.1.7 0 1.3-.1 1.7-.4.5-.3 1-.7 1.2-1.2v-6.3a3.4 3.4 0 0 0-1.2-1.3c-.4-.3-1-.4-1.7-.4-1 0-1.9.5-2.4 1.4-.5 1-.8 2.1-.8 3.6v.3zm12.4-.6c0-2.2.6-4 1.7-5.3a6 6 0 0 1 4.8-2c2.1 0 3.7.6 4.9 2a7.8 7.8 0 0 1 1.8 5.3v.3c0 2.1-.6 3.9-1.8 5.2a6 6 0 0 1-4.8 2 6 6 0 0 1-4.9-2 7.8 7.8 0 0 1-1.7-5.2v-.3zm3.2.3c0 1.4.3 2.5.8 3.4.6.9 1.4 1.3 2.6 1.3 1.1 0 2-.4 2.5-1.3.6-.9.8-2 .8-3.4v-.3c0-1.4-.2-2.5-.8-3.4a2.8 2.8 0 0 0-2.6-1.4c-1 0-2 .5-2.5 1.4-.5.9-.8 2-.8 3.4v.3zm18.9 4.7a3 3 0 0 0 2-.7c.5-.5.8-1 .8-1.7h3c0 1.4-.6 2.5-1.7 3.5a6.1 6.1 0 0 1-4.1 1.5c-2.1 0-3.8-.7-4.9-2a7.9 7.9 0 0 1-1.7-5.3v-.4c0-2.1.6-3.8 1.7-5.2 1.1-1.4 2.8-2 4.9-2a6 6 0 0 1 4.2 1.5c1 1 1.6 2.2 1.5 3.8h-3c0-.7-.2-1.4-.7-2-.5-.5-1.2-.8-2-.8-1.2 0-2 .5-2.6 1.4-.5.8-.8 2-.8 3.3v.4c0 1.4.3 2.5.8 3.4.5.9 1.4 1.3 2.6 1.3zm16.6-1.6c0-.5-.2-1-.7-1.2-.4-.4-1.2-.7-2.4-1-1.7-.3-3-.8-3.9-1.5a3.2 3.2 0 0 1-1.3-2.7c0-1.2.5-2.2 1.6-3a6 6 0 0 1 4-1.3c1.7 0 3.1.4 4.2 1.2 1 1 1.5 2 1.4 3.3h-3a2 2 0 0 0-.8-1.5c-.4-.4-1-.6-1.8-.6s-1.4.1-1.8.5c-.4.3-.6.8-.6 1.3s.2.9.6 1.2c.3.3 1.1.5 2.3.8 1.8.3 3.2.9 4 1.5 1 .7 1.3 1.7 1.3 2.8 0 1.3-.5 2.4-1.6 3.2-1 .8-2.4 1.2-4.2 1.2-1.9 0-3.3-.5-4.4-1.5a4 4 0 0 1-1.5-3.3h3c0 .8.3 1.4.9 1.8.6.4 1.2.6 2 .6.9 0 1.5-.2 2-.5.4-.3.7-.8.7-1.3z"
+                  transform="translate(56 6)"
+                ></path>
+                <path
+                  d="M28.6 14.1l.7-4.8 3.6 3.6-3.7 1.6H29a1.7 1.7 0 0 0-.5-.4zm5.2-.3l4 4c.7.7 1.1 1.1 1.3 1.6v.2l-9.2-4h-.1l4-1.8zm5.2 7c-.2.4-.6.8-1.3 1.5l-4.3 4.3-5.7-1.1-.1-.1a1.7 1.7 0 0 0-.7-1.2V24l1-6.5.1-.2a1.7 1.7 0 0 0 1.2-.6h.1l9.7 4zm-6.7 6.9l-7.1 7.1 1.2-7.5v-.1a1.9 1.9 0 0 0 .8-.5l5.1 1zm-8.7 8.7l-.8.8-9-13V24l.1-.1.1-.1h.1l10 2v.1a1.8 1.8 0 0 0 1 1.2.2.2 0 0 0 0 .1l-1.5 9zM22 38c-.6.6-1 1-1.4 1a2 2 0 0 1-1.2 0c-.5 0-.9-.5-1.7-1.3l-9-9 2.4-3.6h.1a2.4 2.4 0 0 0 1.6-.1h.1l9 13zM7.9 28l-2.1-2.1 4-1.7h.1a3 3 0 0 0 .2.2L8 28zm-3-3l-2.6-2.6-1-1 8 1.6v.1L4.8 25zm-4-5a2 2 0 0 1 0-.5c.2-.5.6-.9 1.4-1.7l3.3-3.3a2175.5 2175.5 0 0 0 4.6 6.7s.1 0 0 0l-.3.6h-.1L.8 20zm5.6-6.4L11 9l3.3 1.4 2.3 1c.1 0 0 0 0 .1a2 2 0 0 0 .6 1.8v.1l-4.6 7.1h-.1a2.3 2.3 0 0 0-.6 0 3 3 0 0 0-.5 0l-4.9-7zM12 8l5.8-5.8C18.5 1.5 19 1 19.4.9a2 2 0 0 1 1.2 0c.5.2.9.6 1.7 1.4l1.2 1.2-4.1 6.4c0 .1-.1.1-.1 0a2.1 2.1 0 0 0-2 .5L11.8 8zm12.5-3.7l3.8 3.8-.9 5.7v.1a1.8 1.8 0 0 0-.6.3.1.1 0 0 1-.1 0L20.8 12l-.1-.1a2.2 2.2 0 0 0-.3-1l4-6.4zm-4 8.6l5.5 2.3h.1a.1.1 0 0 1 0 .1v.5h-.1l-12.1 5.2h-.1V21l4.5-7h.5a2 2 0 0 0 1.7-1zm-6.2 9.2L26.5 17l.2.1.1.1-1 6.5-.1.1a1.7 1.7 0 0 0-1.4.9h-.1l-9.8-2-.2-.5z"
+                  fill="url(#netlify-logo-inner-gradient)"
+                  fill-rule="nonzero"
+                ></path>
+              </g>
+            </svg>
+            +
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="10vh"
+              viewBox="0 0 363 102"
+              fill="none"
+              class="astro-AGUtxITr"
+            >
+              <style type="text/css">
+                .text.astro-AGUtxITr {
+                  fill: black;
+                }
+                .hover.astro-AGUtxITr {
+                  fill: black;
+                }
+              </style>
+              <path
+                class="text astro-AGUtxITr"
+                fill-rule="evenodd"
+                d="M55.07 14.216l16.81 54.865a72.6 72.6 0 00-20.765-6.984L39.808 24.135a1.475 1.475 0 00-2.827.005L25.81 62.078a72.598 72.598 0 00-20.859 6.995L21.847 14.2c.998-3.243 1.497-4.865 2.47-6.066a8 8 0 013.239-2.392c1.434-.576 3.13-.576 6.524-.576h8.751c3.398 0 5.097 0 6.532.577a8 8 0 013.241 2.397c.972 1.203 1.47 2.827 2.465 6.076z"
+                clip-rule="evenodd"
+              ></path>
+              <path
+                fill="#FF5D01"
+                fill-rule="evenodd"
+                d="M54.618 71.779c-2.863 2.432-8.578 4.091-15.161 4.091-8.08 0-14.852-2.499-16.649-5.86-.642 1.926-.786 4.13-.786 5.539 0 0-.423 6.915 4.418 11.725 0-2.498 2.037-4.522 4.551-4.522 4.309 0 4.304 3.734 4.3 6.764v.27c0 4.6 2.829 8.541 6.852 10.203a9.22 9.22 0 01-.938-4.064c0-4.386 2.592-6.02 5.604-7.917 2.396-1.51 5.06-3.188 6.894-6.554a12.297 12.297 0 001.502-5.905c0-1.314-.206-2.581-.587-3.77z"
+                clip-rule="evenodd"
+                class="astro-AGUtxITr"
+              ></path>
+              <path
+                class="text astro-AGUtxITr"
+                d="M126.554 69c13.115 0 21.047-3.14 25.68-9.654 0 2.904.157 5.651.55 8.163h7.774c-.706-4.082-.863-6.75-.863-14.128V43.334c0-10.831-8.403-16.56-24.424-16.56-15.47 0-25.522 5.964-26.779 14.598h8.246c1.256-5.808 7.774-8.87 18.533-8.87 10.602 0 16.885 3.69 16.885 9.969v.785l-24.502 1.413c-9.974.549-13.665 1.962-16.492 4.003-2.67 1.962-4.162 5.023-4.162 8.555C107 64.683 114.696 69 126.554 69zm2.513-5.573c-9.109 0-14.135-2.119-14.135-6.357 0-4.553 3.141-6.593 14.214-7.3l23.01-1.412v1.805c0 8.241-9.66 13.264-23.089 13.264zM196.086 69c16.256 0 22.775-5.337 22.775-13.108 0-6.436-4.006-9.732-14.215-10.596l-19.083-1.49c-5.183-.393-8.088-1.884-8.088-5.102 0-4.082 4.476-6.201 14.135-6.201 10.995 0 16.727 2.198 20.497 7.064l6.361-3.061c-3.927-6.122-12.644-9.733-26.151-9.733-13.9 0-22.224 4.631-22.224 12.244 0 6.829 4.947 10.125 14.292 10.91l18.926 1.492c6.204.47 8.089 1.726 8.089 4.944 0 4.631-4.79 6.829-14.293 6.829-11.544 0-18.847-3.14-22.381-8.87l-6.204 3.376C173.312 64.918 181.715 69 196.086 69zM234.929 34.151v18.916c0 7.77 2.67 15.54 17.198 15.54 3.691 0 8.167-.706 10.131-1.57V60.68c-2.749.628-6.047 1.1-9.267 1.1-6.832 0-10.523-2.67-10.523-9.42V34.151h19.633v-5.887h-19.633V15l-7.539 3.061v10.204h-12.33v5.886h12.33zM280.823 28.265h-6.911v39.244h7.461V52.83c0-5.65 1.099-10.439 4.24-13.735 2.749-3.061 6.283-4.788 12.487-4.788 2.12 0 3.455.157 5.262.471v-7.22c-1.65-.393-3.063-.472-5.184-.472-8.402 0-15.078 4.945-17.355 12.558v-11.38zM334.807 69C351.534 69 363 60.523 363 47.887c0-12.637-11.466-21.114-28.193-21.114-16.727 0-28.193 8.477-28.193 21.114C306.614 60.523 318.08 69 334.807 69zm0-6.2c-12.329 0-20.261-5.809-20.261-14.913 0-9.105 7.932-14.913 20.261-14.913 12.251 0 20.261 5.808 20.261 14.913 0 9.104-8.01 14.912-20.261 14.912z"
+              ></path>
+            </svg>
+          </div>
+
+          <p style="margin-bottom: 0">
+            <small>
+              <a href="http://tonysull.co">Tony Sullivan</a>
+            </small>
+          </p>
+
+          <p style="margin-top: 0">
+            <small>
+              <span style="font-size: 0.75em; padding-top: 0.125em"
+                >Co-founder of
+                <a href="https://navillus.dev">navillus.dev</a></span
+              >
+              |
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 0.5rem;
+                  font-size: 0.75em;
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                  fill="#1d9bf0"
+                >
+                  <path opacity="0" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"
+                  ></path>
+                </svg>
+                <a href="https://twitter.com/navillus_dev">@navillus_dev</a>
+              </span>
+            </small>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h2>First, the tools</h2>
+
+            <small style="margin-top: 4em">Forestry.io | Netlify | Astro</small>
+          </section>
+          <section>
+            <img
+              src="https://forestry.io/img/forestry-pos-full.svg"
+              alt="Forestry.io"
+              style="width: 25vw"
+            />
+            <br />
+            <ul>
+              <li class="fragment">Git-based CMS</li>
+              <li class="fragment">Own your content</li>
+              <li class="fragment">Host anywhere</li>
+              <li class="fragment">JSON and Markdown content</li>
+            </ul>
+          </section>
+          <section>
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25vw"
+              viewBox="0 0 134 40"
+            >
+              <defs>
+                <linearGradient
+                  id="netlify-logo-gradient"
+                  x1="39.8%"
+                  x2="63%"
+                  y1="-34.5%"
+                  y2="143.9%"
+                >
+                  <stop offset="0%" stop-color="#00C7B7"></stop>
+                  <stop offset="100%" stop-color="#4D9ABF"></stop>
+                </linearGradient>
+                <radialGradient
+                  id="netlify-logo-inner-gradient"
+                  cy="0%"
+                  r="100.1%"
+                  fx="50%"
+                  fy="0%"
+                  gradientTransform="matrix(0 .9989 -1.152 0 .5 -.5)"
+                >
+                  <stop offset="0%" stop-color="#20C6B7"></stop>
+                  <stop offset="100%" stop-color="#4D9ABF"></stop>
+                </radialGradient>
+              </defs>
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  fill="#0E1E25"
+                  d="M59.1 12.5l.1 1.7c1.1-1.3 2.6-2 4.3-2 3.1 0 4.7 1.8 4.7 5.3v9.8H65v-9.6c0-1-.2-1.6-.6-2-.4-.5-1-.8-2-.8-1.3 0-2.3.6-3 1.9v10.5H56V12.5h3.1zm19 15c-2 0-3.8-.6-5-2-1.4-1.3-2-3-2-5.2v-.4c0-1.5.2-2.8.8-4a6.3 6.3 0 0 1 5.8-3.7c2 0 3.6.7 4.7 2a8.2 8.2 0 0 1 1.7 5.4v1.3h-9.7c.1 1.3.5 2.2 1.2 3 .7.7 1.6 1 2.7 1 1.5 0 2.8-.6 3.7-1.8l1.8 1.7a6 6 0 0 1-2.3 2c-1 .5-2.1.8-3.4.8zM77.7 15c-.9 0-1.6.3-2.2 1a5 5 0 0 0-1 2.6h6.3v-.2a4 4 0 0 0-.9-2.6c-.5-.5-1.2-.8-2.2-.8zm13.1-6v3.6h2.6V15h-2.6v8.2c0 .6.1 1 .3 1.2.3.3.7.4 1.2.4l1.2-.1v2.5a8.2 8.2 0 0 1-2.2.4c-2.5 0-3.8-1.4-3.8-4.3V15H85v-2.5h2.4V8.9h3.3zm8.7 18.4h-3.3v-21h3.3v21zm7.1 0h-3.3V12.5h3.3v14.8zm-3.5-18.6c0-.6.2-1 .5-1.3.3-.4.8-.5 1.4-.5.6 0 1 .1 1.4.5.3.3.5.7.5 1.3 0 .5-.2.9-.5 1.2-.3.3-.8.5-1.4.5-.6 0-1-.2-1.4-.5-.3-.3-.5-.7-.5-1.2zm8.3 18.6V15h-2.2v-2.5h2.2v-1.4c0-1.6.5-2.9 1.4-3.8.9-.9 2.2-1.3 3.8-1.3.6 0 1.2 0 1.9.2l-.1 2.6a6.5 6.5 0 0 0-1.3 0c-1.6 0-2.4.7-2.4 2.4v1.3h3V15h-3v12.3h-3.3zm14-4.8l3-10h3.5l-5.9 17c-.9 2.5-2.4 3.8-4.6 3.8a6 6 0 0 1-1.6-.3v-2.6h.7c.8 0 1.4 0 1.9-.4a3 3 0 0 0 1-1.5l.4-1.3-5.2-14.7h3.6l3.2 10z"
+                ></path>
+                <path
+                  fill="url(#netlify-logo-gradient)"
+                  fill-rule="nonzero"
+                  d="M82 14c0-2.3.5-4.1 1.5-5.5 1-1.4 2.3-2.1 4.1-2.1a4.5 4.5 0 0 1 3.7 1.8v-8h3.2V21h-2.7l-.3-1.8c-.5.7-1 1.2-1.7 1.6-.6.3-1.4.5-2.2.5-1.8 0-3.1-.7-4.1-2-1-1.2-1.5-3-1.5-5V14zm3.2.3c0 1.3.3 2.4.8 3.2.5.8 1.3 1.1 2.4 1.1.7 0 1.3-.1 1.7-.4.5-.3 1-.7 1.2-1.2v-6.3a3.4 3.4 0 0 0-1.2-1.3c-.4-.3-1-.4-1.7-.4-1 0-1.9.5-2.4 1.4-.5 1-.8 2.1-.8 3.6v.3zm12.4-.6c0-2.2.6-4 1.7-5.3a6 6 0 0 1 4.8-2c2.1 0 3.7.6 4.9 2a7.8 7.8 0 0 1 1.8 5.3v.3c0 2.1-.6 3.9-1.8 5.2a6 6 0 0 1-4.8 2 6 6 0 0 1-4.9-2 7.8 7.8 0 0 1-1.7-5.2v-.3zm3.2.3c0 1.4.3 2.5.8 3.4.6.9 1.4 1.3 2.6 1.3 1.1 0 2-.4 2.5-1.3.6-.9.8-2 .8-3.4v-.3c0-1.4-.2-2.5-.8-3.4a2.8 2.8 0 0 0-2.6-1.4c-1 0-2 .5-2.5 1.4-.5.9-.8 2-.8 3.4v.3zm18.9 4.7a3 3 0 0 0 2-.7c.5-.5.8-1 .8-1.7h3c0 1.4-.6 2.5-1.7 3.5a6.1 6.1 0 0 1-4.1 1.5c-2.1 0-3.8-.7-4.9-2a7.9 7.9 0 0 1-1.7-5.3v-.4c0-2.1.6-3.8 1.7-5.2 1.1-1.4 2.8-2 4.9-2a6 6 0 0 1 4.2 1.5c1 1 1.6 2.2 1.5 3.8h-3c0-.7-.2-1.4-.7-2-.5-.5-1.2-.8-2-.8-1.2 0-2 .5-2.6 1.4-.5.8-.8 2-.8 3.3v.4c0 1.4.3 2.5.8 3.4.5.9 1.4 1.3 2.6 1.3zm16.6-1.6c0-.5-.2-1-.7-1.2-.4-.4-1.2-.7-2.4-1-1.7-.3-3-.8-3.9-1.5a3.2 3.2 0 0 1-1.3-2.7c0-1.2.5-2.2 1.6-3a6 6 0 0 1 4-1.3c1.7 0 3.1.4 4.2 1.2 1 1 1.5 2 1.4 3.3h-3a2 2 0 0 0-.8-1.5c-.4-.4-1-.6-1.8-.6s-1.4.1-1.8.5c-.4.3-.6.8-.6 1.3s.2.9.6 1.2c.3.3 1.1.5 2.3.8 1.8.3 3.2.9 4 1.5 1 .7 1.3 1.7 1.3 2.8 0 1.3-.5 2.4-1.6 3.2-1 .8-2.4 1.2-4.2 1.2-1.9 0-3.3-.5-4.4-1.5a4 4 0 0 1-1.5-3.3h3c0 .8.3 1.4.9 1.8.6.4 1.2.6 2 .6.9 0 1.5-.2 2-.5.4-.3.7-.8.7-1.3z"
+                  transform="translate(56 6)"
+                ></path>
+                <path
+                  d="M28.6 14.1l.7-4.8 3.6 3.6-3.7 1.6H29a1.7 1.7 0 0 0-.5-.4zm5.2-.3l4 4c.7.7 1.1 1.1 1.3 1.6v.2l-9.2-4h-.1l4-1.8zm5.2 7c-.2.4-.6.8-1.3 1.5l-4.3 4.3-5.7-1.1-.1-.1a1.7 1.7 0 0 0-.7-1.2V24l1-6.5.1-.2a1.7 1.7 0 0 0 1.2-.6h.1l9.7 4zm-6.7 6.9l-7.1 7.1 1.2-7.5v-.1a1.9 1.9 0 0 0 .8-.5l5.1 1zm-8.7 8.7l-.8.8-9-13V24l.1-.1.1-.1h.1l10 2v.1a1.8 1.8 0 0 0 1 1.2.2.2 0 0 0 0 .1l-1.5 9zM22 38c-.6.6-1 1-1.4 1a2 2 0 0 1-1.2 0c-.5 0-.9-.5-1.7-1.3l-9-9 2.4-3.6h.1a2.4 2.4 0 0 0 1.6-.1h.1l9 13zM7.9 28l-2.1-2.1 4-1.7h.1a3 3 0 0 0 .2.2L8 28zm-3-3l-2.6-2.6-1-1 8 1.6v.1L4.8 25zm-4-5a2 2 0 0 1 0-.5c.2-.5.6-.9 1.4-1.7l3.3-3.3a2175.5 2175.5 0 0 0 4.6 6.7s.1 0 0 0l-.3.6h-.1L.8 20zm5.6-6.4L11 9l3.3 1.4 2.3 1c.1 0 0 0 0 .1a2 2 0 0 0 .6 1.8v.1l-4.6 7.1h-.1a2.3 2.3 0 0 0-.6 0 3 3 0 0 0-.5 0l-4.9-7zM12 8l5.8-5.8C18.5 1.5 19 1 19.4.9a2 2 0 0 1 1.2 0c.5.2.9.6 1.7 1.4l1.2 1.2-4.1 6.4c0 .1-.1.1-.1 0a2.1 2.1 0 0 0-2 .5L11.8 8zm12.5-3.7l3.8 3.8-.9 5.7v.1a1.8 1.8 0 0 0-.6.3.1.1 0 0 1-.1 0L20.8 12l-.1-.1a2.2 2.2 0 0 0-.3-1l4-6.4zm-4 8.6l5.5 2.3h.1a.1.1 0 0 1 0 .1v.5h-.1l-12.1 5.2h-.1V21l4.5-7h.5a2 2 0 0 0 1.7-1zm-6.2 9.2L26.5 17l.2.1.1.1-1 6.5-.1.1a1.7 1.7 0 0 0-1.4.9h-.1l-9.8-2-.2-.5z"
+                  fill="url(#netlify-logo-inner-gradient)"
+                  fill-rule="nonzero"
+                ></path>
+              </g>
+            </svg>
+            <br />
+            <br />
+            <ul>
+              <li class="fragment">Git-based workflow</li>
+              <li class="fragment">Global CDN</li>
+              <li class="fragment">Serverless functions + edge handlers</li>
+              <li class="fragment">Forms, identity, large media...</li>
+            </ul>
+          </section>
+          <section>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25vw"
+              viewBox="0 0 363 102"
+              fill="none"
+              class="astro-AGUtxITr"
+            >
+              <style type="text/css">
+                .text.astro-AGUtxITr {
+                  fill: black;
+                }
+                .hover.astro-AGUtxITr {
+                  fill: black;
+                }
+              </style>
+              <path
+                class="text astro-AGUtxITr"
+                fill-rule="evenodd"
+                d="M55.07 14.216l16.81 54.865a72.6 72.6 0 00-20.765-6.984L39.808 24.135a1.475 1.475 0 00-2.827.005L25.81 62.078a72.598 72.598 0 00-20.859 6.995L21.847 14.2c.998-3.243 1.497-4.865 2.47-6.066a8 8 0 013.239-2.392c1.434-.576 3.13-.576 6.524-.576h8.751c3.398 0 5.097 0 6.532.577a8 8 0 013.241 2.397c.972 1.203 1.47 2.827 2.465 6.076z"
+                clip-rule="evenodd"
+              ></path>
+              <path
+                fill="#FF5D01"
+                fill-rule="evenodd"
+                d="M54.618 71.779c-2.863 2.432-8.578 4.091-15.161 4.091-8.08 0-14.852-2.499-16.649-5.86-.642 1.926-.786 4.13-.786 5.539 0 0-.423 6.915 4.418 11.725 0-2.498 2.037-4.522 4.551-4.522 4.309 0 4.304 3.734 4.3 6.764v.27c0 4.6 2.829 8.541 6.852 10.203a9.22 9.22 0 01-.938-4.064c0-4.386 2.592-6.02 5.604-7.917 2.396-1.51 5.06-3.188 6.894-6.554a12.297 12.297 0 001.502-5.905c0-1.314-.206-2.581-.587-3.77z"
+                clip-rule="evenodd"
+                class="astro-AGUtxITr"
+              ></path>
+              <path
+                class="text astro-AGUtxITr"
+                d="M126.554 69c13.115 0 21.047-3.14 25.68-9.654 0 2.904.157 5.651.55 8.163h7.774c-.706-4.082-.863-6.75-.863-14.128V43.334c0-10.831-8.403-16.56-24.424-16.56-15.47 0-25.522 5.964-26.779 14.598h8.246c1.256-5.808 7.774-8.87 18.533-8.87 10.602 0 16.885 3.69 16.885 9.969v.785l-24.502 1.413c-9.974.549-13.665 1.962-16.492 4.003-2.67 1.962-4.162 5.023-4.162 8.555C107 64.683 114.696 69 126.554 69zm2.513-5.573c-9.109 0-14.135-2.119-14.135-6.357 0-4.553 3.141-6.593 14.214-7.3l23.01-1.412v1.805c0 8.241-9.66 13.264-23.089 13.264zM196.086 69c16.256 0 22.775-5.337 22.775-13.108 0-6.436-4.006-9.732-14.215-10.596l-19.083-1.49c-5.183-.393-8.088-1.884-8.088-5.102 0-4.082 4.476-6.201 14.135-6.201 10.995 0 16.727 2.198 20.497 7.064l6.361-3.061c-3.927-6.122-12.644-9.733-26.151-9.733-13.9 0-22.224 4.631-22.224 12.244 0 6.829 4.947 10.125 14.292 10.91l18.926 1.492c6.204.47 8.089 1.726 8.089 4.944 0 4.631-4.79 6.829-14.293 6.829-11.544 0-18.847-3.14-22.381-8.87l-6.204 3.376C173.312 64.918 181.715 69 196.086 69zM234.929 34.151v18.916c0 7.77 2.67 15.54 17.198 15.54 3.691 0 8.167-.706 10.131-1.57V60.68c-2.749.628-6.047 1.1-9.267 1.1-6.832 0-10.523-2.67-10.523-9.42V34.151h19.633v-5.887h-19.633V15l-7.539 3.061v10.204h-12.33v5.886h12.33zM280.823 28.265h-6.911v39.244h7.461V52.83c0-5.65 1.099-10.439 4.24-13.735 2.749-3.061 6.283-4.788 12.487-4.788 2.12 0 3.455.157 5.262.471v-7.22c-1.65-.393-3.063-.472-5.184-.472-8.402 0-15.078 4.945-17.355 12.558v-11.38zM334.807 69C351.534 69 363 60.523 363 47.887c0-12.637-11.466-21.114-28.193-21.114-16.727 0-28.193 8.477-28.193 21.114C306.614 60.523 318.08 69 334.807 69zm0-6.2c-12.329 0-20.261-5.809-20.261-14.913 0-9.105 7.932-14.913 20.261-14.913 12.251 0 20.261 5.808 20.261 14.913 0 9.104-8.01 14.912-20.261 14.912z"
+              ></path>
+            </svg>
+            <br />
+            <br />
+            <ul>
+              <li class="fragment">Statically built and optimized</li>
+              <li class="fragment">Bring your own framework (BYOF™)</li>
+              <li class="fragment">Javascript when you need it</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Demo time!</h2>
+
+          <a href="https://sarahsu-co.netlify.app">sarahsu.co</a>
+        </section>
+
+        <section>
+          <section>
+            <h2>Type Checking</h2>
+
+            <p>Astro's VS Code extension supports type checking 🚀</p>
+
+            <small style="margin-top: 4em"
+              >Front Matter Templates | Typescript Definitions | Astro
+              Components</small
+            >
+          </section>
+
+          <section>
+            <h3>Front Matter Templates</h3>
+
+            <img
+              src="https://forestry.io/uploads/2019/04/fmt-field-listing.png"
+              style="max-width: 50vw; max-height: 50vh"
+            />
+          </section>
+
+          <section>
+            <h4>Typescript Definitions</h4>
+
+            <pre>
+              <code class="hljs" data-trim data-line-numbers="3-11|13">
+                // src/types/cms.d.ts
+
+                export namespace CMS {
+                  type Markdown = string
+
+                  interface HeroBlock {
+                    template: "heroblock"
+                    title: string
+                    content: Markdown
+                    // ...
+                  }
+
+                  type Block = HeroBlock | CardBlock | // ...
+                }
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Astro Components</h4>
+
+            <pre>
+              <code class="hljs ts" data-trim data-line-numbers="2-4|6-7|10">
+                ---
+                interface Props {
+                  data: CMS.HeroBlock
+                }
+                
+                const { data } = Astro.props as Props
+                const { title, cta, content, image } = data
+                ---
+
+                <h1>{title}</h1>
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>CMS-driven Routing</h2>
+            <p>
+              ...Wait, what about
+              <code
+                style="
+                  background: #f0f0f0;
+                  border-radius: 0.25em;
+                  padding: 0 0.25em;
+                  margin: 0 0.25em;
+                "
+                >src/pages</code
+              >?
+            </p>
+          </section>
+
+          <section>
+            <h4>Project structure</h4>
+            <pre>
+              <code class="hljs sh" data-trim data-line-numbers="1-5|1,6-8">
+                src/
+                |-- data
+                |   |-- pages/
+                |       |-- home.md
+                |       |-- about.md
+                |-- pages/
+                    |-- index.astro
+                    |-- [slug].astro
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>[slug].astro</h4>
+
+            <pre>
+              <code class="hljs ts" data-trim data-line-numbers="2-14|16-19">
+                ---
+                import Layout from '../layouts/Page.astro'
+
+                export async function getStaticPaths() {
+                  const allPages = Astro
+                    .fetchContent('../data/pages/*.md')
+
+                  return allPages.map((page) => {
+                    return {
+                      params: { slug: page.href },
+                      props: { page }
+                    }
+                  })
+                }
+
+                const { page } = Astro.props
+                ---
+
+                &lt;Layout content={page} /&gt;
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h4>Finally, in the layout</h4>
+
+            <pre>
+              <code code="hljs ts" data-trim data-line-numbers="1-8|10-12|15-20">
+                import HeroBlock from '../components/HeroBlock.astro'
+
+                interface Props {
+                  content: CMS.Page
+                }
+
+                const { content } = Astro.props as Props
+                const { title, description, image, blocks } = content
+
+                function isHeroBlock(block: CMS.Block): block is CMS.HeroBlock {
+                  return block.template === "heroblock"
+                }
+                ---
+
+                {blocks.map((block) => {
+                  if (isHeroBlock(block)) {
+                    return (&lt;HeroBlock data={block} /&gt;);
+                  }
+                  /// ... else if
+                })}
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Deploying to Netlify</h2>
+
+            <p>I don't have time for CI/CD!</p>
+          </section>
+
+          <section>
+            <h4>Oh wait...</h4>
+
+            <img
+              src="/posts/assets/2021-09-20-netlify-config.png"
+              style="max-height: 60vh"
+            />
+          </section>
+        </section>
+
+        <section>
+          <h2 style="margin-bottom: 1em">Questions?</h2>
+
+          <small>
+            Check out our blog at
+            <a href="https://navillus.dev/blog">navillus.dev/blog</a>
+          </small>
+          <br />
+          <small>
+            Reach out on Twitter
+            <a href="https://twitter.com/navillus_dev">@navillus_dev</a>
+          </small>
+          <br />
+          <small>
+            Join the Astro Discord at
+            <a href="https://astro.build/chat">astro.build/chat</a>
+          </small>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.3/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
