@@ -102,4 +102,21 @@
               icon: scully
             - title: SvelteKit
               icon: sveltekit
+    - template: featuresblock
+      title: WHAT WE OFFER
+      subtitle: Our Services
+      alt: true
+      items:
+        - icon: blogging
+          title: Web Design & Development
+          content: |-
+            Static doesn't mean boring. We design and build sites with proven technologies to offer dynamic, interactive designs that customers love.
+        - icon: shopping
+          title: eCommerce Stores
+          content: |-
+            Losing a visitor on your online shop costs your more than just impressions, it hits your bottom line. We build modern, accessible eCommerce stores that grow with your business.
+        - icon: architecture
+          title: Software Architecture & Design
+          content: |-
+            Whether you already have a development team or are still in the planning phase, we can help you design your tech stack.
 ---
