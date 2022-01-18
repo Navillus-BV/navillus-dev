@@ -33,16 +33,30 @@ declare namespace CMS {
     image?: string;
   }
 
+  type AuthorId = string;
+
+  interface Author {
+    first_name: string;
+    last_name: string;
+    url: string;
+    slug: AuthorId;
+  }
+
   interface BasePage {
     template: "legal" | "page" | "post";
     permalink: string;
     published: boolean;
-    content?: string;
+    content: {
+      html: string;
+      md: string;
+    };
     seo?: SEO;
   }
 
   interface PostPage extends BasePage {
-    date?: string;
+    date: string;
+    author: AuthorId;
+    last_modified_at?: string;
     category?: string;
     categories?: string[];
     tags?: string[];

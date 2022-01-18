@@ -2146,6 +2146,11 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.4"
 
+markdown-reading-time@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/markdown-reading-time/-/markdown-reading-time-0.1.1.tgz#6061355d29ed7828d96fb1b299f0762f4a22cbd4"
+  integrity sha512-eeP+QwHJpDklyuVhI3EnKQPLvwG5EmHwPHyPy1H78oPkzo0WgeRargSJt4kJzwfj/FGLIUerxLjnexNSMPAlug==
+
 markdown-table@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.2.tgz#9b59eb2c1b22fe71954a65ff512887065a7bb57c"

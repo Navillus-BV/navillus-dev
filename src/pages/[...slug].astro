@@ -1,28 +1,21 @@
 ---
 import LegalLayout from '../layouts/Legal.astro'
 import PageLayout from '../layouts/Page.astro'
+import PostLayout from '../layouts/Post.astro'
 import { getPage, isPublished, hasPermalink } from '../utils/cms.ts'
 
-type AstroPage = {
-  content: {
-    html: string
-  }
-}
-
 export async function getStaticPaths() {
-  const pages = Astro.fetchContent('../data/pages/*.md')
+  const pages = Astro.fetchContent('../data/pages/**/*.md')
     .filter(isPublished)
     .filter(page => !hasPermalink('/')(page))
     .map(getPage)
 
-  const paths = pages.map((page: CMS.Page) => {
-    return {
-      params: {
-        slug: page.permalink.slice(1)
-      },
-      props: page
-    }
-  })
+  const paths = pages.map((page: CMS.Page) => ({
+    params: {
+      slug: page.permalink.slice(1)
+    },
+    props: page
+  }))
 
   return paths
 }
@@ -37,11 +30,16 @@ function isLegalPage(page: CMS.Page): page is CMS.LegalPage {
   return page.template === 'legal'
 }
 
+function isPostPage(page: CMS.Page): page is CMS.PostPage {
+  return page.template === 'post'
+}
+
 const Layout = isContentPage(page) ? PageLayout
   : isLegalPage(page) ? LegalLayout
+  : isPostPage(page) ? PostLayout
   : PageLayout
 ---
 
 <Layout {...page}>
-  {page.content}
+  {page.content.html}
 </Layout>

@@ -8,7 +8,7 @@ export function hasPermalink(permalink: string) {
   };
 }
 
-type AstroPage = CMS.Page & {
+type AstroContent = {
   astro: any;
   Content: any;
   content: {
@@ -18,11 +18,20 @@ type AstroPage = CMS.Page & {
   file: URL;
 };
 
-export function getPage(page: AstroPage): CMS.Page {
-  const { astro, content, Content, file, ..._page } = page;
+export function getAuthor(author: AstroContent & CMS.Author): CMS.Author {
+  const { astro, content, Content, file, ...rest } = author;
+
+  return rest;
+}
+
+export function getPage(page: AstroContent & CMS.Page): CMS.Page {
+  const { astro, content, Content, file, ...rest } = page;
 
   return {
-    ..._page,
-    content: content.html,
+    ...rest,
+    content: {
+      html: content.html,
+      md: content.source,
+    },
   };
 }

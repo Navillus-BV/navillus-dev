@@ -1,0 +1,110 @@
+---
+import Layout from './Base.astro'
+import UIBlock from '../components/blocks/UIBlock.astro'
+import { getAuthor } from '../utils/cms.ts'
+import { formatDate } from '../utils/dates.ts'
+import { readMinutesForPage } from '../utils/markdown.ts' 
+
+const page = Astro.props as CMS.PostPage
+const { permalink, seo, date, last_modified_at } = page
+
+const minutes = readMinutesForPage(page)
+
+const authors = Astro.fetchContent('../data/authors/*.md')
+  .map(getAuthor) as CMS.Author[]
+
+const authorsMap = authors.reduce((acc, next) => {
+  acc[next.slug] = next
+  return acc
+}, {})
+
+const author = authorsMap[page.author]
+const authorName = author
+  ? `${author.first_name} ${author.last_name}`
+  : page.author
+
+console.log(seo)
+---
+
+<Layout permalink={permalink} seo={seo}>
+  <UIBlock alt class='h-entry'>
+    <header>
+      <h1 class="p-name">{seo.title}</h1>
+
+      <p class="p-summary h5 lead">{seo.description}</p>
+
+      <small>
+        <time class="dt-published" datetime={date}>
+          {formatDate(date)}
+        </time>
+        by
+        <b class="h-card p-author">
+          <a class="u-url" href={author.url}>{authorName}</a>
+        </b>
+        • {minutes} min read
+      </small>
+
+      {last_modified_at && (
+        <small>
+          <time class="dt-updated" datetime={last_modified_at}>
+            <i>Updated: {formatDate(last_modified_at)}</i>
+          </time>
+        </small>
+      )}
+    </header>
+
+    <article class="e-content">
+      <slot />
+    </article>
+  </UIBlock>
+
+  <slot />
+</Layout>
+
+<style lang="scss">
+  header {
+    margin-bottom: var(--spacer-lg);
+
+    & small {
+      display: block;
+      margin-top: var(--spacer-tiny);
+    }
+
+    & h1 {
+      margin: 0 0 0.5em;
+      font-size: var(--chisel-h3);
+
+      @media (min-width: 640px) {
+        & {
+          font-size: var(--chisel-h2);
+        }
+      }
+    }
+
+    & .lead {
+      color: var(--chisel-neutral-700);
+    }
+  }
+
+  article {
+    & h1,
+    h2,
+    h3,
+    h4 {
+      margin: 1.5em 0 0.5em;
+    }
+
+    & :global(pre + p) {
+      margin-top: var(--spacer-sm);
+    }
+
+    & .twitter-tweet + p {
+      margin-top: 1em;
+    }
+  }
+
+  footer {
+    margin-top: var(--spacer-xl);
+  }
+</style>
+
