@@ -10,4 +10,6 @@ const { blocks, hero, permalink, seo } = Astro.props as CMS.ContentPage
   {hero && (<Hero {...hero} />)}
 
   {blocks.map(block => (<Block block={block} />))}
+
+  <slot />
 </Layout>

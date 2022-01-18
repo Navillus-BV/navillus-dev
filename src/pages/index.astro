@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/Page.astro'
 import { isPublished, hasPermalink } from '../utils/cms.ts'
+import { organizationSchema, websiteSchema } from '../utils/jsonLD.ts'
 
 const page = Astro.fetchContent('../data/pages/*.md')
   .filter(isPublished)
@@ -10,5 +11,6 @@ const Layout = page.template === 'page' ? PageLayout : PageLayout
 ---
 
 <Layout {...page}>
-  
+  {websiteSchema}
+  {organizationSchema}
 </Layout>
