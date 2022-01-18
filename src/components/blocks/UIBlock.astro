@@ -2,10 +2,10 @@
 import clsx from 'clsx'
 import Show from '../Show.astro'
 
-const { title, subtitle, alt = false, id } = Astro.props as CMS.UIBlock
+const { title, subtitle, alt = false, id, class: className } = Astro.props as CMS.UIBlock & { class: string }
 ---
 
-<section class={clsx({ alt })} {id}>
+<section class={`${className} ${clsx({ alt })}`} {id}>
   <div class="container">
     <Show when={!!title}>
       <h2 class='h6'>

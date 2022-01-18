@@ -1,16 +1,16 @@
 ---
-template: post
-author: tony-sull
-permalink: /blog/accessibility-skip-to-content
-published: true
-seo:
-  title: "Web Accessibility: Hidden links make all the difference"
-  description: For visitors that use a keyboard or screen reader to navigate websites, hidden quick links can make a site much more enjoyable.
-  image: /posts/2021-05-10-accessibility-skip-to-content.jpg
-date: 2021-05-10
-last_modified_at: 2021-07-21
-tags:
-  - accessibility
+  template: post
+  author: tony-sull
+  permalink: /blog/accessibility-skip-to-content
+  published: true
+  seo:
+    title: "Web Accessibility: Hidden links make all the difference"
+    description: For visitors that use a keyboard or screen reader to navigate websites, hidden quick links can make a site much more enjoyable.
+    image: /posts/2021-05-10-accessibility-skip-to-content.jpg
+  date: 2021-05-10
+  last_modified_at: 2021-07-21
+  tags:
+    - accessibility
 ---
 
 Accessibility is a bit of a polarizing topic when it comes to web technologies, but it doesn't have to be. Accessibility isn't an all or nothing game and more often then not there are small, simple changes that can make a huge difference in both keyboard and screen reader support. Let's take a look at an accessibility easter egg that [may not be new](https://webaim.org/techniques/skipnav/) but is still sorely lacking on many of even the most popular sites.
