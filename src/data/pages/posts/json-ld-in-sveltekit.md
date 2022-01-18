@@ -1,7 +1,7 @@
 ---
   template: post
   author: tony-sull
-  permalink: /blog/json-ld-sveltekit
+  permalink: /blog/json-ld-in-sveltekit
   published: true
   seo:
     title: Including json+ld structured data in Svelte

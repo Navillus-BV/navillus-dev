@@ -2,6 +2,7 @@
   template: post
   author: tony-sull
   permalink: /blog/astro-plus-netlify-cms
+  published: true
   seo:
     title: Astro + Netlify CMS
     description: Static sites powered by a git-based CMS, made easy.
