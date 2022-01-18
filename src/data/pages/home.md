@@ -36,4 +36,70 @@
             [65% cost savings](https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/) after moving their business critical documentation sites over to Jamstack technologies. Their documentation sites are visited by 3.5 million users annually and provide technical support for all of their 15 products and related components.
 
             Because Jamstack sites are built once and served as static files, they can be distributed globally and available almost instantly to your customers around the world.
+    - template: badgesblock
+      title: TECHNOLOGY WE USE
+      subtitle: Building the Modern Web
+      groups:
+        - title: HEADLESS CMS
+          items:
+            - title: Contentful
+              icon: contentful
+            - title: Dato CMS
+              icon: datocms
+            - title: Forestry
+              icon: forestry
+            - title: Netlify CMS
+              icon: netlify-cms
+            - title: Prismic
+              icon: prismic
+            - title: Sanity.io
+              icon: sanity
+            - title: Storyblok
+              icon: storyblok
+            - title: Strapi
+              icon: strapi
+        - title: DEPLOYMENT PLATFORMS
+          items:
+            - title: AWS
+              icon: aws
+            - title: Azure
+              icon: azure
+            - title: Begin.com
+              icon: begin
+            - title: Cloudflare Pages
+              icon: cloudflare
+            - title: Digital Ocean
+              icon: digitalocean
+            - title: Firebase
+              icon: firebase
+            - title: Netlify
+              icon: netlify
+            - title: Render
+              icon: render
+            - title: Vercel
+              icon: vercel
+        - title: STATIC SITE GENERATORS
+          items:
+            - title: 11ty
+              icon: 11ty
+            - title: Astro
+              icon: astro
+            - title: Gatsby
+              icon: gatsby
+            - title: Gridsome
+              icon: gridsome
+            - title: Hugo
+              icon: hugo
+            - title: Jekyll
+              icon: jekyll
+            - title: NextJS
+              icon: nextjs
+            - title: NuxtJS
+              icon: nuxtjs
+            - title: Sapper
+              icon: sapper
+            - title: Scully
+              icon: scully
+            - title: SvelteKit
+              icon: sveltekit
 ---

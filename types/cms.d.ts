@@ -72,6 +72,21 @@ declare namespace CMS {
     id?: string;
   }
 
+  interface BadgesBlockItem {
+    title: string;
+    icon: string;
+  }
+
+  interface BadgesBlockGroup {
+    title: string;
+    items: [BadgesBlockItem];
+  }
+
+  interface BadgesBlock extends UIBlock {
+    template: "badgesblock";
+    groups: [BadgesBlockGroup];
+  }
+
   interface FeaturesBlockItem {
     icon: string;
     title: string;
@@ -83,5 +98,5 @@ declare namespace CMS {
     items: [FeaturesBlockItem];
   }
 
-  type Block = FeaturesBlock;
+  type Block = BadgesBlock | FeaturesBlock;
 }

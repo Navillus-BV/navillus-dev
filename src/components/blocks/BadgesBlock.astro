@@ -1,0 +1,11 @@
+---
+import BadgesBlockGroup from './BadgesBlockGroup.astro'
+import UIBlock from './UIBlock.astro'
+
+const block = Astro.props as CMS.BadgesBlock
+const { groups = [] } = block
+---
+
+<UIBlock {...block}>
+  {groups.map(group => (<BadgesBlockGroup {...group} />))}
+</UIBlock>

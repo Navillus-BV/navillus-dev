@@ -3,7 +3,7 @@ import FeaturesBlockItem from './FeaturesBlockItem.astro'
 import UIBlock from './UIBlock.astro'
 
 const block = Astro.props as CMS.FeaturesBlock
-const { items } = block
+const { items = [] } = block
 ---
 
 <UIBlock {...block}>
