@@ -57,19 +57,19 @@ While you're here, make sure each author's image property is pointing to the `/u
 This really was the only tricky bit to work out.
 
 ```js
-import authorData from "../data/authors.json";
+import authorData from '../data/authors.json'
 ```
 
 A few different pages and templates need to load the author data, and they all expected ot find a JSON map. Now that each author has a separate markdown file we need to fix how that data is loaded.
 
 ```js
-let allAuthors = Astro.fetchContent("../data/authors/*.md");
+let allAuthors = Astro.fetchContent('../data/authors/*.md')
 let authorData = allAuthors.reduce((acc, next) => {
   return {
     ...acc,
     [`src/data/authors/${next.slug}.md`]: next,
-  };
-}, {});
+  }
+}, {})
 ```
 
 What's with the `src/data/authors/${next.slug}.md` code? We'll be setting up Forestry soon, but one thing to note now is how Forestry handles content relationships by default.

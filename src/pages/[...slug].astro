@@ -7,14 +7,14 @@ import { getPage, isPublished, hasPermalink } from '../utils/cms.ts'
 export async function getStaticPaths() {
   const pages = Astro.fetchContent('../data/pages/**/*.md')
     .filter(isPublished)
-    .filter(page => !hasPermalink('/')(page))
+    .filter((page) => !hasPermalink('/')(page))
     .map(getPage)
 
   const paths = pages.map((page: CMS.Page) => ({
     params: {
-      slug: page.permalink.slice(1)
+      slug: page.permalink.slice(1),
     },
-    props: page
+    props: page,
   }))
 
   return paths
@@ -34,9 +34,12 @@ function isPostPage(page: CMS.Page): page is CMS.PostPage {
   return page.template === 'post'
 }
 
-const Layout = isContentPage(page) ? PageLayout
-  : isLegalPage(page) ? LegalLayout
-  : isPostPage(page) ? PostLayout
+const Layout = isContentPage(page)
+  ? PageLayout
+  : isLegalPage(page)
+  ? LegalLayout
+  : isPostPage(page)
+  ? PostLayout
   : PageLayout
 ---
 

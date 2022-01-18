@@ -108,29 +108,29 @@ This feature already works as-is, no JavaScript at all. There is a catch though,
 function onSkipToContent(event) {
   // Stop the event's default behavior
   // In this case, don't let it actually change the page's URL
-  event.preventDefault();
+  event.preventDefault()
 
   // Find the hidden target div
-  const target = document.getElementById("start-of-content");
+  const target = document.getElementById('start-of-content')
 
   if (!target) {
-    return;
+    return
   }
 
   // Find the next element in the DOM
-  const content = target.nextElementSibling;
+  const content = target.nextElementSibling
 
   if (content instanceof HTMLElement) {
     // Make sure the content div can't be tabbed to again, the give it focus
-    content.setAttribute("tabindex", "-1");
-    content.focus();
+    content.setAttribute('tabindex', '-1')
+    content.focus()
   }
 }
 
 // Find the hidden "Skip to content" link and hook up tje click event
-const link = document.querySelector('a[href="#start-of-content"]');
+const link = document.querySelector('a[href="#start-of-content"]')
 if (link) {
-  link.addEventListener("click", onSkipToContent());
+  link.addEventListener('click', onSkipToContent())
 }
 ```
 

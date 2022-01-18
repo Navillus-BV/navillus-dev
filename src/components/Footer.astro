@@ -24,7 +24,9 @@ const year = new Date().getFullYear()
     <ul class="links">
       {legal.map(({ title, href }) => (
         <li>
-          <a class='h6' href={href}>{title}</a>
+          <a class="h6" href={href}>
+            {title}
+          </a>
         </li>
       ))}
     </ul>

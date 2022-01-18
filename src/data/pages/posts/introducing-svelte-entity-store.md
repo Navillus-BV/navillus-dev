@@ -78,23 +78,23 @@ npm i -s svelte-entity-store
 Creating an instance of the store is pretty straight forward. Svelte has excellent [TypeScript support](https://svelte.dev/blog/svelte-and-typescript) these days, but it isn't a must. Using `svelte-entity-store` in plain old JavaScript is very similar, just skip the `interface` definition and `<Type>` casting.
 
 ```ts
-import { entityStore } from "svelte-entity-store";
+import { entityStore } from 'svelte-entity-store'
 
 // Define your entity interface
 interface TodoItem {
-  id: string;
-  description: string;
-  completed: boolean;
+  id: string
+  description: string
+  completed: boolean
 }
 
 // Write a getter function that returns the ID of an entity (can be inlined in the constructor also)
 // Currently number and string values are valid IDs
-const getId = (todo: TodoItem) => todo.id;
+const getId = (todo: TodoItem) => todo.id
 
 // Initialize the store
 // (optional) the constructor accepts an Array as a second param
 //            ex: if you rehydrate state from localstorage
-const store = entityStore<TodoItem>(getId);
+const store = entityStore<TodoItem>(getId)
 ```
 
 Nothing to crazy there so far. For TypeScript we define the model `interface`, you could also use `type` if that's your thing. The store also needs to know how to get unique IDs for each item. Right now `string` and `number` IDs are supported, but this may be extended later.
@@ -106,8 +106,8 @@ No problem! The store accepts an optional second parameter.
 ```ts
 const items = [
   // ... array of TodoItem's to populate the store with
-];
-const store = entityStore<TodoItem>(getId, items);
+]
+const store = entityStore<TodoItem>(getId, items)
 ```
 
 Pass in an array of initial items to avoid having to call `store.set(items)` immediately. This is particularly handy if you are rehydrating the store from cache or localstorage, similar to the [TodoMVC example](https://github.com/tony-sull/svelte-entity-store/tree/main/examples/todomvc).
@@ -120,16 +120,16 @@ Properly overriding methods in TypeScript was an interesting challenge to get au
 
 ```ts
 // Get one entity by ID
-const item = store.get("abc-123");
+const item = store.get('abc-123')
 
 // Get a list of entities by ID
-const items = store.get([123, 456, 789]);
+const items = store.get([123, 456, 789])
 
 // Get a list of entities that match a filter function
-const activeItems = store.get((todo) => !todo.completed);
+const activeItems = store.get((todo) => !todo.completed)
 
 // Or get every entity in the store
-const allItems = store.get();
+const allItems = store.get()
 ```
 
 Because the store is returning [derived stores](https://svelte.dev/docs#derived), the full power of Svelte's [reactivity](https://svelte.dev/docs#4_Prefix_stores_with_$_to_access_their_values) model just works.
@@ -161,14 +161,14 @@ Much like `get()`, `set()` has a few different overrides. Calling `set` will blo
 // Replace the existing entity with ID 123, or add it if the ID doesn't exist yet
 store.set({
   id: 123,
-  description: "Todo #1",
+  description: 'Todo #1',
   completed: true,
-});
+})
 
 // Or add/replace multiple todos at once
 store.set([
   // ... multiple todo objects
-]);
+])
 ```
 
 Sometimes you just need to change part of an entity without worrying about the entire object. `update()` solves this, it should look very [familiar](https://svelte.dev/docs#writable).
@@ -178,24 +178,24 @@ function toggleTodo(todo: TodoItem) {
   return {
     ...todo,
     completed: !todo.completed,
-  };
+  }
 }
 
 // Update a single entity by ID
-store.update(toggleTodo, 123);
+store.update(toggleTodo, 123)
 
 // In case you already have the entity object and don't want to call getId,
-store.update(toggleTodo, todoObj);
+store.update(toggleTodo, todoObj)
 
 // The same goes for lists of IDs or entities
-store.update(toggleTodo, [123, 456]);
-store.update(toggleTodo, $activeTodos);
+store.update(toggleTodo, [123, 456])
+store.update(toggleTodo, $activeTodos)
 
 // What if you want to only update entities that meet a filter condition?
-store.update(toggleTodo, (todo) => todo.completed);
+store.update(toggleTodo, (todo) => todo.completed)
 
 // Go crazy with it and run the update against every entity in the store
-store.update(toggleTodo);
+store.update(toggleTodo)
 ```
 
 ### Removing entities
@@ -229,8 +229,8 @@ Take a peek at some of the `svelte-entity-store` [tests](https://github.com/tony
 I purposely didn't add sorting support for v1.0. It can be done without too much headache...
 
 ```ts
-const allItems = store.get();
-$sortedItems = $allItems.sort((a, b) => (a < b ? 1 : -1));
+const allItems = store.get()
+$sortedItems = $allItems.sort((a, b) => (a < b ? 1 : -1))
 ```
 
 but ideally that's built right into the store itself. There's an [issue](https://github.com/tony-sull/svelte-entity-store/issues/2) tracking sorting functionality, the best solution is probably to add an optional `sort` parameter to all `get()` overloads.

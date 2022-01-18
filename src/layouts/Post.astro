@@ -3,15 +3,16 @@ import Layout from './Base.astro'
 import UIBlock from '../components/blocks/UIBlock.astro'
 import { getAuthor } from '../utils/cms.ts'
 import { formatDate } from '../utils/dates.ts'
-import { readMinutesForPage } from '../utils/markdown.ts' 
+import { readMinutesForPage } from '../utils/markdown.ts'
 
 const page = Astro.props as CMS.PostPage
 const { permalink, seo, date, last_modified_at } = page
 
 const minutes = readMinutesForPage(page)
 
-const authors = Astro.fetchContent('../data/authors/*.md')
-  .map(getAuthor) as CMS.Author[]
+const authors = Astro.fetchContent('../data/authors/*.md').map(
+  getAuthor
+) as CMS.Author[]
 
 const authorsMap = authors.reduce((acc, next) => {
   acc[next.slug] = next
@@ -26,8 +27,8 @@ const authorName = author
 console.log(seo)
 ---
 
-<Layout permalink={permalink} seo={seo}>
-  <UIBlock alt class='h-entry'>
+<Layout {permalink} {seo}>
+  <UIBlock alt class="h-entry">
     <header>
       <h1 class="p-name">{seo.title}</h1>
 
@@ -107,4 +108,3 @@ console.log(seo)
     margin-top: var(--spacer-xl);
   }
 </style>
-

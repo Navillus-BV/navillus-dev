@@ -14,26 +14,32 @@ interface ToggleButtonState {
 }
 
 interface ToggleButtonElement extends HTMLButtonElement {
-  setTheme(theme: Theme): void;
-  toggle(): void;
+  setTheme(theme: Theme): void
+  toggle(): void
 }
 
-const initToggleButton = (element: ToggleButtonElement, store: ToggleButtonState) => {
-    element.classList.add('visible')
-    element.removeAttribute('hidden')
+const initToggleButton = (
+  element: ToggleButtonElement,
+  store: ToggleButtonState
+) => {
+  element.classList.add('visible')
+  element.removeAttribute('hidden')
 
-    store.theme = document.documentElement.getAttribute('data-chisel-theme') as Theme
+  store.theme = document.documentElement.getAttribute(
+    'data-chisel-theme'
+  ) as Theme
+  element.setAttribute('data-theme', store.theme)
+
+  element.setTheme = (theme) => {
+    store.theme = theme
     element.setAttribute('data-theme', store.theme)
-
-    element.setTheme = (theme) => {
-      store.theme = theme
-      element.setAttribute('data-theme', store.theme)
-      document.documentElement.setAttribute('data-chisel-theme', store.theme)
-      localStorage.setItem(storageKey, store.theme)
-    }
-
-    element.toggle = () => element.setTheme(store.theme === 'dark' ? 'light' : 'dark')
+    document.documentElement.setAttribute('data-chisel-theme', store.theme)
+    localStorage.setItem(storageKey, store.theme)
   }
+
+  element.toggle = () =>
+    element.setTheme(store.theme === 'dark' ? 'light' : 'dark')
+}
 ---
 
 <!-- global script resets the theme before first paint -->
@@ -57,7 +63,8 @@ const initToggleButton = (element: ToggleButtonElement, store: ToggleButtonState
   }
 </script>
 
-<XElement @is="button"
+<XElement
+  @is="button"
   class="button--icon"
   define:vars={{ storageKey }}
   @do={initToggleButton}

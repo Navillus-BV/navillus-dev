@@ -68,7 +68,7 @@ So what went wrong? If you take a look at v0.4.0, we added custom CSS properties
 At least on some browsers, CSS variable scope isn't always what you'd expect.
 
 ```css
-[data-chisel-theme="dark"] {
+[data-chisel-theme='dark'] {
   ---chisel-primary: #002244;
 }
 ```

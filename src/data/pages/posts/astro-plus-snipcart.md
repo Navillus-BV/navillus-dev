@@ -52,7 +52,7 @@ I didn't want to stray too far from the original 11ty project, and that meant st
 You can see the full details [in GitHub](https://github.com/Navillus-BV/demo-astro-snipcart/blob/main/src/utils/loadMenu.js), but the basic solution here takes advantage of [glob imports](https://vitejs.dev/guide/features.html#glob-import).
 
 ```js
-import.meta.glob("../data/menus/*.json");
+import.meta.glob('../data/menus/*.json')
 ```
 
 The code above is a bit of import magic that allows you to use a [glob pattern](https://www.npmjs.com/package/glob) to load multiple files at once.

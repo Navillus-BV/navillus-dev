@@ -8,7 +8,7 @@ const page: CMS.Page = getPage(
   Astro.fetchContent('../data/pages/*.md')
     .filter(isPublished)
     .find(hasPermalink('/'))
-  )
+)
 
 function isContentPage(page: CMS.Page): page is CMS.ContentPage {
   return page.template === 'page'
@@ -18,8 +18,10 @@ function isLegalPage(page: CMS.Page): page is CMS.LegalPage {
   return page.template === 'legal'
 }
 
-const Layout = isContentPage(page) ? PageLayout
-  : isLegalPage(page) ? LegalLayout
+const Layout = isContentPage(page)
+  ? PageLayout
+  : isLegalPage(page)
+  ? LegalLayout
   : PageLayout
 ---
 

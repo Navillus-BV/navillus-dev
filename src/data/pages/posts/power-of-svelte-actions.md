@@ -54,21 +54,21 @@ This isn't a big deal to do in the Modal component itself - add an extra DOM ele
 
 ```ts
 export default (node, _options = {}) => {
-  const options = { onClickOutside: () => {}, ..._options };
+  const options = { onClickOutside: () => {}, ..._options }
 
   function detect({ target }) {
     if (!node.contains(target)) {
-      options.onClickOutside();
+      options.onClickOutside()
     }
   }
-  document.addEventListener("click", detect, { passive: true, capture: true });
+  document.addEventListener('click', detect, { passive: true, capture: true })
 
   return {
     destroy() {
-      document.removeEventListener("click", detect);
+      document.removeEventListener('click', detect)
     },
-  };
-};
+  }
+}
 ```
 
 There's a few things going on here, let's break that down.
@@ -83,19 +83,19 @@ Finally, the action returns a `destroy` callback that will clean up the event li
 
 ```ts
 export default (node, _options = {}) => {
-  const options = { include: [], onClickOutside: () => {}, ..._options };
+  const options = { include: [], onClickOutside: () => {}, ..._options }
 
   function detect({ target }) {
     if (
       !node.contains(target) ||
       options.include.some((i) => target.isSameNode(i))
     ) {
-      options.onClickOutside();
+      options.onClickOutside()
     }
   }
 
   /** Same as above */
-};
+}
 ```
 
 A little extra functionality here allows components to pass in other DOM elements that should be considered as "inside" the action (rather than "outside").

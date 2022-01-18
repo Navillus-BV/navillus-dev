@@ -11,9 +11,7 @@ interface Props {
 const { main } = navigation as CMS.Navigation
 const { pathname } = Astro.props as Props
 
-interface MenuInputElement extends HTMLInputElement {
-
-}
+interface MenuInputElement extends HTMLInputElement {}
 
 const initMenuInput = (element: MenuInputElement) => {
   const hamburgerElem = document.querySelector('[for="toggle"]')
@@ -57,7 +55,8 @@ const initMenuInput = (element: MenuInputElement) => {
 
     <a href="/#contact" class="button button--outline">Get in Touch</a>
 
-    <XElement @is="label"
+    <XElement
+      @is="label"
       for="toggle"
       title="Open Menu"
       class="hamburger hamburger--squeeze header__hamburger"
@@ -68,7 +67,8 @@ const initMenuInput = (element: MenuInputElement) => {
     </XElement>
   </div>
 
-  <XElement @is="input"
+  <XElement
+    @is="input"
     type="checkbox"
     id="toggle"
     class="sr-only"

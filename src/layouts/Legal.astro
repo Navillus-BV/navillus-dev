@@ -6,13 +6,12 @@ import { formatDate } from '../utils/dates.ts'
 
 const { last_modified_at, permalink, seo, title } = Astro.props as CMS.LegalPage
 
-const lastUpdated =
-  last_modified_at && formatDate(last_modified_at)
+const lastUpdated = last_modified_at && formatDate(last_modified_at)
 
 const allSeo = { title, ...seo }
 ---
 
-<Layout permalink={permalink} seo={allSeo}>
+<Layout {permalink} seo={allSeo}>
   <UIBlock alt>
     <h1>{title}</h1>
 

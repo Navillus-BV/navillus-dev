@@ -6,10 +6,10 @@ import Hero from '../components/Hero.astro'
 const { blocks, hero, permalink, seo } = Astro.props as CMS.ContentPage
 ---
 
-<Layout permalink={permalink} seo={seo}>
-  {hero && (<Hero {...hero} />)}
+<Layout {permalink} {seo}>
+  {hero && <Hero {...hero} />}
 
-  {blocks.map(block => (<Block block={block} />))}
+  {blocks.map((block) => <Block block={block} />)}
 
   <slot />
 </Layout>

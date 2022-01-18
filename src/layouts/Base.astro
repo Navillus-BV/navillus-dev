@@ -6,9 +6,9 @@ import Nav from '../components/Nav.astro'
 const { content, permalink, seo } = Astro.props as CMS.Page
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
-    <MainHead seo={seo} permalink={permalink} />
+    <MainHead {seo} {permalink} />
   </head>
 
   <body>
@@ -16,13 +16,13 @@ const { content, permalink, seo } = Astro.props as CMS.Page
       Skip to content
     </a>
 
-  <Nav pathname={Astro.request.url.pathname} />
+    <Nav pathname={Astro.request.url.pathname} />
 
-	<main id='main'>
-	  <slot />
+    <main id="main">
+      <slot />
 
-    {content}
-	</main>
+      {content}
+    </main>
 
     <Footer />
   </body>

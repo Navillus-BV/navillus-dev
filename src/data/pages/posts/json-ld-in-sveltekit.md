@@ -76,7 +76,7 @@ I prefer to move this out of the Svelte component all together. With the logic i
 
 ```js
 export function serializeSchema(thing) {
-  return `<script type="application/ld+json">${JSON.stringify(thing)}</script>`;
+  return `<script type="application/ld+json">${JSON.stringify(thing)}</script>`
 }
 ```
 
@@ -87,16 +87,16 @@ There's not much magic going on here, the function just takes in a JavaScript ob
 We'll lean on the [schema-dts](https://github.com/google/schema-dts) package for full [Schema.org](https://schema.org/) type definitions.
 
 ```ts
-import type { Thing, WithContext } from "schema-dts";
+import type { Thing, WithContext } from 'schema-dts'
 
-export type Schema = Thing | WithContext<Thing>;
+export type Schema = Thing | WithContext<Thing>
 
 export function serializeSchema(thing: Schema) {
   return `<script type="application/ld+json">${JSON.stringify(
     thing,
     null,
     2
-  )}</script>`;
+  )}</script>`
 }
 ```
 
@@ -131,10 +131,10 @@ Finally, let's add the JSON+LD into the DOM. Most of our projects end up with a 
 
 ```html
 <script lang="ts">
-  import { serializeSchema } from "$utils/json-ld";
-  import type { Schema } from "$utils/json-ld";
+  import { serializeSchema } from '$utils/json-ld'
+  import type { Schema } from '$utils/json-ld'
 
-  export let schema: Schema;
+  export let schema: Schema
 </script>
 
 <svelte:head>
