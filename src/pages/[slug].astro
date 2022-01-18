@@ -1,8 +1,7 @@
 ---
 import LegalLayout from '../layouts/Legal.astro'
 import PageLayout from '../layouts/Page.astro'
-import { isPublished, hasPermalink } from '../utils/cms.ts'
-import { organizationSchema, websiteSchema } from '../utils/jsonLD.ts'
+import { getPage, isPublished, hasPermalink } from '../utils/cms.ts'
 
 type AstroPage = {
   content: {
@@ -14,21 +13,21 @@ export async function getStaticPaths() {
   const pages = Astro.fetchContent('../data/pages/*.md')
     .filter(isPublished)
     .filter(page => !hasPermalink('/')(page))
+    .map(getPage)
 
-  const paths = pages.map(({ astro, Content, file, content, ...page }) => ({
-    params: {
-      slug: page.permalink.slice(1)
-    },
-    props: {
-      page,
-      content,
+  const paths = pages.map((page: CMS.Page) => {
+    return {
+      params: {
+        slug: page.permalink.slice(1)
+      },
+      props: page
     }
-  }))
+  })
 
   return paths
 }
 
-const { page, content } = Astro.props as { page: CMS.Page } & AstroPage
+const page = Astro.props as CMS.Page
 
 function isContentPage(page: CMS.Page): page is CMS.ContentPage {
   return page.template === 'page'
@@ -44,5 +43,5 @@ const Layout = isContentPage(page) ? PageLayout
 ---
 
 <Layout {...page}>
-  {content.html}
+  {page.content}
 </Layout>

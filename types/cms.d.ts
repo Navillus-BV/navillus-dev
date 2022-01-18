@@ -37,6 +37,7 @@ declare namespace CMS {
     template: "legal" | "page" | "post";
     permalink: string;
     published: boolean;
+    content?: string;
     seo?: SEO;
   }
 

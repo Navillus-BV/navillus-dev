@@ -3,7 +3,7 @@ import Footer from '../components/Footer.astro'
 import MainHead from '../components/MainHead.astro'
 import Nav from '../components/Nav.astro'
 
-const { permalink, seo } = Astro.props as CMS.Page
+const { content, permalink, seo } = Astro.props as CMS.Page
 ---
 
 <html lang='en'>
@@ -20,6 +20,8 @@ const { permalink, seo } = Astro.props as CMS.Page
 
 	<main id='main'>
 	  <slot />
+
+    {content}
 	</main>
 
     <Footer />
