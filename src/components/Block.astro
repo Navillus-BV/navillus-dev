@@ -1,5 +1,6 @@
 ---
 import BadgesBlock from './blocks/BadgesBlock.astro'
+import ContactBlock from './blocks/ContactBlock.astro'
 import FeaturesBlock from './blocks/FeaturesBlock.astro'
 import Show from './Show.astro'
 
@@ -13,6 +14,10 @@ function isBadgesBlock(block: CMS.Block): block is CMS.BadgesBlock {
   return block.template === 'badgesblock'
 }
 
+function isContactBlock(block: CMS.Block): block is CMS.ContactBlock {
+  return block.template === 'contactblock'
+}
+
 function isFeaturesBlock(block: CMS.Block): block is CMS.FeaturesBlock {
   return block.template === 'featuresblock'
 }
@@ -20,6 +25,10 @@ function isFeaturesBlock(block: CMS.Block): block is CMS.FeaturesBlock {
 
 <Show when={isBadgesBlock(block)}>
   <BadgesBlock {...block} />
+</Show>
+
+<Show when={isContactBlock(block)}>
+  <ContactBlock {...block} />
 </Show>
 
 <Show when={isFeaturesBlock(block)}>

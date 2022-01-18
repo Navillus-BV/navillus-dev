@@ -1,0 +1,13 @@
+---
+import ContactBlockForm from './ContactBlockForm.astro'
+import UIBlock from './UIBlock.astro'
+import { mdToHtml } from '../../utils/markdown.ts'
+
+const block = Astro.props as CMS.ContactBlock
+const { content } = block
+---
+
+<UIBlock {...block}>
+  {mdToHtml(content)}
+  <ContactBlockForm />
+</UIBlock>

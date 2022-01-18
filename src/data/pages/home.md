@@ -119,4 +119,9 @@
           title: Software Architecture & Design
           content: |-
             Whether you already have a development team or are still in the planning phase, we can help you design your tech stack.
+    - template: contactblock
+      title: JAMSTACK DEVELOPERS FOR HIRE
+      subtitle: Get in Touch
+      content: |-
+        We love what we do and are always up for an interesting conversation, whether you're ready to get started or just have a few questions.
 ---

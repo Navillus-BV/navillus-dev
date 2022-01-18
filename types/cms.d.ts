@@ -87,6 +87,11 @@ declare namespace CMS {
     groups: [BadgesBlockGroup];
   }
 
+  interface ContactBlock extends UIBlock {
+    template: "contactblock";
+    content: string;
+  }
+
   interface FeaturesBlockItem {
     icon: string;
     title: string;
@@ -98,5 +103,5 @@ declare namespace CMS {
     items: [FeaturesBlockItem];
   }
 
-  type Block = BadgesBlock | FeaturesBlock;
+  type Block = BadgesBlock | ContactBlock | FeaturesBlock;
 }
