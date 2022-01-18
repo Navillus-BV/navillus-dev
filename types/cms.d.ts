@@ -33,25 +33,33 @@ declare namespace CMS {
     image?: string;
   }
 
-  interface Page {
+  interface BasePage {
     template: "legal" | "page" | "post";
     permalink: string;
     published: boolean;
     seo?: SEO;
   }
 
-  interface Post extends Page {
+  interface PostPage extends BasePage {
     date?: string;
     category?: string;
     categories?: string[];
     tags?: string[];
   }
 
-  interface ContentPage extends Page {
+  interface ContentPage extends BasePage {
     template: "page";
     hero?: Hero;
     blocks: Block[];
   }
+
+  interface LegalPage extends BasePage {
+    template: "legal";
+    last_modified_at?: string;
+    title: string;
+  }
+
+  type Page = ContentPage | LegalPage | PostPage;
 
   interface Link {
     href: string;

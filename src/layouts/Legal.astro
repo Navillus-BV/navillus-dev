@@ -1,0 +1,35 @@
+---
+import Layout from './Base.astro'
+import Show from '../components/Show.astro'
+import UIBlock from '../components/blocks/UIBlock.astro'
+import { formatDate } from '../utils/dates.ts'
+
+const { last_modified_at, permalink, seo, title } = Astro.props as CMS.LegalPage
+
+const lastUpdated =
+  last_modified_at && formatDate(last_modified_at)
+
+const allSeo = { title, ...seo }
+---
+
+<Layout permalink={permalink} seo={allSeo}>
+  <UIBlock alt>
+    <h1>{title}</h1>
+
+    <Show when={!!lastUpdated}>
+      <p>Last Updated: {lastUpdated}</p>
+    </Show>
+
+    <slot />
+  </UIBlock>
+</Layout>
+
+<style>
+  h1 {
+    margin-bottom: var(--spacer-xs);
+  }
+
+  p {
+    margin-bottom: var(--spacer-md);
+  }
+</style>
