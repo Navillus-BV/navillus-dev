@@ -1,0 +1,48 @@
+---
+interface Tag {
+  tag: string
+  url: string
+}
+
+interface Props {
+  tags: Tag[]
+}
+
+const { tags = [] } = Astro.props as Props
+---
+
+{tags.length > 0 && (
+  <div class="tags">
+    {tags.map(({ tag, url }) => (
+      <a href={url}>
+        <code>{tag}</code>
+      </a>
+    ))}
+  </div>
+)}
+
+<style lang="scss">
+  .tags {
+    display: inline-flex;
+    flex-direction: row;
+    gap: var(--spacer-sm);
+    flex-wrap: wrap;
+    font-size: var(--chisel-h6);
+
+    & a {
+      filter: var(--shadow-sm);
+      margin: 0;
+      color: inherit;
+
+      &:hover {
+        filter: var(--shadow-secondary-sm);
+      }
+
+      & code {
+        display: inline-block;
+        margin: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Post.astro'
+import { getPage, isPublished } from '../../utils/cms.ts'
+
+export async function getStaticPaths() {
+  const pages = Astro.fetchContent('../../data/pages/blog/*.md')
+    .filter(isPublished)
+    .map(getPage)
+
+  const paths = pages.map((page: CMS.Page) => ({
+    params: {
+      slug: page.permalink.replace('/blog/', ''),
+    },
+    props: page,
+  }))
+
+  return paths
+}
+
+const page = Astro.props as CMS.Page
+---
+
+<Layout {...page}>
+  {page.content.html}
+</Layout>

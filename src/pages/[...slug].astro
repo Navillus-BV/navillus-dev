@@ -5,9 +5,9 @@ import PostLayout from '../layouts/Post.astro'
 import { getPage, isPublished, hasPermalink } from '../utils/cms.ts'
 
 export async function getStaticPaths() {
-  const pages = Astro.fetchContent('../data/pages/**/*.md')
+  const pages = Astro.fetchContent('../data/pages/*.md')
     .filter(isPublished)
-    .filter((page) => !hasPermalink('/')(page))
+    .filter((page) => !hasPermalink('/')(page) && !hasPermalink('/blog')(page))
     .map(getPage)
 
   const paths = pages.map((page: CMS.Page) => ({
@@ -16,6 +16,8 @@ export async function getStaticPaths() {
     },
     props: page,
   }))
+
+  console.log(paths.map(p => p.params))
 
   return paths
 }

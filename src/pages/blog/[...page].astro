@@ -1,0 +1,71 @@
+---
+import PostPreview from '../../components/PostPreview.astro'
+import UIBlock from '../../components/blocks/UIBlock.astro'
+import site from '../../data/site.json'
+import Layout from '../../layouts/Page.astro'
+import { getPage, isPublished } from '../../utils/cms.ts'
+import { readMinutesForPage } from '../../utils/markdown.ts'
+
+const [blogPage] = Astro.fetchContent('../../data/pages/blog.md')
+
+export async function getStaticPaths({ paginate, rss }) {
+  function includeReadingTime(post) {
+    return {
+      ...post,
+      minutes: readMinutesForPage(post),
+    }
+  }
+
+  function sortPosts(a, b) {
+    return (
+      new Date(b.published_date).getTime() -
+      new Date(a.published_date).getTime()
+    )
+  }
+
+  const allPosts = Astro.fetchContent('../../data/pages/blog/*.md')
+    .filter(isPublished)
+    .map(getPage)
+    .map(includeReadingTime)
+    .sort(sortPosts)
+
+  rss({
+    title: 'Blog | Navillus',
+    description: site.description,
+    customData: `<language>en-us</language>`,
+    items: allPosts.map((item: CMS.PostPage) => {
+      const content = `<content><![CDATA[ ${item.content.html} ]]></content>`
+
+      const url = new URL(item.permalink, site.url)
+
+      const customData = [
+        `<id>${url.href}</id>`,
+        item.last_modified_at && `<updated>${item.last_modified_at}</updated>`,
+        content,
+      ]
+        .filter(Boolean) // remove <updated> if it wasn't used
+        .join('') // combine into one string
+
+      return {
+        title: item.seo.title,
+        description: item.seo.description,
+        link: url.href,
+        pubDate: item.date,
+        customData,
+      }
+    }),
+    dest: '/feed/blog.xml',
+  })
+
+  return paginate(allPosts, { pageSize: 25 })
+}
+
+const { page } = Astro.props
+const { data: posts } = page
+---
+
+<Layout {...blogPage}>
+  <UIBlock title='All Posts' alt>
+    {posts.map((post) => <PostPreview post={post} />)}
+  </UIBlock>
+</Layout>

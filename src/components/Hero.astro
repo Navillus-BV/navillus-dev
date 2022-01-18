@@ -17,7 +17,7 @@ const { title, subtitle, content, cta } = Astro.props as CMS.Hero
       <p>{mdToHtml(content)}</p>
     </Show>
     <Show when={!!cta}>
-      <a class="button" href={cta.href}>{cta.text}</a>
+      <a class="button" href={cta?.href}>{cta?.text}</a>
     </Show>
   </div>
 </section>

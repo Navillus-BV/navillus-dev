@@ -1,14 +1,22 @@
 ---
 import Layout from './Base.astro'
+import TwitterShare from '../components/TwitterShare.astro'
+import WebMentions from '../components/WebMentions.astro'
 import UIBlock from '../components/blocks/UIBlock.astro'
 import { getAuthor } from '../utils/cms.ts'
 import { formatDate } from '../utils/dates.ts'
 import { readMinutesForPage } from '../utils/markdown.ts'
+import { getAllMentions, isForUrl, sortMentions } from '../utils/mentions'
 
 const page = Astro.props as CMS.PostPage
-const { permalink, seo, date, last_modified_at } = page
+const { permalink, seo, date, last_modified_at, tweetId } = page
 
 const minutes = readMinutesForPage(page)
+
+const allMentions = await getAllMentions()
+const webMentions = allMentions.children
+  .filter(isForUrl(Astro.request.canonicalURL.href))
+  .sort(sortMentions(true))
 
 const authors = Astro.fetchContent('../data/authors/*.md').map(
   getAuthor
@@ -55,9 +63,18 @@ const authorName = author
     <article class="e-content">
       <slot />
     </article>
-  </UIBlock>
 
-  <slot />
+    <footer id="webmentions">
+      <WebMentions {webMentions} url={Astro.request.canonicalURL.href}>
+        <TwitterShare
+          description={page.seo.description}
+          title={page.seo.title}
+          tweetId={tweetId}
+          url={Astro.request.canonicalURL.href}
+        />
+      </WebMentions>
+    </footer>
+  </UIBlock>
 </Layout>
 
 <style lang="scss">
