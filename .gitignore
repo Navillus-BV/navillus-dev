@@ -1,8 +1,13 @@
 # build output
-dist
+dist/
+_cache/
 
 # dependencies
 node_modules/
+.snowpack/
+
+# Local Netlify folder
+.netlify/
 
 # logs
 npm-debug.log*

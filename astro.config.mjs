@@ -9,11 +9,11 @@
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
   buildOptions: {
-    site: "https://navillus.dev",
+    site: 'https://navillus.dev',
     sitemap: true,
   },
   devOptions: {
     port: 8080,
   },
   renderers: [],
-});
+})
