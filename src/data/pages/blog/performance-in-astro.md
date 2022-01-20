@@ -2,7 +2,7 @@
   template: post
   author: tony-sull
   permalink: /blog/performance-in-astro
-  published: true
+  published: false
   seo:
     title: Performance wins with Astro
     description: Does your site really need all that JS?
