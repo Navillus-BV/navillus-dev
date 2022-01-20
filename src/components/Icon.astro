@@ -2,12 +2,12 @@
 import Show from './Show.astro'
 
 interface Props {
- id: CMS.Icon,
- fill?: string,
- width?: string | number,
- height?: string | number,
- hidden?: boolean,
- title?: string
+  id: CMS.Icon
+  fill?: string
+  width?: string | number
+  height?: string | number
+  hidden?: boolean
+  title?: string
 }
 
 const { id, fill, width, height, hidden, title } = Astro.props as Props

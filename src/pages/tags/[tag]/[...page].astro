@@ -60,7 +60,7 @@ const { title, description, url, data: posts } = page
 ---
 
 <Layout permalink={url.current} seo={{ title, description }}>
-  <UIBlock title='All Posts' alt>
+  <UIBlock title="All Posts" alt>
     {posts.map((post) => <PostPreview post={post} />)}
   </UIBlock>
 </Layout>

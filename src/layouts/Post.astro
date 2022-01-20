@@ -69,7 +69,7 @@ const authorName = author
         <TwitterShare
           description={page.seo.description}
           title={page.seo.title}
-          tweetId={tweetId}
+          {tweetId}
           url={Astro.request.canonicalURL.href}
         />
       </WebMentions>

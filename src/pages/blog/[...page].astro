@@ -17,13 +17,12 @@ export async function getStaticPaths({ paginate, rss }) {
   }
 
   function sortPosts(a: CMS.PostPage, b: CMS.PostPage) {
-    return (
-      new Date(b.date).getTime() -
-      new Date(a.date).getTime()
-    )
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
   }
 
-  const allPosts: CMS.PostPage[] = Astro.fetchContent('../../data/pages/blog/*.md')
+  const allPosts: CMS.PostPage[] = Astro.fetchContent(
+    '../../data/pages/blog/*.md'
+  )
     .filter(isPublished)
     .map(getPage)
     .map(includeReadingTime)
@@ -63,7 +62,7 @@ const { data: posts } = page
 ---
 
 <Layout {...blogPage}>
-  <UIBlock title='All Posts' alt>
+  <UIBlock title="All Posts" alt>
     {posts.map((post) => <PostPreview post={post} />)}
   </UIBlock>
 </Layout>
