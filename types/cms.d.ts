@@ -33,6 +33,7 @@ declare namespace CMS {
     | 'scully'
     | 'shield'
     | 'shopping'
+    | 'speedometer'
     | 'storyblok'
     | 'strapi'
     | 'sveltekit'
@@ -98,7 +99,6 @@ declare namespace CMS {
     author: AuthorId
     tweetId?: string
     last_modified_at?: string
-    category?: string
     categories?: string[]
     tags?: string[]
   }
