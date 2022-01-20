@@ -4,7 +4,6 @@ _cache/
 
 # dependencies
 node_modules/
-.snowpack/
 
 # Local Netlify folder
 .netlify/
