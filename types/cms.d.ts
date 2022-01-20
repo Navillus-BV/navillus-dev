@@ -1,4 +1,44 @@
 declare namespace CMS {
+  type Icon =
+    | '11ty'
+    | 'architecture'
+    | 'astro'
+    | 'aws'
+    | 'azure'
+    | 'begin'
+    | 'blogging'
+    | 'cloudflare'
+    | 'contentful'
+    | 'datocms'
+    | 'devto'
+    | 'digitalocean'
+    | 'email'
+    | 'firebase'
+    | 'forestry'
+    | 'gatsby'
+    | 'github'
+    | 'gridsome'
+    | 'hugo'
+    | 'jekyll'
+    | 'linkedin'
+    | 'money'
+    | 'netlify'
+    | 'netlify-cms'
+    | 'nextjs'
+    | 'nuxtjs'
+    | 'prismic'
+    | 'render'
+    | 'sanity'
+    | 'sapper'
+    | 'scully'
+    | 'shield'
+    | 'shopping'
+    | 'storyblok'
+    | 'strapi'
+    | 'sveltekit'
+    | 'twitter'
+    | 'vercel'
+
   interface Site {
     title: string
     description: string
@@ -18,7 +58,7 @@ declare namespace CMS {
   interface NavigationItem {
     title: string
     href: string
-    icon?: string
+    icon?: Icon
   }
 
   interface Navigation {
@@ -98,7 +138,7 @@ declare namespace CMS {
 
   interface BadgesBlockItem {
     title: string
-    icon: string
+    icon: Icon
   }
 
   interface BadgesBlockGroup {
@@ -117,7 +157,7 @@ declare namespace CMS {
   }
 
   interface FeaturesBlockItem {
-    icon: string
+    icon: Icon
     title: string
     content: string
   }

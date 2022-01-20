@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro'
 import navigation from '../data/navigation.json'
 
 const { legal, social } = navigation as CMS.Navigation
@@ -13,9 +14,7 @@ const year = new Date().getFullYear()
         <li>
           <a href={href} rel="me">
             <span class="sr-only">{title}</span>
-            <svg>
-              <use xlink:href={`/assets/sprites.svg#${icon}`} />
-            </svg>
+            <Icon id={icon} />
           </a>
         </li>
       ))}
@@ -71,7 +70,7 @@ const year = new Date().getFullYear()
     flex-direction: row;
     gap: var(--spacer-sm);
 
-    & svg {
+    & :global(svg) {
       height: var(--chisel-h1);
       width: var(--chisel-h1);
       overflow: visible;

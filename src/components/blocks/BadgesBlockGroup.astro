@@ -1,4 +1,6 @@
 ---
+import Icon from '../Icon.astro'
+
 const { title, items } = Astro.props as CMS.BadgesBlockGroup
 ---
 
@@ -8,10 +10,7 @@ const { title, items } = Astro.props as CMS.BadgesBlockGroup
   <ul>
     {items.map(({ icon, title }) => (
       <li>
-        <svg>
-          <title>{title}</title>
-          <use xlink:href={`/assets/sprites.svg#${icon}`} />
-        </svg>
+        <Icon id={icon} title={title} />
       </li>
     ))}
   </ul>
@@ -39,7 +38,7 @@ const { title, items } = Astro.props as CMS.BadgesBlockGroup
       box-shadow: var(--shadow-sm);
     }
 
-    & svg {
+    & :global(svg) {
       height: 1.75rem;
       max-width: var(--spacer-xl);
     }

@@ -1,0 +1,21 @@
+---
+import Show from './Show.astro'
+
+interface Props {
+ id: CMS.Icon,
+ fill?: string,
+ width?: string | number,
+ height?: string | number,
+ hidden?: boolean,
+ title?: string
+}
+
+const { id, fill, width, height, hidden, title } = Astro.props as Props
+---
+
+<svg {fill} {width} {height} aria-hidden={hidden}>
+  <Show when={!!title}>
+    <title>{title}</title>
+  </Show>
+  <use xlink:href={`/assets/sprites.svg#${id}`}></use>
+</svg>

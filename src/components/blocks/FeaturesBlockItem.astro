@@ -1,13 +1,12 @@
 ---
+import Icon from '../Icon.astro'
 import { mdToHtml } from '../../utils/markdown.ts'
 
 const { icon, title, content } = Astro.props as CMS.FeaturesBlockItem
 ---
 
 <article>
-  <svg>
-    <use xlink:href={`/assets/sprites.svg#${icon}`}></use>
-  </svg>
+  <Icon id={icon} />
 
   <div>
     <h4 class="h3">{title}</h4>

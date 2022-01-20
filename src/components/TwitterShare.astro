@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro'
+
 interface Props {
   description: string
   title: string
@@ -17,9 +19,7 @@ const findLink = `https://twitter.com/search?f=tweets&src=typd&q=${encodeURI(
 ---
 
 <div>
-  <svg aria-hidden="true" fill="#55acee" width="24" height="24">
-    <use xlink:href="/assets/sprites.svg#twitter"></use>
-  </svg>
+  <Icon id="twitter" hidden  fill="#55acee" width="24" height="24" />
 
   {tweetId ? (
     <small>
