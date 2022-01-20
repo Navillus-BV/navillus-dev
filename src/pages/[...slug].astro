@@ -17,8 +17,6 @@ export async function getStaticPaths() {
     props: page,
   }))
 
-  console.log(paths.map(p => p.params))
-
   return paths
 }
 

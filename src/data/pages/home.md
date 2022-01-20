@@ -18,6 +18,7 @@
     - template: featuresblock
       title: SITES WITH BENEFITS
       subtitle: Why use the Jamstack?
+      id: jamstack
       alt: true
       items:
         - icon: speedometer
@@ -39,6 +40,7 @@
     - template: badgesblock
       title: TECHNOLOGY WE USE
       subtitle: Building the Modern Web
+      id: tools
       groups:
         - title: HEADLESS CMS
           items:
@@ -105,6 +107,7 @@
     - template: featuresblock
       title: WHAT WE OFFER
       subtitle: Our Services
+      id: services
       alt: true
       items:
         - icon: blogging
@@ -122,6 +125,7 @@
     - template: contactblock
       title: JAMSTACK DEVELOPERS FOR HIRE
       subtitle: Get in Touch
+      id: contact
       content: |-
         We love what we do and are always up for an interesting conversation, whether you're ready to get started or just have a few questions.
 ---

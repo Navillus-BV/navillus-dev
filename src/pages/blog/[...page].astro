@@ -16,14 +16,14 @@ export async function getStaticPaths({ paginate, rss }) {
     }
   }
 
-  function sortPosts(a, b) {
+  function sortPosts(a: CMS.PostPage, b: CMS.PostPage) {
     return (
-      new Date(b.published_date).getTime() -
-      new Date(a.published_date).getTime()
+      new Date(b.date).getTime() -
+      new Date(a.date).getTime()
     )
   }
 
-  const allPosts = Astro.fetchContent('../../data/pages/blog/*.md')
+  const allPosts: CMS.PostPage[] = Astro.fetchContent('../../data/pages/blog/*.md')
     .filter(isPublished)
     .map(getPage)
     .map(includeReadingTime)
@@ -36,10 +36,8 @@ export async function getStaticPaths({ paginate, rss }) {
     items: allPosts.map((item: CMS.PostPage) => {
       const content = `<content><![CDATA[ ${item.content.html} ]]></content>`
 
-      const url = new URL(item.permalink, site.url)
-
       const customData = [
-        `<id>${url.href}</id>`,
+        `<id>${item.permalink}</id>`,
         item.last_modified_at && `<updated>${item.last_modified_at}</updated>`,
         content,
       ]
@@ -49,7 +47,7 @@ export async function getStaticPaths({ paginate, rss }) {
       return {
         title: item.seo.title,
         description: item.seo.description,
-        link: url.href,
+        link: item.permalink,
         pubDate: item.date,
         customData,
       }
