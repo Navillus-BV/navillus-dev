@@ -2,12 +2,12 @@
   "pages": [
     {
       "title": "Home",
-      "page": "src/data/pages/jamstack-developers-for-hire.md",
+      "page": "src/data/pages/home.md",
       "id": ""
     },
     {
       "title": "Services",
-      "page": "src/data/pages/jamstack-developers-for-hire.md",
+      "page": "src/data/pages/home.md",
       "id": "services"
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "title": "Contact Us",
-      "page": "src/data/pages/jamstack-developers-for-hire.md",
+      "page": "src/data/pages/home.md",
       "id": "contact"
     }
   ],
