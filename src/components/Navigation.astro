@@ -38,11 +38,24 @@ const initMenuInput = (element: MenuInputElement) => {
 }
 
 const initHeader = (element: HTMLElement) => {
+  const toggleElem = document.getElementById('toggle') as HTMLInputElement
+
   let lastOffset = window.pageYOffset
+  let closing = false
 
   const onScroll = () => {
+    if (closing) {
+      return
+    }
+
     const height = element.offsetHeight
     const offset = window.pageYOffset
+    const open = toggleElem.checked
+
+    if (open) {
+      element.classList.remove('hide')
+      return
+    }
 
     if (Math.abs(offset - lastOffset) < height / 2) {
       return
@@ -57,7 +70,22 @@ const initHeader = (element: HTMLElement) => {
     lastOffset = offset
   }
 
+  const onToggle = () => {
+    const open = toggleElem.checked
+
+    if (open) {
+      element.classList.remove('hide')
+    } else {
+      closing = true
+      setTimeout(() => {
+        lastOffset = window.pageYOffset
+        closing = false
+      }, 500)
+    }
+  }
+
   document.addEventListener('scroll', onScroll, false)
+  toggleElem.addEventListener('change', onToggle, false)
 }
 ---
 
