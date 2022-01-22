@@ -43,6 +43,15 @@ const initHeader = (element: HTMLElement) => {
   let lastOffset = window.pageYOffset
   let closing = false
 
+  const debounce = (fn: Function, delay = 100) => {
+    let timer
+
+    return (...args) => {
+      clearTimeout(timer)
+      timer = setTimeout(() => fn.apply(this, args), delay)
+    }
+  }
+
   const onScroll = () => {
     if (closing) {
       return
@@ -84,7 +93,7 @@ const initHeader = (element: HTMLElement) => {
     }
   }
 
-  document.addEventListener('scroll', onScroll, false)
+  document.addEventListener('scroll', debounce(onScroll), false)
   toggleElem.addEventListener('change', onToggle, false)
 }
 ---
