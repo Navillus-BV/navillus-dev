@@ -3,13 +3,19 @@ import XElement from 'astro-xelement'
 import Logo from './Logo.astro'
 import ThemeToggle from './ThemeToggle.astro'
 import navigation from '../data/navigation.json'
+import { normalizeNavigationLink } from '../utils/cms.ts'
 
 interface Props {
   pathname: string
 }
 
-const { main } = navigation as CMS.Navigation
 const { pathname } = Astro.props as Props
+
+const normalizeLink = normalizeNavigationLink(
+  Astro.fetchContent('../data/pages/**/*.md')
+)
+
+const pages = (navigation as CMS.Navigation).pages.map(normalizeLink)
 
 interface MenuInputElement extends HTMLInputElement {}
 
@@ -41,13 +47,17 @@ const initMenuInput = (element: MenuInputElement) => {
 
     <nav>
       <ul>
-        {main.map(({ title, href }) => (
-                <li>
-                    <a class="hover:outline" {href} aria-current={pathname === href}>
-                        {title}
-                    </a>
-                </li>
-            ))}
+        {pages.map(({ title, page }) => (
+          <li>
+            <a
+              class="hover:outline"
+              href={page}
+              aria-current={pathname === page}
+            >
+              {title}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
 
@@ -78,9 +88,9 @@ const initMenuInput = (element: MenuInputElement) => {
 
   <nav class="container">
     <ul>
-      {main.map(({ title, href }) => (
+      {pages.map(({ title, page }) => (
         <li>
-          <a href={href} class="h5" aria-current={pathname === href}>
+          <a href={page} class="h5" aria-current={pathname === page}>
             {title}
           </a>
         </li>
@@ -100,7 +110,10 @@ const initMenuInput = (element: MenuInputElement) => {
 
 <style lang="scss">
   header {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: var(--chisel-primary);
   }
 
   a:not(.button) {
@@ -134,8 +147,8 @@ const initMenuInput = (element: MenuInputElement) => {
   }
 
   .top {
-    padding-top: var(--spacer-sm);
-    padding-bottom: var(--spacer-sm);
+    padding-top: var(--spacer-xs);
+    padding-bottom: var(--spacer-xs);
     display: flex;
     align-items: center;
 

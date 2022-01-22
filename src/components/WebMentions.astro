@@ -25,6 +25,8 @@ const { webMentions, url } = Astro.props as Props
 const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share))
 const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
 const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
+
+const domain = new URL(site.url).hostname
 ---
 
 <h2 class="h3">Webmentions</h2>
@@ -100,7 +102,7 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
     your site:
   </p>
   <form
-    action={`https://webmention.io/${site.domain}/webmention`}
+    action={`https://webmention.io/${domain}/webmention`}
     method="post"
     class="form-webmention"
   >

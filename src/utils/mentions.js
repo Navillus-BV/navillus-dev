@@ -2,12 +2,12 @@ import fs from 'fs'
 import unionBy from 'lodash/unionBy'
 import site from '../data/site.json'
 
-const { domain } = site
+const domain = new URL(site.url).hostname
 
 // Define Cache Location and API Endpoint
 const CACHE_FILE_PATH = '_cache/webmentions.json'
 const API = 'https://webmention.io/api'
-const TOKEN = process.env.WEBMENTION_IO_TOKEN
+const TOKEN = import.meta.env.WEBMENTION_IO_TOKEN
 
 async function fetchWebmentions(since, perPage = 1000) {
   // If we don't have a domain name or token, abort
@@ -79,6 +79,10 @@ async function _getAllMentions() {
       writeToCache(webmentions)
       return webmentions
     }
+  } else {
+    console.log(
+      `>>> Skipping webmentions check, WEBMENTION_IO_TOKEN not provided`
+    )
   }
   return cache
 }

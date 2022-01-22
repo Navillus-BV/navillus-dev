@@ -1,17 +1,17 @@
 ---
-  template: post
-  author: tony-sull
-  permalink: /blog/astro-plus-netlify-cms
-  published: true
-  seo:
-    title: Astro + Netlify CMS
-    description: Static sites powered by a git-based CMS, made easy.
-    image: posts/2021-06-23-astro-plus-netlify-cms.jpg
-  date: 2021-06-23
-  tweetId: "1407792706546458625"
-  tags:
-    - astro
-    - cms
+title: Astro + Netlify CMS
+description: Static sites powered by a git-based CMS, made easy.
+social_image: '/uploads/2021-06-23-astro-plus-netlify-cms.jpg'
+date: '2021-06-23T17:31:26Z'
+last_modified_at: ''
+tags:
+  - astro
+  - cms
+permalink: '/blog/astro-plus-netlify-cms'
+published: true
+blocks: []
+tweet_id: '1407792706546458625'
+author: src/data/authors/tony-sull.json
 ---
 
 I like markdown as much as the next developer, but it's easy to forget how convenient a CMS can be. For personal projects or internal tools, though, I can't justify reaching for a full headless CMS setup. Configuration takes time and, more importantly, for Jamstack sites it can be a huge time saver to have the entire CMS alongside the source code right in `git`.

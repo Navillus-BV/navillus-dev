@@ -1,0 +1,54 @@
+---
+label: Blog Post Page
+hide_body: false
+fields:
+- name: template
+  type: text
+  config:
+    required: true
+  label: Template
+  hidden: true
+  default: post
+- name: page
+  type: include
+  config: {}
+  template: page
+  label: Page
+- name: author
+  type: select
+  default: []
+  config:
+    required: true
+    options: []
+    source:
+      type: pages
+      section: authors
+      file: 
+      path: 
+  label: Author
+- name: tweet_id
+  type: text
+  config:
+    required: false
+  label: Tweet Id
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+pages:
+- src/data/pages/blog/animated-page-transitions-in-astro-with-swup.md
+- src/data/pages/blog/astro-forestry-cms.md
+- src/data/pages/blog/astro-netlify-cms.md
+- src/data/pages/blog/astro-snipcart.md
+- src/data/pages/blog/class-properties-in-svelte.md
+- src/data/pages/blog/converting-our-site-to-astro.md
+- src/data/pages/blog/how-to-use-web-components-in-astro.md
+- src/data/pages/blog/including-json-ld-structured-data-in-svelte.md
+- src/data/pages/blog/introducing-chisel.css.md
+- src/data/pages/blog/introducing-svelte-entity-store.md
+- src/data/pages/blog/jamstack-2.0.md
+- src/data/pages/blog/keeping-it-simple-with-astro.md
+- src/data/pages/blog/progressively-enhancing-svelte-with-javascript.md
+- src/data/pages/blog/the-power-of-simplicity.md
+- src/data/pages/blog/the-power-of-svelte-actions.md
+- src/data/pages/blog/web-accessibility-hidden-links-make-all-the-difference.md

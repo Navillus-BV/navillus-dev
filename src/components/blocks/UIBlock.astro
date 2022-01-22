@@ -8,7 +8,7 @@ const {
   alt = false,
   id,
   class: className = '',
-} = Astro.props as CMS.UIBlock & { class: string }
+} = Astro.props as CMS.BaseBlock & { class: string }
 ---
 
 <section class={`${className} ${clsx({ alt })}`} {id}>

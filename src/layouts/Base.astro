@@ -1,14 +1,16 @@
 ---
 import Footer from '../components/Footer.astro'
 import MainHead from '../components/MainHead.astro'
-import Nav from '../components/Nav.astro'
+import Navigation from '../components/Navigation.astro'
+import { getSeo, WithContent } from '../utils/seo.ts'
 
-const { content, permalink, seo } = Astro.props as CMS.Page
+const { content, ...page } = Astro.props as WithContent<CMS.Page>
+const seo = getSeo(page)
 ---
 
 <html lang="en">
   <head>
-    <MainHead {seo} {permalink} />
+    <MainHead {seo} />
   </head>
 
   <body>
@@ -16,12 +18,12 @@ const { content, permalink, seo } = Astro.props as CMS.Page
       Skip to content
     </a>
 
-    <Nav pathname={Astro.request.url.pathname} />
+    <Navigation pathname={Astro.request.url.pathname} />
 
     <main id="main">
       <slot />
 
-      {content}
+      {content?.html}
     </main>
 
     <Footer />

@@ -5,8 +5,11 @@ import WebMentionsCount from './WebMentionsCount.astro'
 import site from '../data/site.json'
 import { getAllMentions, isForUrl } from '../utils/mentions.js'
 import { formatDate } from '../utils/dates.ts'
+import { getSeo } from '../utils/seo.ts'
 
 const { post } = Astro.props
+
+const seo = getSeo(post)
 
 const tags = post.tags.map((tag) => {
   return {
@@ -23,13 +26,13 @@ const webMentions = allMentions.children.filter(isForUrl(url.href))
 
 <article>
   <a href={post.permalink}>
-    <h3 class="underline">{post.seo.title}</h3>
+    <h3 class="underline">{seo.title}</h3>
   </a>
 
   <time class="h6" datetime={post.date}>{formatDate(post.date)}</time>
   <small> • {post.minutes} min read</small>
 
-  <p>{post.seo.description}</p>
+  <p>{seo.description}</p>
 
   <footer>
     <Show when={webMentions.length > 0}>

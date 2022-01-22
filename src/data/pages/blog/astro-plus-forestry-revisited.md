@@ -1,17 +1,17 @@
 ---
-  template: post
-  author: tony-sull
-  permalink: /blog/astro-plus-forestry-revisited
-  published: true
-  seo:
-    title: Astro + Foresty CMS Revisited
-    description: Static sites powered by Forestry's git-based CMS, made even easier.
-    image: posts/2021-08-03-astro-plus-forestry-revisited.jpg
-  tweetId: "1422604180984934404"
-  date: 2021-08-03
-  tags:
-    - astro
-    - cms
+title: Astro + Foresty CMS Revisited
+description: Static sites powered by Forestry's git-based CMS, made even easier.
+social_image: '/uploads/2021-08-03-astro-plus-forestry-revisited.jpg'
+date: '2021-08-03T17:28:39Z'
+last_modified_at: ''
+tags:
+  - astro
+  - cms
+permalink: '/blog/astro-plus-forestry-revisited'
+published: true
+blocks: []
+tweet_id: '1422604180984934404'
+author: src/data/authors/tony-sull.json
 ---
 
 It's been just over a month since the original [Astro + Forestry CMS](/blog/astro-plus-forestry) demo, but things have been [moving quickly](https://github.com/snowpackjs/astro/blob/main/packages/astro/CHANGELOG.md) in Astro land! We'll build upon the original demo, go ahead and check out the first post if you haven't done so already!

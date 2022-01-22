@@ -1,56 +1,62 @@
 {
-  "main": [
+  "pages": [
     {
       "title": "Home",
-      "href": "/"
+      "page": "src/data/pages/jamstack-developers-for-hire.md",
+      "id": ""
     },
     {
       "title": "Services",
-      "href": "/#services"
+      "page": "src/data/pages/jamstack-developers-for-hire.md",
+      "id": "services"
     },
     {
       "title": "Blog",
-      "href": "/blog"
+      "page": "src/data/pages/blog.md",
+      "id": ""
     }
   ],
   "legal": [
     {
       "title": "Privacy Policy",
-      "href": "/privacy"
+      "page": "src/data/pages/privacy-policy.md",
+      "id": ""
     },
     {
       "title": "Terms & Conditions",
-      "href": "/terms"
+      "page": "src/data/pages/terms-conditions.md",
+      "id": ""
     },
     {
       "title": "Contact Us",
-      "href": "/#contact"
+      "page": "src/data/pages/jamstack-developers-for-hire.md",
+      "id": "contact"
     }
   ],
-  "social": [
+  "contact": [
     {
       "title": "Email us at info@navillus.nl",
-      "href": "mailto:info@navillus.nl",
+      "url": "mailto:info@navillus.nl",
       "icon": "email"
     },
     {
       "title": "Find us on Twitter",
-      "href": "https://twitter.com/navillus_dev",
+      "url": "https://twitter.com/navillus_dev",
       "icon": "twitter"
     },
     {
       "title": "Find us on dev.to",
-      "href": "https://dev.to/navillus_dev",
+      "url": "https://dev.to/navillus_dev",
       "icon": "devto"
     },
     {
       "title": "Find us on Github",
-      "href": "https://github.com/navillus-bv",
+      "url": "https://github.com/navillus-bv",
       "icon": "github"
     },
     {
       "title": "RSS Feed",
-      "href": "https://navillus.dev/feed/blog.xml",
+      "url": "https://navillus.dev/feed/blog.xml",
       "icon": "rss"
     }
   ]

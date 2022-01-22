@@ -1,17 +1,17 @@
 ---
-  template: post
-  author: tony-sull
-  permalink: /blog/introducing-svelte-entity-store
-  published: true
-  seo:
-    title: Introducing svelte-entity-store
-    description: A (work-in-progress) generic entity store for Svelte projects.
-    image: posts/2021-05-01-introducing-svelte-entity-store.jpg
-  date: 2021-05-01
-  last_modified_at: 2021-06-05
-  tags:
-    - svelte
-    - intro
+title: Introducing svelte-entity-store
+description: A (work-in-progress) generic entity store for Svelte projects.
+social_image: '/uploads/2021-05-01-introducing-svelte-entity-store.jpg'
+date: '2021-05-01T17:38:44Z'
+tags:
+  - svelte
+  - intro
+permalink: '/blog/introducing-svelte-entity-store'
+published: true
+last_modified_at: '2021-06-05T00:00:00Z'
+blocks: []
+tweet_id: ''
+author: src/data/authors/tony-sull.json
 ---
 
 A (**w**ork-**i**n-**p**rogress) generic entity store for Svelte projects.

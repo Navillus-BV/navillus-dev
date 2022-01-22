@@ -1,0 +1,22 @@
+---
+label: Author
+hide_body: true
+display_field: first_name
+fields:
+- name: first_name
+  type: text
+  config:
+    required: true
+  label: First name
+- name: last_name
+  type: text
+  config:
+    required: true
+  label: Last name
+- name: url
+  type: text
+  config:
+    required: true
+  label: URL
+pages:
+- src/data/authors/tony-sull.json

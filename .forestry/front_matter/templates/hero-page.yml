@@ -1,0 +1,70 @@
+---
+label: Hero Page
+hide_body: true
+fields:
+- name: template
+  type: text
+  config:
+    required: true
+  label: Template
+  hidden: true
+  default: page
+- name: page
+  type: include
+  config: {}
+  template: page
+  label: Page
+- name: hero
+  type: field_group
+  config: {}
+  fields:
+  - name: title
+    type: textarea
+    default: "**JAMSTACK DEVELOPERS FOR HIRE**"
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+      max: 50
+    label: Title
+  - name: subtitle
+    type: textarea
+    default: "Every problem is **different**.\n\n  \n Your **solutions** should be,
+      too."
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Subtitle
+  - name: content
+    type: textarea
+    default: We specialize in finding simple solutions to complex software problems.
+      We value data-driven decisions and accessibility over this month's latest tech
+      trends.
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Content
+  - name: cta
+    type: field_group
+    config: {}
+    fields:
+    - name: text
+      type: text
+      config:
+        required: false
+      label: Display Text
+    - name: href
+      type: text
+      config:
+        required: false
+      label: Link URL
+    label: Call to Action
+  label: Hero
+pages:
+- src/data/pages/blog.md
+- src/data/pages/jamstack-developers-for-hire.md

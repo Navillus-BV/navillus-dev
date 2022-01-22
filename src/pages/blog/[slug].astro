@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Post.astro'
-import { getPage, isPublished } from '../../utils/cms.ts'
+import { getPage, isPublished, WithContent } from '../../utils/cms.ts'
 
 export async function getStaticPaths() {
   const pages = Astro.fetchContent('../../data/pages/blog/*.md')
@@ -17,9 +17,7 @@ export async function getStaticPaths() {
   return paths
 }
 
-const page = Astro.props as CMS.Page
+const page = Astro.props as WithContent<CMS.Page>
 ---
 
-<Layout {...page}>
-  {page.content.html}
-</Layout>
+<Layout {...page} />

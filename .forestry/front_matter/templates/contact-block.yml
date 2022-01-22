@@ -1,0 +1,19 @@
+---
+label: Contact Block
+hide_body: true
+display_field: title
+fields:
+- name: block
+  type: include
+  config: {}
+  template: ui-block
+  label: Block
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Content

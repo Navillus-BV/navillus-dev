@@ -2,24 +2,25 @@
 import Layout from './Base.astro'
 import Show from '../components/Show.astro'
 import UIBlock from '../components/blocks/UIBlock.astro'
+import { WithContent } from '../utils/cms.ts'
 import { formatDate } from '../utils/dates.ts'
 
-const { last_modified_at, permalink, seo, title } = Astro.props as CMS.LegalPage
+const { content, ...page } = Astro.props as WithContent<CMS.LegalPage>
 
-const lastUpdated = last_modified_at && formatDate(last_modified_at)
-
-const allSeo = { title, ...seo }
+const lastUpdated = page.last_modified_at && formatDate(page.last_modified_at)
 ---
 
-<Layout {permalink} seo={allSeo}>
+<Layout {...page}>
   <UIBlock alt>
-    <h1>{title}</h1>
+    <h1>{page.title}</h1>
 
     <Show when={!!lastUpdated}>
       <p>Last Updated: {lastUpdated}</p>
     </Show>
 
     <slot />
+
+    {content?.html}
   </UIBlock>
 </Layout>
 

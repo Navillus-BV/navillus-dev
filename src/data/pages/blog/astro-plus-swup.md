@@ -1,16 +1,18 @@
 ---
-  template: post
-  author: tony-sull
-  permalink: /blog/astro-plus-swup
-  published: true
-  seo:
-    title: Animated page transitions in Astro with Swup
-    description: Static doesn't mean boring! Easily add client routing and page transition animations with swup.js
-    image: posts/2021-07-24-astro-plus-swup.jpg
-  date: 2021-07-24
-  tweetId: '1418952288476012545'
-  tags:
-    - astro
+title: Animated page transitions in Astro with Swup
+description:
+  Static doesn't mean boring! Easily add client routing and page transition
+  animations with swup.js
+social_image: '/uploads/2021-07-24-astro-plus-swup.jpg'
+date: '2021-07-24T17:34:53Z'
+tags:
+  - astro
+permalink: '/blog/astro-plus-swup'
+published: true
+last_modified_at: ''
+blocks: []
+tweet_id: '1418952288476012545'
+author: src/data/authors/tony-sull.json
 ---
 
 I can't be the only developer that has come across a beautifully designed website with top notch animations only to burn an afternoon trying to figure out how exactly they did it. Usually the answer is a combination of 5 different libraries and a pile of JavaScript and CSS being sent over the wire.

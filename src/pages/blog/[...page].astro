@@ -2,25 +2,26 @@
 import PostPreview from '../../components/PostPreview.astro'
 import UIBlock from '../../components/blocks/UIBlock.astro'
 import site from '../../data/site.json'
-import Layout from '../../layouts/Page.astro'
-import { getPage, isPublished } from '../../utils/cms.ts'
+import Layout from '../../layouts/Hero.astro'
+import { getPage, isPublished, WithContent } from '../../utils/cms.ts'
 import { readMinutesForPage } from '../../utils/markdown.ts'
+import { getSeo } from '../../utils/seo.ts'
 
 const [blogPage] = Astro.fetchContent('../../data/pages/blog.md')
 
 export async function getStaticPaths({ paginate, rss }) {
-  function includeReadingTime(post) {
+  function includeReadingTime(post: CMS.BlogPostPage) {
     return {
       ...post,
       minutes: readMinutesForPage(post),
     }
   }
 
-  function sortPosts(a: CMS.PostPage, b: CMS.PostPage) {
+  function sortPosts(a: CMS.BlogPostPage, b: CMS.BlogPostPage) {
     return new Date(b.date).getTime() - new Date(a.date).getTime()
   }
 
-  const allPosts: CMS.PostPage[] = Astro.fetchContent(
+  const allPosts: WithContent<CMS.BlogPostPage>[] = Astro.fetchContent(
     '../../data/pages/blog/*.md'
   )
     .filter(isPublished)
@@ -32,7 +33,9 @@ export async function getStaticPaths({ paginate, rss }) {
     title: 'Blog | Navillus',
     description: site.description,
     customData: `<language>en-us</language>`,
-    items: allPosts.map((item: CMS.PostPage) => {
+    items: allPosts.map((item: WithContent<CMS.BlogPostPage>) => {
+      const seo = getSeo(item)
+
       const content = `<content><![CDATA[ ${item.content.html} ]]></content>`
 
       const customData = [
@@ -44,8 +47,8 @@ export async function getStaticPaths({ paginate, rss }) {
         .join('') // combine into one string
 
       return {
-        title: item.seo.title,
-        description: item.seo.description,
+        title: seo.title,
+        description: seo.description,
         link: item.permalink,
         pubDate: item.date,
         customData,

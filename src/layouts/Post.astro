@@ -3,37 +3,32 @@ import Layout from './Base.astro'
 import TwitterShare from '../components/TwitterShare.astro'
 import WebMentions from '../components/WebMentions.astro'
 import UIBlock from '../components/blocks/UIBlock.astro'
-import { getAuthor } from '../utils/cms.ts'
+import { WithContent } from '../utils/cms.ts'
 import { formatDate } from '../utils/dates.ts'
 import { readMinutesForPage } from '../utils/markdown.ts'
 import { getAllMentions, isForUrl, sortMentions } from '../utils/mentions'
+import { getSeo } from '../utils/seo.ts'
 
-const page = Astro.props as CMS.PostPage
-const { permalink, seo, date, last_modified_at, tweetId } = page
+const { content, ...page } = Astro.props as WithContent<CMS.BlogPostPage>
+const { date, last_modified_at, tweetId } = page
 
-const minutes = readMinutesForPage(page)
+const seo = getSeo(page)
+
+const minutes = readMinutesForPage({ content })
 
 const allMentions = await getAllMentions()
 const webMentions = allMentions.children
   .filter(isForUrl(Astro.request.canonicalURL.href))
   .sort(sortMentions(true))
 
-const authors = Astro.fetchContent('../data/authors/*.md').map(
-  getAuthor
-) as CMS.Author[]
-
-const authorsMap = authors.reduce((acc, next) => {
-  acc[next.slug] = next
-  return acc
-}, {})
-
-const author = authorsMap[page.author]
+const authorsMap = import.meta.globEager('../data/authors/*.json')
+const author = authorsMap[page.author.replace('src', '..')]
 const authorName = author
   ? `${author.first_name} ${author.last_name}`
   : page.author
 ---
 
-<Layout {permalink} {seo}>
+<Layout {...page}>
   <UIBlock alt class="h-entry">
     <header>
       <h1 class="p-name">{seo.title}</h1>
@@ -61,14 +56,14 @@ const authorName = author
     </header>
 
     <article class="e-content">
-      <slot />
+      {content.html}
     </article>
 
     <footer id="webmentions">
       <WebMentions {webMentions} url={Astro.request.canonicalURL.href}>
         <TwitterShare
-          description={page.seo.description}
-          title={page.seo.title}
+          description={seo.description}
+          title={seo.title}
           {tweetId}
           url={Astro.request.canonicalURL.href}
         />

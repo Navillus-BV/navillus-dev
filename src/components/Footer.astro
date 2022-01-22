@@ -1,8 +1,16 @@
 ---
 import Icon from './Icon.astro'
 import navigation from '../data/navigation.json'
+import { normalizeNavigationLink } from '../utils/cms.ts'
 
-const { legal, social } = navigation as CMS.Navigation
+const normalizeLink = normalizeNavigationLink(
+  Astro.fetchContent('../data/pages/**/*.md')
+)
+
+const contact = (navigation as CMS.Navigation).contact
+const legal: CMS.NavigationLink[] = (navigation as CMS.Navigation).legal.map(
+  normalizeLink
+)
 
 const year = new Date().getFullYear()
 ---
@@ -10,9 +18,9 @@ const year = new Date().getFullYear()
 <footer>
   <div class="container">
     <ul class="social">
-      {social.map(({ href, title, icon }) => (
+      {contact.map(({ url, title, icon }) => (
         <li>
-          <a href={href} rel="me">
+          <a href={url} rel="me">
             <span class="sr-only">{title}</span>
             <Icon id={icon} />
           </a>
@@ -21,9 +29,9 @@ const year = new Date().getFullYear()
     </ul>
 
     <ul class="links">
-      {legal.map(({ title, href }) => (
+      {legal.map(({ title, page }) => (
         <li>
-          <a class="h6" href={href}>
+          <a class="h6" href={page}>
             {title}
           </a>
         </li>

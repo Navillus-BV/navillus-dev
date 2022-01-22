@@ -10,7 +10,7 @@
     "format": "prettier -w src"
   },
   "devDependencies": {
-    "astro": "^0.22.13",
+    "astro": "^0.22.16",
     "astro-xelement": "^3.1.0",
     "chisel.css": "^0.8.1",
     "clsx": "^1.1.1",

@@ -1,0 +1,23 @@
+---
+label: UI Block
+hide_body: true
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: subtitle
+  type: text
+  config:
+    required: false
+  label: Subtitle
+- name: id
+  type: text
+  config:
+    required: false
+  label: ID
+- name: alt
+  type: boolean
+  label: Alternate Style

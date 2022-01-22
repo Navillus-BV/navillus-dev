@@ -17,5 +17,5 @@ const { id, fill, width, height, hidden, title } = Astro.props as Props
   <Show when={!!title}>
     <title>{title}</title>
   </Show>
-  <use xlink:href={`/assets/sprites.svg#${id}`}></use>
+  <use xlink:href={`/sprites.svg#${id}`}></use>
 </svg>

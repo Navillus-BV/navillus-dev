@@ -1,23 +1,22 @@
 ---
 import site from '../data/site.json'
+import { permalinkToCanonical, SEO } from '../utils/seo.ts'
 
 interface Props {
-  seo?: CMS.SEO
-  permalink: string
+  seo: SEO
 }
 
-const { seo = {}, permalink } = Astro.props as Props
-
+const { seo } = Astro.props as Props
+const { title, description, image, canonical } = seo
 const {
-  title = site.title,
-  description = site.description,
-  image = site.social.image,
-} = seo
+  author,
+  twitter_card,
+  twitter_handle,
+  title: siteTitle,
+} = site as CMS.SiteSettings
 
-const canonicalURL = new URL(permalink, site.url).href
-
-const imageAbsolute = `${site.url}${image}`
-const blogRssFeed = `${site.url}feed/blog.xml`
+const imageAbsolute = permalinkToCanonical(image)
+const blogRssFeed = permalinkToCanonical('/feed/blog.xml')
 ---
 
 <!-- Common -->
@@ -30,8 +29,8 @@ const blogRssFeed = `${site.url}feed/blog.xml`
   content="web development, consulting, jamstack, serverless, static site, netlify, svelte, software, engineering, software engineering, api development"
 />
 <meta name="robots" content="index,follow" />
-<meta name="author" content={site.author} />
-<link rel="canonical" href={canonicalURL} />
+<meta name="author" content={author} />
+<link rel="canonical" href={canonical} />
 <link
   rel="alternate"
   type="application/rss+xml"
@@ -49,11 +48,11 @@ const blogRssFeed = `${site.url}feed/blog.xml`
 <meta name="theme-color" content="#ffc331" />
 <link rel="manifest" href="/manifest.json" />
 <meta name="mobile-web-app-capable" content="yes" />
-<meta name="application-name" content={site.company.name} />
+<meta name="application-name" content={siteTitle} />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"
 />
-<meta name="apple-mobile-web-app-title" content={site.title} />
+<meta name="apple-mobile-web-app-title" content={siteTitle} />
 
 <!-- Open Graph -->
 <meta property="og:title" content={title} />
@@ -61,16 +60,16 @@ const blogRssFeed = `${site.url}feed/blog.xml`
 <meta property="og:type" content="website" />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageAbsolute} />
-<meta property="og:url" content={canonicalURL} />
+<meta property="og:url" content={canonical} />
 
 <!-- Twitter -->
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageAbsolute} />
-<meta name="twitter:url" content={canonicalURL} />
-<meta name="twitter:card" content={site.social.twitter_card} />
-<meta name="twitter:site" content={site.social.twitter} />
-<meta name="twitter:creator" content={site.social.twitter} />
+<meta name="twitter:url" content={canonical} />
+<meta name="twitter:card" content={twitter_card} />
+<meta name="twitter:site" content={twitter_handle} />
+<meta name="twitter:creator" content={twitter_handle} />
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap.xml" />

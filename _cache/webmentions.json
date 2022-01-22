@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2021-07-28T19:01:05.565Z",
+  "lastFetched": "2022-01-22T11:00:05.941Z",
   "children": [
     {
       "type": "entry",
@@ -2685,6 +2685,1717 @@
       },
       "mention-of": "https://navillus.dev/blog/astro-plus-forestry",
       "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Alex Six",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/736245ee22a0c5332d0423fb78f0b77b1e2335566306774c0644e885a3e871d9.jpg",
+        "url": "https://twitter.com/alexandersix_"
+      },
+      "url": "https://twitter.com/alexandersix_/status/1477455638758404097",
+      "published": "2022-01-02T01:44:08+00:00",
+      "wm-received": "2022-01-02T18:26:51Z",
+      "wm-id": 1325442,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1477455638758404097",
+      "wm-target": "https://navillus.dev/blog/svelte-class-props",
+      "content": {
+        "html": "Love this–I use Svelte because I want as little deviation from typical HTML/CSS as possible when using my Svelte components, and using \"class\" instead of \"className\" is a huge win in my book.\n\nSaved me from banging my head against the wall today because of four characters 😂\n<a class=\"u-mention\" href=\"https://navillus.dev/blog/svelte-class-props\"></a>",
+        "text": "Love this–I use Svelte because I want as little deviation from typical HTML/CSS as possible when using my Svelte components, and using \"class\" instead of \"className\" is a huge win in my book.\n\nSaved me from banging my head against the wall today because of four characters 😂"
+      },
+      "mention-of": "https://navillus.dev/blog/svelte-class-props",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Andrew (Storytelling + Scripting)",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cb7001d5872f43be35b96505f786a1b0c4b684e3ee280d3cd342370ad58e3f84.jpg",
+        "url": "https://twitter.com/triptych"
+      },
+      "url": "https://twitter.com/triptych/status/1461563100818141188",
+      "published": "2021-11-19T05:12:52+00:00",
+      "wm-received": "2021-11-19T05:46:56Z",
+      "wm-id": 1307093,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1461563100818141188",
+      "wm-target": "https://navillus.dev/blog/astro-plus-netlify-cms/",
+      "content": {
+        "html": "Astro + Netlify CMS • Navillus <a href=\"https://navillus.dev/blog/astro-plus-netlify-cms/\">navillus.dev/blog/astro-plu…</a>",
+        "text": "Astro + Netlify CMS • Navillus navillus.dev/blog/astro-plu…"
+      },
+      "mention-of": "https://navillus.dev/blog/astro-plus-netlify-cms/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Andrew (Storytelling + Scripting)",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cb7001d5872f43be35b96505f786a1b0c4b684e3ee280d3cd342370ad58e3f84.jpg",
+        "url": "https://twitter.com/triptych"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1417535981058764809#favorited-by-811530",
+      "published": null,
+      "wm-received": "2021-11-14T07:05:17Z",
+      "wm-id": 1304781,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1417535981058764809/811530",
+      "wm-target": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "like-of": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Andrew (Storytelling + Scripting)",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cb7001d5872f43be35b96505f786a1b0c4b684e3ee280d3cd342370ad58e3f84.jpg",
+        "url": "https://twitter.com/triptych"
+      },
+      "url": "https://twitter.com/triptych/status/1459574644076212225",
+      "published": "2021-11-13T17:31:27+00:00",
+      "wm-received": "2021-11-14T07:05:17Z",
+      "wm-id": 1304782,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1417535981058764809/1459574644076212225",
+      "wm-target": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "content": {
+        "text": "Hoped to have this post out a couple weeks ago, better late than never!\n\nWe recently moved our site to @astrodotbuild and have been loving how easy it is to build extremely performant sites without a pile of config files and devDependencies\n\n#webdev #SSG\n\nnavillus.dev/blog/convertin…"
+      },
+      "repost-of": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Steve Lee",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ed6b65221626ec2f49068848c85937cb4eb0fae62ba39655e39a33b0a494363c.jpg",
+        "url": "https://twitter.com/SteveALee"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1424057461368135681#favorited-by-14166962",
+      "published": null,
+      "wm-received": "2021-10-04T15:05:45Z",
+      "wm-id": 1281454,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1424057461368135681/14166962",
+      "wm-target": "https://navillus.dev/blog/power-of-simplicity",
+      "like-of": "https://navillus.dev/blog/power-of-simplicity",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Steve Lee",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ed6b65221626ec2f49068848c85937cb4eb0fae62ba39655e39a33b0a494363c.jpg",
+        "url": "https://twitter.com/SteveALee"
+      },
+      "url": "https://twitter.com/SteveALee/status/1444973176144998401",
+      "published": "2021-10-04T10:30:26+00:00",
+      "wm-received": "2021-10-04T15:05:18Z",
+      "wm-id": 1281453,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1444973176144998401",
+      "wm-target": "https://navillus.dev/blog/power-of-simplicity",
+      "content": {
+        "html": "Very much this!\n<a class=\"u-mention\" href=\"https://navillus.dev/blog/power-of-simplicity\"></a>",
+        "text": "Very much this!"
+      },
+      "mention-of": "https://navillus.dev/blog/power-of-simplicity",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Carles Muiños",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c2eaf8cc4be9e3ccd1b887e86329af39b2ec759f1af380a5ad07d8d9e9c2d833.jpg",
+        "url": "https://twitter.com/xarlee_dev"
+      },
+      "url": "https://twitter.com/xarlee_dev/status/1437348084611174402",
+      "published": "2021-09-13T09:31:02+00:00",
+      "wm-received": "2021-09-13T12:04:24Z",
+      "wm-id": 1268333,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1437348084611174402",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry/",
+      "content": {
+        "html": "<a href=\"https://twitter.com/search?q=%23todayIread\">#todayIread</a> Astro + Foresty CMS from <a href=\"https://twitter.com/navillus_dev\">@navillus_dev</a> blog\n\n<a href=\"https://twitter.com/search?q=%23jamstack\">#jamstack</a> <a href=\"https://twitter.com/search?q=%23astro\">#astro</a> <a href=\"https://twitter.com/search?q=%23forestry\">#forestry</a> <a href=\"https://twitter.com/search?q=%23nice\">#nice</a>\n\n<a href=\"https://navillus.dev/blog/astro-plus-forestry/\">navillus.dev/blog/astro-plu…</a>",
+        "text": "#todayIread Astro + Foresty CMS from @navillus_dev blog\n\n#jamstack #astro #forestry #nice\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "mention-of": "https://navillus.dev/blog/astro-plus-forestry/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Carles Muiños",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c2eaf8cc4be9e3ccd1b887e86329af39b2ec759f1af380a5ad07d8d9e9c2d833.jpg",
+        "url": "https://twitter.com/xarlee_dev"
+      },
+      "url": "https://twitter.com/xarlee_dev/status/1437354030389411843",
+      "published": "2021-09-13T09:54:40+00:00",
+      "wm-received": "2021-09-13T12:04:23Z",
+      "wm-id": 1268332,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1437354030389411843",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited/",
+      "content": {
+        "html": "<a href=\"https://twitter.com/search?q=%23todayIread\">#todayIread</a> Astro + Foresty CMS Revisited from <a href=\"https://twitter.com/navillus_dev\">@navillus_dev</a> blog\n\n<a href=\"https://twitter.com/search?q=%23jamstack\">#jamstack</a> <a href=\"https://twitter.com/search?q=%23astro\">#astro</a> <a href=\"https://twitter.com/search?q=%23forestry\">#forestry</a> <a href=\"https://twitter.com/search?q=%23nice\">#nice</a>\n\n<a href=\"https://navillus.dev/blog/astro-plus-forestry-revisited/\">navillus.dev/blog/astro-plu…</a>",
+        "text": "#todayIread Astro + Foresty CMS Revisited from @navillus_dev blog\n\n#jamstack #astro #forestry #nice\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "mention-of": "https://navillus.dev/blog/astro-plus-forestry-revisited/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ff7ef9fa152eff94667d1b31c43162ad0f147871a6cd15b3924a4765251660a9.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1434242894127419392",
+      "published": "2021-09-04T19:52:07+00:00",
+      "wm-received": "2021-09-04T20:53:30Z",
+      "wm-id": 1262733,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1433542570051727388/1434242894127419392",
+      "wm-target": "https://navillus.dev/",
+      "content": {
+        "text": "Ignore Core Vitals, focus on your users. Google just wants to understand how well your site serves your target audience, Google isn't the audience.\n\nReady for a #Website that ranks because your customers love it?\n\nnavillus.dev"
+      },
+      "repost-of": "https://navillus.dev/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ff7ef9fa152eff94667d1b31c43162ad0f147871a6cd15b3924a4765251660a9.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1433542570051727388#favorited-by-1428789526449827840",
+      "published": null,
+      "wm-received": "2021-09-04T20:53:01Z",
+      "wm-id": 1262732,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1433542570051727388/1428789526449827840",
+      "wm-target": "https://navillus.dev/",
+      "like-of": "https://navillus.dev/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/381ae3e36b8e77e70d453b35421a8a307c4bd5af3c82a34ed95472848c29d264.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1433542729284284439",
+      "published": "2021-09-02T21:29:55+00:00",
+      "wm-received": "2021-09-02T23:14:02Z",
+      "wm-id": 1261349,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1432801476120875010/1433542729284284439",
+      "wm-target": "https://navillus.dev/",
+      "content": {
+        "text": "Frustrated with outdated plugins, security issues, and bad #corevitals scores?\n\nWhether you're running a subscription newsletter or a full e-commerce store, the #JAMstack has you covered.\n\nLet's chat! We specialize in fast, accessible #JAMstack websites\n\nnavillus.dev"
+      },
+      "repost-of": "https://navillus.dev/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Carles Muiños",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c2eaf8cc4be9e3ccd1b887e86329af39b2ec759f1af380a5ad07d8d9e9c2d833.jpg",
+        "url": "https://twitter.com/xarlee_dev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1433542570051727388#favorited-by-487592858",
+      "published": null,
+      "wm-received": "2021-09-02T23:14:01Z",
+      "wm-id": 1261347,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1433542570051727388/487592858",
+      "wm-target": "https://navillus.dev/",
+      "like-of": "https://navillus.dev/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/381ae3e36b8e77e70d453b35421a8a307c4bd5af3c82a34ed95472848c29d264.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1432801476120875010#favorited-by-1428789526449827840",
+      "published": null,
+      "wm-received": "2021-09-02T23:14:01Z",
+      "wm-id": 1261348,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1432801476120875010/1428789526449827840",
+      "wm-target": "https://navillus.dev/",
+      "like-of": "https://navillus.dev/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Steve Lee",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/4c7b07ff194ba5e475b08551c09058686580054cdef3127c6f97080ad2327d37.jpg",
+        "url": "https://twitter.com/SteveALee"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-14166962",
+      "published": null,
+      "wm-received": "2021-08-26T21:29:17Z",
+      "wm-id": 1256085,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/14166962",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Rio",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/436f99c5a9c757cd6e7dfb70fcf68b654402b4615b1634465358d01a951aca94.jpg",
+        "url": "https://twitter.com/sirio"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-5544082",
+      "published": null,
+      "wm-received": "2021-08-25T04:41:56Z",
+      "wm-id": 1253884,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/5544082",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "rong-sen",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/bd662d7c93031c6644dc523f510fce426b540274c09cfd2899c14c4d719d6803.jpg",
+        "url": "https://twitter.com/igarshmyb"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-75338702",
+      "published": null,
+      "wm-received": "2021-08-25T03:09:54Z",
+      "wm-id": 1253841,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/75338702",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Gaël Poupard",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/bebb7c8bbc4d5d316c64a4e8278e4fb1a662dd836590aa669864c8f7d7ca013d.jpeg",
+        "url": "https://twitter.com/ffoodd_fr"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-259814870",
+      "published": null,
+      "wm-received": "2021-08-24T18:57:28Z",
+      "wm-id": 1253611,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/259814870",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "WebComponents.dev",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/b759182a1a096334984466c66319037cb5ab13ad15a8ef41b08bf89678d1ecc5.jpg",
+        "url": "https://twitter.com/webcomp_dev"
+      },
+      "url": "https://twitter.com/webcomp_dev/status/1430201072321273860",
+      "published": "2021-08-24T16:11:22+00:00",
+      "wm-received": "2021-08-24T16:38:16Z",
+      "wm-id": 1253556,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1430201072321273860",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kitto",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/fed6ced517a4dba31c634d17868c2ba2b8d6ec8961a96d7f1649250b154a6956.jpg",
+        "url": "https://twitter.com/itskitto_dev"
+      },
+      "url": "https://twitter.com/itskitto_dev/status/1430193398447853576",
+      "published": "2021-08-24T15:40:52+00:00",
+      "wm-received": "2021-08-24T16:38:16Z",
+      "wm-id": 1253557,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1430193398447853576",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Ron Henry",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/4eb4dfa76a3e1674b84054d66d1e109647ab446153b5ee17d82a70860448350d.jpg",
+        "url": "https://twitter.com/ronhenrypoh"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-19115062",
+      "published": null,
+      "wm-received": "2021-08-24T16:38:15Z",
+      "wm-id": 1253554,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/19115062",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "fks",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/74851a0d9b578eab9f6decf0f6dd65fdf82988c3b080c19ad37501daf9aa08f3.jpg",
+        "url": "https://twitter.com/FredKSchott"
+      },
+      "url": "https://twitter.com/FredKSchott/status/1430204504603979778",
+      "published": "2021-08-24T16:25:00+00:00",
+      "wm-received": "2021-08-24T16:38:15Z",
+      "wm-id": 1253555,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1430204504603979778",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Karan Ganesan",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/3100686ccb03e92e05c9c6acd5e94e81aeb0fb49701e6dbfc731d292aca57d0d.jpg",
+        "url": "https://twitter.com/karanganesan"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1369182355",
+      "published": null,
+      "wm-received": "2021-08-24T16:38:14Z",
+      "wm-id": 1253552,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1369182355",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kitto",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/fed6ced517a4dba31c634d17868c2ba2b8d6ec8961a96d7f1649250b154a6956.jpg",
+        "url": "https://twitter.com/itskitto_dev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1354136802232250368",
+      "published": null,
+      "wm-received": "2021-08-24T16:38:14Z",
+      "wm-id": 1253553,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1354136802232250368",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "jellydn",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/aec7a6a0bbe6ea27b103eb6b19f5babfd517b8cdd4746a692ccf5b3ca516f9c9.jpg",
+        "url": "https://twitter.com/jellydn"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-89360130",
+      "published": null,
+      "wm-received": "2021-08-24T16:38:13Z",
+      "wm-id": 1253550,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/89360130",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "fks",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/74851a0d9b578eab9f6decf0f6dd65fdf82988c3b080c19ad37501daf9aa08f3.jpg",
+        "url": "https://twitter.com/FredKSchott"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1308732128",
+      "published": null,
+      "wm-received": "2021-08-24T16:38:13Z",
+      "wm-id": 1253551,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1308732128",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Rich Haines",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/52e776e207a053666495f80c0feaf7e4649a7a2d1d477ee8408593c6c981808c.jpg",
+        "url": "https://twitter.com/studio_hungry"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1025494621164630016",
+      "published": null,
+      "wm-received": "2021-08-24T11:26:47Z",
+      "wm-id": 1253384,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1025494621164630016",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Datadev",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/440b105bc1c4997546afc2f1899a074fcdc8bb404417e48ddb271caf91997759.jpg",
+        "url": "https://twitter.com/Paypane"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-213390200",
+      "published": null,
+      "wm-received": "2021-08-24T10:20:24Z",
+      "wm-id": 1253371,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/213390200",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jake",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/55452fdbb1b010495f28472fab8127f5c5d5ed7aa4f83162020af3774bb163a8.jpg",
+        "url": "https://twitter.com/JakeDChampion"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-2260815740",
+      "published": null,
+      "wm-received": "2021-08-24T09:34:58Z",
+      "wm-id": 1253366,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/2260815740",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/381ae3e36b8e77e70d453b35421a8a307c4bd5af3c82a34ed95472848c29d264.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1428789526449827840",
+      "published": null,
+      "wm-received": "2021-08-24T07:21:12Z",
+      "wm-id": 1253321,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1428789526449827840",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/381ae3e36b8e77e70d453b35421a8a307c4bd5af3c82a34ed95472848c29d264.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1430054356834037785",
+      "published": "2021-08-24T06:28:22+00:00",
+      "wm-received": "2021-08-24T07:21:12Z",
+      "wm-id": 1253322,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1430054356834037785",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "JamstackJobs",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/6763ae60100e7ad4ea00f07db56030db7ea1c5c3cb2881354c4502ae84696eb0.png",
+        "url": "https://twitter.com/Jamstack_Jobs"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1400766564429860872",
+      "published": null,
+      "wm-received": "2021-08-24T07:21:10Z",
+      "wm-id": 1253319,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1400766564429860872",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "bLaCkwEw",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/81f48f0726505d84daa3a9e290b86db4de3245b67c701ed2956e8149ae440e70.jpg",
+        "url": "https://twitter.com/bLaCkwEwGG"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1225417921226256392",
+      "published": null,
+      "wm-received": "2021-08-24T07:21:10Z",
+      "wm-id": 1253320,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1225417921226256392",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Marlon Marcello",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/b589fdee682d84562244efda6a4b817246c393a51a6cdd05ed4457d2e619f89f.jpg",
+        "url": "https://twitter.com/marlonmarcello"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-43386968",
+      "published": null,
+      "wm-received": "2021-08-24T03:50:18Z",
+      "wm-id": 1253232,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/43386968",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "david metcalf",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/418a6d0bf6ec83e8f7cb699e5732dc319d579b4f71213dba965df9ca045b9081.jpg",
+        "url": "https://twitter.com/gloriousLoaf"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1286447888822702080",
+      "published": null,
+      "wm-received": "2021-08-24T02:01:35Z",
+      "wm-id": 1253110,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1286447888822702080",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "J2P",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2f81300a9abee4a272a2ca683ec45efb7e3bb4f2a3e39c119e5a55c98fd6c97c.jpg",
+        "url": "https://twitter.com/J2P_"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-122488754",
+      "published": null,
+      "wm-received": "2021-08-24T02:01:06Z",
+      "wm-id": 1253108,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/122488754",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Rafa Romero Dios",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/02dad0df1ae63e9f821fa9be1846bbcc37cc39604c44b05b19014c677ef21fea.jpg",
+        "url": "https://twitter.com/rafaFERIAH"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-222623019",
+      "published": null,
+      "wm-received": "2021-08-24T02:01:06Z",
+      "wm-id": 1253109,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/222623019",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Serhii Kulykov",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/b5d7eceb4114030bb63e38f383f3aa6297063dfa87c73552c195bad120229616.jpg",
+        "url": "https://twitter.com/serhiikulykov"
+      },
+      "url": "https://twitter.com/serhiikulykov/status/1429916679769833472",
+      "published": "2021-08-23T21:21:17+00:00",
+      "wm-received": "2021-08-23T23:47:55Z",
+      "wm-id": 1253067,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1429916679769833472",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "yeraycaballero",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/196e1d90cb0d535a87897829e9d157b4adae52c0308b2bac3af86a14f047d5ae.jpg",
+        "url": "https://twitter.com/yeraycaballero"
+      },
+      "url": "https://twitter.com/yeraycaballero/status/1429921415671787526",
+      "published": "2021-08-23T21:40:06+00:00",
+      "wm-received": "2021-08-23T23:47:54Z",
+      "wm-id": 1253066,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1429921415671787526",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Westbrook",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1607b524ddb6653f31c5e31abee7894878f0398ed3013bc9b73d501b30a492a2.jpg",
+        "url": "https://twitter.com/WestbrookJ"
+      },
+      "url": "https://twitter.com/WestbrookJ/status/1429929056494133250",
+      "published": "2021-08-23T22:10:28+00:00",
+      "wm-received": "2021-08-23T23:47:53Z",
+      "wm-id": 1253064,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1429929056494133250",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Web Components SF",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/6d1b772c4a260da719b891223c4eedea3e24ba0a271908a30f2466e0e6369033.jpg",
+        "url": "https://twitter.com/WebComponentsSF"
+      },
+      "url": "https://twitter.com/WebComponentsSF/status/1429927701264035841",
+      "published": "2021-08-23T22:05:05+00:00",
+      "wm-received": "2021-08-23T23:47:53Z",
+      "wm-id": 1253065,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1429927701264035841",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Chris Haynes",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f67fbac012debfd82bbbead2387dd493237524fdf72a6b6c69922fcc0dcd061c.jpg",
+        "url": "https://twitter.com/lamplightdev"
+      },
+      "url": "https://twitter.com/lamplightdev/status/1429933644546707456",
+      "published": "2021-08-23T22:28:42+00:00",
+      "wm-received": "2021-08-23T23:47:52Z",
+      "wm-id": 1253063,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1429933644546707456",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Noel",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f2405b6ea671fd11684d0583003c6282aa95b8ce10870ec6383223f54614e09f.jpg",
+        "url": "https://twitter.com/Noel_O_C"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-364783043",
+      "published": null,
+      "wm-received": "2021-08-23T23:47:51Z",
+      "wm-id": 1253061,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/364783043",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jacky Chan",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/020ada05f489f28bfb15e0fb21d2ffa9b6b3475dd36dc3aa0d097fb2910c6548.png",
+        "url": "https://twitter.com/linux_china"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-19276943",
+      "published": null,
+      "wm-received": "2021-08-23T23:47:51Z",
+      "wm-id": 1253062,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/19276943",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Westbrook",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1607b524ddb6653f31c5e31abee7894878f0398ed3013bc9b73d501b30a492a2.jpg",
+        "url": "https://twitter.com/WestbrookJ"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-16910874",
+      "published": null,
+      "wm-received": "2021-08-23T23:47:50Z",
+      "wm-id": 1253060,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/16910874",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Web Components SF",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/6d1b772c4a260da719b891223c4eedea3e24ba0a271908a30f2466e0e6369033.jpg",
+        "url": "https://twitter.com/WebComponentsSF"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1163962135669460997",
+      "published": null,
+      "wm-received": "2021-08-23T23:47:49Z",
+      "wm-id": 1253058,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1163962135669460997",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Serhii Kulykov",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/b5d7eceb4114030bb63e38f383f3aa6297063dfa87c73552c195bad120229616.jpg",
+        "url": "https://twitter.com/serhiikulykov"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-3346333979",
+      "published": null,
+      "wm-received": "2021-08-23T23:47:49Z",
+      "wm-id": 1253059,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/3346333979",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "HIPHOP and CODE - 〚...LOVE〛 - all day. err day.",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/a54d061a01a021f8fbfb5ffc234650a94ce5965e1b6142296b01c77b57e2e4b9.jpg",
+        "url": "https://twitter.com/lifelongdev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1274480724826038272",
+      "published": null,
+      "wm-received": "2021-08-23T23:47:47Z",
+      "wm-id": 1253056,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1274480724826038272",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Elliott",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/02318a5c4427d5288c6938a61ce17d20930b29402794670cc735eb612a3b0b72.jpg",
+        "url": "https://twitter.com/techytacos"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-3256261052",
+      "published": null,
+      "wm-received": "2021-08-23T23:47:47Z",
+      "wm-id": 1253057,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/3256261052",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Nate Moore",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1777eaca4cbf177981f6fcbc375facb3bce28c136c9257368c7dc0fd661332ee.jpg",
+        "url": "https://twitter.com/n_moore"
+      },
+      "url": "https://twitter.com/n_moore/status/1429906263601815556",
+      "published": "2021-08-23T20:39:54+00:00",
+      "wm-received": "2021-08-23T21:26:03Z",
+      "wm-id": 1252956,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1429906263601815556",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Astro",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/53edf69fa04faa522ef9dceb688ac795e7a5199295f447764751ddc3c19ee14a.jpg",
+        "url": "https://twitter.com/astrodotbuild"
+      },
+      "url": "https://twitter.com/astrodotbuild/status/1429912838231887889",
+      "published": "2021-08-23T21:06:01+00:00",
+      "wm-received": "2021-08-23T21:26:03Z",
+      "wm-id": 1252957,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1429903001574068232/1429912838231887889",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "content": {
+        "text": "Curious how to use the latest #webcomponents spec in @astrobuild?\n\nThe Astro.resolve() API recently added in v0.19 makes it dead simple to write native custom elements, bundle them for production, and load them client side\n\n#FrontEndDevelopment \n\nnavillus.dev/blog/web-compo…"
+      },
+      "repost-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Astro",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/53edf69fa04faa522ef9dceb688ac795e7a5199295f447764751ddc3c19ee14a.jpg",
+        "url": "https://twitter.com/astrodotbuild"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-1376650370340986883",
+      "published": null,
+      "wm-received": "2021-08-23T21:26:02Z",
+      "wm-id": 1252954,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/1376650370340986883",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sam @ Autify",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/7d9abe6b3a39af797267b5acb8a80f7e5163d6c22b3c5ba326a7a19af790b1a1.jpg",
+        "url": "https://twitter.com/sota0805"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-195802472",
+      "published": null,
+      "wm-received": "2021-08-23T21:26:02Z",
+      "wm-id": 1252955,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/195802472",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Shreesh",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/eb4a5216e8761b62fe5df74f0e7bf5dfbe547e68cb16e9e4b41df86fe0165f6d.jpg",
+        "url": "https://twitter.com/shreeshbhat"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-219056718",
+      "published": null,
+      "wm-received": "2021-08-23T21:26:01Z",
+      "wm-id": 1252953,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/219056718",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Nate Moore",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1777eaca4cbf177981f6fcbc375facb3bce28c136c9257368c7dc0fd661332ee.jpg",
+        "url": "https://twitter.com/n_moore"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-41262231",
+      "published": null,
+      "wm-received": "2021-08-23T21:26:00Z",
+      "wm-id": 1252951,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/41262231",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Carles Muiños",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c2eaf8cc4be9e3ccd1b887e86329af39b2ec759f1af380a5ad07d8d9e9c2d833.jpg",
+        "url": "https://twitter.com/zuzudev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-487592858",
+      "published": null,
+      "wm-received": "2021-08-23T21:26:00Z",
+      "wm-id": 1252952,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/487592858",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "JohnM",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/46b831cb91127e803d882166f9b4eea3ee133eac6f56fe1b5b95f86cdabbac50.jpg",
+        "url": "https://twitter.com/JohnM19018119"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-1419853116711784480",
+      "published": null,
+      "wm-received": "2021-08-21T13:59:39Z",
+      "wm-id": 1251769,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/1419853116711784480",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "JohnM",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/46b831cb91127e803d882166f9b4eea3ee133eac6f56fe1b5b95f86cdabbac50.jpg",
+        "url": "https://twitter.com/JohnM19018119"
+      },
+      "url": "https://twitter.com/JohnM19018119/status/1429033626008760320",
+      "published": "2021-08-21T10:52:21+00:00",
+      "wm-received": "2021-08-21T13:59:39Z",
+      "wm-id": 1251770,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1422604180984934404/1429033626008760320",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "text": "Wondering what changed in Astro's Collections API in v0.18.0, and how to update to it?\n\nCheck the out our latest post to see what's changed and how easy it now is to take full advantage of @forestryio Instant Previews with @astrodotbuild!\n\n#builtwithastro\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "repost-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "PEIDevs",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/5a44df495e7b6115698e38783a1016f4f36216d4d48db0456fcfb4722d79a296.jpg",
+        "url": "https://twitter.com/PEIDevs"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1409606618854088714#favorited-by-2189865291",
+      "published": null,
+      "wm-received": "2021-08-11T19:37:06Z",
+      "wm-id": 1244343,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1409606618854088714/2189865291",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Saju Thankappan",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/3f6dea3d2983c0fec0d4bad550b9dea65e262f56bd2641d37cd40720939ce362.jpg",
+        "url": "https://twitter.com/sajuthankappan"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1418952288476012545#favorited-by-3348404675",
+      "published": null,
+      "wm-received": "2021-08-09T19:30:24Z",
+      "wm-id": 1242528,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/3348404675",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Carles Muiños",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c2eaf8cc4be9e3ccd1b887e86329af39b2ec759f1af380a5ad07d8d9e9c2d833.jpg",
+        "url": "https://twitter.com/zuzudev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1424057461368135681#favorited-by-487592858",
+      "published": null,
+      "wm-received": "2021-08-08T03:37:57Z",
+      "wm-id": 1240555,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1424057461368135681/487592858",
+      "wm-target": "https://navillus.dev/blog/power-of-simplicity",
+      "like-of": "https://navillus.dev/blog/power-of-simplicity",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Coding Dodo",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/9f28e89379922258f8b0f6a132a1b76d94ead2cb0bdd4d83fa785460f4c4560b.jpg",
+        "url": "https://twitter.com/CodingDodo_"
+      },
+      "url": "https://twitter.com/CodingDodo_/status/1423494428531036161",
+      "published": "2021-08-06T04:01:33+00:00",
+      "wm-received": "2021-08-06T04:33:31Z",
+      "wm-id": 1239213,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1422604180984934404/1423494428531036161",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "text": "Wondering what changed in Astro's Collections API in v0.18.0, and how to update to it?\n\nCheck the out our latest post to see what's changed and how easy it now is to take full advantage of @forestryio Instant Previews with @astrodotbuild!\n\n#builtwithastro\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "repost-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jorge González",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c37d58fb7570b7fc2c749e974aa5efec6ae1abfef7673ce079fdb9fb2aa1a472.jpg",
+        "url": "https://twitter.com/iksaku2"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-255728220",
+      "published": null,
+      "wm-received": "2021-08-05T23:20:54Z",
+      "wm-id": 1239031,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/255728220",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David Easton",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/52cc4a640957ccea8f0c3428f79a2aaf50225d81ea69e34576e7e75b18549f32.jpg",
+        "url": "https://twitter.com/Dweebvid"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-161019045",
+      "published": null,
+      "wm-received": "2021-08-05T16:45:32Z",
+      "wm-id": 1238609,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/161019045",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Forestry CMS",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c6953d0cdf287770da0ab4ac70781302c7de92ccdffaa1e5cae739ceebfb775e.jpg",
+        "url": "https://twitter.com/forestryio"
+      },
+      "url": "https://twitter.com/forestryio/status/1423251438063521792",
+      "published": "2021-08-05T11:56:00+00:00",
+      "wm-received": "2021-08-05T14:08:34Z",
+      "wm-id": 1238434,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1423258386758524935",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "html": "The beauty of embracing open formats like Markdown and JSON on top of Git is that a CMS you designed more than 5 years ago, works perfectly with the latest modern web tooling.\n\nNow go check <a href=\"https://twitter.com/astrodotbuild\">@astrodotbuild</a> to ship faster websites 🚀\n<a class=\"u-mention\" href=\"https://navillus.dev/blog/astro-plus-forestry-revisited\"></a>",
+        "text": "The beauty of embracing open formats like Markdown and JSON on top of Git is that a CMS you designed more than 5 years ago, works perfectly with the latest modern web tooling.\n\nNow go check @astrodotbuild to ship faster websites 🚀"
+      },
+      "mention-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Paul Hart",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f7a9c766fb35e2644e18d9b5b5ea3ad7b6c095891405e2ce83d1c86c976f5621.jpg",
+        "url": "https://twitter.com/atomicjeep"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-32313",
+      "published": null,
+      "wm-received": "2021-08-05T14:08:34Z",
+      "wm-id": 1238435,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/32313",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Forestry CMS",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c6953d0cdf287770da0ab4ac70781302c7de92ccdffaa1e5cae739ceebfb775e.jpg",
+        "url": "https://twitter.com/forestryio"
+      },
+      "url": "https://twitter.com/forestryio/status/1423251438063521792",
+      "published": "2021-08-05T11:56:00+00:00",
+      "wm-received": "2021-08-05T12:11:53Z",
+      "wm-id": 1238331,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1423251438063521792",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "html": "The beauty of embracing open formats like Markdown and JSON on top of Git is that a CMS you designed more than 5 years ago, works perfectly with the latest modern web tooling.\n\nNow go check <a href=\"https://twitter.com/astrodotbuild\">@astrodotbuild</a> to ship faster websites 🚀\n<a class=\"u-mention\" href=\"https://navillus.dev/blog/astro-plus-forestry-revisited\"></a>",
+        "text": "The beauty of embracing open formats like Markdown and JSON on top of Git is that a CMS you designed more than 5 years ago, works perfectly with the latest modern web tooling.\n\nNow go check @astrodotbuild to ship faster websites 🚀"
+      },
+      "mention-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Forestry CMS",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c6953d0cdf287770da0ab4ac70781302c7de92ccdffaa1e5cae739ceebfb775e.jpg",
+        "url": "https://twitter.com/forestryio"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-3423374429",
+      "published": null,
+      "wm-received": "2021-08-04T23:47:04Z",
+      "wm-id": 1237847,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/3423374429",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Yoan Marchal",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/dac507d9036b7b2cb30c93bd3eef4d41e75928f34ff8a24371bff5d57024c848.jpg",
+        "url": "https://twitter.com/yo_0"
+      },
+      "url": "https://twitter.com/yo_0/status/1422899322614648836",
+      "published": "2021-08-04T12:36:49+00:00",
+      "wm-received": "2021-08-04T14:05:50Z",
+      "wm-id": 1237174,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1422604180984934404/1422899322614648836",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "text": "Wondering what changed in Astro's Collections API in v0.18.0, and how to update to it?\n\nCheck the out our latest post to see what's changed and how easy it now is to take full advantage of @forestryio Instant Previews with @astrodotbuild!\n\n#builtwithastro\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "repost-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Konstantin BIFERT 🍉",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/6649a52931a27c043de7a83856e4809186436c02907272bb780b38fe4b8dd516.jpg",
+        "url": "https://twitter.com/kissu_io"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-2996990355",
+      "published": null,
+      "wm-received": "2021-08-04T09:55:55Z",
+      "wm-id": 1237036,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/2996990355",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TRST_Blog",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8c872b78457b09bb978c4fd62406b1225e0736e1c6a1c13419921a86abd9d683.jpg",
+        "url": "https://twitter.com/trst_blog"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-289095641",
+      "published": null,
+      "wm-received": "2021-08-04T04:30:19Z",
+      "wm-id": 1236896,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/289095641",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "fks",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/74851a0d9b578eab9f6decf0f6dd65fdf82988c3b080c19ad37501daf9aa08f3.jpg",
+        "url": "https://twitter.com/FredKSchott"
+      },
+      "url": "https://twitter.com/FredKSchott/status/1422636760241037314",
+      "published": "2021-08-03T19:13:29+00:00",
+      "wm-received": "2021-08-03T20:27:52Z",
+      "wm-id": 1236598,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1422604180984934404/1422636760241037314",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "text": "Wondering what changed in Astro's Collections API in v0.18.0, and how to update to it?\n\nCheck the out our latest post to see what's changed and how easy it now is to take full advantage of @forestryio Instant Previews with @astrodotbuild!\n\n#builtwithastro\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "repost-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Marlon Marcello",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/b589fdee682d84562244efda6a4b817246c393a51a6cdd05ed4457d2e619f89f.jpg",
+        "url": "https://twitter.com/marlonmarcello"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-43386968",
+      "published": null,
+      "wm-received": "2021-08-03T20:27:51Z",
+      "wm-id": 1236596,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/43386968",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Dannie Vinther",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8037d9eed4029b99a65bbc72fa17f697f20d505045c18975197330ff9e721b1c.jpg",
+        "url": "https://twitter.com/dannievinther"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-185734371",
+      "published": null,
+      "wm-received": "2021-08-03T20:27:51Z",
+      "wm-id": 1236597,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/185734371",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "fks",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/74851a0d9b578eab9f6decf0f6dd65fdf82988c3b080c19ad37501daf9aa08f3.jpg",
+        "url": "https://twitter.com/FredKSchott"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-1308732128",
+      "published": null,
+      "wm-received": "2021-08-03T20:27:49Z",
+      "wm-id": 1236594,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/1308732128",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "bLaCkwEw",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/81f48f0726505d84daa3a9e290b86db4de3245b67c701ed2956e8149ae440e70.jpg",
+        "url": "https://twitter.com/bLaCkwEwGG"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-1225417921226256392",
+      "published": null,
+      "wm-received": "2021-08-03T20:27:49Z",
+      "wm-id": 1236595,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/1225417921226256392",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Astro",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/53edf69fa04faa522ef9dceb688ac795e7a5199295f447764751ddc3c19ee14a.jpg",
+        "url": "https://twitter.com/astrodotbuild"
+      },
+      "url": "https://twitter.com/astrodotbuild/status/1422611908654354437",
+      "published": "2021-08-03T17:34:44+00:00",
+      "wm-received": "2021-08-03T18:58:12Z",
+      "wm-id": 1236542,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1422604180984934404/1422611908654354437",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "text": "Wondering what changed in Astro's Collections API in v0.18.0, and how to update to it?\n\nCheck the out our latest post to see what's changed and how easy it now is to take full advantage of @forestryio Instant Previews with @astrodotbuild!\n\n#builtwithastro\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "repost-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthew Phillips",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/6d7638a1ee6e9af1c05c7b08256217d6ed989ffba71b68653b786f17d06adb76.jpg",
+        "url": "https://twitter.com/matthewcp"
+      },
+      "url": "https://twitter.com/matthewcp/status/1422611963771867140",
+      "published": "2021-08-03T17:34:57+00:00",
+      "wm-received": "2021-08-03T18:58:11Z",
+      "wm-id": 1236541,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1422604180984934404/1422611963771867140",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "text": "Wondering what changed in Astro's Collections API in v0.18.0, and how to update to it?\n\nCheck the out our latest post to see what's changed and how easy it now is to take full advantage of @forestryio Instant Previews with @astrodotbuild!\n\n#builtwithastro\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "repost-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matt Biilmann",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/af70cb924db6d4dfc56c9c7cf65e39cf6e3901836a903a237357a1fc28c1c6a5.jpg",
+        "url": "https://twitter.com/biilmann"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-24203304",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:10Z",
+      "wm-id": 1236539,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/24203304",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Juan",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c8d4926eb8956ffa42427cd4ffc4fe6a1efc242f9e21f783dc357ac984666c7b.jpg",
+        "url": "https://twitter.com/jose8a"
+      },
+      "url": "https://twitter.com/jose8a/status/1422629195117588480",
+      "published": "2021-08-03T18:43:25+00:00",
+      "wm-received": "2021-08-03T18:58:10Z",
+      "wm-id": 1236540,
+      "wm-source": "https://brid.gy/repost/twitter/navillus_dev/1422604180984934404/1422629195117588480",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "content": {
+        "text": "Wondering what changed in Astro's Collections API in v0.18.0, and how to update to it?\n\nCheck the out our latest post to see what's changed and how easy it now is to take full advantage of @forestryio Instant Previews with @astrodotbuild!\n\n#builtwithastro\n\nnavillus.dev/blog/astro-plu…"
+      },
+      "repost-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sarah Rainsberger",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/10cfe082ff1c77d7f5c86d80b6512144f982d432d4532924894eef09bbf2c026.png",
+        "url": "https://twitter.com/sarah11918"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-14871106",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:09Z",
+      "wm-id": 1236537,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/14871106",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Patrick Haug",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/5e80846b9c2832c2826a4d006df82dfba9f8f75ea832611b044dbb8d0c404183.jpg",
+        "url": "https://twitter.com/patrickhaug"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-17791881",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:09Z",
+      "wm-id": 1236538,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/17791881",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Astro",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/53edf69fa04faa522ef9dceb688ac795e7a5199295f447764751ddc3c19ee14a.jpg",
+        "url": "https://twitter.com/astrodotbuild"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-1376650370340986883",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:08Z",
+      "wm-id": 1236536,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/1376650370340986883",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kitto",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/fed6ced517a4dba31c634d17868c2ba2b8d6ec8961a96d7f1649250b154a6956.jpg",
+        "url": "https://twitter.com/itskitto_dev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-1354136802232250368",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:07Z",
+      "wm-id": 1236534,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/1354136802232250368",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Shreesh",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/eb4a5216e8761b62fe5df74f0e7bf5dfbe547e68cb16e9e4b41df86fe0165f6d.jpg",
+        "url": "https://twitter.com/shreeshbhat"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-219056718",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:07Z",
+      "wm-id": 1236535,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/219056718",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Rodolphe",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/93efc670b40af6aa47303d690229ba830967ca80b7a6427afe9b3b4f53ff216a.jpg",
+        "url": "https://twitter.com/RDLPHMCHRD"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-114706496",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:06Z",
+      "wm-id": 1236532,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/114706496",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jonathan Neal",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f43b93d8bae4bb8eb00b5260bb32a0ff0e182ccd3ccb179a2e75987d26ed0143.jpg",
+        "url": "https://twitter.com/jon_neal"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-103049472",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:06Z",
+      "wm-id": 1236533,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/103049472",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Carles Muiños",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c2eaf8cc4be9e3ccd1b887e86329af39b2ec759f1af380a5ad07d8d9e9c2d833.jpg",
+        "url": "https://twitter.com/zuzudev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1422604180984934404#favorited-by-487592858",
+      "published": null,
+      "wm-received": "2021-08-03T18:58:05Z",
+      "wm-id": 1236531,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1422604180984934404/487592858",
+      "wm-target": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "like-of": "https://navillus.dev/blog/astro-plus-forestry-revisited",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Rio",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/436f99c5a9c757cd6e7dfb70fcf68b654402b4615b1634465358d01a951aca94.jpg",
+        "url": "https://twitter.com/sirio"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1418952288476012545#favorited-by-5544082",
+      "published": null,
+      "wm-received": "2021-07-31T17:55:46Z",
+      "wm-id": 1234430,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/5544082",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "demik",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/85acf9869d0491807cb4604b202713b4f7168595a55ccbf98887acb5a4a15038.jpg",
+        "url": "https://twitter.com/demik109"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1418952288476012545#favorited-by-300097964",
+      "published": null,
+      "wm-received": "2021-07-31T13:36:08Z",
+      "wm-id": 1234370,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/300097964",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Santi Cros",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/26ed32e491d7c8af9fca0ba78853671fee1f94dc85d8ccf4df3d404c84566c7b.jpg",
+        "url": "https://twitter.com/santi_cros"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1418952288476012545#favorited-by-1245635030874877958",
+      "published": null,
+      "wm-received": "2021-07-29T19:49:57Z",
+      "wm-id": 1233312,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/1245635030874877958",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
       "wm-private": false
     }
   ]

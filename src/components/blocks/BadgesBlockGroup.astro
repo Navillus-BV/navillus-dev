@@ -8,9 +8,9 @@ const { title, items } = Astro.props as CMS.BadgesBlockGroup
   <h4 class="h6"><strong>{title}</strong></h4>
 
   <ul>
-    {items.map(({ icon, title }) => (
+    {items.map(({ icon, description }) => (
       <li>
-        <Icon id={icon} title={title} />
+        <Icon id={icon} title={description} />
       </li>
     ))}
   </ul>

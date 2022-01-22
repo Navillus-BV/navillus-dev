@@ -1,18 +1,17 @@
 ---
-  template: post
-  author: tony-sull
-  permalink: /blog/introducing-chisel
-  published: true
-  seo:
-    title: Introducing chisel.css
-    description: A (work-in-progress) minimalist CSS framework.
-    image: posts/2021-06-02-introducing-chisel.jpg
-  date: 2021-06-02
-  last_modified_at: 2021-06-05
-  tweetId: '1401971725412282374'
-  tags:
-    - intro
-    - css
+title: Introducing chisel.css
+description: A (work-in-progress) minimalist CSS framework.
+social_image: '/uploads/2021-06-02-introducing-chisel.jpg'
+date: '2021-06-02T17:37:30Z'
+tags:
+  - intro
+  - css
+permalink: '/blog/introducing-chisel'
+published: true
+last_modified_at: '2021-06-05T00:00:00Z'
+blocks: []
+tweet_id: '1401971725412282374'
+author: src/data/authors/tony-sull.json
 ---
 
 Have you ever really tried rendering some HTML without any CSS? It's a hot mess! Modern browsers are [operating systems](https://www.google.com/chromebook/chrome-os/) unto themselves these days - I don't envy anyone who has to sift through the complexity to add even a basic feature to a browser these days. But damn do I wish they would add spend a couple days to ship some decent looking default styles for HTML5 elements!

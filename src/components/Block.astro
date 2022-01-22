@@ -2,7 +2,6 @@
 import BadgesBlock from './blocks/BadgesBlock.astro'
 import ContactBlock from './blocks/ContactBlock.astro'
 import FeaturesBlock from './blocks/FeaturesBlock.astro'
-import Show from './Show.astro'
 
 interface Props {
   block: CMS.Block
@@ -11,15 +10,15 @@ interface Props {
 const { block } = Astro.props as Props
 
 function isBadgesBlock(block: CMS.Block): block is CMS.BadgesBlock {
-  return block.template === 'badgesblock'
+  return block.template === 'badges-block'
 }
 
 function isContactBlock(block: CMS.Block): block is CMS.ContactBlock {
-  return block.template === 'contactblock'
+  return block.template === 'contact-block'
 }
 
 function isFeaturesBlock(block: CMS.Block): block is CMS.FeaturesBlock {
-  return block.template === 'featuresblock'
+  return block.template === 'features-block'
 }
 
 const Block = isBadgesBlock(block)
@@ -31,6 +30,4 @@ const Block = isBadgesBlock(block)
   : undefined
 ---
 
-<Show when={!!Block}>
-  <Block {...block} />
-</Show>
+{Block && <Block {...block} />}

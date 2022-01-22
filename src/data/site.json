@@ -1,15 +1,9 @@
 {
-  "title": "Jamstack developers for hire",
+  "title": "Navillus",
   "description": "We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.",
-  "url": "https://navillus.dev/",
-  "domain": "navillus.dev",
+  "image": "/uploads/share.png",
+  "url": "https://navillus.dev",
   "author": "Navillus",
-  "social": {
-    "twitter": "navillus_dev",
-    "twitter_card": "summary_large_image",
-    "image": "assets/share.png"
-  },
-  "company": {
-    "name": "Navillus"
-  }
+  "twitter_handle": "navillus_dev",
+  "twitter_card": "summary_large_image"
 }

@@ -1,31 +1,12 @@
 ---
-import LegalLayout from '../layouts/Legal.astro'
-import PageLayout from '../layouts/Page.astro'
+import Layout from '../layouts/Hero.astro'
 import { getPage, isPublished, hasPermalink } from '../utils/cms.ts'
-import { organizationSchema, websiteSchema } from '../utils/jsonLD.ts'
 
-const page: CMS.Page = getPage(
+const page = getPage(
   Astro.fetchContent('../data/pages/*.md')
     .filter(isPublished)
     .find(hasPermalink('/'))
 )
-
-function isContentPage(page: CMS.Page): page is CMS.ContentPage {
-  return page.template === 'page'
-}
-
-function isLegalPage(page: CMS.Page): page is CMS.LegalPage {
-  return page.template === 'legal'
-}
-
-const Layout = isContentPage(page)
-  ? PageLayout
-  : isLegalPage(page)
-  ? LegalLayout
-  : PageLayout
 ---
 
-<Layout {...page}>
-  {websiteSchema}
-  {organizationSchema}
-</Layout>
+<Layout {...page} />

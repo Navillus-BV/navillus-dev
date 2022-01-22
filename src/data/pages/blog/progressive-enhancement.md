@@ -1,18 +1,19 @@
 ---
-  template: post
-  author: tony-sull
-  permalink: /blog/progressive-enhancement
-  published: true
-  seo:
-    title: Progressively enhancing Svelte with JavaScript
-    description: That's right! Your site built with a JS framework with client-side code can still support users with JS disabled.
-    image: posts/2021-05-08-progressive-enhancement.jpg
-  date: 2021-05-08
-  last_modified_at: 2021-06-05
-  tweetId: '1402315819015622658'
-  tags:
-    - svelte
-    - accessibility
+title: Progressively enhancing Svelte with JavaScript
+description:
+  That's right! Your site built with a JS framework with client-side code
+  can still support users with JS disabled.
+social_image: '/uploads/2021-05-08-progressive-enhancement.jpg'
+date: '2021-05-08T17:49:14Z'
+tags:
+  - svelte
+  - accessibility
+permalink: '/blog/progressive-enhancement'
+published: true
+last_modified_at: '2021-06-05T00:00:00Z'
+blocks: []
+tweet_id: '1402315819015622658'
+author: src/data/authors/tony-sull.json
 ---
 
 We've all heard about "mobile first" designs, but what about JavaScript last? It'll need a catchier name to really stick, but many of us ignore how important it is that basic site functionality works even if JavaScript is disabled or has failed. Browsing the web with JavaScript disabled can be a real pain but it happens more then you'd expect.

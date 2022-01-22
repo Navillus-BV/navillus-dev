@@ -1,0 +1,76 @@
+---
+label: Badges Block
+hide_body: true
+display_field: title
+fields:
+- name: block
+  type: include
+  config: {}
+  template: ui-block
+  label: Block
+- name: groups
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+  - name: items
+    type: field_group_list
+    fields:
+    - name: alt
+      type: text
+      config:
+        required: true
+      label: Description
+    - name: icon
+      type: select
+      default: []
+      config:
+        required: true
+        options:
+        - 11ty
+        - astro
+        - aws
+        - azure
+        - begin
+        - cloudflare
+        - contentful
+        - datocms
+        - digitalocean
+        - firebase
+        - forestry
+        - gatsby
+        - gridsome
+        - hugo
+        - jekyll
+        - netlify
+        - netlify-cms
+        - nextjs
+        - nuxtjs
+        - prismic
+        - render
+        - sanity
+        - sapper
+        - scully
+        - storyblok
+        - strapi
+        - sveltekit
+        - vercel
+        source:
+          type: simple
+          section: 
+          file: 
+          path: 
+      label: Icon
+    config:
+      min: 1
+      max: 
+      labelField: 
+    label: Items
+  config:
+    min: 1
+    max: 
+    labelField: 
+  label: Groups

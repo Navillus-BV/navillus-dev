@@ -1,17 +1,17 @@
 ---
-  template: post
-  author: tony-sull
-  permalink: /blog/astro-plus-forestry
-  published: true
-  seo:
-    title: Astro + Foresty CMS
-    description: Static sites powered by Forestry's git-based CMS, made easy.
-    image: posts/2021-06-28-astro-plus-forestry.jpg
-  date: 2021-06-28
-  tweetId: "1409606618854088714"
-  tags:
-    - astro
-    - cms
+title: Astro + Forestry CMS
+description: Static sites powered by Forestry's git-based CMS, made easy.
+social_image: '/uploads/2021-06-28-astro-plus-forestry.jpg'
+date: '2021-06-28T17:30:03Z'
+last_modified_at: ''
+tags:
+  - astro
+  - cms
+permalink: '/blog/astro-plus-forestry'
+published: true
+blocks: []
+tweet_id: '1409606618854088714'
+author: src/data/authors/tony-sull.json
 ---
 
 This is a follow-up post to our [Astro + Netlify CMS](/blog/astro-plus-netlify-cms) demo - check that one out first if you haven't read it yet!

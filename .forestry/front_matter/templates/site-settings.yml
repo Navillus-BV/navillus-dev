@@ -1,0 +1,61 @@
+---
+label: Site Settings
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  default: Navillus
+- name: description
+  type: text
+  config:
+    required: true
+  label: Description
+  default: We specialize in finding simple solutions to complex software problems.
+    We value data-driven decisions and accessibility over this month's latest tech
+    trends.
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Share Image
+  default: "/uploads/share.png"
+- name: url
+  type: text
+  config:
+    required: true
+  label: URL
+  default: https://navillus.dev
+  hidden: false
+- name: author
+  type: text
+  config:
+    required: true
+  label: Author
+  default: Navillus
+- name: twitter_handle
+  type: text
+  config:
+    required: true
+  label: Twitter Handle
+  default: navillus_dev
+- name: twitter_card
+  type: select
+  default: summary_large_image
+  config:
+    required: true
+    options:
+    - app
+    - player
+    - summary
+    - summary_large_image
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Twitter Card
+pages:
+- src/data/site.json

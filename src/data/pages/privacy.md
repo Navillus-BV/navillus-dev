@@ -1,9 +1,14 @@
 ---
-  template: legal
-  permalink: /privacy
-  title: Privacy Policy
-  last_modified_at: 2020-05-03
-  published: true
+template: legal
+title: Privacy Policy
+description:
+  We specialize in finding simple solutions to complex software problems.
+  We value data-driven decisions and accessibility over this month's latest tech trends.
+date: '2020-05-03T16:50:48Z'
+last_modified_at: '2020-05-03T16:50:48Z'
+permalink: '/privacy'
+social_image: ''
+published: true
 ---
 
 This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.

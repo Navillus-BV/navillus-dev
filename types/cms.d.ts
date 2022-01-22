@@ -1,171 +1,152 @@
 declare namespace CMS {
-  type Icon =
-    | '11ty'
-    | 'architecture'
-    | 'astro'
-    | 'aws'
-    | 'azure'
-    | 'begin'
-    | 'blogging'
-    | 'cloudflare'
-    | 'contentful'
-    | 'datocms'
-    | 'devto'
-    | 'digitalocean'
-    | 'email'
-    | 'firebase'
-    | 'forestry'
-    | 'gatsby'
-    | 'github'
-    | 'gridsome'
-    | 'hugo'
-    | 'jekyll'
-    | 'linkedin'
-    | 'money'
-    | 'netlify'
-    | 'netlify-cms'
-    | 'nextjs'
-    | 'nuxtjs'
-    | 'prismic'
-    | 'render'
-    | 'sanity'
-    | 'sapper'
-    | 'scully'
-    | 'shield'
-    | 'shopping'
-    | 'speedometer'
-    | 'storyblok'
-    | 'strapi'
-    | 'sveltekit'
-    | 'twitter'
-    | 'vercel'
+  type ContactIcon = "devto" | "email" | "github" | "rss" | "twitter";
+  type FeatureIcon =
+    | "architecture"
+    | "blogging"
+    | "money"
+    | "shield"
+    | "shopping"
+    | "speedometer";
+  type ToolIcon =
+    | "11ty"
+    | "astro"
+    | "aws"
+    | "azure"
+    | "begin"
+    | "cloudflare"
+    | "contentful"
+    | "datocms"
+    | "digitalocean"
+    | "firebase"
+    | "forestry"
+    | "gatsby"
+    | "gridsome"
+    | "hugo"
+    | "jekyll"
+    | "netlify"
+    | "netlify-cms"
+    | "nextjs"
+    | "nuxtjs"
+    | "prismic"
+    | "render"
+    | "sanity"
+    | "sapper"
+    | "scully"
+    | "storyblok"
+    | "strapi"
+    | "sveltekit"
+    | "vercel";
+  type Icon = ContactIcon | FeatureIcon | ToolIcon;
 
-  interface Site {
-    title: string
-    description: string
-    url: string
-    domain: string
-    author: string
-    social: {
-      twitter: string
-      twitter_card: string
-      image: string
-    }
-    company: {
-      name: string
-    }
+  type Markdown = string;
+
+  interface SiteSettings {
+    title: string;
+    url: string;
+    author: string;
+    twitter_handle: string;
+    twitter_card: "app" | "player" | "summary" | "summary_large_image";
   }
 
-  interface NavigationItem {
-    title: string
-    href: string
-    icon?: Icon
+  interface NavigationLink {
+    title: string;
+    page: string;
+    id?: string;
   }
 
   interface Navigation {
-    main: [NavigationItem]
-    legal: [NavigationItem]
-    social: [NavigationItem]
+    pages: [NavigationLink];
+    legal: [NavigationLink];
+    contact: [
+      {
+        title: string;
+        url: string;
+        icon: ContactIcon;
+      }
+    ];
   }
-
-  interface SEO {
-    title?: string
-    description?: string
-    image?: string
-  }
-
-  type AuthorId = string
 
   interface Author {
-    first_name: string
-    last_name: string
-    url: string
-    slug: AuthorId
+    first_name: string;
+    last_name: string;
+    url: string;
   }
 
   interface BasePage {
-    template: 'legal' | 'page' | 'post'
-    permalink: string
-    published: boolean
-    content: {
-      html: string
-      md: string
-    }
-    seo?: SEO
+    permalink: string;
+    title: string;
+    description: string;
+    image: string;
+    published: boolean;
+    date: string;
+    blocks: Block[];
+    last_modified_at?: string;
   }
 
-  interface PostPage extends BasePage {
-    date: string
-    author: AuthorId
-    tweetId?: string
-    last_modified_at?: string
-    categories?: string[]
-    tags?: string[]
-  }
-
-  interface ContentPage extends BasePage {
-    template: 'page'
-    hero?: Hero
-    blocks: Block[]
-  }
-
-  interface LegalPage extends BasePage {
-    template: 'legal'
-    last_modified_at?: string
-    title: string
-  }
-
-  type Page = ContentPage | LegalPage | PostPage
-
-  interface Link {
-    href: string
-    text: string
+  interface BlogPostPage extends BasePage {
+    template: "post";
+    author: string;
+    tweet_id?: string;
+    tags: string[];
   }
 
   interface Hero {
-    title: string
-    subtitle: string
-    content: string
-    cta: Link
+    title: string;
+    subtitle: string;
+    content: string;
+    cta?: {
+      text: string;
+      href: string;
+    };
   }
 
-  interface UIBlock {
-    title?: string
-    subtitle?: string
-    alt?: boolean
-    id?: string
+  interface HeroPage extends BasePage {
+    template: "hero";
+    hero: Hero;
+  }
+
+  interface LegalPage extends BasePage {
+    template: "legal";
+  }
+
+  interface BaseBlock {
+    title?: string;
+    subtitle?: string;
+    id?: string;
+    alt: boolean;
   }
 
   interface BadgesBlockItem {
-    title: string
-    icon: Icon
+    description: string;
+    icon: ToolIcon;
   }
 
   interface BadgesBlockGroup {
-    title: string
-    items: [BadgesBlockItem]
+    title: string;
+    items: [BadgesBlockItem];
   }
 
-  interface BadgesBlock extends UIBlock {
-    template: 'badgesblock'
-    groups: [BadgesBlockGroup]
+  interface BadgesBlock extends BaseBlock {
+    template: "badges-block";
+    groups: [BadgesBlockGroup];
   }
 
-  interface ContactBlock extends UIBlock {
-    template: 'contactblock'
-    content: string
+  interface ContactBlock extends BaseBlock {
+    template: "contact-block";
+    content: Markdown;
   }
 
   interface FeaturesBlockItem {
-    icon: Icon
-    title: string
-    content: string
+    title: string;
+    icon: FeatureIcon;
+    content: Markdown;
   }
 
-  interface FeaturesBlock extends UIBlock {
-    template: 'featuresblock'
-    items: [FeaturesBlockItem]
+  interface FeaturesBlock extends BaseBlock {
+    template: "features-block";
+    items: [FeaturesBlockItem];
   }
 
-  type Block = BadgesBlock | ContactBlock | FeaturesBlock
+  type Block = BadgesBlock | ContactBlock | FeaturesBlock;
+  type Page = BlogPostPage | HeroPage | LegalPage;
 }
