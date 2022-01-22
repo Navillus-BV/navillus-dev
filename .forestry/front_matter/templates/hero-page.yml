@@ -67,4 +67,3 @@ fields:
   label: Hero
 pages:
 - src/data/pages/blog.md
-- src/data/pages/jamstack-developers-for-hire.md

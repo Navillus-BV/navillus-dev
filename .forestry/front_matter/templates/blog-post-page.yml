@@ -36,19 +36,5 @@ fields:
   default: []
   label: Tags
 pages:
-- src/data/pages/blog/animated-page-transitions-in-astro-with-swup.md
-- src/data/pages/blog/astro-forestry-cms.md
-- src/data/pages/blog/astro-netlify-cms.md
-- src/data/pages/blog/astro-snipcart.md
-- src/data/pages/blog/class-properties-in-svelte.md
-- src/data/pages/blog/converting-our-site-to-astro.md
-- src/data/pages/blog/how-to-use-web-components-in-astro.md
-- src/data/pages/blog/including-json-ld-structured-data-in-svelte.md
-- src/data/pages/blog/introducing-chisel.css.md
 - src/data/pages/blog/introducing-svelte-entity-store.md
-- src/data/pages/blog/jamstack-2.0.md
 - src/data/pages/blog/keeping-it-simple-with-astro.md
-- src/data/pages/blog/progressively-enhancing-svelte-with-javascript.md
-- src/data/pages/blog/the-power-of-simplicity.md
-- src/data/pages/blog/the-power-of-svelte-actions.md
-- src/data/pages/blog/web-accessibility-hidden-links-make-all-the-difference.md
