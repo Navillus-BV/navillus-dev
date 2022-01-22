@@ -36,9 +36,32 @@ const initMenuInput = (element: MenuInputElement) => {
 
   element.classList.add('animate')
 }
+
+const initHeader = (element: HTMLElement) => {
+  let lastOffset = window.pageYOffset
+
+  const onScroll = () => {
+    const height = element.offsetHeight
+    const offset = window.pageYOffset
+
+    if (Math.abs(offset - lastOffset) < height / 2) {
+      return
+    }
+
+    if (offset > lastOffset) {
+      element.classList.add('hide')
+    } else {
+      element.classList.remove('hide')
+    }
+
+    lastOffset = offset
+  }
+
+  document.addEventListener('scroll', onScroll, false)
+}
 ---
 
-<header>
+<XElement @is="header" @do={initHeader}>
   <div class="container top">
     <a href="/" class="brand">
       <span class="sr-only">Go to homepage</span>
@@ -106,7 +129,7 @@ const initMenuInput = (element: MenuInputElement) => {
       </li>
     </ul>
   </nav>
-</header>
+</XElement>
 
 <style lang="scss">
   header {
@@ -114,6 +137,11 @@ const initMenuInput = (element: MenuInputElement) => {
     top: 0;
     z-index: 90;
     background: var(--chisel-primary);
+    transition: transform 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  header.hide {
+    transform: translate3d(0, -100%, 0);
   }
 
   a:not(.button) {
