@@ -10,8 +10,8 @@
     "format": "prettier -w src"
   },
   "devDependencies": {
-    "astro": "^0.22.16",
-    "astro-xelement": "^3.1.0",
+    "astro": "^0.22.20",
+    "astro-xelement": "^3.1.1",
     "chisel.css": "^0.8.1",
     "clsx": "^1.1.1",
     "lodash": "^4.17.21",
@@ -19,6 +19,6 @@
     "nano-markdown": "^1.2.1",
     "netlify-plugin-cache-folder": "^0.0.8",
     "prettier": "^2.5.1",
-    "prettier-plugin-astro": "^0.0.11"
+    "prettier-plugin-astro": "^0.0.12"
   }
 }
