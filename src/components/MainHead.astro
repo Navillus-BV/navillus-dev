@@ -1,4 +1,5 @@
 ---
+import Font from 'astro-fonts'
 import site from '../data/site.json'
 import { permalinkToCanonical, SEO } from '../utils/seo.ts'
 
@@ -40,6 +41,7 @@ const blogRssFeed = permalinkToCanonical('/feed/blog.xml')
 
 <!-- Styles -->
 <link rel="stylesheet" href="/src/assets/main.scss" />
+<Font name="Poppins" weights={[400, 500, 700]} styles="normal" />
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.svg" />

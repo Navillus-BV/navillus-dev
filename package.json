@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "astro": "^0.22.20",
+    "astro-fonts": "^0.1.0",
     "astro-xelement": "^3.1.1",
     "chisel.css": "^0.8.1",
     "clsx": "^1.1.1",

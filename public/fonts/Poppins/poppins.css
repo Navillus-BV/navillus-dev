@@ -1,0 +1,24 @@
+
+  /** Poppins[400] - normal */
+  @font-face {
+    font-family: 'Poppins';
+    font-style:  normal;
+    font-weight: 400;
+    src: url('https://fonts.gstatic.com/s/poppins/v19/pxiEyp8kv8JHgFVrJJnecg.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+
+  /** Poppins[500] - normal */
+  @font-face {
+    font-family: 'Poppins';
+    font-style:  normal;
+    font-weight: 500;
+    src: url('https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLGT9Z1JlFQ.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+
+  /** Poppins[700] - normal */
+  @font-face {
+    font-family: 'Poppins';
+    font-style:  normal;
+    font-weight: 700;
+    src: url('https://fonts.gstatic.com/s/poppins/v19/pxiByp8kv8JHgFVrLCz7Z1JlFQ.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }

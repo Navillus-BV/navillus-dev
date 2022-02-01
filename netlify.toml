@@ -1,9 +1,9 @@
 [build]
-    command = "yarn build"
+    command = "npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build"
     publish = "dist"
 
 [dev]
-    command = "yarn start"
+    command = "pnpm dev"
 
 [[plugins]]
     package = "netlify-plugin-a11y"
