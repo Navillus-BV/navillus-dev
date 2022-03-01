@@ -26,11 +26,6 @@
       "title": "Terms & Conditions",
       "page": "src/data/pages/terms-conditions.md",
       "id": ""
-    },
-    {
-      "title": "Contact Us",
-      "page": "src/data/pages/home.md",
-      "id": "contact"
     }
   ],
   "contact": [

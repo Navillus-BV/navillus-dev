@@ -140,12 +140,4 @@ blocks:
         content:
           Whether you already have a development team or are still in the planning
           phase, we can help you design your tech stack.
-  - template: contact-block
-    title: JAMSTACK DEVELOPERS FOR HIRE
-    subtitle: Get in Touch
-    id: contact
-    content:
-      We love what we do and are always up for an interesting conversation, whether
-      you're ready to get started or just have a few questions.
-    alt: false
 ---

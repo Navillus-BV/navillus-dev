@@ -123,8 +123,6 @@ const initHeader = (element: HTMLElement) => {
 
     <ThemeToggle />
 
-    <a href="/#contact" class="button button--outline">Get in Touch</a>
-
     <XElement
       @is="label"
       for="toggle"
@@ -155,15 +153,6 @@ const initHeader = (element: HTMLElement) => {
           </a>
         </li>
       ))}
-      <li>
-        <a
-          href="/#contact"
-          aria-current={pathname === '/#contact'}
-          class="button"
-        >
-          Get in Touch
-        </a>
-      </li>
     </ul>
   </nav>
 </XElement>
@@ -238,10 +227,6 @@ const initHeader = (element: HTMLElement) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    & li:last-of-type {
-      margin-top: var(--spacer-sm);
-    }
   }
 
   nav {
