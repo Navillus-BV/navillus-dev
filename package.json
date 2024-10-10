@@ -23,6 +23,7 @@
     "chisel.css": "^0.8.1",
     "marked": "^14.1.2",
     "mdast-util-to-string": "^4.0.0",
+    "netlify-plugin-cache-folder": "^0.0.8",
     "reading-time": "^1.5.0"
   }
 }
