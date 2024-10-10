@@ -1,34 +1,43 @@
 ---
-import Layout from './Base.astro'
-import TwitterShare from '../components/TwitterShare.astro'
-import WebMentions from '../components/WebMentions.astro'
-import UIBlock from '../components/blocks/UIBlock.astro'
-import { WithContent } from '../utils/cms.ts'
-import { formatDate } from '../utils/dates.ts'
-import { readMinutesForPage } from '../utils/markdown.ts'
-import { getAllMentions, isForUrl, sortMentions } from '../utils/mentions'
-import { getSeo } from '../utils/seo.ts'
+import Layout, { type Props as LayoutProps } from "./Page.astro";
+import TwitterShare from "../components/TwitterShare.astro";
+import WebMentions from "../components/WebMentions.astro";
+import UIBlock from "../components/blocks/UIBlock.astro";
+import { formatDate } from "../utils/dates.ts";
+import { getAllMentions, isForUrl, sortMentions } from "../utils/mentions";
+import { getEntry, type CollectionEntry } from "astro:content";
+import { site } from "../data/site";
 
-const { content, ...page } = Astro.props as WithContent<CMS.BlogPostPage>
-const { date, last_modified_at, tweetId } = page
+const page = Astro.props as CollectionEntry<"blog">;
 
-const seo = getSeo(page)
+const { title, description, social_image, date, last_modified_at, tweet_id } =
+  page.data;
 
-const minutes = readMinutesForPage({ content })
+const seo: LayoutProps = {
+  name: site.title,
+  title: title,
+  description: description,
+  image: social_image,
+};
 
-const allMentions = await getAllMentions()
+const { Content, remarkPluginFrontmatter } = await page.render();
+const minutes = remarkPluginFrontmatter.minutesRead;
+
+const allMentions = await getAllMentions();
 const webMentions = allMentions.children
-  .filter(isForUrl(Astro.request.canonicalURL.href))
-  .sort(sortMentions(true))
+  .filter(isForUrl(Astro.url.pathname))
+  .sort(sortMentions(true));
 
-const authorsMap = import.meta.globEager('../data/authors/*.json')
-const author = authorsMap[page.author.replace('src', '..')]
-const authorName = author
-  ? `${author.first_name} ${author.last_name}`
-  : page.author
+const author = await getEntry(page.data.author);
+
+if (!author) {
+  throw new Error(`Author "${page.data.author}" not found`);
+}
+
+const authorName = `${author.data.first_name} ${author.data.last_name}`;
 ---
 
-<Layout {...page}>
+<Layout {...seo}>
   <UIBlock alt class="h-entry">
     <header>
       <h1 class="p-name">{seo.title}</h1>
@@ -36,43 +45,45 @@ const authorName = author
       <p class="p-summary h5 lead">{seo.description}</p>
 
       <small>
-        <time class="dt-published" datetime={date}>
+        <time class="dt-published" datetime={formatDate(date)}>
           {formatDate(date)}
         </time>
         by
         <b class="h-card p-author">
-          <a class="u-url" href={author.url}>{authorName}</a>
+          <a class="u-url" href={author.data.url}>{authorName}</a>
         </b>
         • {minutes} min read
       </small>
 
-      {last_modified_at && (
-        <small>
-          <time class="dt-updated" datetime={last_modified_at}>
-            <i>Updated: {formatDate(last_modified_at)}</i>
-          </time>
-        </small>
-      )}
+      {
+        last_modified_at && (
+          <small>
+            <time class="dt-updated" datetime={formatDate(last_modified_at)}>
+              <i>Updated: {formatDate(last_modified_at)}</i>
+            </time>
+          </small>
+        )
+      }
     </header>
 
     <article class="e-content">
-      {content.html}
+      <Content />
     </article>
 
     <footer id="webmentions">
-      <WebMentions {webMentions} url={Astro.request.canonicalURL.href}>
+      <WebMentions {webMentions} url={Astro.url.href}>
         <TwitterShare
           description={seo.description}
           title={seo.title}
-          {tweetId}
-          url={Astro.request.canonicalURL.href}
+          tweetId={tweet_id}
+          url={Astro.url.href}
         />
       </WebMentions>
     </footer>
   </UIBlock>
 </Layout>
 
-<style lang="scss">
+<style>
   header {
     margin-bottom: var(--spacer-lg);
 

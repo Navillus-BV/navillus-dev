@@ -1,104 +1,36 @@
 ---
-import XElement from 'astro-xelement'
-import Logo from './Logo.astro'
-import ThemeToggle from './ThemeToggle.astro'
-import navigation from '../data/navigation.json'
-import { normalizeNavigationLink } from '../utils/cms.ts'
+import Logo from "./Logo.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import { navigation } from "../data/navigation";
 
 interface Props {
-  pathname: string
+  pathname: string;
 }
 
-const { pathname } = Astro.props as Props
-
-const normalizeLink = normalizeNavigationLink(
-  Astro.fetchContent('../data/pages/**/*.md')
-)
-
-const pages = (navigation as CMS.Navigation).pages.map(normalizeLink)
+const { pathname } = Astro.props as Props;
 
 interface MenuInputElement extends HTMLInputElement {}
 
 const initMenuInput = (element: MenuInputElement) => {
-  const hamburgerElem = document.querySelector('[for="toggle"]')
+  const hamburgerElem = document.querySelector('[for="toggle"]')!;
   element.onchange = () => {
     element.checked
-      ? hamburgerElem.classList.add('is-active')
-      : hamburgerElem.classList.remove('is-active')
-  }
+      ? hamburgerElem.classList.add("is-active")
+      : hamburgerElem.classList.remove("is-active");
+  };
 
-  matchMedia('(min-width: 768px)').onchange = (event) => {
+  matchMedia("(min-width: 768px)").onchange = (event) => {
     if (event.matches) {
-      hamburgerElem.classList.remove('is-active')
-      element.checked = false
+      hamburgerElem.classList.remove("is-active");
+      element.checked = false;
     }
-  }
+  };
 
-  element.classList.add('animate')
-}
-
-const initHeader = (element: HTMLElement) => {
-  const toggleElem = document.getElementById('toggle') as HTMLInputElement
-
-  let lastOffset = window.pageYOffset
-  let closing = false
-
-  const debounce = (fn: Function, delay = 100) => {
-    let timer
-
-    return (...args) => {
-      clearTimeout(timer)
-      timer = setTimeout(() => fn.apply(this, args), delay)
-    }
-  }
-
-  const onScroll = () => {
-    if (closing) {
-      return
-    }
-
-    const height = element.offsetHeight
-    const offset = window.pageYOffset
-    const open = toggleElem.checked
-
-    if (open) {
-      element.classList.remove('hide')
-      return
-    }
-
-    if (Math.abs(offset - lastOffset) < height / 2) {
-      return
-    }
-
-    if (offset > lastOffset) {
-      element.classList.add('hide')
-    } else {
-      element.classList.remove('hide')
-    }
-
-    lastOffset = offset
-  }
-
-  const onToggle = () => {
-    const open = toggleElem.checked
-
-    if (open) {
-      element.classList.remove('hide')
-    } else {
-      closing = true
-      setTimeout(() => {
-        lastOffset = window.pageYOffset
-        closing = false
-      }, 500)
-    }
-  }
-
-  document.addEventListener('scroll', debounce(onScroll), false)
-  toggleElem.addEventListener('change', onToggle, false)
-}
+  element.classList.add("animate");
+};
 ---
 
-<XElement @is="header" @do={initHeader}>
+<header id="nav-header">
   <div class="container top">
     <a href="/" class="brand">
       <span class="sr-only">Go to homepage</span>
@@ -107,24 +39,25 @@ const initHeader = (element: HTMLElement) => {
 
     <nav>
       <ul>
-        {pages.map(({ title, page }) => (
-          <li>
-            <a
-              class="hover:outline"
-              href={page}
-              aria-current={pathname === page}
-            >
-              {title}
-            </a>
-          </li>
-        ))}
+        {
+          navigation.pages.map(({ title, href, id }) => (
+            <li>
+              <a
+                class="hover:outline"
+                href={[href, id].filter(Boolean).join("#")}
+                aria-current={pathname === href}
+              >
+                {title}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
     <ThemeToggle />
 
-    <XElement
-      @is="label"
+    <label
       for="toggle"
       title="Open Menu"
       class="hamburger hamburger--squeeze header__hamburger"
@@ -132,11 +65,10 @@ const initHeader = (element: HTMLElement) => {
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
-    </XElement>
+    </label>
   </div>
 
-  <XElement
-    @is="input"
+  <input
     type="checkbox"
     id="toggle"
     class="sr-only"
@@ -146,18 +78,110 @@ const initHeader = (element: HTMLElement) => {
 
   <nav class="container">
     <ul>
-      {pages.map(({ title, page }) => (
-        <li>
-          <a href={page} class="h5" aria-current={pathname === page}>
-            {title}
-          </a>
-        </li>
-      ))}
+      {
+        navigation.pages.map(({ title, href, id }) => (
+          <li>
+            <a
+              href={[href, id].filter(Boolean).join("#")}
+              class="h5"
+              aria-current={pathname === href}
+            >
+              {title}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
-</XElement>
+</header>
 
-<style lang="scss">
+<script>
+  function initMenuInput(element: HTMLInputElement) {
+    const hamburgerElem = document.querySelector('[for="toggle"]')!;
+    element.onchange = () => {
+      element.checked
+        ? hamburgerElem.classList.add("is-active")
+        : hamburgerElem.classList.remove("is-active");
+    };
+
+    matchMedia("(min-width: 768px)").onchange = (event) => {
+      if (event.matches) {
+        hamburgerElem.classList.remove("is-active");
+        element.checked = false;
+      }
+    };
+
+    element.classList.add("animate");
+  }
+
+  function initHeader(element: HTMLElement) {
+    const toggleElem = document.getElementById("toggle") as HTMLInputElement;
+
+    let lastOffset = window.scrollY;
+    let closing = false;
+
+    const debounce = (fn: Function, delay = 100) => {
+      let timer: NodeJS.Timeout;
+
+      return (...args: any) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(document, args), delay);
+      };
+    };
+
+    const onScroll = () => {
+      if (closing) {
+        return;
+      }
+
+      const height = element.offsetHeight;
+      const offset = window.scrollY;
+      const open = toggleElem.checked;
+
+      if (open) {
+        element.classList.remove("hide");
+        return;
+      }
+
+      if (Math.abs(offset - lastOffset) < height / 2) {
+        return;
+      }
+
+      if (offset > lastOffset) {
+        element.classList.add("hide");
+      } else {
+        element.classList.remove("hide");
+      }
+
+      lastOffset = offset;
+    };
+
+    const onToggle = () => {
+      const open = toggleElem.checked;
+
+      if (open) {
+        element.classList.remove("hide");
+      } else {
+        closing = true;
+        setTimeout(() => {
+          lastOffset = window.scrollY;
+          closing = false;
+        }, 500);
+      }
+    };
+
+    document.addEventListener("scroll", debounce(onScroll), false);
+    toggleElem.addEventListener("change", onToggle, false);
+  }
+
+  const header = document.getElementById("nav-header");
+  header && initHeader(header);
+
+  const menuToggle = document.querySelector<HTMLInputElement>(".hamburger");
+  menuToggle && initMenuInput(menuToggle);
+</script>
+
+<style>
   header {
     position: sticky;
     top: 0;
@@ -258,7 +282,7 @@ const initHeader = (element: HTMLElement) => {
       justify-content: center;
     }
 
-    label[for='toggle'] {
+    label[for="toggle"] {
       display: none;
     }
 

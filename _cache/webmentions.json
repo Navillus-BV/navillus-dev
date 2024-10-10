@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2022-01-22T11:00:05.941Z",
+  "lastFetched": "2024-10-10T16:38:22.833Z",
   "children": [
     {
       "type": "entry",
@@ -4395,6 +4395,283 @@
       "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/1245635030874877958",
       "wm-target": "https://navillus.dev/blog/astro-plus-swup",
       "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "ふぉくる",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/bc9e771ae28844b063d4db87b3f6663dd8fbe7b968fb2b0fdd6eb63d80782da2.jpg",
+        "url": "https://twitter.com/focru_ino"
+      },
+      "url": "https://twitter.com/focru_ino/status/1617892728536444931",
+      "published": "2023-01-24T14:31:00+00:00",
+      "wm-received": "2023-01-24T16:16:52Z",
+      "wm-id": 1604973,
+      "wm-source": "https://brid.gy/comment/twitter/navillus_dev/1617892728536444931/1617892728536444931",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "barbaだと、headの書き換えができないから、コンポーネント単位でstyleを割り当ててマウント時に読み込むastroと相性が悪いみたい。代わりにSwupっていうライブラリが使えそう。\n<a href=\"https://navillus.dev/blog/astro-plus-swup\">navillus.dev/blog/astro-plu…</a>",
+        "text": "barbaだと、headの書き換えができないから、コンポーネント単位でstyleを割り当ててマウント時に読み込むastroと相性が悪いみたい。代わりにSwupっていうライブラリが使えそう。\nnavillus.dev/blog/astro-plu…"
+      },
+      "in-reply-to": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "しゃもきっと",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/a47b9e3f012cd5f7e0b84a85a9ec14e8418304802b265ecb7506774ffbe24a12.jpg",
+        "url": "https://twitter.com/shamokit_y2323"
+      },
+      "url": "https://twitter.com/shamokit_y2323/status/1612363550407942144",
+      "published": "2023-01-09T08:20:01+00:00",
+      "wm-received": "2023-01-10T02:25:13Z",
+      "wm-id": 1596613,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1612363550407942144",
+      "wm-target": "https://navillus.dev/blog/json-ld-in-sveltekit",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<a href=\"https://navillus.dev/blog/json-ld-in-sveltekit\">navillus.dev/blog/json-ld-i…</a>\nふむ…\nとりあえずほかのやってからまた見てみるか\n別に検索エンジンにアピりたいページ内から構造化マークアップしなくてもいいっちゃいいんだけどな…",
+        "text": "navillus.dev/blog/json-ld-i…\nふむ…\nとりあえずほかのやってからまた見てみるか\n別に検索エンジンにアピりたいページ内から構造化マークアップしなくてもいいっちゃいいんだけどな…"
+      },
+      "mention-of": "https://navillus.dev/blog/json-ld-in-sveltekit",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Navillus",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/19a56df834311780b81cf0a0eed7a798923ad3c799dfe3e0392e32d08113aacc.jpg",
+        "url": "https://twitter.com/navillus_dev"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1417536331631169549",
+      "published": "2021-07-20T17:26:12+00:00",
+      "wm-received": "2022-11-07T21:19:49Z",
+      "wm-id": 1552756,
+      "wm-source": "https://brid.gy/comment/twitter/navillus_dev/1417536331631169549/1417536331631169549",
+      "wm-target": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "Just published this post, thanks for the reminder!\n\n<a href=\"https://twitter.com/navillus_dev/status/1417535981058764809?s=19\">twitter.com/navillus_dev/s…</a>\n\n<a class=\"u-mention\" href=\"https://navillus.dev/blog/converting-navillus-to-astro\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/Jamstack_Jobs\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/brianleroux\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/kino_auge\"></a>",
+        "text": "Just published this post, thanks for the reminder!\n\ntwitter.com/navillus_dev/s…"
+      },
+      "in-reply-to": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Danilo Cestari",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/649f2df1b046749effcb44f060bbecc327d896b75f3b27c78ca02495efcda816.jpg",
+        "url": "https://twitter.com/DaniloCestari"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1418952288476012545#favorited-by-361497350",
+      "published": null,
+      "wm-received": "2022-11-01T00:55:25Z",
+      "wm-id": 1548416,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/361497350",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-protocol": "webmention",
+      "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Christian Meredith",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f6946b6855fbd630040a3f9fa0d81427a4798b844483e5946b725f5c60ee5d46.jpg",
+        "url": "https://twitter.com/Ceige_M"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1418952288476012545#favorited-by-1916392610",
+      "published": null,
+      "wm-received": "2022-10-28T07:04:55Z",
+      "wm-id": 1546004,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/1916392610",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-protocol": "webmention",
+      "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Caleb (he/him) #BlackLivesMatter",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/3a4ab8d4df4e1a11c1523c6316914bf861490e63bc84653299a5c580aebd375f.jpg",
+        "url": "https://twitter.com/calebjasik"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1429903001574068232#favorited-by-978459014555201536",
+      "published": null,
+      "wm-received": "2022-10-15T08:35:56Z",
+      "wm-id": 1539193,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1429903001574068232/978459014555201536",
+      "wm-target": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-protocol": "webmention",
+      "like-of": "https://navillus.dev/blog/web-components-in-astro",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "",
+        "photo": "",
+        "url": ""
+      },
+      "url": "https://www.reddit.com/r/astrodotbuild/comments/o07a8q/keeping_it_simple_with_astro/",
+      "published": null,
+      "wm-received": "2022-08-29T19:18:48Z",
+      "wm-id": 1502712,
+      "wm-source": "https://www.reddit.com/r/astrodotbuild/comments/o07a8q/keeping_it_simple_with_astro/",
+      "wm-target": "https://navillus.dev/blog/keeping-it-simple-with-astro",
+      "wm-protocol": "webmention",
+      "mention-of": "https://navillus.dev/blog/keeping-it-simple-with-astro",
+      "wm-property": "mention-of",
+      "wm-private": false,
+      "rels": {
+        "canonical": "https://www.reddit.com/r/astrodotbuild/comments/o07a8q/keeping_it_simple_with_astro/"
+      }
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthias Andrasch",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e63b0be03e1f033bc96cbe805625e8b18906e0a16254dc33c2e17a69136340a7.jpg",
+        "url": "https://twitter.com/m_andrasch"
+      },
+      "url": "https://twitter.com/m_andrasch/status/1517437033626673152",
+      "published": "2022-04-22T09:35:56+00:00",
+      "wm-received": "2022-04-23T00:37:33Z",
+      "wm-id": 1385213,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1517437033626673152",
+      "wm-target": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "📄 Interesting read: \"Converting our site to Astro\"\n\n\"SvelteKit earned its place at the top of my list when building large, dynamic webapps. But for most projects, I will happily build with Astro and sprinkle in Svelte components when needed.\" <a href=\"https://twitter.com/search?q=%23SSG\">#SSG</a>   <a href=\"https://navillus.dev/blog/converting-navillus-to-astro\">navillus.dev/blog/convertin…</a>",
+        "text": "📄 Interesting read: \"Converting our site to Astro\"\n\n\"SvelteKit earned its place at the top of my list when building large, dynamic webapps. But for most projects, I will happily build with Astro and sprinkle in Svelte components when needed.\" #SSG   navillus.dev/blog/convertin…"
+      },
+      "mention-of": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "",
+        "photo": "",
+        "url": ""
+      },
+      "url": "https://lzomedia.com/blog/looking-for-a-personal-svelte-stack/",
+      "published": null,
+      "wm-received": "2022-04-22T11:21:11Z",
+      "wm-id": 1384688,
+      "wm-source": "https://lzomedia.com/blog/looking-for-a-personal-svelte-stack/",
+      "wm-target": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-protocol": "pingback",
+      "mention-of": "https://navillus.dev/blog/converting-navillus-to-astro",
+      "wm-property": "mention-of",
+      "wm-private": false,
+      "rels": {
+        "canonical": "https://lzomedia.com/blog/looking-for-a-personal-svelte-stack/"
+      }
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Tom Hermans🤘🌈",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/795f03301969b7eb3f47673dca199228325e3a925defe302d9653b3f3283823f.jpg",
+        "url": "https://twitter.com/tomhermans"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1418952288476012545#favorited-by-10044152",
+      "published": null,
+      "wm-received": "2022-03-19T14:57:37Z",
+      "wm-id": 1365751,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1418952288476012545/10044152",
+      "wm-target": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-protocol": "webmention",
+      "like-of": "https://navillus.dev/blog/astro-plus-swup",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Andrew 🌠Story Crafter ✨",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cb7001d5872f43be35b96505f786a1b0c4b684e3ee280d3cd342370ad58e3f84.jpg",
+        "url": "https://twitter.com/triptych"
+      },
+      "url": "https://twitter.com/triptych/status/1500533195393024002",
+      "published": "2022-03-06T18:06:06+00:00",
+      "wm-received": "2022-03-06T21:01:23Z",
+      "wm-id": 1359422,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1500533195393024002",
+      "wm-target": "https://navillus.dev/blog/converting-navillus-to-astro/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "Converting our site to Astro • Navillus <a href=\"https://navillus.dev/blog/converting-navillus-to-astro/\">navillus.dev/blog/convertin…</a>",
+        "text": "Converting our site to Astro • Navillus navillus.dev/blog/convertin…"
+      },
+      "mention-of": "https://navillus.dev/blog/converting-navillus-to-astro/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Philip Saa 🇩🇪 #winter",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/9a0561f077080c96d4ffaac6bfbdae1d6b4532eeb5f2061cc39e00394f68e9ea.jpg",
+        "url": "https://twitter.com/cowglow"
+      },
+      "url": "https://twitter.com/cowglow/status/1499685125239586817",
+      "published": "2022-03-04T09:56:11+00:00",
+      "wm-received": "2022-03-05T07:59:51Z",
+      "wm-id": 1358892,
+      "wm-source": "https://brid.gy/post/twitter/navillus_dev/1499685125239586817",
+      "wm-target": "https://navillus.dev/blog/progressive-enhancement",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "\"We’ve all heard about “mobile first” designs, but what about JavaScript last?\" - <a href=\"https://twitter.com/tonysull_co\">@tonysull_co</a>\n\n<a href=\"https://navillus.dev/blog/progressive-enhancement\">navillus.dev/blog/progressi…</a>",
+        "text": "\"We’ve all heard about “mobile first” designs, but what about JavaScript last?\" - @tonysull_co\n\nnavillus.dev/blog/progressi…"
+      },
+      "mention-of": "https://navillus.dev/blog/progressive-enhancement",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "bLaCkwEw",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8ebdc09eb51c88e322c08cbbc67e25ef6baf624d570fd3e7904315800934087b.jpg",
+        "url": "https://twitter.com/bLaCkwEwGG"
+      },
+      "url": "https://twitter.com/navillus_dev/status/1407792706546458625#favorited-by-1225417921226256392",
+      "published": null,
+      "wm-received": "2022-01-30T15:55:04Z",
+      "wm-id": 1342357,
+      "wm-source": "https://brid.gy/like/twitter/navillus_dev/1407792706546458625/1225417921226256392",
+      "wm-target": "https://navillus.dev/blog/astro-plus-netlify-cms",
+      "wm-protocol": "webmention",
+      "like-of": "https://navillus.dev/blog/astro-plus-netlify-cms",
       "wm-property": "like-of",
       "wm-private": false
     }

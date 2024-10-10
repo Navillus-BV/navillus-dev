@@ -1,27 +1,29 @@
 ---
 interface Tag {
-  tag: string
-  url: string
+  tag: string;
+  url: string;
 }
 
 interface Props {
-  tags: Tag[]
+  tags: Tag[];
 }
 
-const { tags = [] } = Astro.props as Props
+const { tags = [] } = Astro.props as Props;
 ---
 
-{tags.length > 0 && (
-  <div class="tags">
-    {tags.map(({ tag, url }) => (
-      <a href={url}>
-        <code>{tag}</code>
-      </a>
-    ))}
-  </div>
-)}
+{
+  tags.length > 0 && (
+    <div class="tags">
+      {tags.map(({ tag, url }) => (
+        <a href={url}>
+          <code>{tag}</code>
+        </a>
+      ))}
+    </div>
+  )
+}
 
-<style lang="scss">
+<style>
   .tags {
     display: inline-flex;
     flex-direction: row;

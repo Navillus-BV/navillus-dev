@@ -1,9 +1,10 @@
 ---
-import FeaturesBlockItem from './FeaturesBlockItem.astro'
-import UIBlock from './UIBlock.astro'
+import type { FeaturesBlock } from "../../content/config";
+import FeaturesBlockItem from "./FeaturesBlockItem.astro";
+import UIBlock from "./UIBlock.astro";
 
-const block = Astro.props as CMS.FeaturesBlock
-const { items = [] } = block
+const block = Astro.props as FeaturesBlock;
+const { items = [] } = block;
 ---
 
 <UIBlock {...block}>

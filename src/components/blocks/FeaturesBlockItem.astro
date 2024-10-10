@@ -1,8 +1,9 @@
 ---
-import Icon from '../Icon.astro'
-import { mdToHtml } from '../../utils/markdown.ts'
+import Icon from "../Icon.astro";
+import type { FeaturesBlock } from "../../content/config";
+import Markdown from "../Markdown.astro";
 
-const { icon, title, content } = Astro.props as CMS.FeaturesBlockItem
+const { icon, title, content } = Astro.props as FeaturesBlock["items"][0];
 ---
 
 <article>
@@ -10,6 +11,8 @@ const { icon, title, content } = Astro.props as CMS.FeaturesBlockItem
 
   <div>
     <h4 class="h3">{title}</h4>
-    <p>{mdToHtml(content)}</p>
+    <p>
+      <Markdown md={content} />
+    </p>
   </div>
 </article>

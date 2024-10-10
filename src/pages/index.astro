@@ -1,12 +1,8 @@
 ---
-import Layout from '../layouts/Hero.astro'
-import { getPage, isPublished, hasPermalink } from '../utils/cms.ts'
+import { getEntry } from "astro:content";
+import Hero from "../layouts/Hero.astro";
 
-const page = getPage(
-  Astro.fetchContent('../data/pages/*.md')
-    .filter(isPublished)
-    .find(hasPermalink('/'))
-)
+const page = await getEntry("pages", "home");
 ---
 
-<Layout {...page} />
+<Hero {...page} />

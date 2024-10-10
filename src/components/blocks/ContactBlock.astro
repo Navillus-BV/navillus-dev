@@ -1,13 +1,14 @@
 ---
-import ContactBlockForm from './ContactBlockForm.astro'
-import UIBlock from './UIBlock.astro'
-import { mdToHtml } from '../../utils/markdown.ts'
+import type { ContactBlock } from "../../content/config";
+import Markdown from "../Markdown.astro";
+import ContactBlockForm from "./ContactBlockForm.astro";
+import UIBlock from "./UIBlock.astro";
 
-const block = Astro.props as CMS.ContactBlock
-const { content } = block
+const block = Astro.props as ContactBlock;
+const { content } = block;
 ---
 
 <UIBlock {...block}>
-  {mdToHtml(content)}
+  <Markdown md={content} />
   <ContactBlockForm />
 </UIBlock>

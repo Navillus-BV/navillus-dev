@@ -1,68 +1,55 @@
 ---
-import PostPreview from '../../../components/PostPreview.astro'
-import UIBlock from '../../../components/blocks/UIBlock.astro'
-import Layout from '../../../layouts/Hero.astro'
-import { getPage, isPublished } from '../../../utils/cms.ts'
-import { readMinutesForPage } from '../../../utils/markdown.ts'
-import { uniq } from '../../../utils/uniq.ts'
+import type { GetStaticPaths } from "astro";
+import PostPreview from "../../../components/PostPreview.astro";
+import UIBlock from "../../../components/blocks/UIBlock.astro";
+import Layout from "../../../layouts/Hero.astro";
+import { uniq } from "../../../utils/uniq.ts";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
-const [blogPage] = Astro.fetchContent('../../../data/pages/blog.md')
+function getTitle(tag: string) {
+  return `Posts tagged "${tag}"`;
+}
 
-export async function getStaticPaths({ paginate }) {
-  function title(tag) {
-    return `Posts tagged "${tag}"`
+function getDescription(tag: string) {
+  return `All posts from the Navillus Blog tagged with “${tag}”`;
+}
+
+export const getStaticPaths = (async ({ paginate }) => {
+  function sortPosts(a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) {
+    return b.data.date.getTime() - a.data.date.getTime();
   }
 
-  function description(tag) {
-    return `All posts from the Navillus Blog tagged with “${tag}”`
-  }
+  const allPosts = await getCollection("blog").then((posts) =>
+    posts.filter((post) => post.data.published).sort(sortPosts)
+  );
 
-  function includeReadingTime(post: CMS.BlogPostPage) {
-    return {
-      ...post,
-      minutes: readMinutesForPage(post),
-    }
-  }
+  const allTags: string[] = uniq(allPosts.map((post) => post.data.tags).flat());
 
-  function sortPosts(a: CMS.BlogPostPage, b: CMS.BlogPostPage) {
-    return new Date(b.date).getTime() - new Date(a.date).getTime()
-  }
-
-  const allPosts = Astro.fetchContent('../../../data/pages/blog/*.md')
-    .filter(isPublished)
-    .map(getPage)
-    .map(includeReadingTime)
-    .sort(sortPosts)
-
-  const allTags: string[] = uniq(allPosts.map(({ tags }) => tags).flat())
-
-  const paths = allTags.map((tag) => {
-    const posts = allPosts.filter((p) => p.tags.indexOf(tag) >= 0)
+  return allTags.flatMap((tag) => {
+    const posts = allPosts.filter((p) => p.data.tags.includes(tag));
 
     return paginate(posts, {
       params: { tag },
-      props: {
-        title: title(tag),
-        description: description(tag),
-        posts,
-      },
-    })
-  })
+      pageSize: 25,
+    });
+  });
+}) satisfies GetStaticPaths;
 
-  return paths
-}
+const { tag } = Astro.params;
+const { page } = Astro.props;
+const { data: posts } = page;
 
-const { title, description, page } = Astro.props
-const { data: posts } = page
+const tagPage = await getEntry("pages", "tag");
 
-const layoutPage = {
-  ...getPage(blogPage),
-  title,
-  description,
-}
+const title = getTitle(tag);
+
+tagPage.data.title = title;
+tagPage.data.description = getDescription(tag);
 ---
 
-<Layout {...layoutPage}>
+<Layout {...tagPage}>
   <UIBlock {title} alt>
     {posts.map((post) => <PostPreview post={post} />)}
   </UIBlock>

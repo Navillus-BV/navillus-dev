@@ -1,16 +1,30 @@
 ---
-import Layout from './Base.astro'
-import Block from '../components/Block.astro'
-import Hero from '../components/Hero.astro'
-import type { WithContent } from '../utils/cms.ts'
+import Layout, { type Props as LayoutProps } from "./Page.astro";
+import Block from "../components/Block.astro";
+import HeroBlock from "../components/Hero.astro";
+import type { CollectionEntry } from "astro:content";
+import { site } from "../data/site";
 
-const { content, ...page } = Astro.props as WithContent<CMS.LegalPage>
+type Props = CollectionEntry<"pages">;
 
-const { blocks = [], hero } = page
+const page = Astro.props;
+
+if (page.data.type != "hero") {
+  throw new Error();
+}
+
+const { blocks = [] } = page.data;
+
+const seo: LayoutProps = {
+  name: site.title,
+  title: page.data.title,
+  description: page.data.description,
+  image: page.data.social_image,
+};
 ---
 
-<Layout {...page}>
-  {hero && <Hero {...hero} />}
+<Layout {...seo}>
+  {page.data.hero && <HeroBlock {...page.data.hero} />}
 
   {blocks.map((block) => <Block block={block} />)}
 

@@ -1,100 +1,106 @@
 ---
-import Avatar from './Avatar.astro'
-import WebMentionReply from './WebMentionReply.astro'
-import { isMentionType, MENTION_TYPE } from '../utils/mentions.js'
-import site from '../data/site.json'
+import Avatar from "./Avatar.astro";
+import WebMentionReply from "./WebMentionReply.astro";
+import { isMentionType, MENTION_TYPE } from "../utils/mentions.js";
+import site from "../data/site.json";
 
 interface WebMention {
   author?: {
-    photo: string
-    name: string
-  }
-  url?: string
-  published: Date
+    photo: string;
+    name: string;
+  };
+  url?: string;
+  published: Date;
   content: {
-    text: string
-  }
+    text: string;
+  };
 }
 
 interface Props {
-  webMentions: WebMention[]
-  url: string
+  webMentions: WebMention[];
+  url: string;
 }
 
-const { webMentions, url } = Astro.props as Props
-const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share))
-const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
-const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
+const { webMentions, url } = Astro.props as Props;
+const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share));
+const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like));
+const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply));
 
-const domain = new URL(site.url).hostname
+const domain = new URL(site.url).hostname;
 ---
 
 <h2 class="h3">Webmentions</h2>
 
 <slot />
 
-{likes.length > 0 && (
-  <div class="facepile">
-    <h3 class="h4">
-      {likes.length} Like{likes.length > 1 ? 's' : ''}
-    </h3>
+{
+  likes.length > 0 && (
+    <div class="facepile">
+      <h3 class="h4">
+        {likes.length} Like{likes.length > 1 ? "s" : ""}
+      </h3>
 
-    {likes.map((mention) =>
-      mention.url ? (
-        <a
-          class="h-card u-url"
-          href={mention.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Avatar src={mention.author.photo} alt={mention.author.name} />
-        </a>
-      ) : (
-        <Avatar src={mention.author.photo} alt={mention.author.name} />
-      )
-    )}
-  </div>
-)}
+      {likes.map((mention) =>
+        mention.url ? (
+          <a
+            class="h-card u-url"
+            href={mention.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Avatar src={mention.author!.photo} alt={mention.author!.name} />
+          </a>
+        ) : (
+          <Avatar src={mention.author!.photo} alt={mention.author!.name} />
+        )
+      )}
+    </div>
+  )
+}
 
-{reposts.length > 0 && (
-  <div class="facepile">
-    <h3 class="h4">
-      {reposts.length} Repost{reposts.length > 1 ? 's' : ''}
-    </h3>
+{
+  reposts.length > 0 && (
+    <div class="facepile">
+      <h3 class="h4">
+        {reposts.length} Repost{reposts.length > 1 ? "s" : ""}
+      </h3>
 
-    {reposts.map((mention) =>
-      mention.url ? (
-        <a
-          class="h-card u-url"
-          href={mention.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Avatar src={mention.author.photo} alt={mention.author.name} />
-        </a>
-      ) : (
-        <Avatar src={mention.author.photo} alt={mention.author.name} />
-      )
-    )}
-  </div>
-)}
+      {reposts.map((mention) =>
+        mention.url ? (
+          <a
+            class="h-card u-url"
+            href={mention.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Avatar src={mention.author!.photo} alt={mention.author!.name} />
+          </a>
+        ) : (
+          <Avatar src={mention.author!.photo} alt={mention.author!.name} />
+        )
+      )}
+    </div>
+  )
+}
 
-{replies.length > 0 && (
-  <div>
-    <h3 class="h4">
-      {replies.length}
-      {replies.length === 1 ? 'Reply' : 'Replies'}
-    </h3>
+{
+  replies.length > 0 && (
+    <div>
+      <h3 class="h4">
+        {replies.length}
+        {replies.length === 1 ? "Reply" : "Replies"}
+      </h3>
 
-    {replies.map((mention) => (
-      <WebMentionReply mention={mention} />
-    ))}
-  </div>
-)}
+      {replies.map((mention) => (
+        <WebMentionReply mention={mention} />
+      ))}
+    </div>
+  )
+}
 
 <div class="webmentions__form">
   <p class="h5">
-    {webMentions.length > 0 ? 'These are ' : 'We support '}
+    {webMentions.length > 0 ? "These are " : "We support "}
     <a href="https://indieweb.org/Webmention">webmentions</a> via the
     <a href="https://indieweb.org/">IndieWeb</a>
     and
@@ -119,7 +125,7 @@ const domain = new URL(site.url).hostname
   </form>
 </div>
 
-<style lang="scss">
+<style>
   h2 {
     margin-bottom: var(--spacer-xs);
   }
@@ -151,7 +157,7 @@ const domain = new URL(site.url).hostname
     margin-top: var(--spacer-lg);
   }
 
-  button[type='submit'] {
+  button[type="submit"] {
     margin-top: var(--spacer-sm);
   }
 </style>

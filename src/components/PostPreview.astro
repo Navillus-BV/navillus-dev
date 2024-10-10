@@ -1,36 +1,49 @@
 ---
-import Show from './Show.astro'
-import TagsList from './TagsList.astro'
-import WebMentionsCount from './WebMentionsCount.astro'
-import site from '../data/site.json'
-import { getAllMentions, isForUrl } from '../utils/mentions.js'
-import { formatDate } from '../utils/dates.ts'
-import { getSeo } from '../utils/seo.ts'
+import type { Props as SEOProps } from "./SEO.astro";
+import Show from "./Show.astro";
+import TagsList from "./TagsList.astro";
+import WebMentionsCount from "./WebMentionsCount.astro";
+import site from "../data/site.json";
+import { getAllMentions, isForUrl } from "../utils/mentions.js";
+import { formatDate } from "../utils/dates.ts";
+import type { CollectionEntry } from "astro:content";
 
-const { post } = Astro.props
+type Props = {
+  post: CollectionEntry<"blog">;
+};
 
-const seo = getSeo(post)
+const { post } = Astro.props;
 
-const tags = post.tags.map((tag) => {
+const seo: Partial<SEOProps> = {
+  title: post.data.title,
+  description: post.data.description,
+  image: post.data.social_image,
+};
+
+const tags = post.data.tags.map((tag: string) => {
   return {
     tag,
     url: `/tags/${tag}`,
-  }
-})
+  };
+});
 
-const url = new URL(post.permalink, site.url)
+const url = new URL(`/blog/${post.slug}`, site.url);
 
-const allMentions = await getAllMentions()
-const webMentions = allMentions.children.filter(isForUrl(url.href))
+const allMentions = await getAllMentions();
+const webMentions = allMentions.children.filter(isForUrl(url.href));
+
+const { remarkPluginFrontmatter } = await post.render();
 ---
 
 <article>
-  <a href={post.permalink}>
-    <h3 class="underline">{seo.title}</h3>
+  <a href={url}>
+    <h3 class="underline">{post.data.title}</h3>
   </a>
 
-  <time class="h6" datetime={post.date}>{formatDate(post.date)}</time>
-  <small> • {post.minutes} min read</small>
+  <time class="h6" datetime={formatDate(post.data.date)}
+    >{formatDate(post.data.date)}</time
+  >
+  <small> • {remarkPluginFrontmatter.minutesRead} min read</small>
 
   <p>{seo.description}</p>
 
@@ -43,7 +56,7 @@ const webMentions = allMentions.children.filter(isForUrl(url.href))
   </footer>
 </article>
 
-<style lang="scss">
+<style>
   article {
     &:not(:first-of-type) {
       margin-top: var(--spacer-lg);

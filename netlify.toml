@@ -1,35 +1,33 @@
 [build]
-    command = "npx pnpm install --store=node_modules/.pnpm-store && npx pnpm build"
-    publish = "dist"
+command = "npm run build"
+publish = "dist"
 
 [dev]
-    command = "pnpm dev"
+command = "npm run dev"
 
 [[plugins]]
-    package = "netlify-plugin-a11y"
+package = "netlify-plugin-a11y"
 
 [[plugins]]
-    package = "netlify-plugin-cache-folder"
+package = "netlify-plugin-cache-folder"
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
 
 [[redirects]]
-    from = "/api/*"
-    to = "/.netlify/functions/:splat"
-    status = 200
+from = "https://navillus.nl"
+to = "https://navillus.dev"
+status = 301
+force = true
 
 [[redirects]]
-    from = "https://navillus.nl"
-    to = "https://navillus.dev"
-    status = 301
-    force = true
+from = "https://navillus.nl/"
+to = "https://navillus.dev/"
+status = 301
+force = true
 
 [[redirects]]
-    from = "https://navillus.nl/"
-    to = "https://navillus.dev/"
-    status = 301
-    force = true
-
-[[redirects]]
-    from = "https://navillus.nl/*"
-    to = "https://navillus.dev/:splat"
-    status = 301
-    force = true
+from = "https://navillus.nl/*"
+to = "https://navillus.dev/:splat"
+status = 301
+force = true
