@@ -24,7 +24,7 @@
     },
     {
       "title": "Terms & Conditions",
-      "page": "/terms",
+      "href": "/terms",
       "id": ""
     }
   ],
