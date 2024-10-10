@@ -1,0 +1,30 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+[dev]
+command = "npm run dev"
+
+[[plugins]]
+package = "netlify-plugin-a11y"
+
+[[plugins]]
+package = "netlify-plugin-cache-folder"
+
+[[redirects]]
+from = "https://navillus.nl"
+to = "https://navillus.dev"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://navillus.nl/"
+to = "https://navillus.dev/"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://navillus.nl/*"
+to = "https://navillus.dev/:splat"
+status = 301
+force = true
