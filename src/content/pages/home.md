@@ -1,13 +1,13 @@
 ---
 type: hero
-title: Jamstack developers for hire
+title: E-Commerce developers for hire
 date: '2022-01-20T16:53:47Z'
 last_modified_at: '2022-01-20T16:53:47Z'
 social_image:
   src: ../../assets/uploads/share.png
   alt: We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.
 hero:
-  title: '**JAMSTACK DEVELOPERS FOR HIRE**'
+  title: '**E-COMMERCE DEVELOPERS FOR HIRE**'
   subtitle: |-
     Every problem is **different**.
 
@@ -22,8 +22,8 @@ hero:
 blocks:
   - type: features
     title: SITES WITH BENEFITS
-    subtitle: Why use the Jamstack?
-    id: jamstack
+    subtitle: Why use a custom storefront?
+    id: e-commere
     alt: true
     items:
       - title: Better Performance
@@ -31,7 +31,7 @@ blocks:
         content: |-
           According to [Google](https://www.blog.google/products/admanager/increase-speed-of-your-mobile-site-wi/ "Google"), 53% of visitors will leave a website if it takes longer than 3 seconds to load. Even worse, a whopping 79% of online shoppers will stay away from online stores with performance hiccups.
 
-          Jamstack sites are built once and globally distributed - they don't depend on servers to rebuild the page for every visitor.
+          We build E-Commerce sites optimized for near instant delivery around the globe. Whether you're launching a brand new store or scaling to millions in daily sales, we'll make sure that website load times don't loose you sales.
       - title: Higher Security
         icon: shield
         content:
@@ -42,33 +42,32 @@ blocks:
       - title: Cheaper, Easier Scaling
         icon: money
         content: |-
-          [65% cost savings](https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/ "65% cost savings") after moving their business critical documentation sites over to Jamstack technologies. Their documentation sites are visited by 3.5 million users annually and provide technical support for all of their 15 products and related components.
+          [65% cost savings](https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/ "65% cost savings") after moving their business critical documentation sites over to static sites and plain old HTML. Their documentation sites are visited by 3.5 million users annually and provide technical support for all of their 15 products and related components.
 
-          Because Jamstack sites are built once and served as static files, they can be distributed globally and available almost instantly to your customers around the world.
+          E-Commerce sites can take advantage of the same tools. By building your store once and served as static files, they can be distributed globally and available almost instantly to your customers around the world.
   - type: badges
     title: TECHNOLOGY WE USE
     subtitle: Building the Modern Web
     id: tools
     groups:
-      - title: HEADLESS CMS
+      - title: E-COMMERCE PLATFORMS
         items:
-          - alt: Contentful
-            icon: contentful
-          - icon: datocms
-            alt: Dato CMS
-          - alt: Forestry
-            icon: forestry
-          - alt: Netlify CMS
-            icon: netlify-cms
-          - alt: Prismic
-            icon: prismic
-          - alt: Sanity.io
-            icon: sanity
-          - alt: Storyblok
-            icon: storyblok
-          - alt: Strapi
-            icon: strapi
-      - items:
+          - alt: Shopify
+            icon: shopify
+          - alt: Swell
+            icon: swell
+          - alt: WooCommerce
+            icon: woocommerce
+          - alt: Snipcart
+            icon: snipcart
+          - alt: BigCommerce
+            icon: bigcommerce
+          - alt: Vendure
+            icon: vendure
+          - alt: Medusa
+            icon: medusa
+      - title: DEPLOYMENT PLATFORMS
+        items:
           - alt: AWS
             icon: aws
           - alt: Azure
@@ -87,29 +86,16 @@ blocks:
             icon: render
           - alt: Vercel
             icon: vercel
-        title: DEPLOYMENT PLATFORMS
-      - title: STATIC SITE GENERATORS
+      - title: FRONTEND FRAMEWORKS
         items:
-          - alt: 11ty
-            icon: 11ty
           - alt: Astro
             icon: astro
-          - alt: Gatsby
-            icon: gatsby
-          - alt: Gridsome
-            icon: gridsome
-          - alt: Hugo
-            icon: hugo
-          - alt: Jekyll
-            icon: jekyll
+          - alt: 11ty
+            icon: 11ty
           - icon: nextjs
             alt: NextJS
           - alt: NuxtJS
             icon: nuxtjs
-          - alt: Sapper
-            icon: sapper
-          - alt: Scully
-            icon: scully
           - alt: SvelteKit
             icon: sveltekit
   - type: features
@@ -120,7 +106,7 @@ blocks:
     items:
       - icon: blogging
         content:
-          Static doesn't mean boring. We design and build sites with proven technologies to offer dynamic, interactive designs that customers love.
+          Let your online store shine. We design and build sites with proven technologies to offer dynamic, interactive designs that customers love.
         title: Web Design & Development
       - title: eCommerce Stores
         icon: shopping
