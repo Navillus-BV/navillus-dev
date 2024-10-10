@@ -1,67 +1,28 @@
 ---
-import PostPreview from '../../components/PostPreview.astro'
-import UIBlock from '../../components/blocks/UIBlock.astro'
-import site from '../../data/site.json'
-import Layout from '../../layouts/Hero.astro'
-import { getPage, isPublished, WithContent } from '../../utils/cms.ts'
-import { readMinutesForPage } from '../../utils/markdown.ts'
-import { getSeo } from '../../utils/seo.ts'
+import type { GetStaticPaths } from "astro";
+import PostPreview from "../../components/PostPreview.astro";
+import UIBlock from "../../components/blocks/UIBlock.astro";
+import Layout from "../../layouts/Hero.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
 
-const [blogPage] = Astro.fetchContent('../../data/pages/blog.md')
-
-export async function getStaticPaths({ paginate, rss }) {
-  function includeReadingTime(post: CMS.BlogPostPage) {
-    return {
-      ...post,
-      minutes: readMinutesForPage(post),
-    }
+export const getStaticPaths = (async ({ paginate }) => {
+  function sortPosts(a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) {
+    return b.data.date.getTime() - a.data.date.getTime();
   }
 
-  function sortPosts(a: CMS.BlogPostPage, b: CMS.BlogPostPage) {
-    return new Date(b.date).getTime() - new Date(a.date).getTime()
-  }
+  const allPosts = await getCollection("blog").then((posts) =>
+    posts.filter((post) => post.data.published).sort(sortPosts)
+  );
 
-  const allPosts: WithContent<CMS.BlogPostPage>[] = Astro.fetchContent(
-    '../../data/pages/blog/*.md'
-  )
-    .filter(isPublished)
-    .map(getPage)
-    .map(includeReadingTime)
-    .sort(sortPosts)
+  return paginate(allPosts, { pageSize: 25 });
+}) satisfies GetStaticPaths;
 
-  rss({
-    title: 'Blog | Navillus',
-    description: site.description,
-    customData: `<language>en-us</language>`,
-    items: allPosts.map((item: WithContent<CMS.BlogPostPage>) => {
-      const seo = getSeo(item)
+const { page } = Astro.props;
+const { data: posts } = page;
 
-      const content = `<content><![CDATA[ ${item.content.html} ]]></content>`
-
-      const customData = [
-        `<id>${item.permalink}</id>`,
-        item.last_modified_at && `<updated>${item.last_modified_at}</updated>`,
-        content,
-      ]
-        .filter(Boolean) // remove <updated> if it wasn't used
-        .join('') // combine into one string
-
-      return {
-        title: seo.title,
-        description: seo.description,
-        link: item.permalink,
-        pubDate: item.date,
-        customData,
-      }
-    }),
-    dest: '/feed/blog.xml',
-  })
-
-  return paginate(allPosts, { pageSize: 25 })
-}
-
-const { page } = Astro.props
-const { data: posts } = page
+const blogPage = await getEntry("pages", "blog");
 ---
 
 <Layout {...blogPage}>

@@ -1,17 +1,17 @@
 ---
-import clsx from 'clsx'
-import Show from '../Show.astro'
+import Show from "../Show.astro";
+import type { BaseBlock } from "../../content/config";
 
 const {
   title,
   subtitle,
   alt = false,
   id,
-  class: className = '',
-} = Astro.props as CMS.BaseBlock & { class: string }
+  class: className = "",
+} = Astro.props as BaseBlock & { class: string };
 ---
 
-<section class={`${className} ${clsx({ alt })}`} {id}>
+<section class:list={[className, { alt }]} {id}>
   <div class="container">
     <Show when={!!title}>
       <h2 class="h6">

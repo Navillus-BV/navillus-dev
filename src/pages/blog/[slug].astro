@@ -1,23 +1,23 @@
 ---
-import Layout from '../../layouts/Post.astro'
-import { getPage, isPublished, WithContent } from '../../utils/cms.ts'
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Post.astro";
 
-export async function getStaticPaths() {
-  const pages = Astro.fetchContent('../../data/pages/blog/*.md')
-    .filter(isPublished)
-    .map(getPage)
+export const getStaticPaths = (async () => {
+  const pages = await getCollection("blog");
 
-  const paths = pages.map((page: CMS.Page) => ({
+  return pages.map((page) => ({
+    props: { page },
     params: {
-      slug: page.permalink.replace('/blog/', ''),
+      slug: page.slug,
     },
-    props: page,
-  }))
+  }));
+}) satisfies GetStaticPaths;
 
-  return paths
-}
-
-const page = Astro.props as WithContent<CMS.Page>
+const { page } = Astro.props;
+const { Content } = await page.render();
 ---
 
-<Layout {...page} />
+<Layout {...page}>
+  <Content />
+</Layout>

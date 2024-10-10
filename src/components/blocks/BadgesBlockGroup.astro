@@ -1,22 +1,25 @@
 ---
-import Icon from '../Icon.astro'
+import type { BadgeBlock } from "../../content/config";
+import Icon from "../Icon.astro";
 
-const { title, items } = Astro.props as CMS.BadgesBlockGroup
+const { title, items } = Astro.props as BadgeBlock["groups"][0];
 ---
 
 <div>
   <h4 class="h6"><strong>{title}</strong></h4>
 
   <ul>
-    {items.map(({ icon, description }) => (
-      <li>
-        <Icon id={icon} title={description} />
-      </li>
-    ))}
+    {
+      items.map(({ icon, alt }) => (
+        <li>
+          <Icon id={icon} title={alt} />
+        </li>
+      ))
+    }
   </ul>
 </div>
 
-<style lang="scss">
+<style>
   div {
     &:not(:first-of-type) {
       margin-top: var(--spacer-md);

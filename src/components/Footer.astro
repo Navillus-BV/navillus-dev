@@ -1,45 +1,39 @@
 ---
-import Icon from './Icon.astro'
-import navigation from '../data/navigation.json'
-import { normalizeNavigationLink } from '../utils/cms.ts'
+import Icon from "./Icon.astro";
+import { navigation } from "../data/navigation";
 
-const normalizeLink = normalizeNavigationLink(
-  Astro.fetchContent('../data/pages/**/*.md')
-)
-
-const contact = (navigation as CMS.Navigation).contact
-const legal: CMS.NavigationLink[] = (navigation as CMS.Navigation).legal.map(
-  normalizeLink
-)
-
-const year = new Date().getFullYear()
+const year = new Date().getFullYear();
 ---
 
 <footer>
   <div class="container">
     <ul class="social">
-      {contact.map(({ url, title, icon }) => (
-        <li>
-          <a href={url} rel="me">
-            <span class="sr-only">{title}</span>
-            <Icon id={icon} />
-          </a>
-        </li>
-      ))}
+      {
+        navigation.contact.map(({ url, title, icon }) => (
+          <li>
+            <a href={url} rel="me">
+              <span class="sr-only">{title}</span>
+              <Icon id={icon} />
+            </a>
+          </li>
+        ))
+      }
     </ul>
 
     <ul class="links">
-      {legal.map(({ title, page }) => (
-        <li>
-          <a class="h6" href={page}>
-            {title}
-          </a>
-        </li>
-      ))}
+      {
+        navigation.legal.map(({ title, href }) => (
+          <li>
+            <a class="h6" {href}>
+              {title}
+            </a>
+          </li>
+        ))
+      }
     </ul>
 
     <div class="legal">
-      <div>© {year} Navillus B.V.</div>
+      <div>© 2022-{year} Navillus Ventures LLC</div>
 
       <small>
         Icons made by
@@ -55,7 +49,7 @@ const year = new Date().getFullYear()
   </div>
 </footer>
 
-<style lang="scss">
+<style>
   footer {
     background: var(--chisel-neutral-50);
   }

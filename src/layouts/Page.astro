@@ -1,0 +1,73 @@
+---
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/700.css";
+import "../styles/theme.css";
+import SEO, { type Props as SEOProps } from "../components/SEO.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+
+export type Props = SEOProps & {};
+
+const { ...seo } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="”mask-icon”" href="/favicon-mask.svg" color="#37322E" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#ffc331" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Navillus" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Navillus" />
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <SEO {...seo} />
+
+    <!-- global script resets the theme before first paint -->
+    <script is:inline>
+      if (!!localStorage) {
+        const storedDark = localStorage.getItem("theme");
+
+        const prefersDark =
+          window &&
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        const theme =
+          typeof storedDark === "string"
+            ? storedDark
+            : prefersDark
+              ? "dark"
+              : "light";
+
+        document.documentElement.setAttribute("data-chisel-theme", theme);
+      }
+    </script>
+  </head>
+  <body>
+    <body>
+      <a id="skip-to-content" href="#main" class="sr-only sr-only-focusable">
+        Skip to content
+      </a>
+
+      <Navigation pathname={Astro.url.pathname} />
+
+      <main id="main">
+        <slot />
+      </main>
+
+      <Footer />
+    </body>
+  </body>
+</html>
