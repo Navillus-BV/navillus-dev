@@ -18,17 +18,25 @@ export type ContactIcon = z.infer<typeof contactIconSchema>
 
 const toolIconSchema = z.enum([
     "11ty",
+    "airtable",
     "astro",
     "aws",
     "azure",
     "begin",
     "cloudflare",
+    "decap",
     "digitalocean",
     "firebase",
     "netlify",
     "nextjs",
     "nuxtjs",
+    "payload",
+    "postgres",
     "render",
+    "retool",
+    "sanity",
+    "sqlite",
+    "vite",
     "bigcommerce",
     "medusa",
     "shopify",
@@ -64,7 +72,8 @@ const featureIconSchema = z.enum([
     "money",
     "shield",
     "shopping",
-    "speedometer"
+    "speedometer",
+    "tools"
 ])
 export type FeatureIcon = z.infer<typeof featureIconSchema>
 const featuresBlockSchema = baseBlockSchema.extend({

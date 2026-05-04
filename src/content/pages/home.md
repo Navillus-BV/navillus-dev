@@ -1,120 +1,114 @@
 ---
 type: hero
-title: E-Commerce developers for hire
+title: Websites and internal tools for small businesses and non-profits
 date: '2022-01-20T16:53:47Z'
 last_modified_at: '2022-01-20T16:53:47Z'
 social_image:
   src: ../../assets/uploads/share.png
-  alt: We specialize in finding simple solutions to complex software problems. We value data-driven decisions and accessibility over this month's latest tech trends.
+  alt: We build websites and internal tools for small businesses and non-profits. Boring tech, no lock-in, no surprises five years from now.
 hero:
-  title: '**E-COMMERCE DEVELOPERS FOR HIRE**'
+  title: '**WEBSITES & INTERNAL TOOLS THAT JUST WORK**'
   subtitle: |-
     Every problem is **different**.
 
     Your **solutions** should be, too.
   content:
-    We specialize in finding simple solutions to complex software problems.
-    We value data-driven decisions and accessibility over this month's latest tech
-    trends.
+    We build websites and internal tooling for small businesses and non-profits.
+    We value boring tech, accessibility, and sites that still work in five years
+    over this month's framework of choice.
   cta:
     text: How we can help
     href: '/#services'
 blocks:
   - type: features
-    title: SITES WITH BENEFITS
-    subtitle: Why use a custom storefront?
-    id: e-commere
+    title: BUILT TO LAST
+    subtitle: Why custom beats off-the-shelf
+    id: why-us
     alt: true
     items:
-      - title: Better Performance
+      - title: Sites that don't lose you visitors
         icon: speedometer
         content: |-
-          According to [Google](https://www.blog.google/products/admanager/increase-speed-of-your-mobile-site-wi/ "Google"), 53% of visitors will leave a website if it takes longer than 3 seconds to load. Even worse, a whopping 79% of online shoppers will stay away from online stores with performance hiccups.
+          According to [Google](https://www.blog.google/products/admanager/increase-speed-of-your-mobile-site-wi/ "Google"), 53% of visitors will leave a website if it takes longer than 3 seconds to load. For a small business or non-profit, that's donors, customers, and members walking away before they ever see what you do.
 
-          We build E-Commerce sites optimized for near instant delivery around the globe. Whether you're launching a brand new store or scaling to millions in daily sales, we'll make sure that website load times don't loose you sales.
-      - title: Higher Security
+          We build sites optimized for fast delivery on any connection, on any device. Whether you're refreshing a one-pager or replacing a tangle of plugins, we'll make sure load times aren't the reason people bounce.
+      - title: Tools your team won't fight
         icon: shield
-        content:
-          '[Enable Security](https://www.enablesecurity.com/ "Enable Security")
-          found that over 70% of WordPress sites are vulnerable to hacker attacks. Chances
-          are sites secure when first built, but without regular updates and maintenance
-          they can quickly fall behind and put businesses at risk.'
-      - title: Cheaper, Easier Scaling
+        content: |-
+          [70% of WordPress sites](https://www.enablesecurity.com/ "Enable Security") are vulnerable to attack. Most internal tools are worse — built once, never patched, held together by the one person who remembers the password.
+
+          We build software that's easy to maintain, easy to hand off, and easy to lock down. No "the consultant left and now nobody can edit the homepage."
+      - title: Boring tech, on purpose
         icon: money
         content: |-
-          [65% cost savings](https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/ "65% cost savings") after moving their business critical documentation sites over to static sites and plain old HTML. Their documentation sites are visited by 3.5 million users annually and provide technical support for all of their 15 products and related components.
+          Companies have reported [65% cost savings](https://www.netlify.com/blog/2019/06/12/jamstack_conf-nyc-session-recap-citrix-delivers-better-ux-with-less-overhead-using-jamstack-and-netlify/ "65% cost savings") moving documentation off heavyweight platforms onto plain old HTML.
 
-          E-Commerce sites can take advantage of the same tools. By building your store once and served as static files, they can be distributed globally and available almost instantly to your customers around the world.
+          Your website and your team's internal tools don't need a server farm. We pick the simplest tool that solves your problem — usually one you can host for the price of a coffee, and one we can hand back to you without strings attached.
   - type: badges
-    title: TECHNOLOGY WE USE
-    subtitle: Building the Modern Web
+    title: TOOLS WE REACH FOR
+    subtitle: Boring on purpose
     id: tools
     groups:
-      - title: E-COMMERCE PLATFORMS
-        items:
-          - alt: Shopify
-            icon: shopify
-          - alt: Swell
-            icon: swell
-          - alt: WooCommerce
-            icon: woocommerce
-          - alt: Snipcart
-            icon: snipcart
-          - alt: BigCommerce
-            icon: bigcommerce
-          - alt: Vendure
-            icon: vendure
-          - alt: Medusa
-            icon: medusa
-      - title: DEPLOYMENT PLATFORMS
-        items:
-          - alt: AWS
-            icon: aws
-          - alt: Azure
-            icon: azure
-          - alt: Begin.com
-            icon: begin
-          - alt: Cloudflare Pages
-            icon: cloudflare
-          - alt: Digital Ocean
-            icon: digitalocean
-          - alt: Firebase
-            icon: firebase
-          - alt: Netlify
-            icon: netlify
-          - alt: Render
-            icon: render
-          - alt: Vercel
-            icon: vercel
-      - title: FRONTEND FRAMEWORKS
+      - title: WEBSITES
         items:
           - alt: Astro
             icon: astro
           - alt: 11ty
             icon: 11ty
-          - icon: nextjs
-            alt: NextJS
-          - alt: NuxtJS
-            icon: nuxtjs
-          - alt: SvelteKit
-            icon: sveltekit
+          - alt: Vite
+            icon: vite
+          - alt: Sanity
+            icon: sanity
+          - alt: Decap CMS
+            icon: decap
+          - alt: Payload
+            icon: payload
+      - title: INTERNAL TOOLING
+        items:
+          - alt: Retool
+            icon: retool
+          - alt: Airtable
+            icon: airtable
+          - alt: Postgres
+            icon: postgres
+          - alt: SQLite
+            icon: sqlite
+      - title: HOSTING
+        items:
+          - alt: Netlify
+            icon: netlify
+          - alt: Cloudflare Pages
+            icon: cloudflare
+          - alt: Vercel
+            icon: vercel
+          - alt: AWS
+            icon: aws
+          - alt: DigitalOcean
+            icon: digitalocean
   - type: features
-    title: WHAT WE OFFER
-    subtitle: Our Services
+    title: WHAT WE DO
+    subtitle: Three ways we can help
     id: services
     alt: true
     items:
-      - icon: blogging
+      - title: New websites
+        icon: blogging
         content:
-          Let your online store shine. We design and build sites with proven technologies to offer dynamic, interactive designs that customers love.
-        title: Web Design & Development
-      - title: eCommerce Stores
-        icon: shopping
+          Starting from scratch? We design and build sites that load fast, stay
+          accessible, and won't trap you in a platform you can't leave. Good for
+          small businesses launching their first real web presence and non-profits
+          that need a site donors and members can actually use.
+      - title: Existing websites, made better
+        icon: speedometer
         content:
-          Losing a visitor on your online shop costs your more than just impressions, it hits your bottom line. We build modern, accessible eCommerce stores that
-          grow with your business.
-      - title: Software Architecture & Design
-        icon: architecture
+          Already have a site that's slow, broken, or held together with plugins?
+          We audit what you have, fix what's worth fixing, and rebuild the parts
+          that aren't. You keep what works. We replace what doesn't.
+      - title: Internal tools
+        icon: tools
         content:
-          Whether you already have a development team or are still in the planning phase, we can help you design your tech stack.
+          Spreadsheets aren't a database. Email isn't a workflow. We build the
+          small, focused web apps that let your team stop copying data between
+          five tabs — and we build them so the next developer can pick them up
+          without a séance.
 ---

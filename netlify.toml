@@ -28,3 +28,49 @@ from = "https://navillus.nl/*"
 to = "https://navillus.dev/:splat"
 status = 301
 force = true
+
+# Retired blog posts — redirect to the blog index.
+[[redirects]]
+from = "/blog/astro-plus-netlify-cms"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/astro-plus-forestry"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/astro-plus-forestry-revisited"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/astro-plus-snipcart"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/jamstack-2_0"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/introducing-svelte-entity-store"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/svelte-class-props"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/astro-plus-swup"
+to = "/blog"
+status = 301
+
+[[redirects]]
+from = "/blog/converting-navillus-to-astro"
+to = "/blog"
+status = 301
