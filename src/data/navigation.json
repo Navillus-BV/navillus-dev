@@ -30,23 +30,23 @@
   ],
   "contact": [
     {
-      "title": "Email us at info@navillus.dev",
-      "url": "mailto:info@navillus.dev",
+      "title": "Email us at dev@tonysull.co",
+      "url": "mailto:dev@tonysull.co",
       "icon": "email"
     },
     {
-      "title": "Find us on Twitter",
-      "url": "https://twitter.com/navillus_dev",
-      "icon": "twitter"
+      "title": "Find us on Bluesky",
+      "url": "https://bsky.app/profile/tonysull.co",
+      "icon": "bluesky"
     },
     {
-      "title": "Find us on dev.to",
-      "url": "https://dev.to/navillus_dev",
-      "icon": "devto"
+      "title": "Find us on Mastodon",
+      "url": "https://indieweb.social/@tonysull",
+      "icon": "mastodon"
     },
     {
       "title": "Find us on Github",
-      "url": "https://github.com/navillus-dev",
+      "url": "https://github.com/tony-sull",
       "icon": "github"
     },
     {

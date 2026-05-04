@@ -1,6 +1,6 @@
 import data from "./navigation.json"
 
-export type ContactIcon = "devto" | "email" | "github" | "rss" | "twitter"
+export type ContactIcon = "bluesky" | "email" | "github" | "mastodon" | "rss"
 
 export type NavigationSettings = {
     pages: Array<{

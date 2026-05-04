@@ -1,6 +1,5 @@
 ---
 import Layout, { type Props as LayoutProps } from "./Page.astro";
-import TwitterShare from "../components/TwitterShare.astro";
 import WebMentions from "../components/WebMentions.astro";
 import UIBlock from "../components/blocks/UIBlock.astro";
 import { formatDate } from "../utils/dates.ts";
@@ -10,7 +9,7 @@ import { site } from "../data/site";
 
 const page = Astro.props as CollectionEntry<"blog">;
 
-const { title, description, social_image, date, last_modified_at, tweet_id } =
+const { title, description, social_image, date, last_modified_at } =
   page.data;
 
 const seo: LayoutProps = {
@@ -71,14 +70,7 @@ const authorName = `${author.data.first_name} ${author.data.last_name}`;
     </article>
 
     <footer id="webmentions">
-      <WebMentions {webMentions} url={Astro.url.href}>
-        <TwitterShare
-          description={seo.description}
-          title={seo.title}
-          tweetId={tweet_id}
-          url={Astro.url.href}
-        />
-      </WebMentions>
+      <WebMentions {webMentions} url={Astro.url.href} />
     </footer>
   </UIBlock>
 </Layout>

@@ -12,7 +12,7 @@ const baseBlockSchema = z.object({
 export type BaseBlock = z.infer<typeof baseBlockSchema>
 
 const contactIconSchema = z.enum([
-    "devto", "email", "github", "rss", "twitter"
+    "bluesky", "email", "github", "mastodon", "rss"
 ])
 export type ContactIcon = z.infer<typeof contactIconSchema>
 
