@@ -1,47 +1,35 @@
-# Astro Starter Kit: Minimal
+# navillus.dev
+
+Source for [navillus.dev](https://navillus.dev) — Navillus BV's marketing
+site and engineering blog. Built with [Astro](https://astro.build) and
+hosted on Netlify.
+
+## Local development
+
+Requires Node 22 (`.nvmrc`).
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev      # dev server at localhost:4321
+npm run build    # astro check && astro build → dist/
+npm run preview  # preview the build
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Project documentation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Long-lived project docs live in `.chisel/docs/`, managed via the
+[`chisel`](https://chisel.build) CLI. Start here:
 
-## 🚀 Project Structure
+- [`project/tech-stack.md`](./.chisel/docs/project/tech-stack.md) — frameworks, integrations, hosting
+- [`project/coding-standards.md`](./.chisel/docs/project/coding-standards.md) — TypeScript, Astro, CSS, accessibility conventions
+- [`project/structure.md`](./.chisel/docs/project/structure.md) — directory layout and routing map
 
-Inside of your Astro project, you'll see the following folders and files:
+Query them with `chisel docs overview` or pull targeted LLM context with
+`chisel context create "<topic>"`.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Adding content
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Blog posts** — `src/content/blog/<slug>.md`. Frontmatter schema in
+  `src/content.config.ts`; copy an existing post as a template.
+- **Authors** — `src/content/authors/<id>.json`.
+- **Static pages** — `src/content/pages/<slug>.md`.
