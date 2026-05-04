@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # Chisel Cache
 .chisel/index.db
+
+# Private notes (local-only, not for the public repo)
+.private/

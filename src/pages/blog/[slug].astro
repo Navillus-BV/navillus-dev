@@ -4,7 +4,7 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Post.astro";
 
 export const getStaticPaths = (async () => {
-  const pages = await getCollection("blog");
+  const pages = await getCollection("blog", ({ data }) => data.published);
 
   return pages.map((page) => ({
     props: { page },
