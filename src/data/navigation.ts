@@ -1,10 +1,6 @@
-import { z } from "astro:content"
 import data from "./navigation.json"
 
-const contactIconSchema = z.enum([
-    "devto", "email", "github", "rss", "twitter"
-])
-export type ContactIcon = z.infer<typeof contactIconSchema>
+export type ContactIcon = "devto" | "email" | "github" | "rss" | "twitter"
 
 export type NavigationSettings = {
     pages: Array<{

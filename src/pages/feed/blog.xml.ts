@@ -24,9 +24,9 @@ export const GET: APIRoute = async (context) => {
                 image: item.data.social_image,
             }
 
-            const url = new URL(`/blog/${item.slug}`, site.url)
+            const url = new URL(`/blog/${item.id}`, site.url)
 
-            const content = `<content><![CDATA[ ${marked(item.body)} ]]></content>`
+            const content = `<content><![CDATA[ ${marked.parse(item.body ?? "")} ]]></content>`
 
             const customData = [
                 `<id>${url.pathname}</id>`,

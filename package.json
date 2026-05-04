@@ -10,20 +10,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/sitemap": "^3.2.0",
-    "astro": "^4.15.12",
-    "typescript": "^5.6.2"
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.2.2"
   },
   "devDependencies": {
-    "@astrojs/rss": "^4.0.7",
-    "@fontsource/poppins": "^5.1.0",
-    "@types/marked": "^6.0.0",
-    "astro-xelement": "^3.2.0",
+    "@fontsource/poppins": "^5.2.7",
     "chisel.css": "^0.8.1",
-    "marked": "^14.1.2",
+    "marked": "^18.0.3",
     "mdast-util-to-string": "^4.0.0",
     "netlify-plugin-cache-folder": "^0.0.8",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "typescript": "^6.0.3"
+  },
+  "optionalDependencies": {
+    "@astrojs/compiler-rs": "^0.1.10"
   }
 }

@@ -6,7 +6,7 @@ import WebMentionsCount from "./WebMentionsCount.astro";
 import site from "../data/site.json";
 import { getAllMentions, isForUrl } from "../utils/mentions.js";
 import { formatDate } from "../utils/dates.ts";
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 
 type Props = {
   post: CollectionEntry<"blog">;
@@ -27,12 +27,12 @@ const tags = post.data.tags.map((tag: string) => {
   };
 });
 
-const url = new URL(`/blog/${post.slug}`, site.url);
+const url = new URL(`/blog/${post.id}`, site.url);
 
 const allMentions = await getAllMentions();
 const webMentions = allMentions.children.filter(isForUrl(url.href));
 
-const { remarkPluginFrontmatter } = await post.render();
+const { remarkPluginFrontmatter } = await render(post);
 ---
 
 <article>

@@ -5,7 +5,7 @@ import WebMentions from "../components/WebMentions.astro";
 import UIBlock from "../components/blocks/UIBlock.astro";
 import { formatDate } from "../utils/dates.ts";
 import { getAllMentions, isForUrl, sortMentions } from "../utils/mentions";
-import { getEntry, type CollectionEntry } from "astro:content";
+import { getEntry, render, type CollectionEntry } from "astro:content";
 import { site } from "../data/site";
 
 const page = Astro.props as CollectionEntry<"blog">;
@@ -20,7 +20,7 @@ const seo: LayoutProps = {
   image: social_image,
 };
 
-const { Content, remarkPluginFrontmatter } = await page.render();
+const { Content, remarkPluginFrontmatter } = await render(page);
 const minutes = remarkPluginFrontmatter.minutesRead;
 
 const allMentions = await getAllMentions();

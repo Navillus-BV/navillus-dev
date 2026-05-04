@@ -1,5 +1,7 @@
-import { defineCollection, reference, z, type ImageFunction } from "astro:content";
-import { site } from "../data/site";
+import { defineCollection, reference, type ImageFunction } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
+import { site } from "./data/site";
 
 const baseBlockSchema = z.object({
     title: z.string().optional(),
@@ -94,9 +96,9 @@ const basePageSchema = (image: ImageFunction) => z.object({
         alt: z.string(),
     }),
     published: z.boolean().optional().default(true),
-    date: z.date({ coerce: true }),
+    date: z.coerce.date(),
     blocks: z.array(blockSchema).optional().default([]),
-    last_modified_at: z.date({ coerce: true }).optional()
+    last_modified_at: z.coerce.date().optional()
 })
 export type BasePage = z.infer<ReturnType<typeof basePageSchema>>
 
@@ -144,21 +146,21 @@ export type Page =
 const authorSchema = z.object({
     first_name: z.string(),
     last_name: z.string(),
-    url: z.string().url()
+    url: z.url()
 })
 export type Author = z.infer<typeof authorSchema>
 
 export const collections = {
     pages: defineCollection({
-        type: "content",
+        loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
         schema: ({ image }) => pageSchema(image)
     }),
     blog: defineCollection({
-        type: "content",
+        loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
         schema: ({ image }) => blogPostSchema(image)
     }),
     authors: defineCollection({
-        type: "data",
+        loader: glob({ pattern: "**/*.json", base: "./src/content/authors" }),
         schema: authorSchema
     })
 }

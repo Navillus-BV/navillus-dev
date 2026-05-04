@@ -3,6 +3,10 @@ import { getEntry } from "astro:content";
 import Hero from "../layouts/Hero.astro";
 
 const page = await getEntry("pages", "home");
+
+if (!page) {
+  throw new Error('Missing content entry: pages/home');
+}
 ---
 
 <Hero {...page} />

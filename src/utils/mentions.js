@@ -1,6 +1,12 @@
 import fs from "fs";
-import unionBy from "lodash/unionBy";
 import site from "../data/site.json";
+
+// Union two arrays of objects, deduplicated by the value at `key`. First occurrence wins.
+function unionBy(a, b, key) {
+  const seen = new Set(a.map((item) => item[key]));
+  const extras = b.filter((item) => !seen.has(item[key]));
+  return [...a, ...extras];
+}
 
 const domain = new URL(site.url).hostname;
 

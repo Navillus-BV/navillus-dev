@@ -23,6 +23,10 @@ const { page } = Astro.props;
 const { data: posts } = page;
 
 const blogPage = await getEntry("pages", "blog");
+
+if (!blogPage) {
+  throw new Error('Missing content entry: pages/blog');
+}
 ---
 
 <Layout {...blogPage}>

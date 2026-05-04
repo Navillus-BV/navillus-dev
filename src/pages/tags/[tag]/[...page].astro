@@ -43,6 +43,10 @@ const { data: posts } = page;
 
 const tagPage = await getEntry("pages", "tag");
 
+if (!tagPage) {
+  throw new Error('Missing content entry: pages/tag');
+}
+
 const title = getTitle(tag);
 
 tagPage.data.title = title;
